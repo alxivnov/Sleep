@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C6631D27-E5E1-4C36-81DB-3861F708376A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Sleep Diary</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>372b8521-4407-7a44-b862-2bc3017fb0d4</key>
+		<string>https://secure-svn.1gb.ru/pine</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Sleep Diary/Sleep Diary.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>372b8521-4407-7a44-b862-2bc3017fb0d4</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>372b8521-4407-7a44-b862-2bc3017fb0d4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>372b8521-4407-7a44-b862-2bc3017fb0d4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Pine</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  Sleep Diary
+
+  Created by Alexander Ivanov on 01.05.15.
+  Copyright (c) 2015 Alexander Ivanov. All rights reserved.
+ */
+
+"Fall asleep" = "Fall asleep";
+"Wake up" = "Wake up";
+"Go to sleep!" = "Go to sleep!";
+"Wake up now!" = "Wake up now!";
+"Notification at %@." = "Notification at %@.";
+"Notification disabled." = "Notification disabled.";
+"Pressure" = "Pressure";
+"%f mbar" = "%f mbar";
+"%li mbar" = "%li mbar";
+"Yes" = "Yes";
+"No" = "No";
+"Cancel" = "Cancel";
+"Thank You" = "Thank You";
+"Do you want to tell me about your experience with this app?" = "Do you want to tell me about your experience with this app?";
+
+"Enjoying this app?" = "Enjoying Sleep Diary?";
+"Would you mind giving me some feedback?" = "Would you mind giving me some feedback?";
+"How about rating on the App Store, then?" = "How about rating on the App Store, then?";
+"Not really" = "Not really";
+"Yes!" = "Yes!";
+"No, thanks" = "No, thanks";
+"Ok, sure" = "Ok, sure";
+"NO" = "No";
+"YES" = "Yes";

@@ -1,0 +1,146 @@
+
+/* Class = «UINavigationItem»; title = «About»; ObjectID = «9o7-FY-920»; */
+"9o7-FY-920.title" = "О приложении";
+
+/* Class = "UITableViewSection"; headerTitle = "FEEDBACK"; ObjectID = "0QC-e1-EXl"; */
+"0QC-e1-EXl.headerTitle" = "ОБРАТНАЯ СВЯЗЬ";
+
+/* Class = "UILabel"; text = "Contact the Developer"; ObjectID = "3n3-zc-JaF"; */
+"3n3-zc-JaF.text" = "Написать разработчику";
+
+/* Class = "UITableViewSection"; headerTitle = "SHARE"; ObjectID = "49N-Qr-A3m"; */
+"49N-Qr-A3m.headerTitle" = "ПОДЕЛИТЬСЯ";
+
+/* Class = "UILabel"; text = "Tell a Friend"; ObjectID = "3Oj-Eo-Daz"; */
+"3Oj-Eo-Daz.text" = "Рассказать друзьям";
+
+/* Class = "UITableViewSection"; headerTitle = "RATE"; ObjectID = "EIQ-Uk-q5Q"; */
+"EIQ-Uk-q5Q.headerTitle" = "ОЦЕНИТЬ";
+
+/* Class = "UILabel"; text = "Write a Review"; ObjectID = "ZAC-i8-ajS"; */
+"ZAC-i8-ajS.text" = "Написать отзыв";
+
+/* Class = "UITableViewSection"; headerTitle = "TIP"; ObjectID = "2Qb-pA-SCl"; */
+"2Qb-pA-SCl.headerTitle" = "ЧАЕВЫЕ";
+
+/* Class = "UILabel"; text = "Fund the Project"; ObjectID = "ROn-tc-1Fu"; */
+"ROn-tc-1Fu.text" = "Поддержать проект";
+
+/* Class = "UITableViewSection"; headerTitle = "OTHER APPS"; ObjectID = "dje-Cp-aRM"; */
+"dje-Cp-aRM.headerTitle" = "ДРУГИЕ ПРИЛОЖЕНИЯ";
+
+/* Class = "UIButton"; normalTitle = "FALL ASLEEP"; ObjectID = "gPp-rt-0k2"; */
+"gPp-rt-0k2.normalTitle" = "УСНУТЬ";
+
+/* Class = "UIButton"; selectedTitle = "WAKE UP"; ObjectID = "gPp-rt-0k2"; */
+"gPp-rt-0k2.selectedTitle" = "ПРОСНУТЬСЯ";
+
+/* Class = "UILabel"; text = "Starts"; ObjectID = "RjL-4O-T2H"; */
+"RjL-4O-T2H.text" = "Начало";
+
+/* Class = "UILabel"; text = "Ends"; ObjectID = "aU2-f3-tSe"; */
+"aU2-f3-tSe.text" = "Конец";
+
+/* Class = «UINavigationItem»; title = «Atmospheric Pressure»; ObjectID = «dD9-tH-nBs»; */
+"dD9-tH-nBs.title" = "Атмосферное давление";
+
+/* Class = "UISegmentedControl"; Gzj-x3-q4q.segmentTitles[0] = "Day"; ObjectID = "Gzj-x3-q4q"; */
+"Gzj-x3-q4q.segmentTitles[0]" = "День";
+
+/* Class = "UISegmentedControl"; Gzj-x3-q4q.segmentTitles[1] = "Week"; ObjectID = "Gzj-x3-q4q"; */
+"Gzj-x3-q4q.segmentTitles[1]" = "Нед.";
+
+/* Class = "UISegmentedControl"; Gzj-x3-q4q.segmentTitles[2] = "Month"; ObjectID = "Gzj-x3-q4q"; */
+"Gzj-x3-q4q.segmentTitles[2]" = "Мес.";
+
+/* Class = "UISegmentedControl"; Gzj-x3-q4q.segmentTitles[3] = "Year"; ObjectID = "Gzj-x3-q4q"; */
+"Gzj-x3-q4q.segmentTitles[3]" = "Год";
+
+/* Class = «UINavigationItem»; title = «Data»; ObjectID = «pcq-gH-aUz»; */
+"pcq-gH-aUz.title" = "Данные";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "pkZ-vY-yJo"; */
+"pkZ-vY-yJo.title" = "Настройки";
+
+/* Class = "UILabel"; text = "Enable"; ObjectID = "Vfr-yd-zF0"; */
+"Vfr-yd-zF0.text" = "Включить";
+
+/* Class = "UILabel"; text = "Preferred sleep duration"; ObjectID = "rdQ-ME-qgA"; */
+"rdQ-ME-qgA.text" = "Продолжительность сна";
+
+/* Class = "UITableViewSection"; headerTitle = "BEDTIME ALERT"; ObjectID = "GOi-7V-2m1"; */
+"GOi-7V-2m1.headerTitle" = "НАПОМИНАНИЕ О СНЕ";
+
+/* Class = "UITableViewSection"; footerTitle = "Notification"; ObjectID = "GOi-7V-2m1"; */
+"GOi-7V-2m1.footerTitle" = "Напоминание";
+
+/* Class = "UILabel"; text = "Preferred wake up time"; ObjectID = "HbS-pn-YB9"; */
+"HbS-pn-YB9.text" = "Время подъема";
+
+/* Class = "UITableViewSection"; headerTitle = "WAKE UP ALARM"; ObjectID = "zwS-U4-Ecm"; */
+"zwS-U4-Ecm.headerTitle" = "БУДИЛЬНИК";
+
+/* Class = "UITableViewSection"; footerTitle = "We will wake you up slightly sooner if it will coincide with the end of a sleep cycle."; ObjectID = "zwS-U4-Ecm"; */
+"zwS-U4-Ecm.footerTitle" = "Мы разбудим Вас немного раньше, если это время совпадет с окончанием цикла сна.";
+
+/* Class = "UILabel"; text = "To use \"Sleep Diary\" allow it to read and write Sleep Analysis data."; ObjectID = "fw2-vh-Q1K"; */
+"fw2-vh-Q1K.text" = "Чтобы использовать Sleep Diary, дайте ему доступ к данным Анализа сна.";
+
+/* Class = "UILabel"; text = "To use alarm clock allow \"Sleep Diary\" to send you notifications."; ObjectID = "Jfi-q3-aG6"; */
+"Jfi-q3-aG6.text" = "Чтобы использовать будильник, разрешите отправлять уведомления.";
+
+/* Class = "UILabel"; text = "\"Sleep Diary\" helps you analyse and improve sleep habits."; ObjectID = "2PG-Rm-0LD"; */
+"2PG-Rm-0LD.text" = "Sleep Diary помогает анализировать\nи улучшать Ваши привычки сна.";
+
+/* Class = "UILabel"; text = "Start tracking your sleep by pressing \"FALL ASLEEP\" button when you will go to bed."; ObjectID = "ObX-wQ-qZP"; */
+"ObX-wQ-qZP.text" = "Начните отслеживать сон нажав кнопку УСНУТЬ, когда будете ложиться спать.";
+
+/* Class = "UILabel"; text = "Sleep Analysis will live here"; ObjectID = "0xc-08-CIz"; */
+"0xc-08-CIz.text" = "Здесь будет Анализ сна";
+
+/* Class = "UILabel"; text = "Start tracking your sleep by pressing \"FALL ASLEEP\" button when you will go to bed."; ObjectID = "TN1-LF-b6D"; */
+"TN1-LF-b6D.text" = "Начните отслеживать сон нажав кнопку УСНУТЬ, когда будете ложиться спать.";
+
+"cKH-wt-DkS.text" = "Отлично";
+"hKB-4A-yaq.text" = "Продолжайте отслеживать сон, чтобы улучшить анализ и получать более точные советы.";
+
+"Fqx-SJ-uiC.normalTitle" = "Разрешить";
+"8ZL-3Y-1ea.normalTitle" = "Разрешить";
+
+"rKm-MZ-Igt.text" = "Только при долгом нажатии";
+"Rh9-wz-CYb.footerTitle" = "Этот диалог может быть вызван при каждом нажатии кнопкуи ПРОСНУТЬСЯ или только при нажатии в течение 3 секунд.";
+
+// segment
+"GZz-cv-Z7j.text" = "Активность";
+"Il9-UH-yWJ.text" = "Шаги";
+"pkN-og-fGy.text" = "Пульс";
+"tAD-cc-Fy4.text" = "Циклы сна";
+// analysis
+"TqY-yX-sgg.text" = "Активность";
+"8Tn-ec-8lL.text" = "Шаги";
+"9Wz-h5-3nm.text" = "Пульс";
+"GIt-tX-Cqn.text" = "Циклы сна";
+// interval
+"6t8-Zn-Mos.text" = "Активность";
+"1PK-Hz-tAN.text" = "Шаги";
+"mYS-IZ-X4a.text" = "Пульс";
+"80h-ze-rwD.text" = "Циклы сна";
+
+"q1S-Ue-4ad.headerTitle" = "О ПРОГРАММЕ";
+
+"7GC-m4-P8f.headerTitle" = "НАСТРОЙКИ";
+"7GC-m4-P8f.footerTitle" = "Это время, которое требуется Вам для засыпания.";
+"d8K-Ay-4YT.text" = "Время засыпания";
+"7ss-ew-06a.footerTitle" = "Это время, которое потребовалось Вам для засыпания.";
+"iWC-Hn-P96.text" = "Время засыпания";
+
+"ROn-tc-1Fu.text" = "Яблоко";
+"aOJ-06-EDL.text" = "Салат";
+"Tm4-mj-xYC.text" = "Пакет здоровой еды";
+"2Qb-pA-SCl.footerTitle" = "Вы можете помочь разработчику вести здоровый образ жизни, купив одну из внутренних покупок.";
+
+"v3d-rs-gPa.text" = "Отправить данные сна разработчику";
+"al6-oO-mh8.text" = "Отправить данные сна разработчику";
+
+"5s4-kw-W89.text" = "Пригласить друзей";
+"7RY-sK-Nbf.text" = "Пригласить через Messenger";

@@ -1,0 +1,42 @@
+/* 
+  Localizable.strings
+  Sleep Diary
+
+  Created by Alexander Ivanov on 01.05.15.
+  Copyright (c) 2015 Alexander Ivanov. All rights reserved.
+ */
+
+"Fall asleep" = "Uykuya Devam";
+"Wake up" = "Uyan";
+"Pressure" = "Basınç";
+"%f mbar" = "%f mbar";
+"%li mbar" = "%li mbar";
+"Yes" = "Evet";
+"No" = "Hayır";
+"Done" = "Tamam";
+"Cancel" = "İptal";
+"Thank You" = "Teşekkürler";
+"Do you want to tell me about your experience with this app?" = "Bu uygulama ile ilgili fikirlerini benimle paylaşmak ister misin?";
+
+"Enjoying this app?" = "Bu uygulamayı eğlenceli buldun mu?";
+"Would you mind giving me some feedback?" = "Bize biraz geribildirim verebilir misin?";
+"How about rating on the App Store, then?" = "App Store üzerinde değerlendirmesini yapar mısın?";
+"Not really" = "Tam olarak değil";
+"Yes!" = "Evet";
+"No, thanks" = "Hayır, teşekkürler";
+"Ok, sure" = "Tamam, tabi";
+"NO" = "Hayır";
+"YES" = "Evet";
+
+"Go to sleep!" = "Haydi uyumaya!";
+"Wake up now!" = "Uyanma zamanı!";
+"Notification at %@." = "%@'de uyar";
+"Notification disabled." = "Bildirimler kapalı.";
+
+"Average" = "Ortalama";
+"Total" = "Toplam";
+"Starts" = "Başlangıç";
+"Ends" = "Bitiş";
+"Duration" = "Süre";
+
+"Go to sleep at %@" = "%@ uyu";

@@ -1,0 +1,4 @@
+"NSHealthShareUsageDescription" = "Sleep Diary показывает эти данные в диаграмме сна.";
+"NSHealthUpdateUsageDescription" = "Sleep Diary сохраняет продолжительность сна в Здоровье.";
+"NSLocationWhenInUseUsageDescription" = "Sleep Diary использует местоположение для вычисления времени рассвета и заката для показа на диаграмме сна.";
+"NSMotionUsageDescription" = "Sleep Diary показывает активность в диаграмме сна.";

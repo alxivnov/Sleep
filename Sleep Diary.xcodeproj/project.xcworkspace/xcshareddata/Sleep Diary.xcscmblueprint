@@ -1,0 +1,32 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "372b8521-4407-7a44-b862-2bc3017fb0d4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "372b8521-4407-7a44-b862-2bc3017fb0d4" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "9636DDF4D19DB5E8D23B3E5825BEA4B42966A54C" : 9223372036854775807,
+    "372b8521-4407-7a44-b862-2bc3017fb0d4" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C6631D27-E5E1-4C36-81DB-3861F708376A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "9636DDF4D19DB5E8D23B3E5825BEA4B42966A54C" : "Objective%20Sea\/",
+    "372b8521-4407-7a44-b862-2bc3017fb0d4" : "pine\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Sleep Diary",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Sleep Diary\/Sleep Diary.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/secure-svn.1gb.ru\/pine",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "372b8521-4407-7a44-b862-2bc3017fb0d4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/0xALEX\/Objective-Sea.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9636DDF4D19DB5E8D23B3E5825BEA4B42966A54C"
+    }
+  ]
+}

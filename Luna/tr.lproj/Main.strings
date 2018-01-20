@@ -1,0 +1,105 @@
+
+/* Class = "UINavigationItem"; title = "About"; ObjectID = "9o7-FY-920"; */
+"9o7-FY-920.title" = "Hakkinda";
+
+/* Class = "UITableViewSection"; headerTitle = "FEEDBACK"; ObjectID = "0QC-e1-EXl"; */
+"0QC-e1-EXl.headerTitle" = "GERİ BİLDİRİM";
+
+/* Class = "UILabel"; text = "Contact the Developer"; ObjectID = "3n3-zc-JaF"; */
+"3n3-zc-JaF.text" = "Geliştirici Kurun";
+
+/* Class = "UITableViewSection"; headerTitle = "SHARE"; ObjectID = "49N-Qr-A3m"; */
+"49N-Qr-A3m.headerTitle" = "PAYLAŞ";
+
+/* Class = "UILabel"; text = "Tell a Friend"; ObjectID = "3Oj-Eo-Daz"; */
+"3Oj-Eo-Daz.text" = "Arkadaşınla Paylaş";
+
+/* Class = "UITableViewSection"; headerTitle = "RATE"; ObjectID = "EIQ-Uk-q5Q"; */
+"EIQ-Uk-q5Q.headerTitle" = "PUAN VER";
+
+/* Class = "UILabel"; text = "Write a Review"; ObjectID = "ZAC-i8-ajS"; */
+"ZAC-i8-ajS.text" = "Uygulamayı puanla";
+
+/* Class = "UITableViewSection"; headerTitle = "TIP"; ObjectID = "2Qb-pA-SCl"; */
+"2Qb-pA-SCl.headerTitle" = "Bağış";
+
+/* Class = "UILabel"; text = "Fund the Project"; ObjectID = "ROn-tc-1Fu"; */
+"ROn-tc-1Fu.text" = "Projeye bağışda bulun";
+
+/* Class = "UITableViewSection"; headerTitle = "OTHER APPS"; ObjectID = "dje-Cp-aRM"; */
+"dje-Cp-aRM.headerTitle" = "DİĞER UYGULAMALAR";
+
+/* Class = "UIButton"; normalTitle = "FALL ASLEEP"; ObjectID = "gPp-rt-0k2"; */
+"gPp-rt-0k2.normalTitle" = "UYKUYA DEVAM";
+
+/* Class = "UIButton"; selectedTitle = "WAKE UP"; ObjectID = "gPp-rt-0k2"; */
+"gPp-rt-0k2.selectedTitle" = "UYAN";
+
+/* Class = "UILabel"; text = "Starts"; ObjectID = "RjL-4O-T2H"; */
+"RjL-4O-T2H.text" = "Başlangıç";
+
+/* Class = "UILabel"; text = "Ends"; ObjectID = "aU2-f3-tSe"; */
+"aU2-f3-tSe.text" = "Bitiş";
+
+/* Class = «UINavigationItem»; title = «Atmospheric Pressure»; ObjectID = «dD9-tH-nBs»; */
+"dD9-tH-nBs.title" = "Atmosfer Basıncı";
+
+/* Class = "UISegmentedControl"; Gzj-x3-q4q.segmentTitles[0] = "Day"; ObjectID = "Gzj-x3-q4q"; */
+"Gzj-x3-q4q.segmentTitles[0]" = "Gün";
+
+/* Class = "UISegmentedControl"; Gzj-x3-q4q.segmentTitles[1] = "Week"; ObjectID = "Gzj-x3-q4q"; */
+"Gzj-x3-q4q.segmentTitles[1]" = "Hafta";
+
+/* Class = "UISegmentedControl"; Gzj-x3-q4q.segmentTitles[2] = "Month"; ObjectID = "Gzj-x3-q4q"; */
+"Gzj-x3-q4q.segmentTitles[2]" = "Ay";
+
+/* Class = "UISegmentedControl"; Gzj-x3-q4q.segmentTitles[3] = "Year"; ObjectID = "Gzj-x3-q4q"; */
+"Gzj-x3-q4q.segmentTitles[3]" = "Yıl";
+
+/* Class = «UINavigationItem»; title = «Data»; ObjectID = «pcq-gH-aUz»; */
+"pcq-gH-aUz.title" = "Veri";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "pkZ-vY-yJo"; */
+"pkZ-vY-yJo.title" = "Ayarlar";
+
+/* Class = "UILabel"; text = "Enable"; ObjectID = "Vfr-yd-zF0"; */
+"Vfr-yd-zF0.text" = "Enable";
+
+/* Class = "UILabel"; text = "Preferred sleep duration"; ObjectID = "rdQ-ME-qgA"; */
+"rdQ-ME-qgA.text" = "Tercih edilen uyku süresi";
+
+/* Class = "UITableViewSection"; headerTitle = "Bedtime alert"; ObjectID = "GOi-7V-2m1"; */
+"GOi-7V-2m1.headerTitle" = "Yatmadan uyarısı";
+
+/* Class = "UITableViewSection"; footerTitle = "Notification"; ObjectID = "GOi-7V-2m1"; */
+"GOi-7V-2m1.footerTitle" = "Bildirimler";
+
+/* Class = "UILabel"; text = "Preferred wake up time"; ObjectID = "HbS-pn-YB9"; */
+"HbS-pn-YB9.text" = "Tercih edilen uyanma zamanı";
+
+/* Class = "UITableViewSection"; headerTitle = "Wake up alarm"; ObjectID = "zwS-U4-Ecm"; */
+"zwS-U4-Ecm.headerTitle" = "Uyanma alarmı";
+
+/* Class = "UITableViewSection"; footerTitle = "We will wake you up slightly sooner if it will coincide with the end of a sleep cycle."; ObjectID = "zwS-U4-Ecm"; */
+"zwS-U4-Ecm.footerTitle" = "Günlük uyku düzeninize bakıp, ritualinize göre sizi biz uyandıracağız.";
+
+// segmented
+"GZz-cv-Z7j.text" = "Aktivite";
+"Il9-UH-yWJ.text" = "Adım";
+"pkN-og-fGy.text" = "Kâlp Atış Hızı";
+"tAD-cc-Fy4.text" = "Uyku Incelemesi";
+// analysis
+"TqY-yX-sgg.text" = "Aktivite";
+"8Tn-ec-8lL.text" = "Adım";
+"9Wz-h5-3nm.text" = "Kâlp Atış Hızı";
+"GIt-tX-Cqn.text" = "Uyku Incelemesi";
+// interval
+"6t8-Zn-Mos.text" = "Aktivite";
+"1PK-Hz-tAN.text" = "Adım";
+"mYS-IZ-X4a.text" = "Kâlp Atış Hızı";
+"80h-ze-rwD.text" = "Uyku Incelemesi";
+
+"ROn-tc-1Fu.text" = "Elma";
+"aOJ-06-EDL.text" = "Salata";
+"Tm4-mj-xYC.text" = "Sağlıklı Besin Çantası";
+"2Qb-pA-SCl.footerTitle" = "Geliştiriciden bu miktarlardan birini devirerek daha sağlıklı bir hayat yaşamanıza yardımcı olabilirsiniz.";

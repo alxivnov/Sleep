@@ -1,0 +1,57 @@
+
+/* Class = "UIButton"; normalTitle = "FALL ASLEEP"; ObjectID = "gPp-rt-0k2"; */
+"gPp-rt-0k2.normalTitle" = "Einschlafen";
+
+/* Class = "UIButton"; selectedTitle = "WAKE UP"; ObjectID = "gPp-rt-0k2"; */
+"gPp-rt-0k2.selectedTitle" = "Aufwachen";
+
+/* Class = "UILabel"; text = "Starts"; ObjectID = "RjL-4O-T2H"; */
+"RjL-4O-T2H.text" = "Anfang";
+
+/* Class = "UILabel"; text = "Ends"; ObjectID = "aU2-f3-tSe"; */
+"aU2-f3-tSe.text" = "Ende";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "pkZ-vY-yJo"; */
+"pkZ-vY-yJo.title" = "Einstellungen";
+
+/* Class = "UILabel"; text = "Bedtime alert"; ObjectID = "Vfr-yd-zF0"; */
+"Vfr-yd-zF0.text" = "Schlaf-Alert";
+
+/* Class = "UILabel"; text = "Preferred sleep duration"; ObjectID = "rdQ-ME-qgA"; */
+"rdQ-ME-qgA.text" = "Bevorzugte Schlafdauer";
+
+/* Class = "UISegmentedControl"; Gzj-x3-q4q.segmentTitles[0] = "Day"; ObjectID = "Gzj-x3-q4q"; */
+"Gzj-x3-q4q.segmentTitles[0]" = "Tag";
+
+/* Class = "UISegmentedControl"; Gzj-x3-q4q.segmentTitles[1] = "Week"; ObjectID = "Gzj-x3-q4q"; */
+"Gzj-x3-q4q.segmentTitles[1]" = "Woche";
+
+/* Class = "UISegmentedControl"; Gzj-x3-q4q.segmentTitles[2] = "Month"; ObjectID = "Gzj-x3-q4q"; */
+"Gzj-x3-q4q.segmentTitles[2]" = "Monat";
+
+/* Class = "UISegmentedControl"; Gzj-x3-q4q.segmentTitles[3] = "Year"; ObjectID = "Gzj-x3-q4q"; */
+"Gzj-x3-q4q.segmentTitles[3]" = "Jahr";
+
+// segmented
+"GZz-cv-Z7j.text" = "Aktivität";
+"Il9-UH-yWJ.text" = "Schritte";
+"pkN-og-fGy.text" = "Herzfrequenz";
+"tAD-cc-Fy4.text" = "Schlafanalyse";
+// analysis
+"TqY-yX-sgg.text" = "Aktivität";
+"8Tn-ec-8lL.text" = "Schritte";
+"9Wz-h5-3nm.text" = "Herzfrequenz";
+"GIt-tX-Cqn.text" = "Schlafanalyse";
+// interval
+"6t8-Zn-Mos.text" = "Aktivität";
+"1PK-Hz-tAN.text" = "Schritte";
+"mYS-IZ-X4a.text" = "Herzfrequenz";
+"80h-ze-rwD.text" = "Schlafanalyse";
+
+"ROn-tc-1Fu.text" = "Apfel";
+"aOJ-06-EDL.text" = "Salat";
+"Tm4-mj-xYC.text" = "Tasche der gesunden Nahrung";
+"2Qb-pA-SCl.footerTitle" = "Sie können dem Entwickler helfen, ein gesundes Leben zu leben, indem man ihm eine dieser Summen kippt.";
+
+"5s4-kw-W89.text" = "Freunde einladen";
+"7RY-sK-Nbf.text" = "Über Messenger einladen";

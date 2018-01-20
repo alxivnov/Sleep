@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  Sleep Diary
+
+  Created by Alexander Ivanov on 01.05.15.
+  Copyright (c) 2015 Alexander Ivanov. All rights reserved.
+ */
+
+"Fall asleep" = "Einschlafen";
+"Wake up" = "Aufwachen";
+"Pressure" = "Druck";
+"%f mbar" = "%f mbar";
+"%li mbar" = "%li mbar";
+"Yes" = "Ja";
+"No" = "Nein";
+"Done" = "Fertig";
+"Cancel" = "Abbrechen";
+"Thank You" = "Vielen Dank";
+"Do you want to tell me about your experience with this app?" = "Wollen Sie mir von Ihrer Erfahrung mit der App berichten?";
+
+"Average" = "Durchschnitt";
+"Total" = "Gesamt";
+"Starts" = "Anfang";
+"Ends" = "Ende";
+"Duration" = "Dauer";
+
+"Go to sleep at %@" = "Geh schlafen um %@";

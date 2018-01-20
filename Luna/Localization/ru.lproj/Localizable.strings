@@ -1,0 +1,65 @@
+/* 
+  Localizable.strings
+  Sleep Diary
+
+  Created by Alexander Ivanov on 01.05.15.
+  Copyright (c) 2015 Alexander Ivanov. All rights reserved.
+ */
+
+"Change" = "Изменить";
+"Delete" = "Удалить";
+"Save" = "Сохранить";
+
+"Delete sample?" = "Удалить данные?";
+
+"Fall asleep" = "Уснуть";
+"Wake up" = "Проснуться";
+"Go to sleep!" = "Отбой!";
+"It's time to go to bed." = "Пора ложиться спать.";
+"Wake up now!" = "Подъем!";
+"It's time to wake up." = "Пора вставать.";
+"Go to sleep at %@" = "Ложитесь спать в %@";
+"Notification at %@." = "Уведомление в %@.";
+"Notification disabled." = "Уведомление отключено.";
+"Bedtime alert disabled" = "Напоминание о сне выключено";
+"Bedtime alert enabled" = "Напоминание о сне включено";
+"No alarm" = "Без будильника";
+"Pressure" = "Давление";
+"%f mbar" = "%f мбар";
+"%li mbar" = "%li мбар";
+"Yes" = "Да";
+"No" = "Нет";
+"Done" = "Готово";
+"Cancel" = "Отмена";
+"Thank You" = "Спасибо";
+"Do you want to tell me about your experience with this app?" = "Хотите рассказать мне о Вашем опыте использования этого приложения?";
+
+"Enjoying this app?" = "Вам нравится \"Sleep Diary\"?";
+"Would you mind giving me some feedback?" = "Расскажите о том, что можно улучшить.";
+"How about rating on the App Store, then?" = "Тогда напишите отзыв в App Store, пожалуйста!";
+"Not really" = "Нет";
+"Yes!" = "Да";
+"No, thanks" = "Нет, спасибо";
+"Ok, sure" = "Хорошо";
+"NO" = "Нет";
+"YES" = "Да";
+
+"Movement" = "Движение";
+"Average" = "Среднее";
+"Total" = "Всего";
+"Starts" = "Начало";
+"Ends" = "Конец";
+"Duration" = "Длительность";
+
+"To use \"Sleep Diary\" allow it to read and write Sleep Analysis data in the Health app's Sources tab." = "Чтобы использовать Sleep Diary, разрешите ему считывать и записывать данные Анализа сна в приложении Здоровье на вкладке Источники.";
+"To use alarm clock allow \"Sleep Diary\" to send you notifications in the Settings." = "Чтобы использовать будильник, разрешите Sleep Diary отправлять Вам уведомления в Настройках.";
+
+"%@, bedtime: %@" = "%@, отбой в %@";
+"%@, wake up: %@" = "%@, подъем в %@";
+
+"Asleep" = "В состоянии сна";
+"In bed" = "В постели";
+
+"Were you asleep?" = "Это время сна?";
+
+"Please, write what you feel is wrong or right with the data." = "Пожалуйста, опишите, что по Вашему мнению неправильно и правильно в этих данных.";
