@@ -278,7 +278,9 @@
 	if (activities) {
 		self.activities = activities;
 	} else if (!self.watchActivities) {
-		if ([WatchDelegate instance].reachableSession)
+		if ([self.startDate isGreaterThanOrEqual:[WatchDelegate instance].installedSession.receivedApplicationContext[KEY_TIMER_START]] && [self.endDate isLessThanOrEqual:[WatchDelegate instance].installedSession.receivedApplicationContext[KEY_TIMER_END]] && [WatchDelegate instance].installedSession.receivedApplicationContext[HKMetadataKeySampleActivities])
+			self.watchActivities = [CMMotionActivitySample samplesFromData:[WatchDelegate instance].installedSession.receivedApplicationContext[HKMetadataKeySampleActivities] date:[WatchDelegate instance].installedSession.receivedApplicationContext[KEY_TIMER_START]];
+		else if ([WatchDelegate instance].reachableSession)
 			[[WatchDelegate instance] getActivitiesFromDate:self.visualizer.startDate toDate:self.visualizer.endDate handler:^(NSArray<CMMotionActivitySample *> *activities) {
 				if (activities)
 					self.watchActivities = activities;

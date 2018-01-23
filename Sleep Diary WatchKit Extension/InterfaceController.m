@@ -169,6 +169,14 @@
 
 	if (IS_DEBUGGING)
 		[self setTitle:[NSBundle bundleVersion]];
+
+	NSDate *toDate = [NSDate date];
+	NSDate *fromDate = [toDate addValue:-1 forComponent:NSCalendarUnitDay];
+	[CMMotionActivitySample queryActivityStartingFromDate:fromDate toDate:toDate within:GLOBAL.sleepLatency withHandler:^(NSArray<CMMotionActivitySample *> *activities) {
+		NSData *data = [CMMotionActivitySample samplesToData:activities date:fromDate];
+		if (data)
+			[[PhoneDelegate instance].installedSession updateApplicationContext: @{ KEY_TIMER_START : fromDate, KEY_TIMER_END : toDate, HKMetadataKeySampleActivities : data }];
+	}];
 }
 
 - (void)willActivate {
