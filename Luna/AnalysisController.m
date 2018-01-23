@@ -189,7 +189,7 @@
 	__block AnalysisController *__self = self;
 	return [NSArray arrayWithObject:[UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:[Localization delete] handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
 		[__self tableView:__self.tableView commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:indexPath];
-	}] withObject:[UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:[self tableView:tableView titleForSwipeAccessoryButtonForRowAtIndexPath:indexPath] handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+	}] withObject:[UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:[self tableView:tableView titleForSwipeAccessoryButtonForRowAtIndexPath:indexPath] handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
 		[__self tableView:__self.tableView swipeAccessoryButtonPushedForRowAtIndexPath:indexPath];
 	}]];
 }
