@@ -1069,17 +1069,6 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
-		FA596E801AED074E00EAFE24 /* SK */ = {
-			isa = PBXGroup;
-			children = (
-				FABFA8AE1D81877900F79DBD /* NSRateController.h */,
-				FABFA8AF1D81877900F79DBD /* NSRateController.m */,
-				FABFA8B11D8187A100F79DBD /* UIRateController.h */,
-				FABFA8B21D8187A100F79DBD /* UIRateController.m */,
-			);
-			path = SK;
-			sourceTree = "<group>";
-		};
 		FA67D4441AF3BF7C000789C8 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
@@ -1094,9 +1083,12 @@
 		FA829A3A1A9CB94E00B1E47B /* EXKit */ = {
 			isa = PBXGroup;
 			children = (
+				FABFA8AE1D81877900F79DBD /* NSRateController.h */,
+				FABFA8AF1D81877900F79DBD /* NSRateController.m */,
+				FABFA8B11D8187A100F79DBD /* UIRateController.h */,
+				FABFA8B21D8187A100F79DBD /* UIRateController.m */,
 				FA24D8731C9448FB003020BD /* Answers */,
 				FA403E721AEC146200827125 /* Images */,
-				FA596E801AED074E00EAFE24 /* SK */,
 				FA829A3C1A9CB97900B1E47B /* UI */,
 			);
 			name = EXKit;
