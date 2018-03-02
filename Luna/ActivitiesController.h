@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "UIPagingController.h"
+#import "UIPageViewController+Convenience.h"
 
 @interface ActivitiesController : UIPagingController <UIPageViewControllerDelegate>
 

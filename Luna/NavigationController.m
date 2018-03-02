@@ -69,10 +69,7 @@ __synthesize(UIPanTransition *, transition, [UIPanTransition gestureTransition:N
 }
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-	if ([viewController isKindOfClass:[ActivitiesController class]])
-		for (UIViewController *vc in ((ActivitiesController *)viewController).pageViewControllers)
-			[cls(UIScrollView, vc.view).panGestureRecognizer addTarget:self action:@selector(pan:)];
-	else
+	if (![viewController isKindOfClass:[ActivitiesController class]])
 		[cls(UIScrollView, viewController.view).panGestureRecognizer addTarget:self action:@selector(pan:)];
 }
 

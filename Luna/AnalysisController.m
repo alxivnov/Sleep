@@ -16,7 +16,6 @@
 #import "UIAccessoryView.h"
 #import "UIBezierPath+Convenience.h"
 #import "UIImage+View.h"
-#import "UIScrollView+Scroll.h"
 
 #import "Dispatch+Convenience.h"
 #import "NSArray+Convenience.h"
@@ -25,6 +24,7 @@
 #import "UIApplication+Convenience.h"
 #import "UIColor+Convenience.h"
 #import "UIImage+Convenience.h"
+#import "UIScrollView+Convenience.h"
 #import "UITableView+Convenience.h"
 #import "UIViewController+Convenience.h"
 
@@ -58,7 +58,7 @@
 }
 
 - (NSNumber *)buttonShapes {
-	return sel([UIApplication sharedApplication].rootViewController, buttonShapes);
+	return ret([UIApplication sharedApplication].rootViewController, buttonShapes);
 }
 
 - (void)viewDidLoad {
@@ -175,7 +175,7 @@
 - (void)tableView:(UITableView *)tableView swipeAccessoryButtonPushedForRowAtIndexPath:(NSIndexPath *)indexPath {
 	UIViewController *vc = [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:GUI_INTERVAL];
 
-	_sel_(vc.lastViewController, setSample:, self.samples[indexPath.row]);
+	sel_(vc.lastViewController, setSample:, self.samples[indexPath.row]);
 
 	[self presentViewController:vc animated:YES completion:^{
 		[tableView deselectRowAtIndexPath:indexPath animated:NO];

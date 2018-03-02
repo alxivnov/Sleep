@@ -145,7 +145,7 @@
 	NSUInteger index = [self.weekButtons indexOfObject:sender];
 
 	UINavigationController *navigationController = [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"activities"];
-	_sel_(navigationController.topViewController, setWeekday:, @(index));
+	sel_(navigationController.topViewController, setWeekday:, @(index));
 	[self presentViewController:navigationController animated:YES completion:Nil];
 }
 

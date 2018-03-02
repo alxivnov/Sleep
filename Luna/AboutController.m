@@ -11,7 +11,6 @@
 #import "Localization.h"
 
 #import "UIRateController+Answers.h"
-#import "UIScrollView+Scroll.h"
 
 #import "Answers+Convenience.h"
 #import "Affiliates+Convenience.h"
@@ -23,6 +22,7 @@
 #import "UIActivityViewController+Convenience.h"
 #import "UIAlertController+Convenience.h"
 #import "UIApplication+Convenience.h"
+#import "UIScrollView+Convenience.h"
 #import "UITableView+Convenience.h"
 #import "UIView+Convenience.h"
 

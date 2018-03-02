@@ -15,12 +15,12 @@
 #import "UIButton+Convenience.h"
 #import "UIDatePicker+Convenience.h"
 #import "UIFont+Modification.h"
-#import "UIScrollView+Scroll.h"
 
 #import "NSArray+Convenience.h"
 #import "NSCalendar+Convenience.h"
 #import "NSFormatter+Convenience.h"
 #import "NSObject+Convenience.h"
+#import "UIScrollView+Convenience.h"
 #import "UITableView+Convenience.h"
 #import "UITableViewCell+Convenience.h"
 #import "Dispatch+Convenience.h"

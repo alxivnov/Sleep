@@ -16,10 +16,23 @@
 #import "UIViewController+Convenience.h"
 
 @interface ActivitiesController ()
-
+@property (strong, nonatomic) NSArray<NSDate *> *dates;
 @end
 
 @implementation ActivitiesController
+
+__synthesize(NSArray *, dates, ({
+	NSDate *now = [NSDate date];
+	NSDate *today = [now dateComponent];
+	NSUInteger weekday = [now weekday];
+	NSUInteger firstWeekday = [NSDate firstWeekday];
+	if (firstWeekday == 1 && weekday == 0)
+		weekday = 7;
+
+	[NSArray arrayFromCount:weekday - firstWeekday + 1 block:^id(NSUInteger index) {
+		return [today addValue:firstWeekday - weekday + index forComponent:NSCalendarUnitDay];
+	}];
+}))
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
@@ -32,40 +45,7 @@
 	[UIPageControl appearance].currentPageIndicatorTintColor = self.navigationController.navigationBar.barTintColor;
 	[UIPageControl appearance].pageIndicatorTintColor = [UIColor lightGrayColor];
 
-
-
-	NSDate *now = [NSDate date];
-	NSDate *today = [now dateComponent];
-	NSUInteger weekday = [now weekday];
-	NSUInteger firstWeekday = [NSDate firstWeekday];
-	if (firstWeekday == 1 && weekday == 0)
-		weekday = 7;
-
-	NSArray<NSDate *> *dates = [NSArray arrayFromCount:weekday - firstWeekday + 1 block:^id(NSUInteger index) {
-		return [today addValue:firstWeekday - weekday + index forComponent:NSCalendarUnitDay];
-	}];
-
-	self.pageViewControllers = [dates map:^id(NSDate *obj) {
-		ActivityController *vc = [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"activity"];
-		vc.startDate = obj;
-		vc.endDate = [obj addValue:1 forComponent:NSCalendarUnitDay];
-		vc.navigationItem.title = [[obj descriptionForDate:NSDateFormatterMediumStyle] uppercaseString];
-
-		if (@available(iOS 11.0, *)) {
-			
-		} else {
-			UIEdgeInsets inset = vc.tableView.contentInset;
-			inset.top += [UIViewController statusBarHeight] + self.navigationController.navigationBar.frame.size.height;
-			vc.tableView.contentInset = inset;
-		}
-
-		return vc;
-	}];
-	self.currentPage = [self.weekday unsignedIntegerValue];
-
-
-
-	[self pageViewController:self didFinishAnimating:NO previousViewControllers:@[ ] transitionCompleted:YES];
+//	[self pageViewController:self didFinishAnimating:NO previousViewControllers:@[ ] transitionCompleted:YES];
 
 
 	
@@ -88,13 +68,44 @@
  }
  */
 
-- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed {
-	if (!completed)
-		return;
+- (UIViewController *)viewControllerForIndex:(NSUInteger)index {
+	NSDate *obj = idx(self.dates, index);
+	if (!obj)
+		return Nil;
 
-	self.navigationItem.title = self.viewControllers.firstObject.navigationItem.title;
-	self.navigationItem.rightBarButtonItems = self.viewControllers.firstObject.navigationItem.rightBarButtonItems;
-	self.toolbarItems = self.viewControllers.firstObject.toolbarItems;
+	ActivityController *vc = [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"activity"];
+	vc.startDate = obj;
+	vc.endDate = [obj addValue:1 forComponent:NSCalendarUnitDay];
+	vc.navigationItem.title = [[obj descriptionForDate:NSDateFormatterMediumStyle] uppercaseString];
+
+	vc.view.tag = index;
+	[vc.tableView.panGestureRecognizer addTarget:self.navigationController action:@selector(pan:)];
+
+	if (@available(iOS 11.0, *)) {
+
+	} else {
+		UIEdgeInsets inset = vc.tableView.contentInset;
+		inset.top += [UIViewController statusBarHeight] + self.navigationController.navigationBar.frame.size.height;
+		vc.tableView.contentInset = inset;
+	}
+
+	return vc;
+}
+
+- (NSUInteger)indexForViewController:(UIViewController *)viewController {
+	return viewController.view.tag;
+}
+
+- (NSUInteger)initialIndex {
+	return [self.weekday unsignedIntegerValue];
+}
+
+- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
+	return self.dates.count;
+}
+
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
+	return [self indexForViewController:pageViewController.viewControllers.firstObject];
 }
 
 @end
