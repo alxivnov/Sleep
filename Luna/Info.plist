@@ -32,7 +32,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.9.5</string>
+	<string>2.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -57,7 +57,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>18.3.2.1124</string>
+	<string>18.4.9.1162</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -96,7 +96,7 @@
 	<key>NSHealthUpdateUsageDescription</key>
 	<string>Sleep Diary saves sleep durations to the Health.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Sleep Diary uses location to calculate sunrise and sunset times displayed in a graph.</string>
+	<string>Sleep Diary uses location to calculate sunrise and sunset times.</string>
 	<key>NSMotionUsageDescription</key>
 	<string>Sleep Diary displays motion activity in a graph.</string>
 	<key>UILaunchStoryboardName</key>

@@ -96,8 +96,8 @@ __synthesize(NSArray *, dates, ({
 	return viewController.view.tag;
 }
 
-- (NSUInteger)initialIndex {
-	return [self.weekday unsignedIntegerValue];
+- (NSUInteger)currentPage {
+	return self.viewControllers.count > 0 ? super.currentPage : self.weekday.unsignedIntegerValue;
 }
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {

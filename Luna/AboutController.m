@@ -15,7 +15,6 @@
 #import "Answers+Convenience.h"
 #import "Affiliates+Convenience.h"
 #import "MessageUI+Convenience.h"
-#import "FBSDKShareKit+Convenience.h"
 #import "NSBundle+Convenience.h"
 #import "NSObject+Convenience.h"
 #import "SKInAppPurchase.h"
@@ -25,6 +24,8 @@
 #import "UIScrollView+Convenience.h"
 #import "UITableView+Convenience.h"
 #import "UIView+Convenience.h"
+
+#import "WatchDelegate.h"
 
 #define IMG_LUNA_ICON @"Luna-Icon-128"
 #define IDX_PURCHASE 1
@@ -77,6 +78,18 @@ __synthesize(SKInAppPurchase *, purchase3, [SKInAppPurchase purchaseWithProductI
 	if (indexPath.section == 0) {
 		UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
 		cell.detailTextLabel.text = [cell.detailTextLabel.text isEqualToString:[NSBundle bundleVersion]] ? [NSBundle bundleShortVersionString] : [NSBundle bundleVersion];
+/*
+		if ([WatchDelegate instance].reachableSession) {
+			NSDate *date = [NSDate date];
+			[[WatchDelegate instance] getActivitiesFromDate:[date addValue:-1 forComponent:NSCalendarUnitDay] toDate:date handler:^(NSArray<CMMotionActivitySample *> *activities) {
+				NSArray *arr = [activities map:^id(CMMotionActivitySample *obj) {
+					return [NSString stringWithFormat:@"%@,%f,%lu,%lu", [obj.startDate descriptionWithFormat:@"yyyy'-'MM'-'dd' 'HH':'mm':'ss" calendar:Nil], obj.duration, obj.type, obj.confidence];
+				}];
+				NSString *str = [arr componentsJoinedByString:STR_NEW_LINE];
+				[self presentActivityWithActivityItems:arr_(str)];
+			}];
+		}
+*/
 	} else if (indexPath.section == IDX_PURCHASE) {
 		__weak AboutController *__self = self;
 
@@ -107,22 +120,18 @@ __synthesize(SKInAppPurchase *, purchase3, [SKInAppPurchase purchaseWithProductI
 
 		[Answers logAddToCartWithPrice:purchase.price currency:purchase.currencyCode itemName:purchase.localizedTitle itemType:Nil itemId:purchase.productIdentifier customAttributes:Nil];
 	} else if (indexPath.section == 2) {
-		[self presentInviteContent:[FBSDKAppInviteContent createWithAppLinkURL:[NSURL URLWithString:@"https://apptag.me/sleep/"] previewImageURL:[NSURL URLWithString:@"http://a4.mzstatic.com/us/r30/Purple111/v4/73/4f/c2/734fc272-d011-691d-477e-fa216675baaf/screen696x696.jpeg"] destination:indexPath.row ? FBSDKAppInviteDestinationMessenger : FBSDKAppInviteDestinationFacebook] completion:^(BOOL success, NSError *error) {
-			[Answers logInviteWithMethod:indexPath.row ? @"Messenger" : @"Facebook" customAttributes:@{ @"success" : success ? @"YES" : @"NO", @"vc" : [[self class] description] }];
-		}];
-	} else if (indexPath.section == 3) {
 		UIImage *screenshot = [self.presentingViewController.view snapshotImageAfterScreenUpdates:YES];
 
 		[self presentMailComposeWithRecipients:arr_(STR_EMAIL) subject:[NSBundle bundleDisplayNameAndShortVersion] body:Nil attachments:screenshot ? @{ @"screenshot.jpg" : [screenshot jpegRepresentation] } : Nil completionHandler:Nil];
-	} else if (indexPath.section == 4) {
+	} else if (indexPath.section == 3) {
 		[self presentWebActivityWithActivityItems:@[ [NSBundle bundleDisplayName], [NSURL URLForMobileAppWithIdentifier:APP_ID_LUNA affiliateInfo:GLOBAL.affiliateInfo] ] excludedTypes:Nil completionHandler:^(UIActivityType  _Nullable activityType, BOOL completed, NSArray * _Nullable returnedItems, NSError * _Nullable activityError) {
 			[Answers logInviteWithMethod:activityType customAttributes:@{ @"version" : [NSBundle bundleVersion], @"success" : completed ? @"YES" : @"NO", @"error" : [activityError debugDescription] ?: STR_EMPTY }];
 		}];
-	} else if (indexPath.section == 5) {
+	} else if (indexPath.section == 4) {
 		[UIApplication openURL:[NSURL URLForMobileAppWithIdentifier:APP_ID_LUNA affiliateInfo:GLOBAL.affiliateInfo] options:Nil completionHandler:^(BOOL success) {
 			[UIRateController logRateWithMethod:@"AboutController" success:success];
 		}];
-	} else if (indexPath.section == 6) {
+	} else if (indexPath.section == 5) {
 		if (indexPath.row == 0)
 			[self presentProductWithIdentifier:APP_ID_DONE parameters:GLOBAL.affiliateInfo];
 		else if (indexPath.row == 1)

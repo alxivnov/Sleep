@@ -99,7 +99,7 @@
 	if (!startDate)
 		startDate = unit ? [unit == NSCalendarUnitDay || unit == NSCalendarUnitWeekday ? endDate : [[endDate addValue:-1 forComponent:unit] addValue:1 forComponent:NSCalendarUnitDay] dateComponent] : Nil;
 
-	return [HKSleepAnalysis querySamplesWithStartDate:startDate endDate:endDate options:HKQueryOptionStrictEndDate limit:HKObjectQueryNoLimit sort:@{ HKSampleSortIdentifierEndDate : @NO } completion:^(NSArray<HKCategorySample *> *samples) {
+	return [HKDataSleepAnalysis querySamplesWithStartDate:startDate endDate:endDate options:HKQueryOptionStrictEndDate limit:HKObjectQueryNoLimit sort:@{ HKSampleSortIdentifierEndDate : @NO } completion:^(NSArray<HKCategorySample *> *samples) {
 		if (completion)
 			completion([self create:samples unit:unit]);
 	}];
@@ -110,7 +110,7 @@
 }
 
 + (HKObserverQuery *)observe:(NSCalendarUnit)unit startDate:(NSDate *)startDate endDate:(NSDate *)endDate updateHandler:(void (^)(NSArray<AnalysisPresenter *> *))updateHandler {
-	return [HKSleepAnalysis observeSamplesWithStartDate:startDate endDate:endDate options:HKQueryOptionNone/*HKQueryOptionStrictEndDate*/ limit:HKObjectQueryNoLimit sort:@{ HKSampleSortIdentifierEndDate : @NO } updateHandler:^(NSArray<HKCategorySample *> *samples) {
+	return [HKDataSleepAnalysis observeSamplesWithStartDate:startDate endDate:endDate options:HKQueryOptionNone/*HKQueryOptionStrictEndDate*/ limit:HKObjectQueryNoLimit sort:@{ HKSampleSortIdentifierEndDate : @NO } updateHandler:^(NSArray<HKCategorySample *> *samples) {
 		if (updateHandler)
 			updateHandler([self create:samples unit:unit]);
 	}];

@@ -15,7 +15,7 @@
 #define HKMetadataKeySampleActivities @"HKMetadataKeySampleActivities"
 #define HKMetadataKeySleepOnsetLatency @"HKMetadataKeySleepOnsetLatency"
 
-@interface HKSleepAnalysis (CMMotionActivitySample)
+@interface HKDataSleepAnalysis (CMMotionActivitySample)
 
 + (NSArray<HKCategorySample *> *)samplesWithStartDate:(NSDate *)start endDate:(NSDate *)end activities:(NSArray<CMMotionActivitySample *> *)activities sleepLatency:(NSTimeInterval)sleepLatency adaptive:(BOOL)adaptive;
 

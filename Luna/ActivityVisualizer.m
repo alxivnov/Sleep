@@ -453,8 +453,8 @@ __synthesize(UIImageView *, sunsetView, ({ UIImageView *x = [[UIImageView alloc]
 
 	__block BOOL sleep, steps, heart = NO;
 
-	[[HKHealthStore defaultStore] requestAuthorizationToShare:Nil read:@[ [HKSleepAnalysis identifier], [HKStepCount identifier], [HKHeartRate identifier], [HKActiveEnergy identifier] ] completion:^(BOOL success) {
-		[HKSleepAnalysis querySamplesWithStartDate:self.startDate endDate:self.endDate options:HKQueryOptionStrictEndDate limit:HKObjectQueryNoLimit sort:@{ HKSampleSortIdentifierStartDate : @YES } completion:^(NSArray<HKCategorySample *> *samples) {
+	[[HKHealthStore defaultStore] requestAuthorizationToShare:Nil read:@[ [HKDataSleepAnalysis identifier], [HKStepCount identifier], [HKHeartRate identifier], [HKActiveEnergy identifier] ] completion:^(BOOL success) {
+		[HKDataSleepAnalysis querySamplesWithStartDate:self.startDate endDate:self.endDate options:HKQueryOptionStrictEndDate limit:HKObjectQueryNoLimit sort:@{ HKSampleSortIdentifierStartDate : @YES } completion:^(NSArray<HKCategorySample *> *samples) {
 			[self setSamples:samples startDate:Nil endDate:Nil];
 
 			sleep = YES;

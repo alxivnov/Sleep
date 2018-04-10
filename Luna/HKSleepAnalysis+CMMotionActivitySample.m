@@ -8,7 +8,7 @@
 
 #import "HKSleepAnalysis+CMMotionActivitySample.h"
 
-@implementation HKSleepAnalysis (CMMotionActivitySample)
+@implementation HKDataSleepAnalysis (CMMotionActivitySample)
 
 + (HKCategorySample *)sampleFromActivities:(NSArray<CMMotionActivitySample *> *)activities sleepLatency:(NSTimeInterval)sleepLatency {
 	CMMotionActivitySample *first = [activities firstObject:^BOOL(CMMotionActivitySample *obj) {
@@ -26,7 +26,7 @@
 		return obj.duration >= duration;
 	}];
 
-	return first && last && [last.endDate timeIntervalSinceDate:first.startDate] > sleepLatency ? [HKSleepAnalysis sampleWithStartDate:first.startDate endDate:last.endDate value:HKCategoryValueSleepAnalysisAsleep metadata:@{ HKMetadataKeySleepOnsetLatency : @(sleepLatency) }] : Nil;
+	return first && last && [last.endDate timeIntervalSinceDate:first.startDate] > sleepLatency ? [HKDataSleepAnalysis sampleWithStartDate:first.startDate endDate:last.endDate value:HKCategoryValueSleepAnalysisAsleep metadata:@{ HKMetadataKeySleepOnsetLatency : @(sleepLatency) }] : Nil;
 }
 
 + (NSArray<HKCategorySample *> *)samplesFromActivities:(NSArray<CMMotionActivitySample *> *)activities sleepLatency:(NSTimeInterval)sleepLatency {
@@ -110,8 +110,8 @@
 
 + (void)saveSampleWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate activities:(NSArray<CMMotionActivitySample *> *)activities sleepLatency:(NSTimeInterval)sleepLatency adaptive:(BOOL)adaptive completion:(void(^)(BOOL))completion {
 	if (startDate && endDate && [endDate timeIntervalSinceDate:startDate] > fabs(sleepLatency))
-		[HKSleepAnalysis saveSampleWithStartDate:startDate endDate:endDate value:sleepLatency ? HKCategoryValueSleepAnalysisInBed : HKCategoryValueSleepAnalysisAsleep metadata:activities ? @{ HKMetadataKeySampleActivities : [CMMotionActivitySample samplesToString:activities date:startDate] ?: STR_EMPTY } : Nil completion:sleepLatency ? ^(BOOL success) {
-			NSArray<HKCategorySample *> *samples = [HKSleepAnalysis samplesWithStartDate:startDate endDate:endDate activities:activities sleepLatency:sleepLatency adaptive:adaptive];
+		[HKDataSleepAnalysis saveSampleWithStartDate:startDate endDate:endDate value:sleepLatency ? HKCategoryValueSleepAnalysisInBed : HKCategoryValueSleepAnalysisAsleep metadata:activities ? @{ HKMetadataKeySampleActivities : [CMMotionActivitySample samplesToString:activities date:startDate] ?: STR_EMPTY } : Nil completion:sleepLatency ? ^(BOOL success) {
+			NSArray<HKCategorySample *> *samples = [HKDataSleepAnalysis samplesWithStartDate:startDate endDate:endDate activities:activities sleepLatency:sleepLatency adaptive:adaptive];
 
 			if (samples.count)
 				[[HKHealthStore defaultStore] saveObjects:samples completion:completion];

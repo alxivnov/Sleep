@@ -196,7 +196,7 @@
 	[self startLogging];
 
 	if (GLOBAL.asleep)
-		[HKSleepAnalysis querySamplesWithStartDate:GLOBAL.startDate endDate:Nil completion:^(NSArray<__kindof HKSample *> *samples) {
+		[HKDataSleepAnalysis querySamplesWithStartDate:GLOBAL.startDate endDate:Nil completion:^(NSArray<__kindof HKSample *> *samples) {
 			if (samples.count)
 				[GLOBAL endSleeping];
 

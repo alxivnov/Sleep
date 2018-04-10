@@ -11,6 +11,7 @@
 
 @interface Global (Notifications)
 
++ (NSDate *)alarmDate:(NSArray<AnalysisPresenter *> *)presenters sleepLatency:(NSTimeInterval)sleepLatency;
 - (NSDate *)alarmDate:(NSArray<AnalysisPresenter *> *)presenters;
 
 - (NSDate *)alertDate:(NSArray<AnalysisPresenter *> *)presenters;

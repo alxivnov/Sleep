@@ -36,7 +36,7 @@
 @implementation Global
 
 - (NSNumber *)isAuthorized {
-	return [HKSleepAnalysis isAuthorized];
+	return [HKDataSleepAnalysis isAuthorized];
 }
 
 - (void)requestAuthorization:(void (^)(BOOL))completion {
@@ -51,11 +51,11 @@
 //	end = end ? end : [NSDate date];
 	if ([CMMotionActivityManager isActivityAvailable])
 		[CMMotionActivitySample queryActivityStartingFromDate:startDate toDate:endDate within:self.sleepLatency withHandler:^(NSArray<CMMotionActivitySample *> *activities) {
-			[HKSleepAnalysis saveSampleWithStartDate:startDate endDate:endDate activities:activities sleepLatency:GLOBAL.sleepLatency adaptive:YES completion:completion];
+			[HKDataSleepAnalysis saveSampleWithStartDate:startDate endDate:endDate activities:activities sleepLatency:GLOBAL.sleepLatency adaptive:YES completion:completion];
 		}];
 	else
 		[HKActiveEnergy queryActivityStartingFromDate:startDate toDate:endDate /*within:self.sleepLatency*/ withHandler:^(NSArray<CMMotionActivitySample *> *activities) {
-			[HKSleepAnalysis saveSampleWithStartDate:startDate endDate:endDate activities:activities sleepLatency:GLOBAL.sleepLatency adaptive:YES completion:completion];
+			[HKDataSleepAnalysis saveSampleWithStartDate:startDate endDate:endDate activities:activities sleepLatency:GLOBAL.sleepLatency adaptive:YES completion:completion];
 		}];
 }
 
@@ -96,7 +96,7 @@ __synthesize(NSUserDefaults *, defaults, [[NSUserDefaults alloc] initWithSuiteNa
 
 - (BOOL)bedtimeAlert {
 	NSNumber *bedtimeAlert = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_BEDTIME_ALERT];
-	return bedtimeAlert ? [bedtimeAlert boolValue] : YES;
+	return bedtimeAlert == Nil ? YES : [bedtimeAlert boolValue];
 }
 
 - (void)setBedtimeAlert:(BOOL)bedtimeAlert {
@@ -105,7 +105,7 @@ __synthesize(NSUserDefaults *, defaults, [[NSUserDefaults alloc] initWithSuiteNa
 
 - (NSTimeInterval)sleepDuration {
 	NSNumber *sleepDuration = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_SLEEP_DURATION];
-	return sleepDuration ? [sleepDuration doubleValue] : 8.0 * TIME_HOUR;
+	return sleepDuration == Nil ? 8.0 * TIME_HOUR : [sleepDuration doubleValue];
 }
 
 - (void)setSleepDuration:(NSTimeInterval)sleepDuration {
@@ -123,7 +123,7 @@ __synthesize(NSUserDefaults *, defaults, [[NSUserDefaults alloc] initWithSuiteNa
 
 - (NSTimeInterval)alarmTime {
 	NSNumber *alarmTime = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_WAKE_UP_TIME];
-	return alarmTime ? [alarmTime doubleValue] : 8 * TIME_HOUR;
+	return alarmTime == Nil ? 8.0 * TIME_HOUR : [alarmTime doubleValue];
 }
 
 - (void)setAlarmTime:(NSTimeInterval)alarmTime {
@@ -132,7 +132,7 @@ __synthesize(NSUserDefaults *, defaults, [[NSUserDefaults alloc] initWithSuiteNa
 
 - (NSTimeInterval)sleepLatency {
 	NSNumber *sleepLatency = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_SLEEP_LATENCY];
-	return sleepLatency ? sleepLatency.doubleValue : 10.0 * TIME_MINUTE;
+	return sleepLatency == Nil ? 10.0 * TIME_MINUTE : sleepLatency.doubleValue;
 }
 
 - (void)setSleepLatency:(NSTimeInterval)sleepLatency {

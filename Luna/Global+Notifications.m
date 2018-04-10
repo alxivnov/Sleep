@@ -16,12 +16,12 @@
 
 #warning Suggest wake up time which considers suggested duration of sleep (instead of GLOBAL.sleepDuration) and suggested fall asleep time (insted of 22.0 * TIME_HOUR [think about another usage of 22.0 * TIME_HOUR]) based on week samples!
 
-- (NSDate *)alarmDate:(NSArray<AnalysisPresenter *> *)presenters {
++ (NSDate *)alarmDate:(NSArray<AnalysisPresenter *> *)presenters sleepLatency:(NSTimeInterval)sleepLatency {
 	AnalysisPresenter *presenter = presenters.firstObject;
 
 	if (presenter) {
 		NSInteger cycleCount = lround(GLOBAL.sleepDuration / SLEEP_CYCLE_DURATION) - presenter.cycleCount;
-		NSTimeInterval napTime = (cycleCount > 0 ? cycleCount : 1) * SLEEP_CYCLE_DURATION + self.sleepLatency;
+		NSTimeInterval napTime = (cycleCount > 0 ? cycleCount : 1) * SLEEP_CYCLE_DURATION + sleepLatency;
 		if ([GLOBAL.startDate timeComponent] + napTime < 22.0 * TIME_HOUR)
 			return [GLOBAL.startDate dateByAddingTimeInterval:napTime];
 	}
@@ -38,6 +38,10 @@
 		date = temp;
 
 	return date.isPast ? Nil : date;
+}
+
+- (NSDate *)alarmDate:(NSArray<AnalysisPresenter *> *)presenters {
+	return [[self class] alarmDate:presenters sleepLatency:self.sleepLatency];
 }
 
 - (NSDate *)wakeUpTimeForDate:(NSDate *)date avgWakeUpTime:(NSTimeInterval)avgWakeUpTime {

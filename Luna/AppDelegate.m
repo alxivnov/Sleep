@@ -9,8 +9,6 @@
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-
 #import "AppDelegate.h"
 #import "Global.h"
 #import "WatchDelegate.h"
@@ -48,8 +46,7 @@
 	if (launchOptions[UIApplicationLaunchOptionsShortcutItemKey])
 		[application.rootViewController.lastViewController forwardSelector:@selector(application:performActionForShortcutItem:completionHandler:) withObject:application withObject:launchOptions[UIApplicationLaunchOptionsShortcutItemKey] withObject:Nil nextTarget:UIViewControllerNextTarget(YES)];
 
-	return [[FBSDKApplicationDelegate sharedInstance] application:application
-							 didFinishLaunchingWithOptions:launchOptions];
+	return YES;
 }
 
 - (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
@@ -57,7 +54,7 @@
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-	return [[FBSDKApplicationDelegate sharedInstance] application:app openURL:url options:options] || [[app.rootViewController.lastViewController forwardSelector:@selector(application:openURL:options:) withObject:app withObject:url withObject:options nextTarget:UIViewControllerNextTarget(YES)] boolValue];
+	return [[app.rootViewController.lastViewController forwardSelector:@selector(application:openURL:options:) withObject:app withObject:url withObject:options nextTarget:UIViewControllerNextTarget(YES)] boolValue];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -80,8 +77,6 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
 	// Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-
-	[FBSDKAppEvents activateApp];
 
 	[cls(ViewController, application.rootViewController) setup];
 }

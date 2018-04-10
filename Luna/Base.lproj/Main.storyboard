@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AvenirNext.ttc">
-            <string>AvenirNext-Bold</string>
-            <string>AvenirNext-UltraLight</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -586,7 +579,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Feb 23, 2015   10:00 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Own-xH-LRq">
-                                                    <rect key="frame" x="184" y="18" width="176" height="19.5"/>
+                                                    <rect key="frame" x="183" y="18" width="176" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.48361128568649292" green="0.48291862010955811" blue="0.50435942411422729" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -613,7 +606,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Feb 24, 2015   6:00 AM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pPp-Zu-srD">
-                                                    <rect key="frame" x="190.5" y="18" width="169.5" height="19.5"/>
+                                                    <rect key="frame" x="189.5" y="18" width="169.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.48361128568649292" green="0.48291862010955811" blue="0.50435942411422729" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -646,7 +639,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label multipleTouchEnabled="YES" contentMode="left" text="15 min" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="u4r-hW-k3U">
-                                                    <rect key="frame" x="312.5" y="18" width="47.5" height="19.5"/>
+                                                    <rect key="frame" x="311.5" y="18" width="47.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -757,7 +750,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="1.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pFJ-yF-ba2">
-                                                    <rect key="frame" x="339.5" y="18" width="20.5" height="19.5"/>
+                                                    <rect key="frame" x="338.5" y="18" width="20.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -793,7 +786,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="0.99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SEx-EF-KRb">
-                                                    <rect key="frame" x="327" y="18" width="33" height="19.5"/>
+                                                    <rect key="frame" x="326" y="18" width="33" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -821,7 +814,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="2.99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7fy-y4-pOk">
-                                                    <rect key="frame" x="327" y="18" width="33" height="19.5"/>
+                                                    <rect key="frame" x="326" y="18" width="33" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -849,7 +842,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="9.99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8qG-Zq-WsQ">
-                                                    <rect key="frame" x="327" y="18" width="33" height="19.5"/>
+                                                    <rect key="frame" x="326" y="18" width="33" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -860,56 +853,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Facebook" id="rh9-QU-xqJ">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="5s4-kw-W89" imageView="fqA-Ux-Y9v" style="IBUITableViewCellStyleDefault" id="hfJ-ci-W3H">
-                                        <rect key="frame" x="0.0" y="419" width="375" height="56"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hfJ-ci-W3H" id="nWd-Af-lKb">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Invite Friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5s4-kw-W89">
-                                                    <rect key="frame" x="61" y="0.0" width="299" height="55.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="FB-f-Logo__blue_30.png" id="fqA-Ux-Y9v">
-                                                    <rect key="frame" x="16" y="12" width="30" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="7RY-sK-Nbf" imageView="dmg-Xr-hxh" style="IBUITableViewCellStyleDefault" id="P8e-9W-9Ce">
-                                        <rect key="frame" x="0.0" y="475" width="375" height="56"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P8e-9W-9Ce" id="ktK-oJ-VFE">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Invite in Messenger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7RY-sK-Nbf">
-                                                    <rect key="frame" x="61" y="0.0" width="299" height="55.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Messenger_Icon.png" id="dmg-Xr-hxh">
-                                                    <rect key="frame" x="16" y="12" width="30" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                             <tableViewSection headerTitle="FEEDBACK" id="0QC-e1-EXl">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="3n3-zc-JaF" detailTextLabel="QrT-Ow-AiO" imageView="cHV-ze-c9q" style="IBUITableViewCellStyleSubtitle" id="Nxs-hO-RrS">
-                                        <rect key="frame" x="0.0" y="579" width="375" height="56"/>
+                                        <rect key="frame" x="0.0" y="419" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nxs-hO-RrS" id="2Iy-Vr-7ze">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
@@ -941,21 +888,21 @@
                             <tableViewSection headerTitle="SHARE" id="49N-Qr-A3m">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="3Oj-Eo-Daz" imageView="gQV-zV-oXG" style="IBUITableViewCellStyleDefault" id="Lxb-Y9-8JJ">
-                                        <rect key="frame" x="0.0" y="683" width="375" height="56"/>
+                                        <rect key="frame" x="0.0" y="523" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lxb-Y9-8JJ" id="KFl-Q8-u7Q">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Tell a Friend" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Oj-Eo-Daz">
-                                                    <rect key="frame" x="60" y="0.0" width="300" height="55.5"/>
+                                                    <rect key="frame" x="61" y="0.0" width="298" height="55.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="chat-line-30.png" highlightedImage="chat-full-30.png" id="gQV-zV-oXG">
-                                                    <rect key="frame" x="15" y="12" width="30" height="30"/>
+                                                    <rect key="frame" x="16" y="12" width="30" height="30"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -966,21 +913,21 @@
                             <tableViewSection headerTitle="RATE" id="EIQ-Uk-q5Q">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="ZAC-i8-ajS" imageView="De2-hx-lig" style="IBUITableViewCellStyleDefault" id="CYZ-wl-i00">
-                                        <rect key="frame" x="0.0" y="787" width="375" height="56"/>
+                                        <rect key="frame" x="0.0" y="627" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CYZ-wl-i00" id="Kgn-1c-BCd">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Write a Review" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZAC-i8-ajS">
-                                                    <rect key="frame" x="60" y="0.0" width="300" height="55.5"/>
+                                                    <rect key="frame" x="53" y="0.0" width="307" height="55.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="star-line-30.png" highlightedImage="star-full-30.png" id="De2-hx-lig">
-                                                    <rect key="frame" x="15" y="12" width="30" height="30"/>
+                                                    <rect key="frame" x="8" y="12" width="30" height="30"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -991,21 +938,21 @@
                             <tableViewSection headerTitle="OTHER APPS" id="dje-Cp-aRM">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="ZR6-Qo-xb2" detailTextLabel="3E5-7z-GDf" imageView="qpA-sn-BMJ" style="IBUITableViewCellStyleValue1" id="oU3-Ah-Ga8">
-                                        <rect key="frame" x="0.0" y="891" width="375" height="56"/>
+                                        <rect key="frame" x="0.0" y="731" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oU3-Ah-Ga8" id="Zu7-zu-4Yd">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Air Tasks" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZR6-Qo-xb2">
-                                                    <rect key="frame" x="60" y="18" width="65" height="19.5"/>
+                                                    <rect key="frame" x="53" y="18" width="65" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="done-30.png" id="qpA-sn-BMJ">
-                                                    <rect key="frame" x="15" y="12" width="30" height="30"/>
+                                                    <rect key="frame" x="8" y="12" width="30" height="30"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="To-Do List with Reminders" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3E5-7z-GDf">
@@ -1019,21 +966,21 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="3al-vr-tng" detailTextLabel="TAc-Ch-orF" imageView="V6a-zW-uCW" style="IBUITableViewCellStyleValue1" id="ONC-XG-3VZ">
-                                        <rect key="frame" x="0.0" y="947" width="375" height="56"/>
+                                        <rect key="frame" x="0.0" y="787" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ONC-XG-3VZ" id="yef-V3-7AI">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Ringo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3al-vr-tng">
-                                                    <rect key="frame" x="60" y="18" width="41.5" height="19.5"/>
+                                                    <rect key="frame" x="53" y="18" width="41.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="ringo-30.png" id="V6a-zW-uCW">
-                                                    <rect key="frame" x="15" y="12" width="30" height="30"/>
+                                                    <rect key="frame" x="8" y="12" width="30" height="30"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Ringtone Producer" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TAc-Ch-orF">
@@ -1698,7 +1645,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fk3-rd-nHI">
-                                                    <rect key="frame" x="316" y="18" width="44" height="20.5"/>
+                                                    <rect key="frame" x="315" y="18" width="44" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -1722,7 +1669,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Iw9-eJ-wbX">
-                                                    <rect key="frame" x="316" y="18" width="44" height="20.5"/>
+                                                    <rect key="frame" x="315" y="18" width="44" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -1769,7 +1716,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="syG-HQ-7Xj">
-                                                    <rect key="frame" x="316" y="18" width="44" height="20.5"/>
+                                                    <rect key="frame" x="315" y="18" width="44" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -1793,7 +1740,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="diT-ap-cmi">
-                                                    <rect key="frame" x="316" y="18" width="44" height="20.5"/>
+                                                    <rect key="frame" x="315" y="18" width="44" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -1817,7 +1764,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jcs-BP-KEw">
-                                                    <rect key="frame" x="316" y="18" width="44" height="20.5"/>
+                                                    <rect key="frame" x="315" y="18" width="44" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -1841,7 +1788,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1nI-TJ-SAt">
-                                                    <rect key="frame" x="316" y="18" width="44" height="20.5"/>
+                                                    <rect key="frame" x="315" y="18" width="44" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -1865,7 +1812,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Ik-HZ-Pt5">
-                                                    <rect key="frame" x="316" y="18" width="44" height="20.5"/>
+                                                    <rect key="frame" x="315" y="18" width="44" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -2000,7 +1947,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="8:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MbS-ja-HCP">
-                                                    <rect key="frame" x="326" y="18" width="34" height="19.5"/>
+                                                    <rect key="frame" x="325" y="18" width="34" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.48361128568649292" green="0.48291862010955811" blue="0.50435942411422729" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2178,7 +2125,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="8:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2eq-kS-w2V">
-                                                    <rect key="frame" x="326" y="18" width="34" height="19.5"/>
+                                                    <rect key="frame" x="325" y="18" width="34" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2210,7 +2157,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="15 min" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gj3-gG-huk">
-                                                    <rect key="frame" x="312.5" y="18" width="47.5" height="19.5"/>
+                                                    <rect key="frame" x="311.5" y="18" width="47.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2301,13 +2248,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="FB-f-Logo__blue_30.png" width="30" height="30"/>
         <image name="Luna-Button-Highlighted.png" width="290" height="290"/>
         <image name="Luna-Button-Normal.png" width="290" height="290"/>
         <image name="Luna-Button-Selected.png" width="290" height="290"/>
         <image name="Luna-Moon-Gray-64.png" width="64" height="64"/>
         <image name="Luna-Week-Background.png" width="40" height="40"/>
-        <image name="Messenger_Icon.png" width="30" height="30"/>
         <image name="activity.png" width="30" height="30"/>
         <image name="alarm-full.png" width="30" height="30"/>
         <image name="alarm-line.png" width="30" height="30"/>

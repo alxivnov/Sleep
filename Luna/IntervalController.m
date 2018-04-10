@@ -186,8 +186,8 @@
 }
 
 - (void)setProgress:(NSTimeInterval)sleepLatency {
-	self.inBedSample = sleepLatency ? [HKSleepAnalysis sampleWithStartDate:self.startDate endDate:self.endDate value:HKCategoryValueSleepAnalysisInBed metadata:Nil] : Nil;
-	self.sleepSamples = sleepLatency ? [HKSleepAnalysis samplesWithStartDate:self.startDate endDate:self.endDate activities:self.activities sleepLatency:sleepLatency adaptive:YES] : arr_([HKSleepAnalysis sampleWithStartDate:self.startDate endDate:self.endDate value:HKCategoryValueSleepAnalysisAsleep metadata:Nil]);
+	self.inBedSample = sleepLatency ? [HKDataSleepAnalysis sampleWithStartDate:self.startDate endDate:self.endDate value:HKCategoryValueSleepAnalysisInBed metadata:Nil] : Nil;
+	self.sleepSamples = sleepLatency ? [HKDataSleepAnalysis samplesWithStartDate:self.startDate endDate:self.endDate activities:self.activities sleepLatency:sleepLatency adaptive:YES] : arr_([HKDataSleepAnalysis sampleWithStartDate:self.startDate endDate:self.endDate value:HKCategoryValueSleepAnalysisAsleep metadata:Nil]);
 	[self.visualizer scrollRectToVisibleDate:self.endDate animated:YES];
 
 	self.navigationController.navigationBar.progress = [[self.visualizer.sleepSamples query:^BOOL(HKCategorySample *obj) {
@@ -343,7 +343,7 @@
 	if (self.inBedSamplesToDelete.count || self.sleepSamplesToDelete.count)
 		[[HKHealthStore defaultStore] deleteObjects:self.inBedSamplesToDelete.count && self.sleepSamplesToDelete.count ? [self.inBedSamplesToDelete arrayByAddingObjectsFromArray:self.sleepSamplesToDelete] : self.inBedSamplesToDelete.count ? self.inBedSamplesToDelete : self.sleepSamplesToDelete completion:^(BOOL success) {
 			if (success)
-				[HKSleepAnalysis saveSampleWithStartDate:self.startDate endDate:self.endDate activities:self.activities sleepLatency:-self.visualizer.sleepLatency.doubleValue adaptive:YES completion:^(BOOL success) {
+				[HKDataSleepAnalysis saveSampleWithStartDate:self.startDate endDate:self.endDate activities:self.activities sleepLatency:-self.visualizer.sleepLatency.doubleValue adaptive:YES completion:^(BOOL success) {
 					[GCD main:^{
 						[self performSegueWithIdentifier:success ? GUI_SAVE : GUI_CANCEL sender:Nil];
 					}];
@@ -354,7 +354,7 @@
 				}];
 		}];
 	else
-		[HKSleepAnalysis saveSampleWithStartDate:self.startDate endDate:self.endDate activities:self.activities sleepLatency:-self.visualizer.sleepLatency.doubleValue adaptive:YES completion:^(BOOL success) {
+		[HKDataSleepAnalysis saveSampleWithStartDate:self.startDate endDate:self.endDate activities:self.activities sleepLatency:-self.visualizer.sleepLatency.doubleValue adaptive:YES completion:^(BOOL success) {
 			[GCD main:^{
 				[self performSegueWithIdentifier:success ? GUI_SAVE : GUI_CANCEL sender:Nil];
 			}];
