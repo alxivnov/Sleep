@@ -1,6 +1,6 @@
 
 /* Class = «UINavigationItem»; title = «About»; ObjectID = «9o7-FY-920»; */
-"9o7-FY-920.title" = "О приложении";
+"9o7-FY-920.title" = "Спасибо";
 
 /* Class = "UITableViewSection"; headerTitle = "FEEDBACK"; ObjectID = "0QC-e1-EXl"; */
 "0QC-e1-EXl.headerTitle" = "ОБРАТНАЯ СВЯЗЬ";
@@ -60,7 +60,7 @@
 "pcq-gH-aUz.title" = "Данные";
 
 /* Class = "UINavigationItem"; title = "Settings"; ObjectID = "pkZ-vY-yJo"; */
-"pkZ-vY-yJo.title" = "Настройки";
+"pkZ-vY-yJo.title" = "Будильник";
 
 /* Class = "UILabel"; text = "Enable"; ObjectID = "Vfr-yd-zF0"; */
 "Vfr-yd-zF0.text" = "Включить";
@@ -144,3 +144,8 @@
 
 "5s4-kw-W89.text" = "Пригласить друзей";
 "7RY-sK-Nbf.text" = "Пригласить через Messenger";
+
+"lcE-c7-xTx.title" = "Сон";
+"upp-qf-d4g.title" = "Статистика";
+"9mq-MT-fNB.title" = "Будильник";
+"1o4-i4-Nld.title" = "Спасибо";

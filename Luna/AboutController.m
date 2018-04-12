@@ -29,11 +29,16 @@
 
 #define IMG_LUNA_ICON @"Luna-Icon-128"
 #define IDX_PURCHASE 1
+#define IDX_APPS 5
+
+#define DEV_ID 734258593
 
 @interface AboutController ()
 @property (strong, nonatomic, readonly) SKInAppPurchase *purchase1;
 @property (strong, nonatomic, readonly) SKInAppPurchase *purchase2;
 @property (strong, nonatomic, readonly) SKInAppPurchase *purchase3;
+
+@property (strong, nonatomic) NSArray<AFMediaItem *> *apps;
 @end
 
 @implementation AboutController
@@ -42,36 +47,80 @@ __synthesize(SKInAppPurchase *, purchase1, [SKInAppPurchase purchaseWithProductI
 __synthesize(SKInAppPurchase *, purchase2, [SKInAppPurchase purchaseWithProductIdentifier:APP_PURCHASE_ID_2])
 __synthesize(SKInAppPurchase *, purchase3, [SKInAppPurchase purchaseWithProductIdentifier:APP_PURCHASE_ID_3])
 
-- (void)viewWillAppear:(BOOL)animated {
-	[super viewWillAppear:animated];
-	
-	UITableViewCell *cell0 = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-	cell0.textLabel.text = [NSBundle bundleDisplayName];
-	cell0.detailTextLabel.text = [NSBundle bundleShortVersionString];
+- (void)viewDidLoad {
+	[super viewDidLoad];
 
-	if (self.purchase1.localizedTitle) {
-		UITableViewCell *purchaseCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:IDX_PURCHASE]];
-		purchaseCell.textLabel.text = self.purchase1.localizedTitle;
-		purchaseCell.detailTextLabel.text = self.purchase1.localizedPrice;
-	}
+	NSURL *url = [[NSFileManager URLForDirectory:NSCachesDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"%ul.plist", DEV_ID]];
+	self.apps = [[NSArray arrayWithContentsOfURL:url] map:^id(id obj) {
+		return [[AFMediaItem alloc] initWithDictionary:obj];
+	}];
 
-	if (self.purchase2.localizedTitle) {
-		UITableViewCell *purchaseCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:IDX_PURCHASE]];
-		purchaseCell.textLabel.text = self.purchase2.localizedTitle;
-		purchaseCell.detailTextLabel.text = self.purchase2.localizedPrice;
-	}
+	[AFMediaItem lookup:@{ KEY_ID : @(DEV_ID), KEY_MEDIA : kMediaSoftware, KEY_ENTITY : kEntitySoftware } handler:^(NSArray<AFMediaItem *> *results) {
+		self.apps = [results query:^BOOL(AFMediaItem *obj) {
+			return [obj.wrapperType isEqualToString:kMediaSoftware] && obj.trackId.unsignedIntegerValue != APP_ID_LUNA;
+		}];
+		[[self.apps map:^id(AFMediaItem *obj) {
+			return obj.dictionary;
+		}] writeToURL:url];
 
-	if (self.purchase3.localizedTitle) {
-		UITableViewCell *purchaseCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:IDX_PURCHASE]];
-		purchaseCell.textLabel.text = self.purchase3.localizedTitle;
-		purchaseCell.detailTextLabel.text = self.purchase3.localizedPrice;
-	}
+		if (self.apps.count)
+			[GCD main:^{
+				if (self.tableView.numberOfSections > 4)
+					[self.tableView reloadSections:[NSIndexSet indexSetWithIndex:4] withRowAnimation:UITableViewRowAnimationAutomatic];
+				else
+					[self.tableView insertSections:[NSIndexSet indexSetWithIndex:4] withRowAnimation:UITableViewRowAnimationAutomatic];
+			}];
+	}];
+}
 
-//	[purchaseCell.imageView animate:CGAffineTransformMakeRotation(DEG_360 / 4) duration:1.25 damping:0.1 velocity:ANIMATION_VELOCITY options:ANIMATION_OPTIONS completion:Nil];
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+	return 5 + (self.apps.count ? 1 : 0);
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	return section == IDX_PURCHASE ? 3 : section == IDX_APPS ? self.apps.count : 1;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	return section == IDX_PURCHASE ? loc(@"TIPS") : section == 2 ? loc(@"FEEDBACK") : section == 3 ? loc(@"SHARE") : section == 4 ? loc(@"RATE") : section == IDX_APPS ? loc(@"APPS") : Nil;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
 	return section == IDX_PURCHASE ? self.purchase1.localizedDescription ?: self.purchase2.localizedDescription ?: self.purchase3.localizedDescription ?: [super tableView:tableView titleForFooterInSection:section] : [super tableView:tableView titleForFooterInSection:section];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:indexPath.section == IDX_PURCHASE ? [NSString stringWithFormat:@"%ld%ld", indexPath.section, indexPath.row] : str(indexPath.section) forIndexPath:indexPath];
+
+	if (indexPath.section == 0 && indexPath.row == 0) {
+		cell.textLabel.text = [NSBundle bundleDisplayName];
+		cell.detailTextLabel.text = [NSBundle bundleShortVersionString];
+	} else if (indexPath.section == IDX_PURCHASE && indexPath.row == 0 && self.purchase1.localizedTitle) {
+		cell.textLabel.text = self.purchase1.localizedTitle;
+		cell.detailTextLabel.text = self.purchase1.localizedPrice;
+	} else if (indexPath.section == IDX_PURCHASE && indexPath.row == 1 && self.purchase2.localizedTitle) {
+		cell.textLabel.text = self.purchase2.localizedTitle;
+		cell.detailTextLabel.text = self.purchase2.localizedPrice;
+	} else if (indexPath.section == IDX_PURCHASE && indexPath.row == 2 && self.purchase3.localizedTitle) {
+		cell.textLabel.text = self.purchase3.localizedTitle;
+		cell.detailTextLabel.text = self.purchase3.localizedPrice;
+	} else if (indexPath.section == IDX_APPS) {
+		AFMediaItem *app = self.apps[indexPath.row];
+
+		NSArray *titles = [app.trackName componentsSeparatedByString:@" - "];
+		cell.textLabel.text = titles.count > 1 ? titles.firstObject : app.trackName;
+		cell.detailTextLabel.text = titles.count > 1 ? titles.lastObject : [app.dictionary[@"genres"] firstObject];
+		if (URL_CACHE(app.artworkUrl100).isExistingFile)
+			cell.imageView.image = [[UIImage image:URL_CACHE(app.artworkUrl100)] imageWithSize:CGSizeMake(30.0, 30.0) mode:UIImageScaleAspectFit];
+		else
+			[app.artworkUrl100 cache:^(NSURL *url) {
+				[GCD main:^{
+					cell.imageView.image = [[UIImage image:url] imageWithSize:CGSizeMake(30.0, 30.0) mode:UIImageScaleAspectFit];
+				}];
+			}];
+	}
+
+	return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -132,18 +181,10 @@ __synthesize(SKInAppPurchase *, purchase3, [SKInAppPurchase purchaseWithProductI
 			[UIRateController logRateWithMethod:@"AboutController" success:success];
 		}];
 	} else if (indexPath.section == 5) {
-		if (indexPath.row == 0)
-			[self presentProductWithIdentifier:APP_ID_DONE parameters:GLOBAL.affiliateInfo];
-		else if (indexPath.row == 1)
-			[self presentProductWithIdentifier:APP_ID_DONE parameters:GLOBAL.affiliateInfo];
+		[self presentProductWithIdentifier:[self.apps[indexPath.row].trackId integerValue] parameters:Nil];
 	}
 	
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-/*
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return 4;//5;
-}
-*/
 
 @end

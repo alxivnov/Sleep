@@ -67,7 +67,7 @@
 
 - (UIDatePickerController *)pickerController {
 	if (!_pickerController) {
-		_pickerController = [[UIDatePickerController alloc] initWithView:self.view];
+		_pickerController = [[UIDatePickerController alloc] initWithView:self.view.rootview];
 
 		__weak IntervalController *__self = self;
 		_pickerController.datePickerValueChanged = ^(UIDatePicker *sender, id identifier) {

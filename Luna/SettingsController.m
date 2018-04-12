@@ -80,7 +80,7 @@ __synthesize(NSArray<UIButton *> *, wakeUpButtons, (@[ self.sunButton, self.monB
 
 - (UIDatePickerController *)pickerController {
 	if (!_pickerController) {
-		_pickerController = [[UIDatePickerController alloc] initWithView:self.view];
+		_pickerController = [[UIDatePickerController alloc] initWithView:self.view.rootview];
 		_pickerController.datePicker.datePickerMode = UIDatePickerModeTime;
 
 		__weak SettingsController *__self = self;
