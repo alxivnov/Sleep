@@ -7,11 +7,6 @@
 //
 
 #import "NSArray+AnalysisPresenter.h"
-#import "AnalysisPresenter.h"
-
-#import "Accelerate+Convenience.h"
-#import "NSCalendar+Convenience.h"
-#import "NSObject+Convenience.h"
 
 @implementation NSArray (AnalysisPresenter)
 

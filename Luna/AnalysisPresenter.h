@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@import HealthKit;
+#import "HKSleepAnalysis+CMMotionActivitySample.h"
+#import "NSArray+AnalysisPresenter.h"
+
+#import "HKData.h"
+#import "NSFormatter+Convenience.h"
+
 
 #define SLEEP_CYCLE_DURATION 5400.0
-
-@class AnalysisPresenter;
 
 @protocol AnalysisPresenter <NSObject>
 

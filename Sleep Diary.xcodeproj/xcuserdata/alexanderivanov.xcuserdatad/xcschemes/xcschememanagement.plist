@@ -4,22 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Sleep Diary WatchKit App (Complication).xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
-		</dict>
-		<key>Sleep Diary WatchKit App.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
 		<key>Sleep Diary.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>Widget.xcscheme</key>
+		<key>Watch (Complication).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Watch.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>

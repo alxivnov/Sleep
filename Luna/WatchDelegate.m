@@ -53,7 +53,17 @@
 		[UNUserNotificationCenter getPendingNotificationRequestWithIdentifier:GUI_FALL_ASLEEP completionHandler:^(UNNotificationRequest *request) {
 			replyHandler(@{ GUI_FALL_ASLEEP : [request.nextTriggerDate serialize] ?: STR_EMPTY });
 		}];
-	else if (message[KEY_TIMER_START]) {
+	else if ([[[Settings class] description] isEqualToString:message[STR_UNDERSCORE]]) {
+		NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:6];
+		dic[STR_UNDERSCORE] = [[Settings class] description];
+		dic[@"startDate"] = GLOBAL.startDate;
+		dic[@"bedtimeAlert"] = @(GLOBAL.bedtimeAlert);
+		dic[@"sleepDuration"] = @(GLOBAL.sleepDuration);
+		dic[@"alarmWeekdays"] = GLOBAL.alarmWeekdays;
+		dic[@"alarmTime"] = @(GLOBAL.alarmTime);
+		dic[@"sleepLatency"] = @(GLOBAL.sleepLatency);
+		replyHandler(dic);
+	} else if (message[KEY_TIMER_START]) {
 		GLOBAL.startDate = [NSDate deserialize:message[KEY_TIMER_START]];
 
 		if (GLOBAL.asleep) {

@@ -8,7 +8,7 @@
 
 #import "Widget.h"
 #import "AnalysisPresenter.h"
-#import "Global+Notifications.h"
+#import "Global.h"
 #import "Localization.h"
 
 #import "NSArray+Convenience.h"

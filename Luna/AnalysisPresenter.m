@@ -7,16 +7,6 @@
 //
 
 #import "AnalysisPresenter.h"
-#import "Localization.h"
-#import "NSArray+AnalysisPresenter.h"
-
-#import "HKData.h"
-#import "NSArray+Convenience.h"
-#import "NSCalendar+Convenience.h"
-#import "NSFormatter+Convenience.h"
-#import "NSObject+Convenience.h"
-
-#import "HKSleepAnalysis+CMMotionActivitySample.h"
 
 @interface SamplePresenter : AnalysisPresenter
 @end
@@ -141,7 +131,7 @@ __synthesize(NSUInteger, cycleCount, floor(self.duration / SLEEP_CYCLE_DURATION)
 }
 
 - (NSString *)detailText {
-	NSString *detailText = self.allSamples.firstObject.value == HKCategoryValueSleepAnalysisAsleep ? [Localization asleep] : [Localization inBed];
+	NSString *detailText = self.allSamples.firstObject.value == HKCategoryValueSleepAnalysisAsleep ? loc(@"Asleep") : loc(@"In Bed");
 	if (IS_DEBUGGING && self.allSamples.firstObject.metadata[HKMetadataKeySleepOnsetLatency])
 		detailText = [NSString stringWithFormat:@"%@ (%@)", detailText, [[NSDateComponentsFormatter mmssAbbreviatedFormatter] stringFromTimeInterval:[self.allSamples.firstObject.metadata[HKMetadataKeySleepOnsetLatency] doubleValue]]];
 	return detailText;
@@ -165,7 +155,7 @@ __synthesize(NSUInteger, cycleCount, floor(self.duration / SLEEP_CYCLE_DURATION)
 @implementation DayPresenter
 
 __synthesize(NSArray *, inBedPresenters, [self.samples query:^BOOL(SamplePresenter *obj) {
-	return obj.allSamples.firstObject.value != HKCategoryValueSleepAnalysisAsleep;
+	return obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed;
 }])
 
 __synthesize(NSArray *, sleepPresenters, [self.samples query:^BOOL(SamplePresenter *obj) {

@@ -7,31 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CD015A201EF1C33C006CED5B /* Accelerate+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFC352F1EF07287001F2CAB /* Accelerate+Convenience.m */; };
 		CD0459332049ACDF006D48D0 /* NSXMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0459312049ACDE006D48D0 /* NSXMLDictionary.m */; };
-		CD0459342049ACF3006D48D0 /* NSXMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0459312049ACDE006D48D0 /* NSXMLDictionary.m */; };
 		CD0906831E37FF4F00E45444 /* NSDictionary+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0906821E37FF4F00E45444 /* NSDictionary+Convenience.m */; };
 		CD0988C01F02DAB5006E2A65 /* FB-f-Logo__blue_30@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0988BE1F02DAB5006E2A65 /* FB-f-Logo__blue_30@2x.png */; };
 		CD0988C11F02DAB5006E2A65 /* Messenger_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0988BF1F02DAB5006E2A65 /* Messenger_Icon@2x.png */; };
 		CD0988C71F02E494006E2A65 /* FBSDKCoreKit+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0988C41F02E494006E2A65 /* FBSDKCoreKit+Convenience.m */; };
 		CD0988C81F02E494006E2A65 /* FBSDKShareKit+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0988C61F02E494006E2A65 /* FBSDKShareKit+Convenience.m */; };
-		CD0988CB1F02EA75006E2A65 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0988C91F02EA75006E2A65 /* FBSDKCoreKit.framework */; };
-		CD0988CC1F02EA75006E2A65 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0988CA1F02EA75006E2A65 /* FBSDKShareKit.framework */; };
+		CD0CB5AD207EB32A00F2B266 /* NSData+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0CB5AC207EB32A00F2B266 /* NSData+Convenience.m */; };
+		CD0CB5B0207EB35900F2B266 /* NSString+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0CB5AF207EB35900F2B266 /* NSString+Convenience.m */; };
+		CD0CB5B3207F421D00F2B266 /* like-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0CB5B1207F421D00F2B266 /* like-line@2x.png */; };
+		CD0CB5B4207F421D00F2B266 /* like-fill@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0CB5B2207F421D00F2B266 /* like-fill@2x.png */; };
 		CD14034C1EF338EF009F5DDE /* HKCategorySample+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = CD14034B1EF338EF009F5DDE /* HKCategorySample+JSON.m */; };
+		CD1D5534207C1EB80091DEFE /* WatchConnectivity+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA6C1DB3C50600208F7E /* WatchConnectivity+Convenience.m */; };
+		CD1D5537207C2A5D0091DEFE /* SunriseController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5536207C2A5D0091DEFE /* SunriseController.m */; };
 		CD254B491F0BD2F40063C50C /* UIBezierPath+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD254B481F0BD2F40063C50C /* UIBezierPath+Convenience.m */; };
-		CD254B4A1F0BEBFF0063C50C /* UIBezierPath+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD254B481F0BD2F40063C50C /* UIBezierPath+Convenience.m */; };
 		CD2935701DD884AA002A9FAF /* QuartzCore+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD29356F1DD884AA002A9FAF /* QuartzCore+Convenience.m */; };
 		CD2935731DD884F0002A9FAF /* UIApplication+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2935721DD884F0002A9FAF /* UIApplication+Convenience.m */; };
-		CD5933811E08044300AD6D09 /* AutodetectController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5933801E08044300AD6D09 /* AutodetectController.m */; };
-		CD5E0C4E1ED78A1500CE8C72 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6BCA6A1AD5270C006029D5 /* HealthKit.framework */; };
+		CD49F6902080B83F00DAA6C8 /* AnalysisPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0FB16B1C9074E50065558A /* AnalysisPresenter.m */; };
+		CD49F6912080B84200DAA6C8 /* NSArray+AnalysisPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FABFA8C71D819B6A00F79DBD /* NSArray+AnalysisPresenter.m */; };
+		CD49F6942080B8CB00DAA6C8 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = CD49F6932080B8CB00DAA6C8 /* Settings.m */; };
+		CD49F6992080B9C400DAA6C8 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = CD49F6932080B8CB00DAA6C8 /* Settings.m */; };
+		CD49F6A22081126F00DAA6C8 /* moon-fill-128@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD49F69E2081126900DAA6C8 /* moon-fill-128@2x.png */; };
+		CD49F6A32081126F00DAA6C8 /* moon-line-128@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD49F69F2081126900DAA6C8 /* moon-line-128@2x.png */; };
+		CD527E86207B833F00C005F4 /* ClockKit+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA5C1DB3C50600208F7E /* ClockKit+Convenience.m */; };
+		CD527E90207B8DDF00C005F4 /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = FA394A1D1AD2B5D200138B0B /* Global.m */; };
 		CD5E0C511ED78A4100CE8C72 /* UITableViewCell+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5E0C501ED78A4100CE8C72 /* UITableViewCell+Convenience.m */; };
 		CD624B841EE4773F008CAEEA /* StatisticsController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD624B831EE4773F008CAEEA /* StatisticsController.m */; };
-		CD6493BD1FCC54D6004DDDA6 /* Accelerate+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFC352F1EF07287001F2CAB /* Accelerate+Convenience.m */; };
+		CD6FE87F207CD82D006B1152 /* EDSunriseSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CD811E781E9E90400096974D /* EDSunriseSet.m */; };
+		CD6FE880207CDD87006B1152 /* CoreLocation+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD811E7F1E9E93AD0096974D /* CoreLocation+Convenience.m */; };
 		CD75B5031F19536D00BAB7DC /* SKInAppPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = CD75B5001F19536D00BAB7DC /* SKInAppPurchase.m */; };
 		CD75B5041F19536D00BAB7DC /* StoreKit+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD75B5021F19536D00BAB7DC /* StoreKit+Convenience.m */; };
-		CD7EB8441D9FE181003EE72D /* Global+Notifications.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7EB8431D9FE181003EE72D /* Global+Notifications.m */; };
-		CD7EB8451D9FE2DB003EE72D /* Global+Notifications.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7EB8431D9FE181003EE72D /* Global+Notifications.m */; };
-		CD7EB8461D9FE2E5003EE72D /* Global+Notifications.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7EB8431D9FE181003EE72D /* Global+Notifications.m */; };
 		CD811E791E9E90400096974D /* EDSunriseSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CD811E781E9E90400096974D /* EDSunriseSet.m */; };
 		CD811E7C1E9E92050096974D /* sunrise@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD811E7A1E9E92050096974D /* sunrise@2x.png */; };
 		CD811E7D1E9E92050096974D /* sunset@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD811E7B1E9E92050096974D /* sunset@2x.png */; };
@@ -43,11 +48,47 @@
 		CD81DE341DE4B82E009B8DCC /* salad-fill-30@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD81DE2E1DE4B82E009B8DCC /* salad-fill-30@2x.png */; };
 		CD81DE351DE4B82E009B8DCC /* salad-line-30@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD81DE2F1DE4B82E009B8DCC /* salad-line-30@2x.png */; };
 		CD8CB7A31DD8C98A00450799 /* UIViewController+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8CB7A21DD8C98A00450799 /* UIViewController+Convenience.m */; };
+		CD8F8F53207A1742007FA86A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD8F8F51207A1742007FA86A /* Interface.storyboard */; };
+		CD8F8F55207A1744007FA86A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD8F8F54207A1744007FA86A /* Assets.xcassets */; };
+		CD8F8F5C207A1744007FA86A /* Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CD8F8F5B207A1744007FA86A /* Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CD8F8F62207A1744007FA86A /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8F8F61207A1744007FA86A /* InterfaceController.m */; };
+		CD8F8F65207A1744007FA86A /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8F8F64207A1744007FA86A /* ExtensionDelegate.m */; };
+		CD8F8F68207A1744007FA86A /* ComplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8F8F67207A1744007FA86A /* ComplicationController.m */; };
+		CD8F8F6A207A1744007FA86A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD8F8F69207A1744007FA86A /* Assets.xcassets */; };
+		CD8F8F6E207A1744007FA86A /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CD8F8F4F207A1742007FA86A /* Watch.app */; };
+		CD8F8F79207A22C7007FA86A /* background-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD8F8F78207A22C7007FA86A /* background-line@2x.png */; };
+		CD8F8F7C207A49E4007FA86A /* SamplesController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8F8F7B207A49E4007FA86A /* SamplesController.m */; };
+		CD8F8F7D207A4C9E007FA86A /* HKData.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3A8C31DE08D1D00AEB8BB /* HKData.m */; };
+		CD8F8F7E207A4CAA007FA86A /* HKHealthStore+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3A8C51DE08D1D00AEB8BB /* HKHealthStore+Convenience.m */; };
+		CD8F8F7F207A4CC2007FA86A /* NSArray+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA641DB3C50600208F7E /* NSArray+Convenience.m */; };
+		CD8F8F80207A4CC9007FA86A /* NSObject+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4BA5DC1DD9C59D008161D4 /* NSObject+Convenience.m */; };
+		CD8F8F81207A5AE8007FA86A /* NSCalendar+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8403C1DDB8C690042D2CC /* NSCalendar+Convenience.m */; };
+		CD8F8F82207A5F71007FA86A /* NSFormatter+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA661DB3C50600208F7E /* NSFormatter+Convenience.m */; };
+		CD8F8F84207A6389007FA86A /* UIImage+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA840391DDB8C3A0042D2CC /* UIImage+Convenience.m */; };
+		CD8F8F85207A63A1007FA86A /* NSFileManager+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4BA6051DDA04B6008161D4 /* NSFileManager+Convenience.m */; };
+		CD8F8F86207A63A9007FA86A /* NSURL+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FA38A0AF1DDDFB2F004B963A /* NSURL+Convenience.m */; };
+		CD8F8F87207A63B1007FA86A /* Dispatch+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA621DB3C50600208F7E /* Dispatch+Convenience.m */; };
+		CD8F8F88207A65E9007FA86A /* UIColor+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4105BA1DE892CE00E76154 /* UIColor+Convenience.m */; };
+		CD8F8F89207A66E4007FA86A /* Accelerate+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFC352F1EF07287001F2CAB /* Accelerate+Convenience.m */; };
+		CD8F8F8A207A6830007FA86A /* UIBezierPath+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD254B481F0BD2F40063C50C /* UIBezierPath+Convenience.m */; };
+		CD8F8F8D207A6B38007FA86A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8F8F8C207A6B38007FA86A /* HealthKit.framework */; };
+		CD8F8F8E207A6C95007FA86A /* background-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD8F8F78207A22C7007FA86A /* background-line@2x.png */; };
+		CD8F8F8F207A7005007FA86A /* WatchKit+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA6E1DB3C50600208F7E /* WatchKit+Convenience.m */; };
+		CD8F8F91207A8EAB007FA86A /* background-fill@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD8F8F90207A8EAB007FA86A /* background-fill@2x.png */; };
+		CD8F8F92207A9795007FA86A /* NSBundle+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA8FF071DDB50C700F9B99A /* NSBundle+Convenience.m */; };
+		CD8F8F93207AB7EA007FA86A /* CoreMotion+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA601DB3C50600208F7E /* CoreMotion+Convenience.m */; };
+		CD8F8F94207AB81B007FA86A /* CMMotionActivitySample.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA5E1DB3C50600208F7E /* CMMotionActivitySample.m */; };
+		CD8F8F95207AB895007FA86A /* HKSleepAnalysis+CMMotionActivitySample.m in Sources */ = {isa = PBXBuildFile; fileRef = FACC6D5F1DF02B460009D3FF /* HKSleepAnalysis+CMMotionActivitySample.m */; };
+		CD8F8F96207AB95B007FA86A /* HKActiveEnergy+CMMotionActivitySample.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCC2BEB1E6EF19D00CCD583 /* HKActiveEnergy+CMMotionActivitySample.m */; };
 		CD9BC08B1E6C8FCC003BD7DE /* MobileCoreServices+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9BC08A1E6C8FCC003BD7DE /* MobileCoreServices+Convenience.m */; };
+		CDA4C317207CF7B600551473 /* sunrise@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD811E7A1E9E92050096974D /* sunrise@2x.png */; };
+		CDA4C318207CF7B600551473 /* sunset@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD811E7B1E9E92050096974D /* sunset@2x.png */; };
+		CDA4C319207CF84000551473 /* moon-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA47C7821BC26AC5002D2E02 /* moon-line@2x.png */; };
+		CDA4C31A207CF84000551473 /* moon-full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA47C7801BC26AC5002D2E02 /* moon-full@2x.png */; };
+		CDA4C31B207CF84000551473 /* sun-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA47C78F1BC27F0B002D2E02 /* sun-line@2x.png */; };
+		CDA4C31C207CF84000551473 /* sun-full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA47C7901BC27F0B002D2E02 /* sun-full@2x.png */; };
 		CDA8403A1DDB8C3A0042D2CC /* UIImage+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA840391DDB8C3A0042D2CC /* UIImage+Convenience.m */; };
 		CDA8403D1DDB8C690042D2CC /* NSCalendar+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8403C1DDB8C690042D2CC /* NSCalendar+Convenience.m */; };
-		CDA8403E1DDB8CC30042D2CC /* NSCalendar+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8403C1DDB8C690042D2CC /* NSCalendar+Convenience.m */; };
-		CDA8403F1DDB8CC40042D2CC /* NSCalendar+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8403C1DDB8C690042D2CC /* NSCalendar+Convenience.m */; };
 		CDAE76731F229C510085F78A /* Answers+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAE76721F229C510085F78A /* Answers+Convenience.m */; };
 		CDCC2BEC1E6EF19D00CCD583 /* HKActiveEnergy+CMMotionActivitySample.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCC2BEB1E6EF19D00CCD583 /* HKActiveEnergy+CMMotionActivitySample.m */; };
 		CDE33AFD2049920C00F89AD8 /* UIScrollView+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE33AFB2049920B00F89AD8 /* UIScrollView+Convenience.m */; };
@@ -83,19 +124,11 @@
 		CDE33B392049924800F89AD8 /* Google+-76@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CDE33B1B2049924800F89AD8 /* Google+-76@3x.png */; };
 		CDE33B3C204992F200F89AD8 /* UIPageViewController+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE33B3B204992F200F89AD8 /* UIPageViewController+Convenience.m */; };
 		CDE3A8C61DE08D1D00AEB8BB /* HKData.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3A8C31DE08D1D00AEB8BB /* HKData.m */; };
-		CDE3A8C71DE08D1D00AEB8BB /* HKData.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3A8C31DE08D1D00AEB8BB /* HKData.m */; };
-		CDE3A8C81DE08D1D00AEB8BB /* HKData.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3A8C31DE08D1D00AEB8BB /* HKData.m */; };
 		CDE3A8C91DE08D1D00AEB8BB /* HKHealthStore+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3A8C51DE08D1D00AEB8BB /* HKHealthStore+Convenience.m */; };
-		CDE3A8CA1DE08D1D00AEB8BB /* HKHealthStore+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3A8C51DE08D1D00AEB8BB /* HKHealthStore+Convenience.m */; };
-		CDE3A8CB1DE08D1D00AEB8BB /* HKHealthStore+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3A8C51DE08D1D00AEB8BB /* HKHealthStore+Convenience.m */; };
 		CDE3A8D31DE095D900AEB8BB /* UILabel+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3A8D21DE095D900AEB8BB /* UILabel+Convenience.m */; };
-		CDE3A8D41DE095D900AEB8BB /* UILabel+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3A8D21DE095D900AEB8BB /* UILabel+Convenience.m */; };
 		CDE3A8D81DE098D200AEB8BB /* UISlider+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3A8D71DE098D200AEB8BB /* UISlider+Convenience.m */; };
 		CDE3A8EE1DE0B5AF00AEB8BB /* NSTimer+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3A8ED1DE0B5AF00AEB8BB /* NSTimer+Convenience.m */; };
-		CDE3A8EF1DE0B5D100AEB8BB /* NSTimer+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3A8ED1DE0B5AF00AEB8BB /* NSTimer+Convenience.m */; };
 		CDE3A8FC1DE1EDF700AEB8BB /* UITableView+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3A8FB1DE1EDF700AEB8BB /* UITableView+Convenience.m */; };
-		CDE3A9091DE20DB700AEB8BB /* UIView+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4BA6291DDA1CC0008161D4 /* UIView+Convenience.m */; };
-		CDEBFD1B1DEB187100119B8F /* PhoneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEBFD1A1DEB187100119B8F /* PhoneDelegate.m */; };
 		CDF5C8D01DA01233006E36ED /* ActivitiesController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5C8CF1DA01233006E36ED /* ActivitiesController.m */; };
 		CDF5FA701DB3C50600208F7E /* CMMotionActivitySample.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA5E1DB3C50600208F7E /* CMMotionActivitySample.m */; };
 		CDF5FA711DB3C50600208F7E /* CoreMotion+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA601DB3C50600208F7E /* CoreMotion+Convenience.m */; };
@@ -104,30 +137,8 @@
 		CDF5FA741DB3C50700208F7E /* NSFormatter+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA661DB3C50600208F7E /* NSFormatter+Convenience.m */; };
 		CDF5FA761DB3C50700208F7E /* UserNotifications+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA6A1DB3C50600208F7E /* UserNotifications+Convenience.m */; };
 		CDF5FA771DB3C50700208F7E /* WatchConnectivity+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA6C1DB3C50600208F7E /* WatchConnectivity+Convenience.m */; };
-		CDF5FA791DB3C51300208F7E /* ClockKit+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA5C1DB3C50600208F7E /* ClockKit+Convenience.m */; };
-		CDF5FA7A1DB3C51800208F7E /* WatchKit+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA6E1DB3C50600208F7E /* WatchKit+Convenience.m */; };
-		CDF5FA7B1DB3C53B00208F7E /* NSArray+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA641DB3C50600208F7E /* NSArray+Convenience.m */; };
-		CDF5FA7C1DB3C53C00208F7E /* NSArray+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA641DB3C50600208F7E /* NSArray+Convenience.m */; };
-		CDF5FA7F1DB3C54200208F7E /* WatchConnectivity+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA6C1DB3C50600208F7E /* WatchConnectivity+Convenience.m */; };
-		CDF5FA801DB3C55500208F7E /* CMMotionActivitySample.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA5E1DB3C50600208F7E /* CMMotionActivitySample.m */; };
-		CDF5FA811DB3C55C00208F7E /* CoreMotion+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA601DB3C50600208F7E /* CoreMotion+Convenience.m */; };
-		CDF5FA821DB3C56700208F7E /* Dispatch+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA621DB3C50600208F7E /* Dispatch+Convenience.m */; };
-		CDF5FA831DB3C56800208F7E /* Dispatch+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA621DB3C50600208F7E /* Dispatch+Convenience.m */; };
-		CDF5FA841DB3C56B00208F7E /* NSFormatter+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA661DB3C50600208F7E /* NSFormatter+Convenience.m */; };
-		CDF5FA851DB3C56C00208F7E /* NSFormatter+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA661DB3C50600208F7E /* NSFormatter+Convenience.m */; };
-		CDF5FA861DB3C56F00208F7E /* UserNotifications+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA6A1DB3C50600208F7E /* UserNotifications+Convenience.m */; };
-		CDF5FA871DB3C57000208F7E /* UserNotifications+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA6A1DB3C50600208F7E /* UserNotifications+Convenience.m */; };
 		CDFC35301EF07288001F2CAB /* Accelerate+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFC352F1EF07287001F2CAB /* Accelerate+Convenience.m */; };
 		CDFDD69F1F0F6EDC00030626 /* Answers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFDD69E1F0F6EDC00030626 /* Answers.framework */; };
-		CDFE078F1EA6B0C90011A6C8 /* EDSunriseSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CD811E781E9E90400096974D /* EDSunriseSet.m */; };
-		CDFE07901EA6B0DA0011A6C8 /* sunrise@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD811E7A1E9E92050096974D /* sunrise@2x.png */; };
-		CDFE07911EA6B0DA0011A6C8 /* sunset@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD811E7B1E9E92050096974D /* sunset@2x.png */; };
-		CDFE07921EA6B1000011A6C8 /* sunrise@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD811E7A1E9E92050096974D /* sunrise@2x.png */; };
-		CDFE07931EA6B1000011A6C8 /* sunset@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD811E7B1E9E92050096974D /* sunset@2x.png */; };
-		CDFE07941EA6B60E0011A6C8 /* CoreLocation+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD811E7F1E9E93AD0096974D /* CoreLocation+Convenience.m */; };
-		CDFE07951EA6B61F0011A6C8 /* NSURL+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FA38A0AF1DDDFB2F004B963A /* NSURL+Convenience.m */; };
-		FA0081E91D85937E004E3FB0 /* NSArray+AnalysisPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FABFA8C71D819B6A00F79DBD /* NSArray+AnalysisPresenter.m */; };
-		FA0081EA1D859386004E3FB0 /* NSArray+AnalysisPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FABFA8C71D819B6A00F79DBD /* NSArray+AnalysisPresenter.m */; };
 		FA098B701C91B98300D83FDF /* UIAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA098B6E1C91B98300D83FDF /* UIAccessoryView.m */; };
 		FA098B731C91BAD600D83FDF /* UIImage+View.m in Sources */ = {isa = PBXBuildFile; fileRef = FA098B721C91BAD600D83FDF /* UIImage+View.m */; };
 		FA098B771C91C0ED00D83FDF /* disclosure@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA098B761C91C0ED00D83FDF /* disclosure@2x.png */; };
@@ -140,9 +151,6 @@
 		FA2255861CC26B400067A10C /* UIButton+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2255851CC26B400067A10C /* UIButton+Convenience.m */; };
 		FA2EFC3E1DDF211600E24C1E /* UIGestureTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFC3D1DDF211600E24C1E /* UIGestureTransition.m */; };
 		FA2EFC411DDF212000E24C1E /* UIInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFC401DDF212000E24C1E /* UIInteractiveTransition.m */; };
-		FA2F2DAA1D9D438200ADB756 /* moon-full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA47C7801BC26AC5002D2E02 /* moon-full@2x.png */; };
-		FA2F2DAB1D9D438700ADB756 /* sun-full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA47C7901BC27F0B002D2E02 /* sun-full@2x.png */; };
-		FA2F2DAC1D9D438800ADB756 /* sun-full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA47C7901BC27F0B002D2E02 /* sun-full@2x.png */; };
 		FA30FC101D212DBA00EC8D7E /* sleep@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA30FC0D1D212DBA00EC8D7E /* sleep@2x.png */; };
 		FA30FC111D212DBA00EC8D7E /* activity@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA30FC0E1D212DBA00EC8D7E /* activity@2x.png */; };
 		FA30FC121D212DBA00EC8D7E /* heart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA30FC0F1D212DBA00EC8D7E /* heart@2x.png */; };
@@ -151,20 +159,9 @@
 		FA3718D01B67A3510004FCEF /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA3718CF1B67A3510004FCEF /* Fabric.framework */; };
 		FA3718D21B67A4F10004FCEF /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA3718D11B67A4F10004FCEF /* Crashlytics.framework */; };
 		FA38A0B01DDDFB2F004B963A /* NSURL+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FA38A0AF1DDDFB2F004B963A /* NSURL+Convenience.m */; };
-		FA38A0B11DDDFB33004B963A /* NSURL+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FA38A0AF1DDDFB2F004B963A /* NSURL+Convenience.m */; };
 		FA38A0B41DDDFC8D004B963A /* UIGestureRecognizer+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FA38A0B31DDDFC8D004B963A /* UIGestureRecognizer+Convenience.m */; };
-		FA38A0B51DDDFE92004B963A /* UIGestureRecognizer+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FA38A0B31DDDFC8D004B963A /* UIGestureRecognizer+Convenience.m */; };
 		FA3949DD1AD2B11200138B0B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA3949DC1AD2B11200138B0B /* StoreKit.framework */; };
-		FA3949E51AD2B1BC00138B0B /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA3949E41AD2B1BC00138B0B /* NotificationCenter.framework */; };
-		FA3949EB1AD2B1BC00138B0B /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3949EA1AD2B1BC00138B0B /* TodayViewController.m */; };
-		FA3949ED1AD2B1BC00138B0B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3949EC1AD2B1BC00138B0B /* MainInterface.storyboard */; };
-		FA3949F01AD2B1BC00138B0B /* Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FA3949E21AD2B1BC00138B0B /* Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		FA3949FF1AD2B1EB00138B0B /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3949FE1AD2B1EB00138B0B /* InterfaceController.m */; };
-		FA394A041AD2B1EB00138B0B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA394A031AD2B1EB00138B0B /* Images.xcassets */; };
-		FA394A101AD2B1EC00138B0B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA394A0E1AD2B1EC00138B0B /* Interface.storyboard */; };
-		FA394A121AD2B1EC00138B0B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA394A111AD2B1EC00138B0B /* Images.xcassets */; };
 		FA394A1E1AD2B5D200138B0B /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = FA394A1D1AD2B5D200138B0B /* Global.m */; };
-		FA394A351AD2D4C500138B0B /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = FA394A1D1AD2B5D200138B0B /* Global.m */; };
 		FA403E411AEBA05600827125 /* done-30.png in Resources */ = {isa = PBXBuildFile; fileRef = FA403E3B1AEBA05600827125 /* done-30.png */; };
 		FA403E421AEBA05600827125 /* done-30@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA403E3C1AEBA05600827125 /* done-30@2x.png */; };
 		FA403E431AEBA05600827125 /* done-30@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA403E3D1AEBA05600827125 /* done-30@3x.png */; };
@@ -180,8 +177,6 @@
 		FA403E551AEC071C00827125 /* star-full-30@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA403E521AEC071C00827125 /* star-full-30@2x.png */; };
 		FA403EC41AEC182200827125 /* Luna-Icon-128.png in Resources */ = {isa = PBXBuildFile; fileRef = FA403EC31AEC182200827125 /* Luna-Icon-128.png */; };
 		FA4105BB1DE892CE00E76154 /* UIColor+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4105BA1DE892CE00E76154 /* UIColor+Convenience.m */; };
-		FA4105BC1DE892D800E76154 /* UIColor+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4105BA1DE892CE00E76154 /* UIColor+Convenience.m */; };
-		FA4105BD1DE892D800E76154 /* UIColor+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4105BA1DE892CE00E76154 /* UIColor+Convenience.m */; };
 		FA422A691B2EBB060011C7E3 /* UIFont+Modification.m in Sources */ = {isa = PBXBuildFile; fileRef = FA422A681B2EBB060011C7E3 /* UIFont+Modification.m */; };
 		FA47C7841BC26AC5002D2E02 /* moon-full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA47C7801BC26AC5002D2E02 /* moon-full@2x.png */; };
 		FA47C7851BC26AC5002D2E02 /* timer-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA47C7811BC26AC5002D2E02 /* timer-line@2x.png */; };
@@ -193,8 +188,6 @@
 		FA47C7911BC27F0B002D2E02 /* sun-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA47C78F1BC27F0B002D2E02 /* sun-line@2x.png */; };
 		FA47C7921BC27F0B002D2E02 /* sun-full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA47C7901BC27F0B002D2E02 /* sun-full@2x.png */; };
 		FA4BA5DD1DD9C59D008161D4 /* NSObject+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4BA5DC1DD9C59D008161D4 /* NSObject+Convenience.m */; };
-		FA4BA5DE1DD9C59D008161D4 /* NSObject+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4BA5DC1DD9C59D008161D4 /* NSObject+Convenience.m */; };
-		FA4BA5DF1DD9C59D008161D4 /* NSObject+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4BA5DC1DD9C59D008161D4 /* NSObject+Convenience.m */; };
 		FA4BA5E51DD9E885008161D4 /* MessageUI+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4BA5E41DD9E885008161D4 /* MessageUI+Convenience.m */; };
 		FA4BA5F41DDA0362008161D4 /* Affiliates+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4BA5F31DDA0362008161D4 /* Affiliates+Convenience.m */; };
 		FA4BA5FF1DDA0408008161D4 /* UIActivity+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4BA5FC1DDA0408008161D4 /* UIActivity+Convenience.m */; };
@@ -208,40 +201,21 @@
 		FA56C7AF1C0CE81B008A171F /* alarm-1.caf in Resources */ = {isa = PBXBuildFile; fileRef = FA56C7AE1C0CE81B008A171F /* alarm-1.caf */; };
 		FA5BDD641CFE156C00DFB0F3 /* ActivityVisualizer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5BDD631CFE156C00DFB0F3 /* ActivityVisualizer.m */; };
 		FA67D4471AF3BFC6000789C8 /* Localization.m in Sources */ = {isa = PBXBuildFile; fileRef = FA67D4461AF3BFC6000789C8 /* Localization.m */; };
-		FA67D4481AF3BFC6000789C8 /* Localization.m in Sources */ = {isa = PBXBuildFile; fileRef = FA67D4461AF3BFC6000789C8 /* Localization.m */; };
-		FA67D4491AF3BFC6000789C8 /* Localization.m in Sources */ = {isa = PBXBuildFile; fileRef = FA67D4461AF3BFC6000789C8 /* Localization.m */; };
 		FA67D45A1AF3C358000789C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA67D45E1AF3C358000789C8 /* Localizable.strings */; };
-		FA67D45B1AF3C358000789C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA67D45E1AF3C358000789C8 /* Localizable.strings */; };
-		FA67D45C1AF3C358000789C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA67D45E1AF3C358000789C8 /* Localizable.strings */; };
 		FA6A804C1CCACF88008023A8 /* ActivityController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6A804B1CCACF88008023A8 /* ActivityController.m */; };
 		FA6BCA6B1AD5270C006029D5 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6BCA6A1AD5270C006029D5 /* HealthKit.framework */; };
 		FA6BCA7A1AD54732006029D5 /* Luna-Icon-File.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6BCA791AD54732006029D5 /* Luna-Icon-File.png */; };
-		FA752DCF1DE34CFA0023C8F1 /* CMMotionActivitySample.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA5E1DB3C50600208F7E /* CMMotionActivitySample.m */; };
-		FA752DD01DE34CFD0023C8F1 /* CoreMotion+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA601DB3C50600208F7E /* CoreMotion+Convenience.m */; };
 		FA829A311A9C82A800B1E47B /* Luna-Button-Normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA829A2E1A9C82A800B1E47B /* Luna-Button-Normal@2x.png */; };
 		FA829A321A9C82A800B1E47B /* Luna-Button-Highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA829A2F1A9C82A800B1E47B /* Luna-Button-Highlighted@2x.png */; };
 		FA829A331A9C82A800B1E47B /* Luna-Button-Selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA829A301A9C82A800B1E47B /* Luna-Button-Selected@2x.png */; };
 		FA829A361A9C8E4400B1E47B /* IntervalController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA829A351A9C8E4400B1E47B /* IntervalController.m */; };
-		FA87E7081D205910004265B3 /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = FA394A1D1AD2B5D200138B0B /* Global.m */; };
-		FA8856941DDC7B77001B869F /* UIImage+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA840391DDB8C3A0042D2CC /* UIImage+Convenience.m */; };
-		FA8856951DDC8A3A001B869F /* NSURLSession+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4BA6081DDA054B008161D4 /* NSURLSession+Convenience.m */; };
 		FA8856BD1DDCACF6001B869F /* UIAlertController+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8856BC1DDCACF6001B869F /* UIAlertController+Convenience.m */; };
-		FA93F4D91CC4DC630055740F /* moon-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA47C7821BC26AC5002D2E02 /* moon-line@2x.png */; };
-		FA93F4DA1CC4DC690055740F /* sun-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA47C78F1BC27F0B002D2E02 /* sun-line@2x.png */; };
-		FA93F4DB1CC4DD250055740F /* sun-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA47C78F1BC27F0B002D2E02 /* sun-line@2x.png */; };
-		FA93F4DC1CC4DD2A0055740F /* moon-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA47C7821BC26AC5002D2E02 /* moon-line@2x.png */; };
 		FA93F4E01CC50A920055740F /* AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA93F4DF1CC50A920055740F /* AlertController.m */; };
 		FA9A88B91DB11A0D007A0754 /* Luna-Moon-64@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA592961AD6878E00E4430D /* Luna-Moon-64@3x.png */; };
 		FA9A88BA1DB11A10007A0754 /* Luna-Moon-64@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA592951AD6878E00E4430D /* Luna-Moon-64@2x.png */; };
 		FA9A88BB1DB11A13007A0754 /* Luna-Sun-64@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA592971AD6878E00E4430D /* Luna-Sun-64@2x.png */; };
 		FA9A88BC1DB11A16007A0754 /* Luna-Sun-64@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA592981AD6878E00E4430D /* Luna-Sun-64@3x.png */; };
-		FAA592991AD6878E00E4430D /* Luna-Moon-64@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA592951AD6878E00E4430D /* Luna-Moon-64@2x.png */; };
-		FAA5929A1AD6878E00E4430D /* Luna-Moon-64@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA592961AD6878E00E4430D /* Luna-Moon-64@3x.png */; };
-		FAA5929B1AD6878E00E4430D /* Luna-Sun-64@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA592971AD6878E00E4430D /* Luna-Sun-64@2x.png */; };
-		FAA5929C1AD6878E00E4430D /* Luna-Sun-64@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA592981AD6878E00E4430D /* Luna-Sun-64@3x.png */; };
 		FAA8FF081DDB50C700F9B99A /* NSBundle+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA8FF071DDB50C700F9B99A /* NSBundle+Convenience.m */; };
-		FAA8FF091DDB50C700F9B99A /* NSBundle+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA8FF071DDB50C700F9B99A /* NSBundle+Convenience.m */; };
-		FAA8FF0A1DDB50C700F9B99A /* NSBundle+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA8FF071DDB50C700F9B99A /* NSBundle+Convenience.m */; };
 		FAB39E1F1CB15CB50016D307 /* long-press-full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB39E1D1CB15CB50016D307 /* long-press-full@2x.png */; };
 		FAB39E201CB15CB50016D307 /* long-press-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB39E1E1CB15CB50016D307 /* long-press-line@2x.png */; };
 		FAB3CD0B1CBFE41E00523C78 /* BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB3CD0A1CBFE41E00523C78 /* BaseController.m */; };
@@ -254,42 +228,27 @@
 		FABFA8B31D8187A100F79DBD /* UIRateController.m in Sources */ = {isa = PBXBuildFile; fileRef = FABFA8B21D8187A100F79DBD /* UIRateController.m */; };
 		FABFA8BF1D8191A500F79DBD /* UIRateController+Answers.m in Sources */ = {isa = PBXBuildFile; fileRef = FABFA8BE1D8191A500F79DBD /* UIRateController+Answers.m */; };
 		FABFA8C81D819B6A00F79DBD /* NSArray+AnalysisPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FABFA8C71D819B6A00F79DBD /* NSArray+AnalysisPresenter.m */; };
-		FABFA8CA1D81A1B300F79DBD /* NSRateController.m in Sources */ = {isa = PBXBuildFile; fileRef = FABFA8AF1D81877900F79DBD /* NSRateController.m */; };
-		FABFA8CB1D81A1BD00F79DBD /* NSRateController.m in Sources */ = {isa = PBXBuildFile; fileRef = FABFA8AF1D81877900F79DBD /* NSRateController.m */; };
-		FABFA8D11D81A82300F79DBD /* AnalysisPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0FB16B1C9074E50065558A /* AnalysisPresenter.m */; };
-		FABFA8D41D81A83E00F79DBD /* AnalysisPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0FB16B1C9074E50065558A /* AnalysisPresenter.m */; };
 		FAC497561A7F6CC6006A26AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC497551A7F6CC6006A26AB /* main.m */; };
 		FAC497591A7F6CC6006A26AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC497581A7F6CC6006A26AB /* AppDelegate.m */; };
 		FAC4975C1A7F6CC6006A26AB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC4975B1A7F6CC6006A26AB /* ViewController.m */; };
 		FAC4975F1A7F6CC6006A26AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC4975D1A7F6CC6006A26AB /* Main.storyboard */; };
 		FAC497611A7F6CC6006A26AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC497601A7F6CC6006A26AB /* Images.xcassets */; };
 		FAC497641A7F6CC6006A26AB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC497621A7F6CC6006A26AB /* LaunchScreen.xib */; };
-		FAC7CE9A1D018ACE002812C1 /* moon-full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA47C7801BC26AC5002D2E02 /* moon-full@2x.png */; };
 		FAC7E1211B6E1830001CB110 /* arrow-double-down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAC7E11F1B6E1830001CB110 /* arrow-double-down@2x.png */; };
 		FAC7E1221B6E1830001CB110 /* arrow-double-up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAC7E1201B6E1830001CB110 /* arrow-double-up@2x.png */; };
 		FACC6D601DF02B460009D3FF /* HKSleepAnalysis+CMMotionActivitySample.m in Sources */ = {isa = PBXBuildFile; fileRef = FACC6D5F1DF02B460009D3FF /* HKSleepAnalysis+CMMotionActivitySample.m */; };
-		FACC6D611DF02B460009D3FF /* HKSleepAnalysis+CMMotionActivitySample.m in Sources */ = {isa = PBXBuildFile; fileRef = FACC6D5F1DF02B460009D3FF /* HKSleepAnalysis+CMMotionActivitySample.m */; };
-		FACFA7221DAE54BD002F36B0 /* Defaults.m in Sources */ = {isa = PBXBuildFile; fileRef = FACFA7201DAE54B2002F36B0 /* Defaults.m */; };
-		FAD052E41AD6D15F0004209B /* Luna-Moon-64@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA592951AD6878E00E4430D /* Luna-Moon-64@2x.png */; };
-		FAD052E51AD6D15F0004209B /* Luna-Sun-64@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA592971AD6878E00E4430D /* Luna-Sun-64@2x.png */; };
-		FAD052E61AD6D1750004209B /* Luna-Moon-64@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA592951AD6878E00E4430D /* Luna-Moon-64@2x.png */; };
-		FAD052E71AD6D1750004209B /* Luna-Sun-64@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA592971AD6878E00E4430D /* Luna-Sun-64@2x.png */; };
 		FAD76C1B1C806D57000D6CE4 /* graph-full-30@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD76C191C806D57000D6CE4 /* graph-full-30@2x.png */; };
 		FAD76C1C1C806D57000D6CE4 /* graph-line-30@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD76C1A1C806D57000D6CE4 /* graph-line-30@2x.png */; };
 		FAD9BAD91D78AEA5006706C6 /* ringo-30.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD9BAD61D78AEA5006706C6 /* ringo-30.png */; };
 		FAD9BADA1D78AEA5006706C6 /* ringo-30@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD9BAD71D78AEA5006706C6 /* ringo-30@2x.png */; };
 		FAD9BADB1D78AEA5006706C6 /* ringo-30@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD9BAD81D78AEA5006706C6 /* ringo-30@3x.png */; };
 		FADA86EE1E000D4500DAE932 /* UINavigationController+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FADA86ED1E000D4500DAE932 /* UINavigationController+Convenience.m */; };
-		FAE03B0B1D0060B600BD4973 /* ComplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE03B091D00601900BD4973 /* ComplicationController.m */; };
-		FAE096FE1BB52A6200B2C038 /* Sleep Diary WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FA3949F91AD2B1EB00138B0B /* Sleep Diary WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		FAE097011BB52A6200B2C038 /* Sleep Diary WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FA394A071AD2B1EB00138B0B /* Sleep Diary WatchKit App.app */; };
 		FAE94ACF1C99683B00FC2501 /* Luna-Moon-Gray-64@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE94ACD1C99683B00FC2501 /* Luna-Moon-Gray-64@2x.png */; };
 		FAE94AD01C99683B00FC2501 /* Luna-Moon-Gray-64@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE94ACE1C99683B00FC2501 /* Luna-Moon-Gray-64@3x.png */; };
 		FAE94AD31C99AC0B00FC2501 /* UIViewController+Answers.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE94AD21C99AC0B00FC2501 /* UIViewController+Answers.m */; };
 		FAE94AD61C99E07B00FC2501 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE94AD51C99E07B00FC2501 /* NavigationController.m */; };
 		FAEBB6B91D89705500D235CC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAEBB6BB1D89705500D235CC /* InfoPlist.strings */; };
 		FAEDA3F21C0B5F830074941F /* AlarmController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEDA3F11C0B5F830074941F /* AlarmController.m */; };
-		FAF0A3E21D7C1CBF00EEF7F7 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6BCA6A1AD5270C006029D5 /* HealthKit.framework */; };
 		FAF0B2F71B554188001D0E66 /* AnalysisController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF0B2F61B554188001D0E66 /* AnalysisController.m */; };
 		FAF4014D1C7DC04A003C528D /* circle-full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF4014B1C7DC04A003C528D /* circle-full@2x.png */; };
 		FAF4014E1C7DC04A003C528D /* circle-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF4014C1C7DC04A003C528D /* circle-line@2x.png */; };
@@ -298,48 +257,40 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FA3949EE1AD2B1BC00138B0B /* PBXContainerItemProxy */ = {
+		CD8F8F5D207A1744007FA86A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FAC497481A7F6CC6006A26AB /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FA3949E11AD2B1BC00138B0B;
-			remoteInfo = Widget;
+			remoteGlobalIDString = CD8F8F5A207A1744007FA86A;
+			remoteInfo = "Watch Extension";
 		};
-		FAE096FC1BB52A6200B2C038 /* PBXContainerItemProxy */ = {
+		CD8F8F6C207A1744007FA86A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FAC497481A7F6CC6006A26AB /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FA3949F81AD2B1EB00138B0B;
-			remoteInfo = "Sleep Diary WatchKit Extension";
-		};
-		FAE096FF1BB52A6200B2C038 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FAC497481A7F6CC6006A26AB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FA394A061AD2B1EB00138B0B;
-			remoteInfo = "Sleep Diary WatchKit App";
+			remoteGlobalIDString = CD8F8F4E207A1742007FA86A;
+			remoteInfo = Watch;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		CD8F8F72207A1744007FA86A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CD8F8F5C207A1744007FA86A /* Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FA3949F41AD2B1BC00138B0B /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				FA3949F01AD2B1BC00138B0B /* Widget.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FAE097021BB52A6200B2C038 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				FAE096FE1BB52A6200B2C038 /* Sleep Diary WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,7 +301,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				FAE097011BB52A6200B2C038 /* Sleep Diary WatchKit App.app in Embed Watch Content */,
+				CD8F8F6E207A1744007FA86A /* Watch.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,18 +319,26 @@
 		CD0988C41F02E494006E2A65 /* FBSDKCoreKit+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FBSDKCoreKit+Convenience.m"; sourceTree = "<group>"; };
 		CD0988C51F02E494006E2A65 /* FBSDKShareKit+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FBSDKShareKit+Convenience.h"; sourceTree = "<group>"; };
 		CD0988C61F02E494006E2A65 /* FBSDKShareKit+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FBSDKShareKit+Convenience.m"; sourceTree = "<group>"; };
-		CD0988C91F02EA75006E2A65 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../Frameworks/Facebook/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		CD0988CA1F02EA75006E2A65 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../Frameworks/Facebook/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		CD0CB5AB207EB32900F2B266 /* NSData+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Convenience.h"; sourceTree = "<group>"; };
+		CD0CB5AC207EB32A00F2B266 /* NSData+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Convenience.m"; sourceTree = "<group>"; };
+		CD0CB5AE207EB35900F2B266 /* NSString+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Convenience.h"; sourceTree = "<group>"; };
+		CD0CB5AF207EB35900F2B266 /* NSString+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Convenience.m"; sourceTree = "<group>"; };
+		CD0CB5B1207F421D00F2B266 /* like-line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "like-line@2x.png"; path = "../../Frameworks/Images/like-line@2x.png"; sourceTree = "<group>"; };
+		CD0CB5B2207F421D00F2B266 /* like-fill@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "like-fill@2x.png"; path = "../../Frameworks/Images/like-fill@2x.png"; sourceTree = "<group>"; };
 		CD14034A1EF338EF009F5DDE /* HKCategorySample+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HKCategorySample+JSON.h"; sourceTree = "<group>"; };
 		CD14034B1EF338EF009F5DDE /* HKCategorySample+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HKCategorySample+JSON.m"; sourceTree = "<group>"; };
+		CD1D5535207C2A5D0091DEFE /* SunriseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SunriseController.h; sourceTree = "<group>"; };
+		CD1D5536207C2A5D0091DEFE /* SunriseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SunriseController.m; sourceTree = "<group>"; };
 		CD254B471F0BD2F40063C50C /* UIBezierPath+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+Convenience.h"; sourceTree = "<group>"; };
 		CD254B481F0BD2F40063C50C /* UIBezierPath+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+Convenience.m"; sourceTree = "<group>"; };
 		CD29356E1DD884AA002A9FAF /* QuartzCore+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QuartzCore+Convenience.h"; sourceTree = "<group>"; };
 		CD29356F1DD884AA002A9FAF /* QuartzCore+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "QuartzCore+Convenience.m"; sourceTree = "<group>"; };
 		CD2935711DD884F0002A9FAF /* UIApplication+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Convenience.h"; sourceTree = "<group>"; };
 		CD2935721DD884F0002A9FAF /* UIApplication+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Convenience.m"; sourceTree = "<group>"; };
-		CD59337F1E08044300AD6D09 /* AutodetectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutodetectController.h; sourceTree = "<group>"; };
-		CD5933801E08044300AD6D09 /* AutodetectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutodetectController.m; sourceTree = "<group>"; };
+		CD49F6922080B8CB00DAA6C8 /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		CD49F6932080B8CB00DAA6C8 /* Settings.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
+		CD49F69E2081126900DAA6C8 /* moon-fill-128@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moon-fill-128@2x.png"; sourceTree = "<group>"; };
+		CD49F69F2081126900DAA6C8 /* moon-line-128@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moon-line-128@2x.png"; sourceTree = "<group>"; };
 		CD5E0C4F1ED78A4100CE8C72 /* UITableViewCell+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Convenience.h"; sourceTree = "<group>"; };
 		CD5E0C501ED78A4100CE8C72 /* UITableViewCell+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Convenience.m"; sourceTree = "<group>"; };
 		CD624B821EE4773F008CAEEA /* StatisticsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticsController.h; sourceTree = "<group>"; };
@@ -388,8 +347,6 @@
 		CD75B5001F19536D00BAB7DC /* SKInAppPurchase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKInAppPurchase.m; sourceTree = "<group>"; };
 		CD75B5011F19536D00BAB7DC /* StoreKit+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "StoreKit+Convenience.h"; sourceTree = "<group>"; };
 		CD75B5021F19536D00BAB7DC /* StoreKit+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "StoreKit+Convenience.m"; sourceTree = "<group>"; };
-		CD7EB8421D9FE181003EE72D /* Global+Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Global+Notifications.h"; sourceTree = "<group>"; };
-		CD7EB8431D9FE181003EE72D /* Global+Notifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Global+Notifications.m"; sourceTree = "<group>"; };
 		CD811E771E9E90400096974D /* EDSunriseSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDSunriseSet.h; path = "../Frameworks/Source/EDSunriseSet-master/EDSunriseSet.h"; sourceTree = "<group>"; };
 		CD811E781E9E90400096974D /* EDSunriseSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDSunriseSet.m; path = "../Frameworks/Source/EDSunriseSet-master/EDSunriseSet.m"; sourceTree = "<group>"; };
 		CD811E7A1E9E92050096974D /* sunrise@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sunrise@2x.png"; sourceTree = "<group>"; };
@@ -404,6 +361,25 @@
 		CD81DE2F1DE4B82E009B8DCC /* salad-line-30@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "salad-line-30@2x.png"; sourceTree = "<group>"; };
 		CD8CB7A11DD8C98A00450799 /* UIViewController+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Convenience.h"; sourceTree = "<group>"; };
 		CD8CB7A21DD8C98A00450799 /* UIViewController+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Convenience.m"; sourceTree = "<group>"; };
+		CD8F8F4F207A1742007FA86A /* Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD8F8F52207A1742007FA86A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		CD8F8F54207A1744007FA86A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD8F8F56207A1744007FA86A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD8F8F5B207A1744007FA86A /* Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD8F8F60207A1744007FA86A /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		CD8F8F61207A1744007FA86A /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		CD8F8F63207A1744007FA86A /* ExtensionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionDelegate.h; sourceTree = "<group>"; };
+		CD8F8F64207A1744007FA86A /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
+		CD8F8F66207A1744007FA86A /* ComplicationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComplicationController.h; sourceTree = "<group>"; };
+		CD8F8F67207A1744007FA86A /* ComplicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComplicationController.m; sourceTree = "<group>"; };
+		CD8F8F69207A1744007FA86A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD8F8F6B207A1744007FA86A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD8F8F78207A22C7007FA86A /* background-line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-line@2x.png"; sourceTree = "<group>"; };
+		CD8F8F7A207A49E4007FA86A /* SamplesController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SamplesController.h; sourceTree = "<group>"; };
+		CD8F8F7B207A49E4007FA86A /* SamplesController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SamplesController.m; sourceTree = "<group>"; };
+		CD8F8F8B207A6B38007FA86A /* Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Watch Extension.entitlements"; sourceTree = "<group>"; };
+		CD8F8F8C207A6B38007FA86A /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.3.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		CD8F8F90207A8EAB007FA86A /* background-fill@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-fill@2x.png"; sourceTree = "<group>"; };
 		CD9BC0891E6C8FCC003BD7DE /* MobileCoreServices+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MobileCoreServices+Convenience.h"; sourceTree = "<group>"; };
 		CD9BC08A1E6C8FCC003BD7DE /* MobileCoreServices+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MobileCoreServices+Convenience.m"; sourceTree = "<group>"; };
 		CD9C32331DB3907C005B0CA5 /* Sleep Diary.profdata */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sleep Diary.profdata"; sourceTree = "<group>"; };
@@ -462,8 +438,6 @@
 		CDE3A8ED1DE0B5AF00AEB8BB /* NSTimer+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Convenience.m"; sourceTree = "<group>"; };
 		CDE3A8FA1DE1EDF700AEB8BB /* UITableView+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Convenience.h"; sourceTree = "<group>"; };
 		CDE3A8FB1DE1EDF700AEB8BB /* UITableView+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Convenience.m"; sourceTree = "<group>"; };
-		CDEBFD191DEB187100119B8F /* PhoneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneDelegate.h; sourceTree = "<group>"; };
-		CDEBFD1A1DEB187100119B8F /* PhoneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneDelegate.m; sourceTree = "<group>"; };
 		CDF5C8CE1DA01233006E36ED /* ActivitiesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivitiesController.h; sourceTree = "<group>"; };
 		CDF5C8CF1DA01233006E36ED /* ActivitiesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivitiesController.m; sourceTree = "<group>"; };
 		CDF5FA5B1DB3C50600208F7E /* ClockKit+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ClockKit+Convenience.h"; sourceTree = "<group>"; };
@@ -508,7 +482,6 @@
 		FA2EFC3D1DDF211600E24C1E /* UIGestureTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIGestureTransition.m; sourceTree = "<group>"; };
 		FA2EFC3F1DDF212000E24C1E /* UIInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIInteractiveTransition.h; sourceTree = "<group>"; };
 		FA2EFC401DDF212000E24C1E /* UIInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIInteractiveTransition.m; sourceTree = "<group>"; };
-		FA2F2DA91D9D38C300ADB756 /* Sleep Diary WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sleep Diary WatchKit App.entitlements"; sourceTree = "<group>"; };
 		FA30FC0D1D212DBA00EC8D7E /* sleep@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sleep@2x.png"; sourceTree = "<group>"; };
 		FA30FC0E1D212DBA00EC8D7E /* activity@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "activity@2x.png"; sourceTree = "<group>"; };
 		FA30FC0F1D212DBA00EC8D7E /* heart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart@2x.png"; sourceTree = "<group>"; };
@@ -521,24 +494,8 @@
 		FA38A0B21DDDFC8D004B963A /* UIGestureRecognizer+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+Convenience.h"; sourceTree = "<group>"; };
 		FA38A0B31DDDFC8D004B963A /* UIGestureRecognizer+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+Convenience.m"; sourceTree = "<group>"; };
 		FA3949DC1AD2B11200138B0B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		FA3949E21AD2B1BC00138B0B /* Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Widget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA3949E41AD2B1BC00138B0B /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		FA3949E81AD2B1BC00138B0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA3949E91AD2B1BC00138B0B /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
-		FA3949EA1AD2B1BC00138B0B /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
-		FA3949EC1AD2B1BC00138B0B /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
-		FA3949F91AD2B1EB00138B0B /* Sleep Diary WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Sleep Diary WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA3949FC1AD2B1EB00138B0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA3949FD1AD2B1EB00138B0B /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
-		FA3949FE1AD2B1EB00138B0B /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
-		FA394A031AD2B1EB00138B0B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		FA394A071AD2B1EB00138B0B /* Sleep Diary WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sleep Diary WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA394A0D1AD2B1EC00138B0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA394A0F1AD2B1EC00138B0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		FA394A111AD2B1EC00138B0B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FA394A1C1AD2B5D200138B0B /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		FA394A1D1AD2B5D200138B0B /* Global.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Global.m; sourceTree = "<group>"; };
-		FA394A3A1AD2D72000138B0B /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Widget.entitlements; sourceTree = "<group>"; };
 		FA403E3B1AEBA05600827125 /* done-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done-30.png"; sourceTree = "<group>"; };
 		FA403E3C1AEBA05600827125 /* done-30@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done-30@2x.png"; sourceTree = "<group>"; };
 		FA403E3D1AEBA05600827125 /* done-30@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done-30@3x.png"; sourceTree = "<group>"; };
@@ -652,9 +609,6 @@
 		FAC7E1201B6E1830001CB110 /* arrow-double-up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-double-up@2x.png"; sourceTree = "<group>"; };
 		FACC6D5E1DF02B460009D3FF /* HKSleepAnalysis+CMMotionActivitySample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HKSleepAnalysis+CMMotionActivitySample.h"; sourceTree = "<group>"; };
 		FACC6D5F1DF02B460009D3FF /* HKSleepAnalysis+CMMotionActivitySample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HKSleepAnalysis+CMMotionActivitySample.m"; sourceTree = "<group>"; };
-		FACFA71F1DAE54B2002F36B0 /* Defaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defaults.h; sourceTree = "<group>"; };
-		FACFA7201DAE54B2002F36B0 /* Defaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Defaults.m; sourceTree = "<group>"; };
-		FAD052E81AD6E6C50004209B /* Sleep Diary WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Sleep Diary WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		FAD76C191C806D57000D6CE4 /* graph-full-30@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "graph-full-30@2x.png"; sourceTree = "<group>"; };
 		FAD76C1A1C806D57000D6CE4 /* graph-line-30@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "graph-line-30@2x.png"; sourceTree = "<group>"; };
 		FAD9BAD61D78AEA5006706C6 /* ringo-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ringo-30.png"; path = "../../EXKit/ImagesEx/ringo-30.png"; sourceTree = "<group>"; };
@@ -662,8 +616,6 @@
 		FAD9BAD81D78AEA5006706C6 /* ringo-30@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ringo-30@3x.png"; path = "../../EXKit/ImagesEx/ringo-30@3x.png"; sourceTree = "<group>"; };
 		FADA86EC1E000D4500DAE932 /* UINavigationController+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Convenience.h"; sourceTree = "<group>"; };
 		FADA86ED1E000D4500DAE932 /* UINavigationController+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Convenience.m"; sourceTree = "<group>"; };
-		FAE03B081D00601900BD4973 /* ComplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplicationController.h; sourceTree = "<group>"; };
-		FAE03B091D00601900BD4973 /* ComplicationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplicationController.m; sourceTree = "<group>"; };
 		FAE94ACD1C99683B00FC2501 /* Luna-Moon-Gray-64@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Luna-Moon-Gray-64@2x.png"; sourceTree = "<group>"; };
 		FAE94ACE1C99683B00FC2501 /* Luna-Moon-Gray-64@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Luna-Moon-Gray-64@3x.png"; sourceTree = "<group>"; };
 		FAE94AD11C99AC0B00FC2501 /* UIViewController+Answers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Answers.h"; sourceTree = "<group>"; };
@@ -685,20 +637,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FA3949DF1AD2B1BC00138B0B /* Frameworks */ = {
+		CD8F8F58207A1744007FA86A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA3949E51AD2B1BC00138B0B /* NotificationCenter.framework in Frameworks */,
-				FAF0A3E21D7C1CBF00EEF7F7 /* HealthKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FA3949F61AD2B1EB00138B0B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CD5E0C4E1ED78A1500CE8C72 /* HealthKit.framework in Frameworks */,
+				CD8F8F8D207A6B38007FA86A /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,12 +649,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDFDD69F1F0F6EDC00030626 /* Answers.framework in Frameworks */,
-				CD0988CB1F02EA75006E2A65 /* FBSDKCoreKit.framework in Frameworks */,
-				FA3718D21B67A4F10004FCEF /* Crashlytics.framework in Frameworks */,
-				CD0988CC1F02EA75006E2A65 /* FBSDKShareKit.framework in Frameworks */,
 				FA6BCA6B1AD5270C006029D5 /* HealthKit.framework in Frameworks */,
 				FA3949DD1AD2B11200138B0B /* StoreKit.framework in Frameworks */,
+				CDFDD69F1F0F6EDC00030626 /* Answers.framework in Frameworks */,
+				FA3718D21B67A4F10004FCEF /* Crashlytics.framework in Frameworks */,
 				FA3718D01B67A3510004FCEF /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -737,6 +678,40 @@
 				CD811E781E9E90400096974D /* EDSunriseSet.m */,
 			);
 			name = EDSunriseSet;
+			sourceTree = "<group>";
+		};
+		CD8F8F50207A1742007FA86A /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				CD8F8F78207A22C7007FA86A /* background-line@2x.png */,
+				CD8F8F90207A8EAB007FA86A /* background-fill@2x.png */,
+				CD49F69E2081126900DAA6C8 /* moon-fill-128@2x.png */,
+				CD49F69F2081126900DAA6C8 /* moon-line-128@2x.png */,
+				CD8F8F51207A1742007FA86A /* Interface.storyboard */,
+				CD8F8F54207A1744007FA86A /* Assets.xcassets */,
+				CD8F8F56207A1744007FA86A /* Info.plist */,
+			);
+			path = Watch;
+			sourceTree = "<group>";
+		};
+		CD8F8F5F207A1744007FA86A /* Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CD8F8F8B207A6B38007FA86A /* Watch Extension.entitlements */,
+				CD8F8F60207A1744007FA86A /* InterfaceController.h */,
+				CD8F8F61207A1744007FA86A /* InterfaceController.m */,
+				CD8F8F7A207A49E4007FA86A /* SamplesController.h */,
+				CD8F8F7B207A49E4007FA86A /* SamplesController.m */,
+				CD1D5535207C2A5D0091DEFE /* SunriseController.h */,
+				CD1D5536207C2A5D0091DEFE /* SunriseController.m */,
+				CD8F8F63207A1744007FA86A /* ExtensionDelegate.h */,
+				CD8F8F64207A1744007FA86A /* ExtensionDelegate.m */,
+				CD8F8F66207A1744007FA86A /* ComplicationController.h */,
+				CD8F8F67207A1744007FA86A /* ComplicationController.m */,
+				CD8F8F69207A1744007FA86A /* Assets.xcassets */,
+				CD8F8F6B207A1744007FA86A /* Info.plist */,
+			);
+			path = "Watch Extension";
 			sourceTree = "<group>";
 		};
 		CD9C32321DB3907C005B0CA5 /* OptimizationProfiles */ = {
@@ -908,6 +883,8 @@
 				CD811E7B1E9E92050096974D /* sunset@2x.png */,
 				CD0988BE1F02DAB5006E2A65 /* FB-f-Logo__blue_30@2x.png */,
 				CD0988BF1F02DAB5006E2A65 /* Messenger_Icon@2x.png */,
+				CD0CB5B2207F421D00F2B266 /* like-fill@2x.png */,
+				CD0CB5B1207F421D00F2B266 /* like-line@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -916,84 +893,13 @@
 			isa = PBXGroup;
 			children = (
 				FA6BCA6A1AD5270C006029D5 /* HealthKit.framework */,
-				FA3949E41AD2B1BC00138B0B /* NotificationCenter.framework */,
 				FA3949DC1AD2B11200138B0B /* StoreKit.framework */,
 				CDFDD69E1F0F6EDC00030626 /* Answers.framework */,
 				FA3718D11B67A4F10004FCEF /* Crashlytics.framework */,
 				FA3718CF1B67A3510004FCEF /* Fabric.framework */,
-				CD0988C91F02EA75006E2A65 /* FBSDKCoreKit.framework */,
-				CD0988CA1F02EA75006E2A65 /* FBSDKShareKit.framework */,
+				CD8F8F8C207A6B38007FA86A /* HealthKit.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FA3949E61AD2B1BC00138B0B /* Widget */ = {
-			isa = PBXGroup;
-			children = (
-				FA3949E91AD2B1BC00138B0B /* TodayViewController.h */,
-				FA3949EA1AD2B1BC00138B0B /* TodayViewController.m */,
-				FA3949EC1AD2B1BC00138B0B /* MainInterface.storyboard */,
-				FA3949E71AD2B1BC00138B0B /* Supporting Files */,
-			);
-			path = Widget;
-			sourceTree = "<group>";
-		};
-		FA3949E71AD2B1BC00138B0B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				FA394A3A1AD2D72000138B0B /* Widget.entitlements */,
-				FA3949E81AD2B1BC00138B0B /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		FA3949FA1AD2B1EB00138B0B /* WatchKit Extension */ = {
-			isa = PBXGroup;
-			children = (
-				FA3949FD1AD2B1EB00138B0B /* InterfaceController.h */,
-				FA3949FE1AD2B1EB00138B0B /* InterfaceController.m */,
-				CD59337F1E08044300AD6D09 /* AutodetectController.h */,
-				CD5933801E08044300AD6D09 /* AutodetectController.m */,
-				FAE03B081D00601900BD4973 /* ComplicationController.h */,
-				FAE03B091D00601900BD4973 /* ComplicationController.m */,
-				FA394A031AD2B1EB00138B0B /* Images.xcassets */,
-				FA3949FB1AD2B1EB00138B0B /* Supporting Files */,
-				FACFA71F1DAE54B2002F36B0 /* Defaults.h */,
-				FACFA7201DAE54B2002F36B0 /* Defaults.m */,
-				CDEBFD191DEB187100119B8F /* PhoneDelegate.h */,
-				CDEBFD1A1DEB187100119B8F /* PhoneDelegate.m */,
-			);
-			name = "WatchKit Extension";
-			path = "Sleep Diary WatchKit Extension";
-			sourceTree = "<group>";
-		};
-		FA3949FB1AD2B1EB00138B0B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				FAD052E81AD6E6C50004209B /* Sleep Diary WatchKit Extension.entitlements */,
-				FA3949FC1AD2B1EB00138B0B /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		FA394A0B1AD2B1EC00138B0B /* WatchKit App */ = {
-			isa = PBXGroup;
-			children = (
-				FA394A0E1AD2B1EC00138B0B /* Interface.storyboard */,
-				FA394A111AD2B1EC00138B0B /* Images.xcassets */,
-				FA394A0C1AD2B1EC00138B0B /* Supporting Files */,
-			);
-			name = "WatchKit App";
-			path = "Sleep Diary WatchKit App";
-			sourceTree = "<group>";
-		};
-		FA394A0C1AD2B1EC00138B0B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				FA2F2DA91D9D38C300ADB756 /* Sleep Diary WatchKit App.entitlements */,
-				FA394A0D1AD2B1EC00138B0B /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		FA56C7AD1C0CE7FD008A171F /* Sounds */ = {
@@ -1069,6 +975,8 @@
 				FAA8FF071DDB50C700F9B99A /* NSBundle+Convenience.m */,
 				CDA8403B1DDB8C690042D2CC /* NSCalendar+Convenience.h */,
 				CDA8403C1DDB8C690042D2CC /* NSCalendar+Convenience.m */,
+				CD0CB5AB207EB32900F2B266 /* NSData+Convenience.h */,
+				CD0CB5AC207EB32A00F2B266 /* NSData+Convenience.m */,
 				CD0906811E37FF4F00E45444 /* NSDictionary+Convenience.h */,
 				CD0906821E37FF4F00E45444 /* NSDictionary+Convenience.m */,
 				FA4BA6041DDA04B6008161D4 /* NSFileManager+Convenience.h */,
@@ -1079,6 +987,8 @@
 				FA4BA62C1DDA1D51008161D4 /* NSLayoutConstraint+Convenience.m */,
 				FA4BA5DB1DD9C59C008161D4 /* NSObject+Convenience.h */,
 				FA4BA5DC1DD9C59D008161D4 /* NSObject+Convenience.m */,
+				CD0CB5AE207EB35900F2B266 /* NSString+Convenience.h */,
+				CD0CB5AF207EB35900F2B266 /* NSString+Convenience.m */,
 				CDE3A8EC1DE0B5AF00AEB8BB /* NSTimer+Convenience.h */,
 				CDE3A8ED1DE0B5AF00AEB8BB /* NSTimer+Convenience.m */,
 				FA38A0AE1DDDFB2F004B963A /* NSURL+Convenience.h */,
@@ -1155,12 +1065,11 @@
 				FA1C7E081A826C5600C64653 /* Images */,
 				FA56C7AD1C0CE7FD008A171F /* Sounds */,
 				FAC497521A7F6CC6006A26AB /* Luna */,
-				FA3949E61AD2B1BC00138B0B /* Widget */,
-				FA3949FA1AD2B1EB00138B0B /* WatchKit Extension */,
-				FA394A0B1AD2B1EC00138B0B /* WatchKit App */,
 				CDF5FA5A1DB3C4B000208F7E /* Objective Sea */,
 				FA829A3A1A9CB94E00B1E47B /* EXKit */,
 				CD811E761E9E90110096974D /* EDSunriseSet */,
+				CD8F8F50207A1742007FA86A /* Watch */,
+				CD8F8F5F207A1744007FA86A /* Watch Extension */,
 				FA3949E31AD2B1BC00138B0B /* Frameworks */,
 				FAC497511A7F6CC6006A26AB /* Products */,
 				CD9C32321DB3907C005B0CA5 /* OptimizationProfiles */,
@@ -1171,9 +1080,8 @@
 			isa = PBXGroup;
 			children = (
 				FAC497501A7F6CC6006A26AB /* Sleep Diary.app */,
-				FA3949E21AD2B1BC00138B0B /* Widget.appex */,
-				FA3949F91AD2B1EB00138B0B /* Sleep Diary WatchKit Extension.appex */,
-				FA394A071AD2B1EB00138B0B /* Sleep Diary WatchKit App.app */,
+				CD8F8F4F207A1742007FA86A /* Watch.app */,
+				CD8F8F5B207A1744007FA86A /* Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1203,8 +1111,6 @@
 				FA829A351A9C8E4400B1E47B /* IntervalController.m */,
 				FA394A1C1AD2B5D200138B0B /* Global.h */,
 				FA394A1D1AD2B5D200138B0B /* Global.m */,
-				CD7EB8421D9FE181003EE72D /* Global+Notifications.h */,
-				CD7EB8431D9FE181003EE72D /* Global+Notifications.m */,
 				FA21776C1AF534DE0089740E /* Widget.h */,
 				FA21776D1AF534DE0089740E /* Widget.m */,
 				FA0FB16D1C907BBD0065558A /* SegmentController.h */,
@@ -1221,14 +1127,16 @@
 				CDF5C8CF1DA01233006E36ED /* ActivitiesController.m */,
 				FA5BDD621CFE156C00DFB0F3 /* ActivityVisualizer.h */,
 				FA5BDD631CFE156C00DFB0F3 /* ActivityVisualizer.m */,
-				FA0FB16A1C9074E50065558A /* AnalysisPresenter.h */,
-				FA0FB16B1C9074E50065558A /* AnalysisPresenter.m */,
-				FABFA8C61D819B6A00F79DBD /* NSArray+AnalysisPresenter.h */,
-				FABFA8C71D819B6A00F79DBD /* NSArray+AnalysisPresenter.m */,
 				CD14034A1EF338EF009F5DDE /* HKCategorySample+JSON.h */,
 				CD14034B1EF338EF009F5DDE /* HKCategorySample+JSON.m */,
 				FACC6D5E1DF02B460009D3FF /* HKSleepAnalysis+CMMotionActivitySample.h */,
 				FACC6D5F1DF02B460009D3FF /* HKSleepAnalysis+CMMotionActivitySample.m */,
+				FABFA8C61D819B6A00F79DBD /* NSArray+AnalysisPresenter.h */,
+				FABFA8C71D819B6A00F79DBD /* NSArray+AnalysisPresenter.m */,
+				FA0FB16A1C9074E50065558A /* AnalysisPresenter.h */,
+				FA0FB16B1C9074E50065558A /* AnalysisPresenter.m */,
+				CD49F6922080B8CB00DAA6C8 /* Settings.h */,
+				CD49F6932080B8CB00DAA6C8 /* Settings.m */,
 				FA67D4441AF3BF7C000789C8 /* Localization */,
 				FA47C78C1BC279C4002D2E02 /* WatchDelegate.h */,
 				FA47C78D1BC279D9002D2E02 /* WatchDelegate.m */,
@@ -1249,56 +1157,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FA3949E11AD2B1BC00138B0B /* Widget */ = {
+		CD8F8F4E207A1742007FA86A /* Watch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FA3949F11AD2B1BC00138B0B /* Build configuration list for PBXNativeTarget "Widget" */;
+			buildConfigurationList = CD8F8F73207A1744007FA86A /* Build configuration list for PBXNativeTarget "Watch" */;
 			buildPhases = (
-				FA3949DE1AD2B1BC00138B0B /* Sources */,
-				FA3949DF1AD2B1BC00138B0B /* Frameworks */,
-				FA3949E01AD2B1BC00138B0B /* Resources */,
+				CD8F8F4D207A1742007FA86A /* Resources */,
+				CD8F8F72207A1744007FA86A /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CD8F8F5E207A1744007FA86A /* PBXTargetDependency */,
 			);
-			name = Widget;
-			productName = Widget;
-			productReference = FA3949E21AD2B1BC00138B0B /* Widget.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
-		FA3949F81AD2B1EB00138B0B /* Sleep Diary WatchKit Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FA394A191AD2B1EC00138B0B /* Build configuration list for PBXNativeTarget "Sleep Diary WatchKit Extension" */;
-			buildPhases = (
-				FA3949F51AD2B1EB00138B0B /* Sources */,
-				FA3949F61AD2B1EB00138B0B /* Frameworks */,
-				FA3949F71AD2B1EB00138B0B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Sleep Diary WatchKit Extension";
-			productName = "Sleep Diary WatchKit Extension";
-			productReference = FA3949F91AD2B1EB00138B0B /* Sleep Diary WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
-		};
-		FA394A061AD2B1EB00138B0B /* Sleep Diary WatchKit App */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FA394A161AD2B1EC00138B0B /* Build configuration list for PBXNativeTarget "Sleep Diary WatchKit App" */;
-			buildPhases = (
-				FA394A051AD2B1EB00138B0B /* Resources */,
-				FAE097021BB52A6200B2C038 /* Embed App Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FAE096FD1BB52A6200B2C038 /* PBXTargetDependency */,
-			);
-			name = "Sleep Diary WatchKit App";
-			productName = "Sleep Diary WatchKit App";
-			productReference = FA394A071AD2B1EB00138B0B /* Sleep Diary WatchKit App.app */;
+			name = Watch;
+			productName = Watch;
+			productReference = CD8F8F4F207A1742007FA86A /* Watch.app */;
 			productType = "com.apple.product-type.application.watchapp2";
+		};
+		CD8F8F5A207A1744007FA86A /* Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD8F8F6F207A1744007FA86A /* Build configuration list for PBXNativeTarget "Watch Extension" */;
+			buildPhases = (
+				CD8F8F57207A1744007FA86A /* Sources */,
+				CD8F8F58207A1744007FA86A /* Frameworks */,
+				CD8F8F59207A1744007FA86A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Watch Extension";
+			productName = "Watch Extension";
+			productReference = CD8F8F5B207A1744007FA86A /* Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 		FAC4974F1A7F6CC6006A26AB /* Sleep Diary */ = {
 			isa = PBXNativeTarget;
@@ -1314,8 +1205,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				FA3949EF1AD2B1BC00138B0B /* PBXTargetDependency */,
-				FAE097001BB52A6200B2C038 /* PBXTargetDependency */,
+				CD8F8F6D207A1744007FA86A /* PBXTargetDependency */,
 			);
 			name = "Sleep Diary";
 			productName = Luna;
@@ -1328,42 +1218,27 @@
 		FAC497481A7F6CC6006A26AB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Alexander Ivanov";
 				TargetAttributes = {
-					FA3949E11AD2B1BC00138B0B = {
-						CreatedOnToolsVersion = 6.2;
+					CD8F8F4E207A1742007FA86A = {
+						CreatedOnToolsVersion = 9.3;
 						DevelopmentTeam = VRBB8HL9RV;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-							com.apple.HealthKit = {
-								enabled = 1;
-							};
-						};
+						ProvisioningStyle = Automatic;
 					};
-					FA3949F81AD2B1EB00138B0B = {
-						CreatedOnToolsVersion = 6.2;
+					CD8F8F5A207A1744007FA86A = {
+						CreatedOnToolsVersion = 9.3;
 						DevelopmentTeam = VRBB8HL9RV;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-							com.apple.HealthKit = {
+							com.apple.BackgroundModes.watchos.extension = {
 								enabled = 0;
 							};
 							com.apple.HealthKit.watchos = {
 								enabled = 1;
 							};
-						};
-					};
-					FA394A061AD2B1EB00138B0B = {
-						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = VRBB8HL9RV;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
+							com.apple.iCloud = {
+								enabled = 0;
 							};
 						};
 					};
@@ -1372,7 +1247,7 @@
 						DevelopmentTeam = VRBB8HL9RV;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -1382,6 +1257,9 @@
 							};
 							com.apple.InAppPurchase = {
 								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
 							};
 						};
 					};
@@ -1404,58 +1282,38 @@
 			projectRoot = "";
 			targets = (
 				FAC4974F1A7F6CC6006A26AB /* Sleep Diary */,
-				FA3949E11AD2B1BC00138B0B /* Widget */,
-				FA3949F81AD2B1EB00138B0B /* Sleep Diary WatchKit Extension */,
-				FA394A061AD2B1EB00138B0B /* Sleep Diary WatchKit App */,
+				CD8F8F4E207A1742007FA86A /* Watch */,
+				CD8F8F5A207A1744007FA86A /* Watch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FA3949E01AD2B1BC00138B0B /* Resources */ = {
+		CD8F8F4D207A1742007FA86A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA3949ED1AD2B1BC00138B0B /* MainInterface.storyboard in Resources */,
-				FA67D45B1AF3C358000789C8 /* Localizable.strings in Resources */,
-				FAA5929B1AD6878E00E4430D /* Luna-Sun-64@2x.png in Resources */,
-				FAA592991AD6878E00E4430D /* Luna-Moon-64@2x.png in Resources */,
-				FAA5929A1AD6878E00E4430D /* Luna-Moon-64@3x.png in Resources */,
-				FAA5929C1AD6878E00E4430D /* Luna-Sun-64@3x.png in Resources */,
+				CD8F8F55207A1744007FA86A /* Assets.xcassets in Resources */,
+				CDA4C317207CF7B600551473 /* sunrise@2x.png in Resources */,
+				CDA4C319207CF84000551473 /* moon-line@2x.png in Resources */,
+				CDA4C318207CF7B600551473 /* sunset@2x.png in Resources */,
+				CD8F8F79207A22C7007FA86A /* background-line@2x.png in Resources */,
+				CD8F8F53207A1742007FA86A /* Interface.storyboard in Resources */,
+				CDA4C31C207CF84000551473 /* sun-full@2x.png in Resources */,
+				CDA4C31A207CF84000551473 /* moon-full@2x.png in Resources */,
+				CDA4C31B207CF84000551473 /* sun-line@2x.png in Resources */,
+				CD8F8F91207A8EAB007FA86A /* background-fill@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FA3949F71AD2B1EB00138B0B /* Resources */ = {
+		CD8F8F59207A1744007FA86A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA394A041AD2B1EB00138B0B /* Images.xcassets in Resources */,
-				FAD052E71AD6D1750004209B /* Luna-Sun-64@2x.png in Resources */,
-				CDFE07931EA6B1000011A6C8 /* sunset@2x.png in Resources */,
-				FA2F2DAB1D9D438700ADB756 /* sun-full@2x.png in Resources */,
-				FA67D45C1AF3C358000789C8 /* Localizable.strings in Resources */,
-				CDFE07921EA6B1000011A6C8 /* sunrise@2x.png in Resources */,
-				FA93F4DC1CC4DD2A0055740F /* moon-line@2x.png in Resources */,
-				FAC7CE9A1D018ACE002812C1 /* moon-full@2x.png in Resources */,
-				FAD052E61AD6D1750004209B /* Luna-Moon-64@2x.png in Resources */,
-				FA93F4DB1CC4DD250055740F /* sun-line@2x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FA394A051AD2B1EB00138B0B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FA93F4D91CC4DC630055740F /* moon-line@2x.png in Resources */,
-				FA93F4DA1CC4DC690055740F /* sun-line@2x.png in Resources */,
-				CDFE07911EA6B0DA0011A6C8 /* sunset@2x.png in Resources */,
-				FA2F2DAC1D9D438800ADB756 /* sun-full@2x.png in Resources */,
-				FA394A101AD2B1EC00138B0B /* Interface.storyboard in Resources */,
-				CDFE07901EA6B0DA0011A6C8 /* sunrise@2x.png in Resources */,
-				FAD052E51AD6D15F0004209B /* Luna-Sun-64@2x.png in Resources */,
-				FA2F2DAA1D9D438200ADB756 /* moon-full@2x.png in Resources */,
-				FA394A121AD2B1EC00138B0B /* Images.xcassets in Resources */,
-				FAD052E41AD6D15F0004209B /* Luna-Moon-64@2x.png in Resources */,
+				CD8F8F8E207A6C95007FA86A /* background-line@2x.png in Resources */,
+				CD49F6A22081126F00DAA6C8 /* moon-fill-128@2x.png in Resources */,
+				CD8F8F6A207A1744007FA86A /* Assets.xcassets in Resources */,
+				CD49F6A32081126F00DAA6C8 /* moon-line-128@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1541,8 +1399,10 @@
 				CDE33B222049924800F89AD8 /* iCloud-60@2x.png in Resources */,
 				CDE33B212049924800F89AD8 /* Google+-60@2x.png in Resources */,
 				FAE94AD01C99683B00FC2501 /* Luna-Moon-Gray-64@3x.png in Resources */,
+				CD0CB5B4207F421D00F2B266 /* like-fill@2x.png in Resources */,
 				FA67D45A1AF3C358000789C8 /* Localizable.strings in Resources */,
 				FAF4014E1C7DC04A003C528D /* circle-line@2x.png in Resources */,
+				CD0CB5B3207F421D00F2B266 /* like-line@2x.png in Resources */,
 				FAD9BADB1D78AEA5006706C6 /* ringo-30@3x.png in Resources */,
 				FA403E4C1AEBCD2200827125 /* moneybox-line-30@2x.png in Resources */,
 				CDE33B322049924800F89AD8 /* Twitter-76@2x.png in Resources */,
@@ -1587,77 +1447,42 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		FA3949DE1AD2B1BC00138B0B /* Sources */ = {
+		CD8F8F57207A1744007FA86A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDE3A8CA1DE08D1D00AEB8BB /* HKHealthStore+Convenience.m in Sources */,
-				CDE3A9091DE20DB700AEB8BB /* UIView+Convenience.m in Sources */,
-				FA67D4481AF3BFC6000789C8 /* Localization.m in Sources */,
-				CDE3A8EF1DE0B5D100AEB8BB /* NSTimer+Convenience.m in Sources */,
-				FA4BA5DE1DD9C59D008161D4 /* NSObject+Convenience.m in Sources */,
-				FA394A351AD2D4C500138B0B /* Global.m in Sources */,
-				CDE3A8C71DE08D1D00AEB8BB /* HKData.m in Sources */,
-				CDA8403E1DDB8CC30042D2CC /* NSCalendar+Convenience.m in Sources */,
-				FAA8FF091DDB50C700F9B99A /* NSBundle+Convenience.m in Sources */,
-				FA4105BC1DE892D800E76154 /* UIColor+Convenience.m in Sources */,
-				CD6493BD1FCC54D6004DDDA6 /* Accelerate+Convenience.m in Sources */,
-				CD7EB8451D9FE2DB003EE72D /* Global+Notifications.m in Sources */,
-				FA8856951DDC8A3A001B869F /* NSURLSession+Convenience.m in Sources */,
-				CDF5FA851DB3C56C00208F7E /* NSFormatter+Convenience.m in Sources */,
-				CD0459342049ACF3006D48D0 /* NSXMLDictionary.m in Sources */,
-				CDF5FA821DB3C56700208F7E /* Dispatch+Convenience.m in Sources */,
-				FA3949EB1AD2B1BC00138B0B /* TodayViewController.m in Sources */,
-				CDF5FA7B1DB3C53B00208F7E /* NSArray+Convenience.m in Sources */,
-				FABFA8CB1D81A1BD00F79DBD /* NSRateController.m in Sources */,
-				FA0081E91D85937E004E3FB0 /* NSArray+AnalysisPresenter.m in Sources */,
-				FABFA8D11D81A82300F79DBD /* AnalysisPresenter.m in Sources */,
-				FA38A0B11DDDFB33004B963A /* NSURL+Convenience.m in Sources */,
-				CDE3A8D41DE095D900AEB8BB /* UILabel+Convenience.m in Sources */,
-				FA38A0B51DDDFE92004B963A /* UIGestureRecognizer+Convenience.m in Sources */,
-				CDF5FA861DB3C56F00208F7E /* UserNotifications+Convenience.m in Sources */,
-				FA752DCF1DE34CFA0023C8F1 /* CMMotionActivitySample.m in Sources */,
-				FA752DD01DE34CFD0023C8F1 /* CoreMotion+Convenience.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FA3949F51AD2B1EB00138B0B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CDF5FA7A1DB3C51800208F7E /* WatchKit+Convenience.m in Sources */,
-				FA4BA5DF1DD9C59D008161D4 /* NSObject+Convenience.m in Sources */,
-				CDEBFD1B1DEB187100119B8F /* PhoneDelegate.m in Sources */,
-				CDF5FA7C1DB3C53C00208F7E /* NSArray+Convenience.m in Sources */,
-				FA67D4491AF3BFC6000789C8 /* Localization.m in Sources */,
-				CDF5FA831DB3C56800208F7E /* Dispatch+Convenience.m in Sources */,
-				CDFE078F1EA6B0C90011A6C8 /* EDSunriseSet.m in Sources */,
-				CDF5FA841DB3C56B00208F7E /* NSFormatter+Convenience.m in Sources */,
-				FA3949FF1AD2B1EB00138B0B /* InterfaceController.m in Sources */,
-				CDA8403F1DDB8CC40042D2CC /* NSCalendar+Convenience.m in Sources */,
-				CD015A201EF1C33C006CED5B /* Accelerate+Convenience.m in Sources */,
-				CDF5FA7F1DB3C54200208F7E /* WatchConnectivity+Convenience.m in Sources */,
-				FAA8FF0A1DDB50C700F9B99A /* NSBundle+Convenience.m in Sources */,
-				CD254B4A1F0BEBFF0063C50C /* UIBezierPath+Convenience.m in Sources */,
-				FAE03B0B1D0060B600BD4973 /* ComplicationController.m in Sources */,
-				CDFE07951EA6B61F0011A6C8 /* NSURL+Convenience.m in Sources */,
-				FA0081EA1D859386004E3FB0 /* NSArray+AnalysisPresenter.m in Sources */,
-				FACFA7221DAE54BD002F36B0 /* Defaults.m in Sources */,
-				CD5933811E08044300AD6D09 /* AutodetectController.m in Sources */,
-				CDE3A8C81DE08D1D00AEB8BB /* HKData.m in Sources */,
-				CDFE07941EA6B60E0011A6C8 /* CoreLocation+Convenience.m in Sources */,
-				CDF5FA871DB3C57000208F7E /* UserNotifications+Convenience.m in Sources */,
-				CDF5FA811DB3C55C00208F7E /* CoreMotion+Convenience.m in Sources */,
-				FA4105BD1DE892D800E76154 /* UIColor+Convenience.m in Sources */,
-				FABFA8D41D81A83E00F79DBD /* AnalysisPresenter.m in Sources */,
-				FA8856941DDC7B77001B869F /* UIImage+Convenience.m in Sources */,
-				CDF5FA801DB3C55500208F7E /* CMMotionActivitySample.m in Sources */,
-				CDF5FA791DB3C51300208F7E /* ClockKit+Convenience.m in Sources */,
-				FACC6D611DF02B460009D3FF /* HKSleepAnalysis+CMMotionActivitySample.m in Sources */,
-				FA87E7081D205910004265B3 /* Global.m in Sources */,
-				FABFA8CA1D81A1B300F79DBD /* NSRateController.m in Sources */,
-				CD7EB8461D9FE2E5003EE72D /* Global+Notifications.m in Sources */,
-				CDE3A8CB1DE08D1D00AEB8BB /* HKHealthStore+Convenience.m in Sources */,
+				CD8F8F88207A65E9007FA86A /* UIColor+Convenience.m in Sources */,
+				CD8F8F85207A63A1007FA86A /* NSFileManager+Convenience.m in Sources */,
+				CD8F8F7E207A4CAA007FA86A /* HKHealthStore+Convenience.m in Sources */,
+				CD8F8F81207A5AE8007FA86A /* NSCalendar+Convenience.m in Sources */,
+				CD8F8F89207A66E4007FA86A /* Accelerate+Convenience.m in Sources */,
+				CD527E86207B833F00C005F4 /* ClockKit+Convenience.m in Sources */,
+				CD8F8F80207A4CC9007FA86A /* NSObject+Convenience.m in Sources */,
+				CD6FE880207CDD87006B1152 /* CoreLocation+Convenience.m in Sources */,
+				CD8F8F93207AB7EA007FA86A /* CoreMotion+Convenience.m in Sources */,
+				CD8F8F82207A5F71007FA86A /* NSFormatter+Convenience.m in Sources */,
+				CD49F6992080B9C400DAA6C8 /* Settings.m in Sources */,
+				CD8F8F68207A1744007FA86A /* ComplicationController.m in Sources */,
+				CD8F8F95207AB895007FA86A /* HKSleepAnalysis+CMMotionActivitySample.m in Sources */,
+				CD1D5537207C2A5D0091DEFE /* SunriseController.m in Sources */,
+				CD8F8F86207A63A9007FA86A /* NSURL+Convenience.m in Sources */,
+				CD6FE87F207CD82D006B1152 /* EDSunriseSet.m in Sources */,
+				CD8F8F84207A6389007FA86A /* UIImage+Convenience.m in Sources */,
+				CD8F8F65207A1744007FA86A /* ExtensionDelegate.m in Sources */,
+				CD8F8F87207A63B1007FA86A /* Dispatch+Convenience.m in Sources */,
+				CD8F8F8F207A7005007FA86A /* WatchKit+Convenience.m in Sources */,
+				CD527E90207B8DDF00C005F4 /* Global.m in Sources */,
+				CD8F8F92207A9795007FA86A /* NSBundle+Convenience.m in Sources */,
+				CD8F8F94207AB81B007FA86A /* CMMotionActivitySample.m in Sources */,
+				CD8F8F8A207A6830007FA86A /* UIBezierPath+Convenience.m in Sources */,
+				CD8F8F62207A1744007FA86A /* InterfaceController.m in Sources */,
+				CD8F8F7D207A4C9E007FA86A /* HKData.m in Sources */,
+				CD49F6902080B83F00DAA6C8 /* AnalysisPresenter.m in Sources */,
+				CD1D5534207C1EB80091DEFE /* WatchConnectivity+Convenience.m in Sources */,
+				CD8F8F7C207A49E4007FA86A /* SamplesController.m in Sources */,
+				CD49F6912080B84200DAA6C8 /* NSArray+AnalysisPresenter.m in Sources */,
+				CD8F8F7F207A4CC2007FA86A /* NSArray+Convenience.m in Sources */,
+				CD8F8F96207AB95B007FA86A /* HKActiveEnergy+CMMotionActivitySample.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1667,6 +1492,7 @@
 			files = (
 				CDF5FA771DB3C50700208F7E /* WatchConnectivity+Convenience.m in Sources */,
 				CD75B5041F19536D00BAB7DC /* StoreKit+Convenience.m in Sources */,
+				CD49F6942080B8CB00DAA6C8 /* Settings.m in Sources */,
 				FAF0B2F71B554188001D0E66 /* AnalysisController.m in Sources */,
 				FABFA8C81D819B6A00F79DBD /* NSArray+AnalysisPresenter.m in Sources */,
 				FA2255861CC26B400067A10C /* UIButton+Convenience.m in Sources */,
@@ -1680,6 +1506,7 @@
 				CDF5FA701DB3C50600208F7E /* CMMotionActivitySample.m in Sources */,
 				CDE33AFD2049920C00F89AD8 /* UIScrollView+Convenience.m in Sources */,
 				FAF5EA981C7BB7F20026F791 /* UIDatePicker+Convenience.m in Sources */,
+				CD0CB5B0207EB35900F2B266 /* NSString+Convenience.m in Sources */,
 				CDF5FA741DB3C50700208F7E /* NSFormatter+Convenience.m in Sources */,
 				FA4BA6061DDA04B6008161D4 /* NSFileManager+Convenience.m in Sources */,
 				CDAE76731F229C510085F78A /* Answers+Convenience.m in Sources */,
@@ -1698,6 +1525,7 @@
 				CDF5FA731DB3C50700208F7E /* NSArray+Convenience.m in Sources */,
 				FA93F4E01CC50A920055740F /* AlertController.m in Sources */,
 				FA829A361A9C8E4400B1E47B /* IntervalController.m in Sources */,
+				CD0CB5AD207EB32A00F2B266 /* NSData+Convenience.m in Sources */,
 				CD14034C1EF338EF009F5DDE /* HKCategorySample+JSON.m in Sources */,
 				FABFA8B01D81877900F79DBD /* NSRateController.m in Sources */,
 				CD811E801E9E93AD0096974D /* CoreLocation+Convenience.m in Sources */,
@@ -1748,7 +1576,6 @@
 				CD0459332049ACDF006D48D0 /* NSXMLDictionary.m in Sources */,
 				FA4BA60C1DDA08DD008161D4 /* CommonCrypto+Convenience.m in Sources */,
 				CDF5C8D01DA01233006E36ED /* ActivitiesController.m in Sources */,
-				CD7EB8441D9FE181003EE72D /* Global+Notifications.m in Sources */,
 				FAC497561A7F6CC6006A26AB /* main.m in Sources */,
 				CDE3A8D31DE095D900AEB8BB /* UILabel+Convenience.m in Sources */,
 				FA8856BD1DDCACF6001B869F /* UIAlertController+Convenience.m in Sources */,
@@ -1758,28 +1585,23 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		FA3949EF1AD2B1BC00138B0B /* PBXTargetDependency */ = {
+		CD8F8F5E207A1744007FA86A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FA3949E11AD2B1BC00138B0B /* Widget */;
-			targetProxy = FA3949EE1AD2B1BC00138B0B /* PBXContainerItemProxy */;
+			target = CD8F8F5A207A1744007FA86A /* Watch Extension */;
+			targetProxy = CD8F8F5D207A1744007FA86A /* PBXContainerItemProxy */;
 		};
-		FAE096FD1BB52A6200B2C038 /* PBXTargetDependency */ = {
+		CD8F8F6D207A1744007FA86A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FA3949F81AD2B1EB00138B0B /* Sleep Diary WatchKit Extension */;
-			targetProxy = FAE096FC1BB52A6200B2C038 /* PBXContainerItemProxy */;
-		};
-		FAE097001BB52A6200B2C038 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FA394A061AD2B1EB00138B0B /* Sleep Diary WatchKit App */;
-			targetProxy = FAE096FF1BB52A6200B2C038 /* PBXContainerItemProxy */;
+			target = CD8F8F4E207A1742007FA86A /* Watch */;
+			targetProxy = CD8F8F6C207A1744007FA86A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FA394A0E1AD2B1EC00138B0B /* Interface.storyboard */ = {
+		CD8F8F51207A1742007FA86A /* Interface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FA394A0F1AD2B1EC00138B0B /* Base */,
+				CD8F8F52207A1742007FA86A /* Base */,
 			);
 			name = Interface.storyboard;
 			sourceTree = "<group>";
@@ -1826,139 +1648,119 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		FA3949F21AD2B1BC00138B0B /* Debug */ = {
+		CD8F8F70207A1744007FA86A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				ENABLE_BITCODE = YES;
-				GCC_OPTIMIZATION_LEVEL = s;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Widget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Watch Extension/Watch Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = VRBB8HL9RV;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alexivanov.luna.widget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexivanov.luna.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Debug;
 		};
-		FA3949F31AD2B1BC00138B0B /* Release */ = {
+		CD8F8F71207A1744007FA86A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_DEBUG_INFORMATION_LEVEL = default;
-				CLANG_USE_OPTIMIZATION_PROFILE = YES;
-				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Watch Extension/Watch Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = Widget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = VRBB8HL9RV;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				LLVM_LTO = YES_THIN;
-				PRODUCT_BUNDLE_IDENTIFIER = com.alexivanov.luna.widget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexivanov.luna.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Release;
 		};
-		FA394A171AD2B1EC00138B0B /* Debug */ = {
+		CD8F8F74207A1744007FA86A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Sleep Diary WatchKit App/Sleep Diary WatchKit App.entitlements";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				GCC_OPTIMIZATION_LEVEL = s;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				IBSC_MODULE = Sleep_Diary_WatchKit_Extension;
-				INFOPLIST_FILE = "Sleep Diary WatchKit App/Info.plist";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = VRBB8HL9RV;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IBSC_MODULE = Watch_Extension;
+				INFOPLIST_FILE = Watch/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexivanov.luna.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Debug;
 		};
-		FA394A181AD2B1EC00138B0B /* Release */ = {
+		CD8F8F75207A1744007FA86A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_DEBUG_INFORMATION_LEVEL = default;
-				CLANG_USE_OPTIMIZATION_PROFILE = YES;
-				CODE_SIGN_ENTITLEMENTS = "Sleep Diary WatchKit App/Sleep Diary WatchKit App.entitlements";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				IBSC_MODULE = Sleep_Diary_WatchKit_Extension;
-				INFOPLIST_FILE = "Sleep Diary WatchKit App/Info.plist";
-				LLVM_LTO = YES_THIN;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = VRBB8HL9RV;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IBSC_MODULE = Watch_Extension;
+				INFOPLIST_FILE = Watch/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexivanov.luna.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
-			};
-			name = Release;
-		};
-		FA394A1A1AD2B1EC00138B0B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "Sleep Diary WatchKit Extension/Sleep Diary WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				GCC_OPTIMIZATION_LEVEL = s;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Sleep Diary WatchKit Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alexivanov.luna.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
-			};
-			name = Debug;
-		};
-		FA394A1B1AD2B1EC00138B0B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_DEBUG_INFORMATION_LEVEL = default;
-				CLANG_USE_OPTIMIZATION_PROFILE = YES;
-				CODE_SIGN_ENTITLEMENTS = "Sleep Diary WatchKit Extension/Sleep Diary WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = "Sleep Diary WatchKit Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				LLVM_LTO = YES_THIN;
-				PRODUCT_BUNDLE_IDENTIFIER = com.alexivanov.luna.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Release;
 		};
@@ -1975,12 +1777,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -2028,12 +1832,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -2080,7 +1886,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = Luna/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexivanov.luna;
@@ -2118,7 +1924,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = Luna/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				LLVM_LTO = YES_THIN;
@@ -2138,29 +1944,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FA3949F11AD2B1BC00138B0B /* Build configuration list for PBXNativeTarget "Widget" */ = {
+		CD8F8F6F207A1744007FA86A /* Build configuration list for PBXNativeTarget "Watch Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FA3949F21AD2B1BC00138B0B /* Debug */,
-				FA3949F31AD2B1BC00138B0B /* Release */,
+				CD8F8F70207A1744007FA86A /* Debug */,
+				CD8F8F71207A1744007FA86A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FA394A161AD2B1EC00138B0B /* Build configuration list for PBXNativeTarget "Sleep Diary WatchKit App" */ = {
+		CD8F8F73207A1744007FA86A /* Build configuration list for PBXNativeTarget "Watch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FA394A171AD2B1EC00138B0B /* Debug */,
-				FA394A181AD2B1EC00138B0B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FA394A191AD2B1EC00138B0B /* Build configuration list for PBXNativeTarget "Sleep Diary WatchKit Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FA394A1A1AD2B1EC00138B0B /* Debug */,
-				FA394A1B1AD2B1EC00138B0B /* Release */,
+				CD8F8F74207A1744007FA86A /* Debug */,
+				CD8F8F75207A1744007FA86A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

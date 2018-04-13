@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+#import "AnalysisPresenter.h"
+
+#import "Accelerate+Convenience.h"
+#import "NSCalendar+Convenience.h"
+#import "NSObject+Convenience.h"
+
 @interface NSArray (AnalysisPresenter)
 
 - (NSTimeInterval)sumDuration;

@@ -9,8 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "HKActiveEnergy+CMMotionActivitySample.h"
-#import "HKSleepAnalysis+CMMotionActivitySample.h"
+#import "Settings.h"
 
 #define GLOBAL [Global instance]
 
@@ -25,9 +24,6 @@
 #define KEY_ASLEEP @"asleep"
 #define KEY_DURATION @"duration"
 #define KEY_SLEEP_DURATION @"sleepDuration"
-
-#define KEY_TIMER_START @"HKSleepAnalysisStartDate"
-#define KEY_TIMER_END @"HKSleepAnalysisEndDate"
 
 #define APP_ID_DONE 734258590
 #define APP_ID_LUNA 964733439
@@ -62,27 +58,16 @@
 #define GUI_FALL_ASLEEP @"fall-asleep"
 #define GUI_WAKE_UP @"wake-up"
 
-@interface Global : NSObject
+@interface Global : Settings
 
 @property (strong, nonatomic, readonly) NSNumber *isAuthorized;
 - (void)requestAuthorization:(void(^)(BOOL success))completion;
 
-- (void)saveSampleWithStartDate:(NSDate *)start endDate:(NSDate *)end completion:(void(^)(BOOL success))completion;
-
-@property (strong, nonatomic) NSDate *startDate;
 @property (assign, nonatomic, readonly) BOOL asleep;
 
 - (void)startSleeping;
 - (void)endSleeping;
 - (void)endSleeping:(void(^)(BOOL success))completion;
-
-@property (assign, nonatomic) BOOL bedtimeAlert;
-@property (assign, nonatomic) NSTimeInterval sleepDuration;
-
-@property (strong, nonatomic) NSArray<NSNumber *> *alarmWeekdays;
-@property (assign, nonatomic) NSTimeInterval alarmTime;
-
-@property (assign, nonatomic) NSTimeInterval sleepLatency;
 
 @property (strong, nonatomic) NSNumber *longPress;
 
