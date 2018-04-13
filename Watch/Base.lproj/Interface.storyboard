@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14031"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <group alignment="center" verticalAlignment="center" id="4si-as-uuC">
+                            <items>
+                                <button alignment="center" id="SAI-Wd-RxN">
+                                    <group key="contentGroup" alignment="left" backgroundImage="background-fill" layout="overlap" id="LSs-96-DcX">
+                                        <items>
+                                            <imageView alignment="center" image="background-line" id="URd-ul-vZe"/>
+                                            <group alignment="center" verticalAlignment="center" layout="vertical" id="mA8-1a-dAY">
+                                                <items>
+                                                    <timer alignment="center" previewedSeconds="0" id="5nx-Jo-GOL">
+                                                        <color key="textColor" red="0.424549073" green="0.41031354669999998" blue="0.81908142569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="font" type="boldSystem" pointSize="20"/>
+                                                    </timer>
+                                                    <label alignment="center" text="loading" id="5py-7V-vhm">
+                                                        <color key="textColor" red="0.2490108311" green="0.227181673" blue="0.67214268450000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="font" type="system" pointSize="10"/>
+                                                    </label>
+                                                </items>
+                                                <edgeInsets key="margins" left="0.0" right="0.0" top="14" bottom="0.0"/>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <action selector="buttonAction" destination="AgC-eL-Hgc" id="8nD-qc-QVX"/>
+                                    </connections>
+                                </button>
+                            </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="12"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="group" destination="LSs-96-DcX" id="v6L-i6-gdx"/>
+                        <outlet property="image" destination="URd-ul-vZe" id="CQ0-36-e5G"/>
+                        <outlet property="label" destination="5py-7V-vhm" id="ej2-uH-08R"/>
+                        <outlet property="timer" destination="5nx-Jo-GOL" id="fmO-h7-oz7"/>
+                        <segue destination="t0I-PW-JGY" kind="relationship" relationship="nextPage" id="zSj-zy-Tfd"/>
+                    </connections>
+                </controller>
+            </objects>
+        </scene>
+        <!--Samples Controller-->
+        <scene sceneID="ucj-bN-msp">
+            <objects>
+                <controller id="t0I-PW-JGY" customClass="SamplesController">
+                    <items>
+                        <table alignment="left" id="QlL-3E-2i4">
+                            <items>
+                                <tableRow identifier="In Bed" id="BOs-q1-QZt" customClass="DetailRowController">
+                                    <group key="rootItem" width="1" alignment="left" layout="vertical" id="Qiz-Pp-9GX">
+                                        <items>
+                                            <group width="1" alignment="left" id="oS5-Rw-3cF">
+                                                <items>
+                                                    <label alignment="left" text="In Bed" id="UXE-KD-45U">
+                                                        <color key="textColor" red="0.51832340430000001" green="0.50094353729999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                    </label>
+                                                    <label alignment="right" text="7:40" id="KIT-dv-wfl">
+                                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <label alignment="left" text="1:50 - 9:30" minimumScaleFactor="0.5" id="s9j-Tw-tQu">
+                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="detailTextLabel" destination="KIT-dv-wfl" id="oze-KL-bN2"/>
+                                        <outlet property="textLabel" destination="s9j-Tw-tQu" id="KUG-No-Dh7"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="Asleep" id="VmQ-cm-7fR" customClass="DetailRowController">
+                                    <group key="rootItem" width="1" alignment="left" layout="vertical" id="1jN-vt-0Qr">
+                                        <items>
+                                            <group width="1" alignment="left" id="ap4-JF-dxt">
+                                                <items>
+                                                    <label alignment="left" text="Asleep" id="H8S-xc-nBV">
+                                                        <color key="textColor" red="0.51832340430000001" green="0.50094353729999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                    </label>
+                                                    <label alignment="right" text="7:30" id="G94-W9-1mP">
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <label alignment="left" text="2:00 - 9:30" minimumScaleFactor="0.5" id="T7D-7c-Kdp">
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="detailTextLabel" destination="G94-W9-1mP" id="CTc-5q-3Xm"/>
+                                        <outlet property="textLabel" destination="T7D-7c-Kdp" id="Xfd-rT-2S5"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="QlL-3E-2i4" id="ixo-QB-naI"/>
+                        <segue destination="7nO-fq-irV" kind="relationship" relationship="nextPage" id="cAp-wU-v1K"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="342" y="31"/>
+        </scene>
+        <!--Sunrise Controller-->
+        <scene sceneID="aYs-QZ-v8m">
+            <objects>
+                <controller id="7nO-fq-irV" customClass="SunriseController">
+                    <items>
+                        <table alignment="left" id="fP2-gK-FFs">
+                            <items>
+                                <tableRow identifier="Sunrise" id="x61-k6-I0Z" customClass="ImageRowController">
+                                    <group key="rootItem" width="1" alignment="left" id="Ide-RX-g2e">
+                                        <items>
+                                            <imageView width="30" height="30" alignment="left" verticalAlignment="center" image="sunrise" id="v6h-EN-n4V"/>
+                                            <group width="1" widthAdjustment="-30" alignment="left" layout="vertical" id="UvK-9G-N1F">
+                                                <items>
+                                                    <label alignment="right" text="Sunrise" id="zHd-yW-h1i">
+                                                        <color key="textColor" red="0.99976795910000005" green="0.83609825370000002" blue="0.182427913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                    </label>
+                                                    <label alignment="right" verticalAlignment="bottom" text="7:00" id="dUI-ia-QkN">
+                                                        <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="image" destination="v6h-EN-n4V" id="sMT-kT-fR6"/>
+                                        <outlet property="textLabel" destination="dUI-ia-QkN" id="tbv-4u-9Tr"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="Sunset" id="DSE-sd-udP" customClass="ImageRowController">
+                                    <group key="rootItem" width="1" alignment="left" id="fJ7-dy-zqC">
+                                        <items>
+                                            <imageView width="30" height="30" alignment="left" verticalAlignment="center" image="sunset" id="dlg-qi-yv6"/>
+                                            <group width="1" widthAdjustment="-30" alignment="left" layout="vertical" id="vFL-qv-ust">
+                                                <items>
+                                                    <label alignment="right" text="Sunset" id="ZDf-rX-Oe2">
+                                                        <color key="textColor" red="0.51832340430000001" green="0.50094353729999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                    </label>
+                                                    <label alignment="right" verticalAlignment="bottom" text="22:00" id="RMz-mH-duN">
+                                                        <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="image" destination="dlg-qi-yv6" id="0Rq-B7-hAf"/>
+                                        <outlet property="textLabel" destination="RMz-mH-duN" id="RRN-O1-bbK"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="Wake Up" id="tzS-m7-koO" customClass="ImageRowController">
+                                    <group key="rootItem" width="1" alignment="left" id="VhN-9y-eK8">
+                                        <items>
+                                            <imageView width="30" height="30" alignment="left" verticalAlignment="center" image="sun-line" id="ZBE-og-eep"/>
+                                            <group width="1" widthAdjustment="-30" alignment="left" layout="vertical" id="VMy-1r-h5g">
+                                                <items>
+                                                    <label alignment="right" text="Wake Up" id="oAH-qS-TZQ">
+                                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                    </label>
+                                                    <label alignment="right" verticalAlignment="bottom" text="8:00" id="rBe-G4-QFO">
+                                                        <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="image" destination="ZBE-og-eep" id="H53-Kg-mij"/>
+                                        <outlet property="textLabel" destination="rBe-G4-QFO" id="KuM-4h-XfB"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="Go to Bed" id="Lb5-4a-QBt" customClass="ImageRowController">
+                                    <group key="rootItem" width="1" alignment="left" id="UGw-8L-Qwq">
+                                        <items>
+                                            <imageView width="30" height="30" alignment="left" verticalAlignment="center" image="moon-line" id="y0H-Nr-Oeu"/>
+                                            <group width="1" widthAdjustment="-30" alignment="left" layout="vertical" id="fQI-u8-QiH">
+                                                <items>
+                                                    <label alignment="right" text="Go to Bed" id="ED3-pJ-IN3">
+                                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                    </label>
+                                                    <label alignment="right" verticalAlignment="bottom" text="23:00" id="bnF-nn-KpF">
+                                                        <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="image" destination="y0H-Nr-Oeu" id="8mF-Hz-H34"/>
+                                        <outlet property="textLabel" destination="bnF-nn-KpF" id="q5G-vJ-fY4"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="fP2-gK-FFs" id="jI9-Hx-B4b"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="652" y="32"/>
+        </scene>
+    </scenes>
+</document>
