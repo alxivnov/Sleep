@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  Sleep Diary
+
+  Created by Alexander Ivanov on 13.04.2018.
+  Copyright © 2018 Alexander Ivanov. All rights reserved.
+*/
+
+"bedtime" = "отбой";
+"wake up" = "подъем";

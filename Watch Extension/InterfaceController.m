@@ -49,7 +49,7 @@
 	}
 	[self.timer setTextColor:self.delegate.startDate ? [UIColor whiteColor] : [UIColor color:RGB_LIGHT_TINT]];
 
-	[self.label setText:self.delegate.startDate ? STR_WAKE_UP : STR_FALL_ASLEEP];
+	[self.label setText:self.delegate.startDate ? loc(@"wake up") : loc(@"bedtime")];
 	[self.label setTextColor:self.delegate.startDate ? [UIColor lightGrayColor] : [UIColor color:RGB_DARK_TINT]];
 }
 

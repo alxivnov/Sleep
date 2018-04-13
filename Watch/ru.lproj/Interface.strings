@@ -1,0 +1,45 @@
+
+/* Class = "WKInterfaceLabel"; text = "loading"; ObjectID = "5py-7V-vhm"; */
+"5py-7V-vhm.text" = "загрузка";
+
+/* Class = "WKInterfaceLabel"; text = "Go to Bed"; ObjectID = "ED3-pJ-IN3"; */
+"ED3-pJ-IN3.text" = "Пора спать";
+
+/* Class = "WKInterfaceLabel"; text = "7:30"; ObjectID = "G94-W9-1mP"; */
+"G94-W9-1mP.text" = "7:30";
+
+/* Class = "WKInterfaceLabel"; text = "Asleep"; ObjectID = "H8S-xc-nBV"; */
+"H8S-xc-nBV.text" = "Во сне";
+
+/* Class = "WKInterfaceLabel"; text = "7:40"; ObjectID = "KIT-dv-wfl"; */
+"KIT-dv-wfl.text" = "7:40";
+
+/* Class = "WKInterfaceLabel"; text = "22:00"; ObjectID = "RMz-mH-duN"; */
+"RMz-mH-duN.text" = "22:00";
+
+/* Class = "WKInterfaceLabel"; text = "2:00 - 9:30"; ObjectID = "T7D-7c-Kdp"; */
+"T7D-7c-Kdp.text" = "2:00 - 9:30";
+
+/* Class = "WKInterfaceLabel"; text = "In Bed"; ObjectID = "UXE-KD-45U"; */
+"UXE-KD-45U.text" = "В постели";
+
+/* Class = "WKInterfaceLabel"; text = "Sunset"; ObjectID = "ZDf-rX-Oe2"; */
+"ZDf-rX-Oe2.text" = "Закат";
+
+/* Class = "WKInterfaceLabel"; text = "23:00"; ObjectID = "bnF-nn-KpF"; */
+"bnF-nn-KpF.text" = "23:00";
+
+/* Class = "WKInterfaceLabel"; text = "7:00"; ObjectID = "dUI-ia-QkN"; */
+"dUI-ia-QkN.text" = "7:00";
+
+/* Class = "WKInterfaceLabel"; text = "Wake Up"; ObjectID = "oAH-qS-TZQ"; */
+"oAH-qS-TZQ.text" = "Подъем";
+
+/* Class = "WKInterfaceLabel"; text = "8:00"; ObjectID = "rBe-G4-QFO"; */
+"rBe-G4-QFO.text" = "8:00";
+
+/* Class = "WKInterfaceLabel"; text = "1:50 - 9:30"; ObjectID = "s9j-Tw-tQu"; */
+"s9j-Tw-tQu.text" = "1:50 - 9:30";
+
+/* Class = "WKInterfaceLabel"; text = "Sunrise"; ObjectID = "zHd-yW-h1i"; */
+"zHd-yW-h1i.text" = "Восход";

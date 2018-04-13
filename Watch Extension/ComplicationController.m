@@ -62,7 +62,7 @@
 			CLKTextProvider *text = [CLKRelativeDateTextProvider textProviderWithDate:self.delegate.startDate style:CLKRelativeDateStyleTimer units:NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond];
 			NSDate *date = [self.delegate alarmDate];
 			if (complication.family == CLKComplicationFamilyUtilitarianLarge && date)
-				[template setText:[CLKTextProvider textProviderWithFormat:STR_FORMAT, text, STR_WAKE_UP, [date descriptionForTime:NSDateFormatterShortStyle]]];
+				[template setText:[CLKTextProvider textProviderWithFormat:STR_FORMAT, text, loc(@"wake up"), [date descriptionForTime:NSDateFormatterShortStyle]]];
 			else
 				[template setText:text];
 
@@ -73,7 +73,7 @@
 			NSString *text = [[NSDateComponentsFormatter hhmmFormatter] stringFromTimeInterval:self.delegate.sleepDuration];
 			NSDate *date = [self.delegate alertDate];
 			if (complication.family == CLKComplicationFamilyUtilitarianLarge && date)
-				[template setText:[CLKTextProvider textProviderWithFormat:STR_FORMAT, text, STR_BEDTIME, [date descriptionForTime:NSDateFormatterShortStyle]]];
+				[template setText:[CLKTextProvider textProviderWithFormat:STR_FORMAT, text, loc(@"bedtime"), [date descriptionForTime:NSDateFormatterShortStyle]]];
 			else
 				[template setText:[CLKSimpleTextProvider textProviderWithText:text]];
 

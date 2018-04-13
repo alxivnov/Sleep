@@ -29,6 +29,9 @@
 		CD49F6992080B9C400DAA6C8 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = CD49F6932080B8CB00DAA6C8 /* Settings.m */; };
 		CD49F6A22081126F00DAA6C8 /* moon-fill-128@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD49F69E2081126900DAA6C8 /* moon-fill-128@2x.png */; };
 		CD49F6A32081126F00DAA6C8 /* moon-line-128@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD49F69F2081126900DAA6C8 /* moon-line-128@2x.png */; };
+		CD49F6AC20811AE200DAA6C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD49F6A8208117E200DAA6C8 /* Localizable.strings */; };
+		CD49F6AD20811E4B00DAA6C8 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD8F8F51207A1742007FA86A /* Interface.storyboard */; };
+		CD49F6AE20811EF900DAA6C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD49F6A8208117E200DAA6C8 /* Localizable.strings */; };
 		CD527E86207B833F00C005F4 /* ClockKit+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA5C1DB3C50600208F7E /* ClockKit+Convenience.m */; };
 		CD527E90207B8DDF00C005F4 /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = FA394A1D1AD2B5D200138B0B /* Global.m */; };
 		CD5E0C511ED78A4100CE8C72 /* UITableViewCell+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5E0C501ED78A4100CE8C72 /* UITableViewCell+Convenience.m */; };
@@ -339,6 +342,9 @@
 		CD49F6932080B8CB00DAA6C8 /* Settings.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
 		CD49F69E2081126900DAA6C8 /* moon-fill-128@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moon-fill-128@2x.png"; sourceTree = "<group>"; };
 		CD49F69F2081126900DAA6C8 /* moon-line-128@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moon-line-128@2x.png"; sourceTree = "<group>"; };
+		CD49F6A7208117E200DAA6C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CD49F6A9208117E700DAA6C8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CD49F6AB2081193400DAA6C8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Interface.strings; sourceTree = "<group>"; };
 		CD5E0C4F1ED78A4100CE8C72 /* UITableViewCell+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Convenience.h"; sourceTree = "<group>"; };
 		CD5E0C501ED78A4100CE8C72 /* UITableViewCell+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Convenience.m"; sourceTree = "<group>"; };
 		CD624B821EE4773F008CAEEA /* StatisticsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticsController.h; sourceTree = "<group>"; };
@@ -710,6 +716,7 @@
 				CD8F8F67207A1744007FA86A /* ComplicationController.m */,
 				CD8F8F69207A1744007FA86A /* Assets.xcassets */,
 				CD8F8F6B207A1744007FA86A /* Info.plist */,
+				CD49F6A8208117E200DAA6C8 /* Localizable.strings */,
 			);
 			path = "Watch Extension";
 			sourceTree = "<group>";
@@ -1295,6 +1302,7 @@
 			files = (
 				CD8F8F55207A1744007FA86A /* Assets.xcassets in Resources */,
 				CDA4C317207CF7B600551473 /* sunrise@2x.png in Resources */,
+				CD49F6AC20811AE200DAA6C8 /* Localizable.strings in Resources */,
 				CDA4C319207CF84000551473 /* moon-line@2x.png in Resources */,
 				CDA4C318207CF7B600551473 /* sunset@2x.png in Resources */,
 				CD8F8F79207A22C7007FA86A /* background-line@2x.png in Resources */,
@@ -1311,8 +1319,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD8F8F8E207A6C95007FA86A /* background-line@2x.png in Resources */,
+				CD49F6AE20811EF900DAA6C8 /* Localizable.strings in Resources */,
 				CD49F6A22081126F00DAA6C8 /* moon-fill-128@2x.png in Resources */,
 				CD8F8F6A207A1744007FA86A /* Assets.xcassets in Resources */,
+				CD49F6AD20811E4B00DAA6C8 /* Interface.storyboard in Resources */,
 				CD49F6A32081126F00DAA6C8 /* moon-line-128@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1598,10 +1608,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		CD49F6A8208117E200DAA6C8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD49F6A7208117E200DAA6C8 /* en */,
+				CD49F6A9208117E700DAA6C8 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		CD8F8F51207A1742007FA86A /* Interface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CD8F8F52207A1742007FA86A /* Base */,
+				CD49F6AB2081193400DAA6C8 /* ru */,
 			);
 			name = Interface.storyboard;
 			sourceTree = "<group>";

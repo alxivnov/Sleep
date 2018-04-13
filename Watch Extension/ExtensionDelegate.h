@@ -31,10 +31,6 @@
 
 #define SEC_22_00_EVENING	79200.0
 
-#define STR_BEDTIME			@"bedtime"
-#define STR_WAKE_UP 		@"wake up"
-#define STR_FALL_ASLEEP 	@"fall asleep"
-
 #define KEY_TIMER_START		@"HKSleepAnalysisStartDate"
 #define KEY_TIMER_END		@"HKSleepAnalysisEndDate"
 
