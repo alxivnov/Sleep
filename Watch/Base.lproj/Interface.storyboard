@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch38" orientation="portrait">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="t0I-PW-JGY">
+    <device id="watch42" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,56 +10,49 @@
     </dependencies>
     <scenes>
         <!--Interface Controller-->
-        <scene sceneID="aou-V4-d1y">
-            <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
-                    <items>
-                        <group alignment="center" verticalAlignment="center" id="4si-as-uuC">
-                            <items>
-                                <button alignment="center" id="SAI-Wd-RxN">
-                                    <group key="contentGroup" alignment="left" backgroundImage="background-fill" layout="overlap" id="LSs-96-DcX">
-                                        <items>
-                                            <imageView alignment="center" image="background-line" id="URd-ul-vZe"/>
-                                            <group alignment="center" verticalAlignment="center" layout="vertical" id="mA8-1a-dAY">
-                                                <items>
-                                                    <timer alignment="center" previewedSeconds="0" id="5nx-Jo-GOL">
-                                                        <color key="textColor" red="0.424549073" green="0.41031354669999998" blue="0.81908142569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="font" type="boldSystem" pointSize="20"/>
-                                                    </timer>
-                                                    <label alignment="center" text="loading" id="5py-7V-vhm">
-                                                        <color key="textColor" red="0.2490108311" green="0.227181673" blue="0.67214268450000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="font" type="system" pointSize="10"/>
-                                                    </label>
-                                                </items>
-                                                <edgeInsets key="margins" left="0.0" right="0.0" top="14" bottom="0.0"/>
-                                            </group>
-                                        </items>
-                                    </group>
-                                    <connections>
-                                        <action selector="buttonAction" destination="AgC-eL-Hgc" id="8nD-qc-QVX"/>
-                                    </connections>
-                                </button>
-                            </items>
-                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="12"/>
-                        </group>
-                    </items>
-                    <connections>
-                        <outlet property="group" destination="LSs-96-DcX" id="v6L-i6-gdx"/>
-                        <outlet property="image" destination="URd-ul-vZe" id="CQ0-36-e5G"/>
-                        <outlet property="label" destination="5py-7V-vhm" id="ej2-uH-08R"/>
-                        <outlet property="timer" destination="5nx-Jo-GOL" id="fmO-h7-oz7"/>
-                        <segue destination="t0I-PW-JGY" kind="relationship" relationship="nextPage" id="zSj-zy-Tfd"/>
-                    </connections>
-                </controller>
-            </objects>
-        </scene>
-        <!--Samples Controller-->
         <scene sceneID="ucj-bN-msp">
             <objects>
-                <controller id="t0I-PW-JGY" customClass="SamplesController">
+                <controller id="t0I-PW-JGY" customClass="InterfaceController">
                     <items>
                         <table alignment="left" id="QlL-3E-2i4">
                             <items>
+                                <tableRow identifier="Button" selectable="NO" id="Ogb-99-SXt" customClass="ButtonRowController">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="Gir-qa-Vu5">
+                                        <items>
+                                            <button alignment="center" id="2KD-8e-SVT">
+                                                <group key="contentGroup" height="1" alignment="left" backgroundImage="background-fill" contentMode="center" layout="overlap" id="eXB-Ri-VCc">
+                                                    <items>
+                                                        <imageView alignment="center" verticalAlignment="center" image="background-line" id="ag3-uG-H81"/>
+                                                        <group alignment="center" verticalAlignment="center" layout="vertical" id="x9d-SD-ESW">
+                                                            <items>
+                                                                <timer alignment="center" previewedSeconds="0" id="qnX-ZO-Crh">
+                                                                    <color key="textColor" red="0.424549073" green="0.41031354669999998" blue="0.81908142569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <fontDescription key="font" type="boldSystem" pointSize="20"/>
+                                                                </timer>
+                                                                <label alignment="center" text="loading" id="8HR-RE-dxP">
+                                                                    <color key="textColor" red="0.2490108311" green="0.227181673" blue="0.67214268450000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <fontDescription key="font" type="system" pointSize="10"/>
+                                                                </label>
+                                                            </items>
+                                                            <edgeInsets key="margins" left="0.0" right="0.0" top="14" bottom="0.0"/>
+                                                        </group>
+                                                    </items>
+                                                </group>
+                                                <connections>
+                                                    <action selector="buttonAction" destination="Ogb-99-SXt" id="a1S-Pf-Xwr"/>
+                                                </connections>
+                                            </button>
+                                        </items>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="group" destination="eXB-Ri-VCc" id="v6G-sm-vdI"/>
+                                        <outlet property="image" destination="ag3-uG-H81" id="Vc5-hB-Q63"/>
+                                        <outlet property="label" destination="8HR-RE-dxP" id="ZRY-MF-5Oz"/>
+                                        <outlet property="timer" destination="qnX-ZO-Crh" id="abG-Di-ytY"/>
+                                    </connections>
+                                </tableRow>
                                 <tableRow identifier="In Bed" id="BOs-q1-QZt" customClass="DetailRowController">
                                     <group key="rootItem" width="1" alignment="left" layout="vertical" id="Qiz-Pp-9GX">
                                         <items>

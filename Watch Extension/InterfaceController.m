@@ -10,6 +10,7 @@
 
 #import "ExtensionDelegate.h"
 
+
 #warning Autodetect
 
 #warning Phone update on wake up from watch
@@ -19,7 +20,16 @@
 
 #warning Alarm/Alert in Sunrise
 
-@interface InterfaceController ()
+
+#define ROW_ID_BUTTON @"Button"
+#define ROW_ID_IN_BED @"In Bed"
+#define ROW_ID_ASLEEP @"Asleep"
+
+#define IMG_BACK_LINE 		@"background-line"
+#define IMG_BACK_FILL 		@"background-fill"
+
+
+@interface ButtonRowController : NSObject
 @property (strong, nonatomic, readonly) ExtensionDelegate *delegate;
 
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceGroup *group;
@@ -29,7 +39,7 @@
 @end
 
 
-@implementation InterfaceController
+@implementation ButtonRowController
 
 - (ExtensionDelegate *)delegate {
 	return [WKExtension sharedExtension].delegate;
@@ -53,24 +63,6 @@
 	[self.label setTextColor:self.delegate.startDate ? [UIColor lightGrayColor] : [UIColor color:RGB_DARK_TINT]];
 }
 
-- (void)awakeWithContext:(id)context {
-    [super awakeWithContext:context];
-
-    // Configure interface objects here.
-}
-
-- (void)willActivate {
-    // This method is called when watch view controller is about to be visible to user
-    [super willActivate];
-
-	[self setup];
-}
-
-- (void)didDeactivate {
-    // This method is called when watch view controller is no longer visible
-    [super didDeactivate];
-}
-
 - (IBAction)buttonAction {
 	self.delegate.startDate = self.delegate.startDate ? Nil : [NSDate date];
 
@@ -91,6 +83,73 @@
 
 		[[CLKComplicationServer sharedInstance] reloadTimeline:Nil];
 	}];
+}
+
+@end
+
+
+@interface DetailRowController : NSObject
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *textLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *detailTextLabel;
+@end
+
+
+@implementation DetailRowController
+
+- (void)setPresenter:(AnalysisPresenter *)presenter {
+	[self.textLabel setText:presenter.text];
+	[self.detailTextLabel setText:presenter.accessoryText];
+}
+
+@end
+
+
+@interface InterfaceController ()
+@property (strong, nonatomic, readonly) ExtensionDelegate *delegate;
+
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceTable *table;
+@end
+
+
+@implementation InterfaceController
+
+- (ExtensionDelegate *)delegate {
+	return [WKExtension sharedExtension].delegate;
+}
+
+- (void)setup {
+	if (self.table.numberOfRows < 1)
+		[self.table setRowTypes:@[ ROW_ID_BUTTON ]];
+	[[self.table rowControllerAtIndex:0] setup];
+
+	NSDate *today = [NSDate date].dateComponent;
+	NSArray<AnalysisPresenter *> *presenters = self.delegate.presenters[today].allPresenters;
+	if (self.table.numberOfRows > 1)
+		[self.table removeRowsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(1, self.table.numberOfRows - 1)]];
+	for (NSUInteger index = 0; index < presenters.count; index++) {
+		AnalysisPresenter *obj = presenters[index];
+
+		[self.table insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:index + 1] withRowType:obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed ? ROW_ID_IN_BED : obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisAsleep ? ROW_ID_ASLEEP : Nil];
+		[[self.table rowControllerAtIndex:index + 1] setPresenter:obj];
+	}
+}
+
+- (void)awakeWithContext:(id)context {
+    [super awakeWithContext:context];
+
+    // Configure interface objects here.
+}
+
+- (void)willActivate {
+    // This method is called when watch view controller is about to be visible to user
+    [super willActivate];
+
+	[self setup];
+}
+
+- (void)didDeactivate {
+    // This method is called when watch view controller is no longer visible
+    [super didDeactivate];
 }
 
 @end

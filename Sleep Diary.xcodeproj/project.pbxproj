@@ -18,6 +18,7 @@
 		CD0CB5B3207F421D00F2B266 /* like-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0CB5B1207F421D00F2B266 /* like-line@2x.png */; };
 		CD0CB5B4207F421D00F2B266 /* like-fill@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0CB5B2207F421D00F2B266 /* like-fill@2x.png */; };
 		CD14034C1EF338EF009F5DDE /* HKCategorySample+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = CD14034B1EF338EF009F5DDE /* HKCategorySample+JSON.m */; };
+		CD149C0520822A130020FE2E /* background-fill@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD8F8F90207A8EAB007FA86A /* background-fill@2x.png */; };
 		CD1D5534207C1EB80091DEFE /* WatchConnectivity+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA6C1DB3C50600208F7E /* WatchConnectivity+Convenience.m */; };
 		CD1D5537207C2A5D0091DEFE /* SunriseController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5536207C2A5D0091DEFE /* SunriseController.m */; };
 		CD254B491F0BD2F40063C50C /* UIBezierPath+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD254B481F0BD2F40063C50C /* UIBezierPath+Convenience.m */; };
@@ -60,7 +61,6 @@
 		CD8F8F6A207A1744007FA86A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD8F8F69207A1744007FA86A /* Assets.xcassets */; };
 		CD8F8F6E207A1744007FA86A /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CD8F8F4F207A1742007FA86A /* Watch.app */; };
 		CD8F8F79207A22C7007FA86A /* background-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD8F8F78207A22C7007FA86A /* background-line@2x.png */; };
-		CD8F8F7C207A49E4007FA86A /* SamplesController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8F8F7B207A49E4007FA86A /* SamplesController.m */; };
 		CD8F8F7D207A4C9E007FA86A /* HKData.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3A8C31DE08D1D00AEB8BB /* HKData.m */; };
 		CD8F8F7E207A4CAA007FA86A /* HKHealthStore+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3A8C51DE08D1D00AEB8BB /* HKHealthStore+Convenience.m */; };
 		CD8F8F7F207A4CC2007FA86A /* NSArray+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA641DB3C50600208F7E /* NSArray+Convenience.m */; };
@@ -381,8 +381,6 @@
 		CD8F8F69207A1744007FA86A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD8F8F6B207A1744007FA86A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD8F8F78207A22C7007FA86A /* background-line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-line@2x.png"; sourceTree = "<group>"; };
-		CD8F8F7A207A49E4007FA86A /* SamplesController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SamplesController.h; sourceTree = "<group>"; };
-		CD8F8F7B207A49E4007FA86A /* SamplesController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SamplesController.m; sourceTree = "<group>"; };
 		CD8F8F8B207A6B38007FA86A /* Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Watch Extension.entitlements"; sourceTree = "<group>"; };
 		CD8F8F8C207A6B38007FA86A /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.3.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		CD8F8F90207A8EAB007FA86A /* background-fill@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-fill@2x.png"; sourceTree = "<group>"; };
@@ -706,8 +704,6 @@
 				CD8F8F8B207A6B38007FA86A /* Watch Extension.entitlements */,
 				CD8F8F60207A1744007FA86A /* InterfaceController.h */,
 				CD8F8F61207A1744007FA86A /* InterfaceController.m */,
-				CD8F8F7A207A49E4007FA86A /* SamplesController.h */,
-				CD8F8F7B207A49E4007FA86A /* SamplesController.m */,
 				CD1D5535207C2A5D0091DEFE /* SunriseController.h */,
 				CD1D5536207C2A5D0091DEFE /* SunriseController.m */,
 				CD8F8F63207A1744007FA86A /* ExtensionDelegate.h */,
@@ -1322,6 +1318,7 @@
 				CD49F6AE20811EF900DAA6C8 /* Localizable.strings in Resources */,
 				CD49F6A22081126F00DAA6C8 /* moon-fill-128@2x.png in Resources */,
 				CD8F8F6A207A1744007FA86A /* Assets.xcassets in Resources */,
+				CD149C0520822A130020FE2E /* background-fill@2x.png in Resources */,
 				CD49F6AD20811E4B00DAA6C8 /* Interface.storyboard in Resources */,
 				CD49F6A32081126F00DAA6C8 /* moon-line-128@2x.png in Resources */,
 			);
@@ -1489,7 +1486,6 @@
 				CD8F8F7D207A4C9E007FA86A /* HKData.m in Sources */,
 				CD49F6902080B83F00DAA6C8 /* AnalysisPresenter.m in Sources */,
 				CD1D5534207C1EB80091DEFE /* WatchConnectivity+Convenience.m in Sources */,
-				CD8F8F7C207A49E4007FA86A /* SamplesController.m in Sources */,
 				CD49F6912080B84200DAA6C8 /* NSArray+AnalysisPresenter.m in Sources */,
 				CD8F8F7F207A4CC2007FA86A /* NSArray+Convenience.m in Sources */,
 				CD8F8F96207AB95B007FA86A /* HKActiveEnergy+CMMotionActivitySample.m in Sources */,
