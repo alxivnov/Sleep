@@ -131,12 +131,12 @@
                         <table alignment="left" id="fP2-gK-FFs">
                             <items>
                                 <tableRow identifier="Sunrise" id="x61-k6-I0Z" customClass="ImageRowController">
-                                    <group key="rootItem" width="1" alignment="left" id="Ide-RX-g2e">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="Ide-RX-g2e">
                                         <items>
-                                            <imageView width="30" height="30" alignment="left" verticalAlignment="center" image="sunrise" id="v6h-EN-n4V"/>
-                                            <group width="1" widthAdjustment="-30" alignment="left" layout="vertical" id="UvK-9G-N1F">
+                                            <imageView width="30" height="30" alignment="center" image="sunrise" id="v6h-EN-n4V"/>
+                                            <group width="1" alignment="left" verticalAlignment="bottom" id="UvK-9G-N1F">
                                                 <items>
-                                                    <label alignment="right" text="Sunrise" id="zHd-yW-h1i">
+                                                    <label alignment="left" verticalAlignment="center" text="Sunrise" id="zHd-yW-h1i">
                                                         <color key="textColor" red="0.99976795910000005" green="0.83609825370000002" blue="0.182427913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                                     </label>
@@ -153,12 +153,12 @@
                                     </connections>
                                 </tableRow>
                                 <tableRow identifier="Sunset" id="DSE-sd-udP" customClass="ImageRowController">
-                                    <group key="rootItem" width="1" alignment="left" id="fJ7-dy-zqC">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="fJ7-dy-zqC">
                                         <items>
-                                            <imageView width="30" height="30" alignment="left" verticalAlignment="center" image="sunset" id="dlg-qi-yv6"/>
-                                            <group width="1" widthAdjustment="-30" alignment="left" layout="vertical" id="vFL-qv-ust">
+                                            <imageView width="30" height="30" alignment="center" image="sunset" id="dlg-qi-yv6"/>
+                                            <group width="1" alignment="left" id="vFL-qv-ust">
                                                 <items>
-                                                    <label alignment="right" text="Sunset" id="ZDf-rX-Oe2">
+                                                    <label alignment="left" verticalAlignment="center" text="Sunset" id="ZDf-rX-Oe2">
                                                         <color key="textColor" red="0.51832340430000001" green="0.50094353729999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                                     </label>
@@ -175,12 +175,12 @@
                                     </connections>
                                 </tableRow>
                                 <tableRow identifier="Wake Up" id="tzS-m7-koO" customClass="ImageRowController">
-                                    <group key="rootItem" width="1" alignment="left" id="VhN-9y-eK8">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="VhN-9y-eK8">
                                         <items>
-                                            <imageView width="30" height="30" alignment="left" verticalAlignment="center" image="sun-line" id="ZBE-og-eep"/>
-                                            <group width="1" widthAdjustment="-30" alignment="left" layout="vertical" id="VMy-1r-h5g">
+                                            <imageView width="30" height="30" alignment="center" image="sun-line" id="ZBE-og-eep"/>
+                                            <group width="1" alignment="left" id="VMy-1r-h5g">
                                                 <items>
-                                                    <label alignment="right" text="Wake Up" id="oAH-qS-TZQ">
+                                                    <label alignment="left" verticalAlignment="center" text="Wake Up" id="oAH-qS-TZQ">
                                                         <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                         <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                                     </label>
@@ -197,12 +197,12 @@
                                     </connections>
                                 </tableRow>
                                 <tableRow identifier="Go to Bed" id="Lb5-4a-QBt" customClass="ImageRowController">
-                                    <group key="rootItem" width="1" alignment="left" id="UGw-8L-Qwq">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="UGw-8L-Qwq">
                                         <items>
-                                            <imageView width="30" height="30" alignment="left" verticalAlignment="center" image="moon-line" id="y0H-Nr-Oeu"/>
-                                            <group width="1" widthAdjustment="-30" alignment="left" layout="vertical" id="fQI-u8-QiH">
+                                            <imageView width="30" height="30" alignment="center" image="moon-line" id="y0H-Nr-Oeu"/>
+                                            <group width="1" alignment="left" id="fQI-u8-QiH">
                                                 <items>
-                                                    <label alignment="right" text="Go to Bed" id="ED3-pJ-IN3">
+                                                    <label alignment="left" verticalAlignment="center" text="Go to Bed" id="ED3-pJ-IN3">
                                                         <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                         <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                                     </label>

@@ -26,7 +26,7 @@
 @implementation ImageRowController
 
 - (void)setDate:(NSDate *)date {
-	[self.textLabel setText:[date descriptionForTime:NSDateFormatterMediumStyle]];
+	[self.textLabel setText:[date descriptionForTime:NSDateFormatterShortStyle]];
 }
 
 @end

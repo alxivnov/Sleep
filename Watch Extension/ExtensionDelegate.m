@@ -34,9 +34,6 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
 	self.settings.startDate = startDate;
 }
 
-#warning Presenters
-#warning Connectivity
-
 - (NSDate *)alarmDate {
 	return [self.settings alertDate:self.presenters.allValues];
 }
@@ -58,7 +55,7 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
 - (void)setup {
 //	NSDate *endDate = [NSDate date];
 //	NSDate *startDate = [endDate addValue:-1 forComponent:NSCalendarUnitWeekOfMonth];
-	self.observer = [AnalysisPresenter query:NSCalendarUnitWeekOfMonth completion:^(NSArray<AnalysisPresenter *> *presenters) {
+	self.observer = [AnalysisPresenter observe:NSCalendarUnitWeekOfMonth updateHandler:^(NSArray<AnalysisPresenter *> *presenters) {
 //	self.observer = [HKDataSleepAnalysis observeSamplesWithStartDate:startDate endDate:Nil/*endDate*/ options:HKQueryOptionNone/*HKQueryOptionStrictEndDate*/ limit:HKObjectQueryNoLimit sort:@{ HKSampleSortIdentifierStartDate : @YES } updateHandler:^(NSArray<HKCategorySample *> *samples) {
 		self.presenters = [presenters dictionaryWithKey:^id<NSCopying>(AnalysisPresenter *obj) {
 			return [obj.endDate dateComponent];

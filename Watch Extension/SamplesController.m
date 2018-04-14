@@ -23,9 +23,9 @@
 
 @implementation DetailRowController
 
-- (void)setSample:(HKCategorySample *)sample {
-	[self.textLabel setText:[NSString stringWithFormat:@"%@ - %@", [sample.startDate descriptionForTime:NSDateFormatterShortStyle], [sample.endDate descriptionForTime:NSDateFormatterShortStyle]]];
-	[self.detailTextLabel setText:[[NSDateComponentsFormatter hhmmFormatter] stringFromTimeInterval:sample.duration]];
+- (void)setPresenter:(AnalysisPresenter *)presenter {
+	[self.textLabel setText:presenter.text];
+	[self.detailTextLabel setText:presenter.accessoryText];
 }
 
 @end
@@ -51,7 +51,7 @@
 		return obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed ? ROW_ID_IN_BED : obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisAsleep ? ROW_ID_ASLEEP : Nil;
 	}]];
 	for (NSUInteger index = 0; index < self.table.numberOfRows && index < presenters.count; index++)
-		 [[self.table rowControllerAtIndex:index] setSample:presenters[index].allSamples.firstObject];
+		 [[self.table rowControllerAtIndex:index] setPresenter:presenters[index]];
 }
 
 - (void)awakeWithContext:(id)context {
