@@ -37,9 +37,6 @@
 
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceTable *table;
 
-@property (strong, nonatomic) NSDate *sunrise;
-@property (strong, nonatomic) NSDate *sunset;
-
 @property (strong, nonatomic) NSDate *wakeUp;
 @property (strong, nonatomic) NSDate *goToBed;
 @end
@@ -50,16 +47,20 @@
 	return [WKExtension sharedExtension].delegate;
 }
 
-- (void)setup {
-	if (self.sunset || self.sunrise) {
-		[self.table setRowTypes:[self.sunset isGreaterThan:self.sunrise] ? @[ ROW_ID_SUNRISE, ROW_ID_SUNSET ] : @[ ROW_ID_SUNSET, ROW_ID_SUNRISE ]];
+- (void)setupSunrise:(NSDate *)sunrise sunset:(NSDate *)sunset {
+	if (sunrise && sunset) {
+		if ([sunset isGreaterThan:sunrise]) {
+			if (!self.table.numberOfRows)
+				[self.table setRowTypes:@[ ROW_ID_SUNRISE, ROW_ID_SUNSET ]];
 
-		if ([self.sunset isGreaterThan:self.sunrise]) {
-			[[self.table rowControllerAtIndex:0] setDate:self.sunrise];
-			[[self.table rowControllerAtIndex:1] setDate:self.sunset];
+			[[self.table rowControllerAtIndex:0] setDate:sunrise];
+			[[self.table rowControllerAtIndex:1] setDate:sunset];
 		} else {
-			[[self.table rowControllerAtIndex:0] setDate:self.sunset];
-			[[self.table rowControllerAtIndex:1] setDate:self.sunrise];
+			if (!self.table.numberOfRows)
+				[self.table setRowTypes:@[ ROW_ID_SUNSET, ROW_ID_SUNRISE ]];
+
+			[[self.table rowControllerAtIndex:0] setDate:sunset];
+			[[self.table rowControllerAtIndex:1] setDate:sunrise];
 		}
 	}
 }
@@ -103,18 +104,18 @@
 	if (!location)
 		return;
 
-	EDSunriseSet *x = [EDSunriseSet sunrisesetWithDate:[NSDate date] timezone:[NSCalendar currentCalendar].timeZone latitude:location.coordinate.latitude longitude:location.coordinate.longitude];
-	self.sunrise = x.sunrise;
-	self.sunset = x.sunset;
-	if (self.sunrise.isPast) {
-		x = [EDSunriseSet sunrisesetWithDate:[x.date addValue:1 forComponent:NSCalendarUnitDay] timezone:[NSCalendar currentCalendar].timeZone latitude:location.coordinate.latitude longitude:location.coordinate.longitude];
-		self.sunrise = x.sunrise;
+	EDSunriseSet *today = [EDSunriseSet sunrisesetWithDate:[NSDate date] timezone:[NSCalendar currentCalendar].timeZone latitude:location.coordinate.latitude longitude:location.coordinate.longitude];
+	NSDate *sunrise = today.sunrise;
+	NSDate *sunset = today.sunset;
+	if (sunrise.isPast) {
+		EDSunriseSet *tomorrow = [EDSunriseSet sunrisesetWithDate:[today.date addValue:1 forComponent:NSCalendarUnitDay] timezone:[NSCalendar currentCalendar].timeZone latitude:location.coordinate.latitude longitude:location.coordinate.longitude];
+		sunrise = tomorrow.sunrise;
 
-		if (self.sunset.isPast)
-			self.sunset = x.sunset;
+		if (sunset.isPast)
+			sunset = tomorrow.sunset;
 	}
 
-	[self setup];
+	[self setupSunrise:sunrise sunset:sunset];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
