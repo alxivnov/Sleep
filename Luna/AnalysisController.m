@@ -57,10 +57,6 @@
 	}];
 }
 
-- (NSNumber *)buttonShapes {
-	return [[UIApplication sharedApplication].rootViewController forwardSelector:@selector(buttonShapes) nextTarget:UIViewControllerNextTarget(YES)];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -70,7 +66,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
-	if (self.buttonShapes)
+	if ([[UIApplication sharedApplication].rootViewController forwardSelector:@selector(buttonShapes) nextTarget:UIViewControllerNextTarget(YES)])
 		for (UIBarButtonItem *item in self.toolbarItems)
 			item.enabled = YES;
 }
