@@ -50,10 +50,6 @@
 	[GCD main:^{
 		if (animated)
 			[self.tableView reloadData];
-
-		self.rightBarButtonItem.title = _samples.count ? [_samples any:^BOOL(AnalysisPresenter *obj) {
-			return obj.allPresenters != Nil;
-		}] ? [Localization average:_avg] : [Localization total:_sum] : Nil;
 	}];
 }
 
@@ -105,7 +101,7 @@
 	[view setItems:[NSArray arrayWithObject:[sample.accessoryText labelWithSize:CGSizeMake(36.0, cell.bounds.size.height) options:NSSizeGreaterThan attributes:@{ NSForegroundColorAttributeName : [UIColor color:HEX_IOS_DARK_GRAY] }] /*withObject:sample.allPresenters ? @(-16.0) : Nil */withObject:sample.allPresenters ? [[UIImage originalImage:IMG_DISCLOSURE] imageView] : Nil] adjustWidth:YES];
 	cell.accessoryView = view;
 
-	cell.textLabel.textColor = sample.isOwn ? [UIColor blackColor] : [UIColor color:HEX_IOS_DARK_GRAY];
+	cell.textLabel.textColor = sample.isOwn ? [UIColor whiteColor] : [UIColor lightGrayColor];
 
 	return cell;
 }
@@ -188,6 +184,12 @@
 	}] withObject:[self tableView:tableView titleForSwipeAccessoryButtonForRowAtIndexPath:indexPath] ? [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:[self tableView:tableView titleForSwipeAccessoryButtonForRowAtIndexPath:indexPath] handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
 		[__self tableView:__self.tableView swipeAccessoryButtonPushedForRowAtIndexPath:indexPath];
 	}] : Nil];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
+	return section == 0 ? (_samples.count ? [_samples any:^BOOL(AnalysisPresenter *obj) {
+		return obj.allPresenters != Nil;
+	}] ? [Localization average:_avg] : [Localization total:_sum] : Nil) : Nil;
 }
 
 @end

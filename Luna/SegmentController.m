@@ -12,11 +12,14 @@
 #import "Widget.h"
 #import "AlarmController.h"
 
+#import "NSFormatter+Convenience.h"
 #import "UITableView+Convenience.h"
 
 #define KEY_SELECTED_SEGMENT_INDEX @"AnalysisController.segment.selectedSegmentIndex"
 
 @interface SegmentController ()
+@property (strong, nonatomic, readonly) NSDateIntervalFormatter *formatter;
+
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segment;
 
 @property (strong, nonatomic) IBOutlet UIView *emptyState0;
@@ -25,10 +28,15 @@
 
 @implementation SegmentController
 
+__synthesize(NSDateIntervalFormatter *, formatter, [[NSDateIntervalFormatter alloc] initWithDateStyle:NSDateIntervalFormatterMediumStyle timeStyle:NSDateIntervalFormatterNoStyle])
+
 - (void)setup:(NSInteger)index {
 	[AnalysisPresenter query:index == 1 ? NSCalendarUnitWeekOfMonth : index == 2 ? NSCalendarUnitMonth : index == 3 ? NSCalendarUnitYear : NSCalendarUnitWeekday completion:^(NSArray<AnalysisPresenter *> *presenters) {
 		[self setSamples:presenters animated:YES];
 	}];
+
+	NSDate *date = [NSDate date];
+	self.navigationItem.title = index == 1 ? [self.formatter stringFromDate:[date addValue:-1 forComponent:NSCalendarUnitWeekOfYear] toDate:date] : index == 2 ? [[NSDateFormatter defaultFormatter] monthSymbolForDate:date] : index == 3 ? [date descriptionWithFormat:@"yyyy" calendar:Nil] : [[NSDate date] descriptionForDate:NSDateFormatterMediumStyle];
 }
 
 - (void)viewDidLoad {

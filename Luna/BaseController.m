@@ -12,6 +12,7 @@
 #import "UIBezierPath+Convenience.h"
 
 #import "QuartzCore+Convenience.h"
+#import "UIColor+Convenience.h"
 #import "UIImage+Convenience.h"
 
 #define IMG_BUTTON_HIGHLIGHTED @"Luna-Button-Highlighted"
@@ -40,7 +41,7 @@
 
 	CGPathRef path = self.sleepDurationLayer.path;
 
-	self.sleepDurationLayer = [[UIBezierPath bezierPathWithArcFrame:self.startButton.bounds width:-(64.0 / 580.0) start:0.0 end:fmin(1.0, sleepDuration / GLOBAL.sleepDuration) lineCap:kCGLineCapRound lineJoin:kCGLineJoinRound] layerWithStrokeColors:@[ [[UIColor whiteColor] colorWithAlphaComponent:(cycleCount + 1.0) / 6.0], GLOBAL.tintColor ]];
+	self.sleepDurationLayer = [[UIBezierPath bezierPathWithArcFrame:self.startButton.bounds width:-(64.0 / 580.0) start:0.0 end:fmin(1.0, sleepDuration / GLOBAL.sleepDuration) lineCap:kCGLineCapRound lineJoin:kCGLineJoinRound] layerWithStrokeColors:@[ [GLOBAL.tintColor colorWithAlphaComponent:(cycleCount + 1.0) / 6.0], RGB(23, 23, 23) ]];
 
 	if (animated) {
 		if (path)

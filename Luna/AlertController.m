@@ -63,7 +63,7 @@
 		NSTimeInterval duration = obj.duration;
 		NSUInteger cycleCount = obj.cycleCount;
 
-		return [[UIBezierPath bezierPathWithArcFrame:CGRectMake(0.0, 0.0, 40.0, 40.0)/*self.weekButtons.firstObject.bounds*/ width:-(64.0 / 580.0) start:0.0 end:duration / GLOBAL.sleepDuration lineCap:kCGLineCapRound lineJoin:kCGLineJoinRound] layerWithStrokeColors:@[ [[UIColor whiteColor] colorWithAlphaComponent:(cycleCount + 1.0) / 6.0] ] fillColor:Nil lineWidth:4.0];
+		return [[UIBezierPath bezierPathWithArcFrame:CGRectMake(0.0, 0.0, 40.0, 40.0)/*self.weekButtons.firstObject.bounds*/ width:-(64.0 / 580.0) start:0.0 end:duration / GLOBAL.sleepDuration lineCap:kCGLineCapRound lineJoin:kCGLineJoinRound] layerWithStrokeColors:@[ [GLOBAL.tintColor colorWithAlphaComponent:(cycleCount + 1.0) / 6.0] ] fillColor:Nil lineWidth:4.0];
 #warning Remove constant!
 	}];
 

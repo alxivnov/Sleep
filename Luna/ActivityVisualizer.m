@@ -59,7 +59,7 @@ __synthesize(CAShapeLayer *, inBedLayer, ({ CAShapeLayer *x = [CAShapeLayer new]
 __synthesize(CAShapeLayer *, sleepLayer, ({ CAShapeLayer *x = [CAShapeLayer new]; [self.layer addSublayer:x]; x; }))
 __synthesize(CAShapeLayer *, stepsLayer, ({ CAShapeLayer *x = [CAShapeLayer new]; [self.layer addSublayer:x]; x.fillColor = [UIColor color:HEX_NCS_YELLOW].CGColor; x; }))
 __synthesize(CAShapeLayer *, heartLayer, ({ CAShapeLayer *x = [CAShapeLayer new]; [self.layer addSublayer:x]; x.fillColor = Nil; x.strokeColor = [UIColor color:HEX_NCS_RED].CGColor; x; }))
-__synthesize(CAShapeLayer *, alertLayer, ({ CAShapeLayer *x = [CAShapeLayer new]; [self.layer addSublayer:x]; x.fillColor = [UIColor color:HEX_IOS_GRAY].CGColor; x; }))
+__synthesize(CAShapeLayer *, alertLayer, ({ CAShapeLayer *x = [CAShapeLayer new]; [self.layer addSublayer:x]; x.fillColor = RGB(51, 51, 51).CGColor; x; }))
 __synthesize(CAShapeLayer *, activityLayer, ({ CAShapeLayer *x = [CAShapeLayer new]; [self.layer addSublayer:x]; x.fillColor = [UIColor color:HEX_NCS_BLUE].CGColor; x; }))
 __synthesize(UIImageView *, timeView, ({ UIImageView *x = [[UIImageView alloc] initWithFrame:CGRectMakeWithSize(self.contentSize)]; [self addSubview:x]; x; }))
 __synthesize(UIImageView *, scaleView, ({ UIImageView *x = [[UIImageView alloc] initWithFrame:CGRectMake(self.contentOffset.x, self.bounds.origin.y, self.bounds.size.width, self.contentSize.height)]; [self addSubview:x]; x; }))
@@ -126,7 +126,7 @@ __synthesize(UIImageView *, sunsetView, ({ UIImageView *x = [[UIImageView alloc]
 - (void)setInBedSamples:(NSArray<HKCategorySample *> *)samples {
 	_inBedSamples = samples;
 
-	UIColor *color = [UIColor color:HEX_IOS_LIGHT_GRAY];
+	UIColor *color = RGB(51, 51, 51);
 
 	NSArray<CAShapeLayer *> *layers = [samples map:^id(HKCategorySample *obj) {
 		CGFloat x = [self x:obj.startDate];
@@ -304,7 +304,7 @@ __synthesize(UIImageView *, sunsetView, ({ UIImageView *x = [[UIImageView alloc]
 - (void)setTimeInterval:(NSTimeInterval)timeInterval {
 	_timeInterval = timeInterval;
 
-	UIColor *color = [UIColor color:HEX_IOS_DARK_GRAY];
+	UIColor *color = [UIColor lightGrayColor];
 	UIImage *image = [UIImage imageWithSize:self.contentSize draw:^(CGContextRef context) {
 		CGContextSetFillColorWithColor(context, color.CGColor);
 

@@ -120,6 +120,8 @@ __synthesize(SKInAppPurchase *, purchase3, [SKInAppPurchase purchaseWithProductI
 			}];
 	}
 
+	[cell.imageView.layer roundCorners:indexPath.section == IDX_APPS ? 6.0 : 0.0];
+
 	return cell;
 }
 

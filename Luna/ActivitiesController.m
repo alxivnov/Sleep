@@ -8,10 +8,12 @@
 
 #import "ActivitiesController.h"
 #import "ActivityController.h"
+#import "Global.h"
 
 #import "NSArray+Convenience.h"
 #import "NSCalendar+Convenience.h"
 #import "NSFormatter+Convenience.h"
+#import "UIColor+Convenience.h"
 #import "UIView+Convenience.h"
 #import "UIViewController+Convenience.h"
 
@@ -40,9 +42,9 @@ __synthesize(NSArray *, dates, ({
 
 	self.delegate = self;
 
-	self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+	self.view.backgroundColor = RGB(13, 13, 13);
 
-	[UIPageControl appearance].currentPageIndicatorTintColor = self.navigationController.navigationBar.barTintColor;
+	[UIPageControl appearance].currentPageIndicatorTintColor = GLOBAL.tintColor;
 	[UIPageControl appearance].pageIndicatorTintColor = [UIColor lightGrayColor];
 
 //	[self pageViewController:self didFinishAnimating:NO previousViewControllers:@[ ] transitionCompleted:YES];

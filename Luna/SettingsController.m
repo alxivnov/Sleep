@@ -75,12 +75,18 @@ __synthesize(NSArray<UIButton *> *, wakeUpButtons, (@[ self.sunButton, self.monB
 	
 	[self.pickerController.doneButton setTitleColor:indexPath.section ? cell.tintColor : self.bedtimeAlertSwitch.onTintColor forState:UIControlStateNormal];
 
-	self.pickerController.titleLabel.text = cell.textLabel.text;
+	self.pickerController.titleLabel.text = [self.tableView cellForRowAtIndexPath:indexPath].textLabel.text;
 }
 
 - (UIDatePickerController *)pickerController {
 	if (!_pickerController) {
 		_pickerController = [[UIDatePickerController alloc] initWithView:self.view.rootview];
+
+		_pickerController.backgroundColor = RGB(23, 23, 23);
+		_pickerController.pickerColor = [UIColor whiteColor];
+		_pickerController.titleColor = [UIColor lightGrayColor];
+		_pickerController.buttonColor = GLOBAL.tintColor;
+		
 		_pickerController.datePicker.datePickerMode = UIDatePickerModeTime;
 
 		__weak SettingsController *__self = self;
@@ -170,7 +176,7 @@ __synthesize(NSArray<UIButton *> *, wakeUpButtons, (@[ self.sunButton, self.monB
 #warning Remove constant!
 
 		button.selected = [idx(GLOBAL.alarmWeekdays, index) boolValue];
-		button.backgroundColor = button.selected ? button.tintColor : [UIColor whiteColor];
+		button.backgroundColor = button.selected ? button.tintColor : button.superview.backgroundColor;
 	}
 }
 
@@ -220,7 +226,7 @@ __synthesize(NSArray<UIButton *> *, wakeUpButtons, (@[ self.sunButton, self.monB
 
 - (IBAction)wakeUpButtonTouch:(UIButton *)sender {
 	sender.selected = !sender.selected;
-	sender.backgroundColor = sender.selected ? sender.tintColor : [UIColor whiteColor];
+	sender.backgroundColor = sender.selected ? sender.tintColor : sender.superview.backgroundColor;
 
 	NSUInteger firstWeekday = [NSCalendar currentCalendar].firstWeekday - 1;
 	GLOBAL.alarmWeekdays = [NSArray arrayFromCount:self.wakeUpButtons.count block:^id(NSUInteger index) {

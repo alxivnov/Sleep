@@ -62,7 +62,7 @@
 		NSTimeInterval secondsPerPixel = seconds / _cycleView.bounds.size.width;
 
 		UIView *view = [[UIView alloc] initWithFrame:_cycleView.bounds];
-		view.backgroundColor = [UIColor whiteColor];
+		view.backgroundColor = RGB(23, 23, 23);
 		[AnalysisPresenter query:NSCalendarUnitDay completion:^(NSArray<AnalysisPresenter *> *presenters) {
 			NSUInteger count = presenters.firstObject.cycleCount;
 
@@ -124,6 +124,12 @@
 - (UIDatePickerController *)pickerController {
 	if (!_pickerController) {
 		_pickerController = [[UIDatePickerController alloc] initWithView:self.alarmView.rootview];
+
+		_pickerController.backgroundColor = RGB(23, 23, 23);
+		_pickerController.buttonColor = GLOBAL.tintColor;
+		_pickerController.pickerColor = [UIColor whiteColor];
+		_pickerController.titleColor = [UIColor lightGrayColor];
+		
 		_pickerController.datePicker.datePickerMode = UIDatePickerModeDateAndTime;
 		[_pickerController.doneButton setTitleColor:self.alarmView.superview.backgroundColor];
 

@@ -69,6 +69,11 @@
 	if (!_pickerController) {
 		_pickerController = [[UIDatePickerController alloc] initWithView:self.view.rootview];
 
+		_pickerController.backgroundColor = RGB(23, 23, 23);
+		_pickerController.pickerColor = [UIColor whiteColor];
+		_pickerController.titleColor = [UIColor lightGrayColor];
+		_pickerController.buttonColor = GLOBAL.tintColor;
+
 		__weak IntervalController *__self = self;
 		_pickerController.datePickerValueChanged = ^(UIDatePicker *sender, id identifier) {
 			[__self datePickerValueChanged:sender indexPath:cls(NSIndexPath, identifier)];
