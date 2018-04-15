@@ -14,6 +14,7 @@
 
 #import "NSObject+Convenience.h"
 #import "UIApplication+Convenience.h"
+#import "UIViewController+Convenience.h"
 #import "Dispatch+Convenience.h"
 #import "UserNotifications+Convenience.h"
 
@@ -75,7 +76,7 @@
 //					}];
 
 					[GCD main:^{
-						[cls(ViewController, [UIApplication sharedApplication].rootViewController) setup];
+						[[UIApplication sharedApplication].rootViewController forwardSelector:@selector(setup) nextTarget:UIViewControllerNextTarget(YES)];
 					}];
 				}];
 				[WIDGET updateQuickActions];
@@ -89,7 +90,7 @@
 //				}];
 
 				[GCD main:^{
-					[cls(ViewController, [UIApplication sharedApplication].rootViewController) setup];
+					[[UIApplication sharedApplication].rootViewController forwardSelector:@selector(setup) nextTarget:UIViewControllerNextTarget(YES)];
 				}];
 			}];
 			[WIDGET updateNotification:Nil];

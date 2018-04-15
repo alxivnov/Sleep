@@ -15,6 +15,8 @@
 
 #define ROW_ID_SUNRISE @"Sunrise"
 #define ROW_ID_SUNSET @"Sunset"
+#define ROW_ID_WAKE_UP @"Wake Up"
+#define ROW_ID_GO_TO_BED @"Go to Bed"
 
 
 @interface ImageRowController : NSObject
@@ -48,21 +50,28 @@
 }
 
 - (void)setupSunrise:(NSDate *)sunrise sunset:(NSDate *)sunset {
-	if (sunrise && sunset) {
-		if ([sunset isGreaterThan:sunrise]) {
-			if (!self.table.numberOfRows)
-				[self.table setRowTypes:@[ ROW_ID_SUNRISE, ROW_ID_SUNSET ]];
+	NSMutableArray *types = [NSMutableArray arrayWithCapacity:3];
+	NSMutableArray *dates = [NSMutableArray arrayWithCapacity:3];
 
-			[[self.table rowControllerAtIndex:0] setDate:sunrise];
-			[[self.table rowControllerAtIndex:1] setDate:sunset];
-		} else {
-			if (!self.table.numberOfRows)
-				[self.table setRowTypes:@[ ROW_ID_SUNSET, ROW_ID_SUNRISE ]];
-
-			[[self.table rowControllerAtIndex:0] setDate:sunset];
-			[[self.table rowControllerAtIndex:1] setDate:sunrise];
-		}
+	if (sunrise) {
+		[types addObject:ROW_ID_SUNRISE];
+		[dates addObject:sunrise];
 	}
+
+	if (sunset) {
+		[types addObject:ROW_ID_SUNSET];
+		[dates addObject:sunset];
+	}
+
+	NSDate *date = self.delegate.startDate ? [self.delegate alarmDate] : [self.delegate alertDate];
+	if (date) {
+		[types addObject:self.delegate.startDate ? ROW_ID_WAKE_UP : ROW_ID_GO_TO_BED];
+		[dates addObject:date];
+	}
+
+	[self.table setRowTypes:types];
+	for (NSUInteger index = 0; index < dates.count && index < self.table.numberOfRows; index++)
+		 [[self.table rowControllerAtIndex:index] setDate:dates[index]];
 }
 
 - (void)awakeWithContext:(id)context {

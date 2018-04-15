@@ -12,8 +12,8 @@
 
 #define STR_FORMAT @"%@, %@: %@"
 
-#define IMG_MOON_LINE_18	@"moon-line-128"
-#define IMG_MOON_FILL_18	@"moon-fill-128"
+#define IMG_MOON_LINE_128	@"moon-line-128"
+#define IMG_MOON_FILL_128	@"moon-fill-128"
 
 @interface ComplicationController ()
 @property (strong, nonatomic, readonly) ExtensionDelegate *delegate;
@@ -66,10 +66,10 @@
 			else
 				[template setText:text];
 
-			[template setImage:[UIImage image:IMG_MOON_FILL_18] tintColor:Nil];
+			[template setImage:[UIImage image:IMG_MOON_FILL_128] tintColor:Nil];
 
 			handler([CLKComplicationTimelineEntry entryWithDate:self.delegate.startDate complicationTemplate:template]);
-		} else if (self.delegate.presenters.count) {
+		} else /*if (self.delegate.presenters.count)*/ {
 			NSString *text = [[NSDateComponentsFormatter hhmmFormatter] stringFromTimeInterval:self.delegate.sleepDuration];
 			NSDate *date = [self.delegate alertDate];
 			if (complication.family == CLKComplicationFamilyUtilitarianLarge && date)
@@ -77,9 +77,9 @@
 			else
 				[template setText:[CLKSimpleTextProvider textProviderWithText:text]];
 
-			[template setImage:[UIImage image:IMG_MOON_LINE_18] tintColor:Nil];
+			[template setImage:[UIImage image:IMG_MOON_LINE_128] tintColor:Nil];
 
-			handler(text ? [CLKComplicationTimelineEntry entryWithDate:self.delegate.presenters[today].endDate complicationTemplate:template] : Nil);
+			handler(/*text ? */[CLKComplicationTimelineEntry entryWithDate:self.delegate.presenters[today].endDate ?: [NSDate date] complicationTemplate:template]/* : Nil*/);
 		}
 	} else {
 		handler(Nil);
@@ -105,7 +105,7 @@
 	CLKComplicationTemplate *template = [CLKComplicationTemplate createWithFamily:complication.family member:CLKComplicationFamilyMemberStackImage];
 
 	[template setText:@"7:15" shortText:Nil];
-	[template setImage:[UIImage image:IMG_MOON_FILL_18] tintColor:Nil];
+	[template setImage:[UIImage image:IMG_MOON_FILL_128] tintColor:Nil];
 
 	handler(template);
 }

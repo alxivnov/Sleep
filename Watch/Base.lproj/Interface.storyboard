@@ -9,10 +9,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14031"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Sleep Diary-->
         <scene sceneID="ucj-bN-msp">
             <objects>
-                <controller id="t0I-PW-JGY" customClass="InterfaceController">
+                <controller title="Sleep Diary" id="t0I-PW-JGY" customClass="InterfaceController">
                     <items>
                         <table alignment="left" id="QlL-3E-2i4">
                             <items>
@@ -34,7 +34,7 @@
                                                                     <fontDescription key="font" type="system" pointSize="10"/>
                                                                 </label>
                                                             </items>
-                                                            <edgeInsets key="margins" left="0.0" right="0.0" top="14" bottom="0.0"/>
+                                                            <edgeInsets key="margins" left="0.0" right="0.0" top="16" bottom="0.0"/>
                                                         </group>
                                                     </items>
                                                 </group>
@@ -44,7 +44,7 @@
                                             </button>
                                         </items>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                                        <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="16"/>
                                     </group>
                                     <connections>
                                         <outlet property="group" destination="eXB-Ri-VCc" id="v6G-sm-vdI"/>
@@ -116,10 +116,10 @@
             </objects>
             <point key="canvasLocation" x="342" y="31"/>
         </scene>
-        <!--Sunrise Controller-->
+        <!--Sleep Diary-->
         <scene sceneID="aYs-QZ-v8m">
             <objects>
-                <controller id="7nO-fq-irV" customClass="SunriseController">
+                <controller title="Sleep Diary" id="7nO-fq-irV" customClass="SunriseController">
                     <items>
                         <table alignment="left" id="fP2-gK-FFs">
                             <items>
@@ -219,7 +219,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="652" y="32"/>
+            <point key="canvasLocation" x="652" y="31"/>
         </scene>
     </scenes>
 </document>

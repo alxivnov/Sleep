@@ -948,9 +948,21 @@
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="16" navigationOrientation="horizontal" spineLocation="none" id="aGv-2s-wST" customClass="ActivitiesController" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <navigationItem key="navigationItem" id="8LF-0E-4FK"/>
+                    <navigationItem key="navigationItem" id="8LF-0E-4FK">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="V06-Bs-mER">
+                            <connections>
+                                <segue destination="rpW-wp-ptq" kind="unwind" unwindAction="unwind:" id="eSD-Xj-Kfq"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="miQ-ZX-3jW">
+                            <connections>
+                                <segue destination="rpW-wp-ptq" kind="unwind" unwindAction="unwind:" id="qNG-TK-cOp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zvP-lC-NoM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="rpW-wp-ptq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4601" y="1099"/>
         </scene>
@@ -2193,7 +2205,7 @@
         <image name="timer-line.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pTE-g4-fFv"/>
+        <segue reference="Inh-cb-GaY"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

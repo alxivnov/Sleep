@@ -38,7 +38,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return (self.showActivity ? self.navigationController.navigationBar.barTintColor ? 2 : 1 : 0) + [super numberOfSectionsInTableView:tableView];
+	return (self.showActivity ? /*self.navigationController.navigationBar.barTintColor*/YES ? 2 : 1 : 0) + [super numberOfSectionsInTableView:tableView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -66,7 +66,7 @@
 				NSDate *startDate = [presenter.endDate dateComponent];
 				NSDate *endDate = [startDate addValue:1 forComponent:NSCalendarUnitDay];
 
-				if (self.navigationController.navigationBar.barTintColor) {
+				if (/*self.navigationController.navigationBar.barTintColor*/YES) {
 					[visualizer loadWithStartDate:startDate endDate:endDate completion:^{
 						[UNUserNotificationCenter getPendingNotificationRequestsWithIdentifier:GUI_FALL_ASLEEP completionHandler:^(NSArray<UNNotificationRequest *> *requests) {
 							visualizer.fallAsleep = requests.firstObject.nextTriggerDate;

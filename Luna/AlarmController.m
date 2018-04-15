@@ -234,10 +234,14 @@
 }
 
 + (void)updateNotificationWithDate:(NSDate *)fireDate completion:(void(^)(BOOL))completion {
-	if (GLOBAL.asleep)
+	if (GLOBAL.asleep) {
 		[[UNNotificationContent contentWithTitle:[Localization wakeUpNow] subtitle:Nil body:[Localization wakeUpNowBody] badge:Nil sound:SND_ALARM_1 attachments:arr_([UIImage URLForResource:IMG_LUNA_SUN withExtension:@"png"]) userInfo:Nil categoryIdentifier:GUI_WAKE_UP] scheduleWithIdentifier:GUI_WAKE_UP date:fireDate repeats:NO completion:completion];
-	else
+	} else {
 		[UNUserNotificationCenter removePendingNotificationRequestWithIdentifier:GUI_WAKE_UP];
+
+		if (completion)
+			completion(YES);
+	}
 }
 
 + (void)updateNotification:(void(^)(BOOL))completion {

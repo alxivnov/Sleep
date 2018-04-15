@@ -58,7 +58,7 @@
 }
 
 - (NSNumber *)buttonShapes {
-	return ret([UIApplication sharedApplication].rootViewController, buttonShapes);
+	return [[UIApplication sharedApplication].rootViewController forwardSelector:@selector(buttonShapes) nextTarget:UIViewControllerNextTarget(YES)];
 }
 
 - (void)viewDidLoad {

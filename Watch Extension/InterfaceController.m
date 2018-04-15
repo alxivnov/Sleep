@@ -13,20 +13,13 @@
 
 #warning Autodetect
 
-#warning Phone update on wake up from watch
-#warning Phone update on first fall asleep from watch
-
-#warning Fix freeze on switching to Samples scane
-
-#warning Alarm/Alert in Sunrise
+// Sometimes app crashes on activation
+// Sometimes app does not load sunrise
 
 
 #define ROW_ID_BUTTON @"Button"
 #define ROW_ID_IN_BED @"In Bed"
 #define ROW_ID_ASLEEP @"Asleep"
-
-#define IMG_BACK_LINE 		@"background-line"
-#define IMG_BACK_FILL 		@"background-fill"
 
 
 @interface ButtonRowController : NSObject

@@ -34,6 +34,8 @@
 #define KEY_TIMER_START		@"HKSleepAnalysisStartDate"
 #define KEY_TIMER_END		@"HKSleepAnalysisEndDate"
 
+#define IMG_BACK_LINE 		@"background-line"
+#define IMG_BACK_FILL 		@"background-fill"
 #define IMG_BACK_SIZE		136.0
 
 @interface ExtensionDelegate : NSObject <WKExtensionDelegate>

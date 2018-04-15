@@ -76,7 +76,7 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
 			return obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisAsleep ? @(obj.duration) : Nil;
 		}];
 
-		self.image = self.startDate ? Nil : [UIImage imageWithSize:CGSizeMake(IMG_BACK_SIZE, IMG_BACK_SIZE) opaque:NO scale:2.0 draw:^(CGContextRef context) {
+		self.image = self.startDate ? Nil : self.inBedDuration == 0.0 && self.sleepDuration == 0.0 ? [UIImage image:IMG_BACK_LINE] : [UIImage imageWithSize:CGSizeMake(IMG_BACK_SIZE, IMG_BACK_SIZE) opaque:NO scale:2.0 draw:^(CGContextRef context) {
 			CGRect frame = CGRectMake(0.0, 0.0, IMG_BACK_SIZE, IMG_BACK_SIZE);
 			[[UIColor color:RGB_LIGHT_TINT] setStroke];
 			[[UIBezierPath bezierPathWithArcFrame:frame width:12.0 start:0.0 end:self.inBedDuration / (self.settings.sleepDuration + self.settings.sleepLatency) lineCap:kCGLineCapRound lineJoin:kCGLineJoinRound] stroke];

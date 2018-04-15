@@ -219,7 +219,7 @@
 
 	[[UIRateController instance] setupLogging:^(NSRateControllerState state) {
 		if (state == NSRateControllerStateMailYes || state == NSRateControllerStateMailNo || state == NSRateControllerStateRateYes || state == NSRateControllerStateRateNo)
-			sel([UIApplication sharedApplication].rootViewController, setup);
+			[[UIApplication sharedApplication].rootViewController forwardSelector:@selector(setup) nextTarget:UIViewControllerNextTarget(YES)];
 	}];
 }
 /*
