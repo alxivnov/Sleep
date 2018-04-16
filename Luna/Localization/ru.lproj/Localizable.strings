@@ -24,6 +24,7 @@
 "Bedtime alert disabled" = "Напоминание о сне выключено";
 "Bedtime alert enabled" = "Напоминание о сне включено";
 "No alarm" = "Без будильника";
+"Alarm" = "Будильник";
 "Pressure" = "Давление";
 "%f mbar" = "%f мбар";
 "%li mbar" = "%li мбар";

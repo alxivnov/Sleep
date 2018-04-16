@@ -131,51 +131,59 @@
 		_pickerController.titleColor = [UIColor lightGrayColor];
 		
 		_pickerController.datePicker.datePickerMode = UIDatePickerModeDateAndTime;
-		[_pickerController.doneButton setTitleColor:self.alarmView.superview.backgroundColor];
 
 		__weak AlarmController *__self = self;
 		_pickerController.datePickerValueChanged = ^(UIDatePicker *sender, id identifier) {
-//			[__self.alarmButton setTitle:[sender.date descriptionForTime:NSDateFormatterShortStyle]];
-
-//			[[__self class] updateNotificationWithDate:sender.date];
-
-
-			((UISlider *)[__self.cycleView subview:UISubviewKindOfClass(UISlider)]).value = [sender.date timeIntervalSinceDate:GLOBAL.startDate];
+			[__self datePickerValueChanged:sender identifier:identifier];
 		};
 		_pickerController.identifierValueChanged = ^(UIDatePicker *sender, id identifier) {
-			sender.minimumDate = [NSDate date];
-			sender.maximumDate = [sender.minimumDate addValue:1 forComponent:NSCalendarUnitDay];
-
-			if (identifier)
-				[AnalysisPresenter query:NSCalendarUnitDay completion:^(NSArray<AnalysisPresenter *> *presenters) {
-					[GCD main:^{
-						NSDate *date = [GLOBAL alarmDate:presenters];
-
-						[sender setNullableDate:date];
-
-						((UISlider *)[__self.cycleView subview:UISubviewKindOfClass(UISlider)]).value = [date timeIntervalSinceDate:GLOBAL.startDate];
-					}];
-				}];
-			else
-				[[__self class] updateNotificationWithDate:sender.date completion:^(BOOL success) {
-					[GCD main:^{
-						[__self setupAlarmView];
-					}];
-				}];
-
-			((UISlider *)[__self.cycleView subview:UISubviewKindOfClass(UISlider)]).value = [sender.date timeIntervalSinceDate:GLOBAL.startDate];
-			if (identifier)
-				__self.cycleView.hidden = NO;
-			[UIView animateWithDuration:ANIMATION_DURATION delay:0.0 usingSpringWithDamping:ANIMATION_DAMPING initialSpringVelocity:ANIMATION_VELOCITY options:ANIMATION_OPTIONS animations:^{
-				__self.cycleView.frame = CGRectSetY(__self.cycleView.frame, identifier ? __self.pickerController.view.frame.origin.y - __self.cycleView.frame.size.height : __self.alarmView.rootview.bounds.size.height);
-			} completion:^(BOOL finished) {
-				if (!identifier)
-					__self.cycleView.hidden = YES;
-			}];
+			[__self identifierValueChanged:sender identifier:identifier];
 		};
 	}
 
 	return _pickerController;
+}
+
+- (void)datePickerValueChanged:(UIDatePicker *)sender identifier:(id)identifier {
+//	[__self.alarmButton setTitle:[sender.date descriptionForTime:NSDateFormatterShortStyle]];
+
+//	[[__self class] updateNotificationWithDate:sender.date];
+
+	((UISlider *)[self.cycleView subview:UISubviewKindOfClass(UISlider)]).value = [sender.date timeIntervalSinceDate:GLOBAL.startDate];
+}
+
+- (void)identifierValueChanged:(UIDatePicker *)sender identifier:(id)identifier {
+	sender.minimumDate = [NSDate date];
+	sender.maximumDate = [sender.minimumDate addValue:1 forComponent:NSCalendarUnitDay];
+
+	if (identifier)
+		[AnalysisPresenter query:NSCalendarUnitDay completion:^(NSArray<AnalysisPresenter *> *presenters) {
+			[GCD main:^{
+				NSDate *date = [GLOBAL alarmDate:presenters];
+
+				[sender setNullableDate:date];
+
+				((UISlider *)[self.cycleView subview:UISubviewKindOfClass(UISlider)]).value = [date timeIntervalSinceDate:GLOBAL.startDate];
+			}];
+		}];
+	else
+		[[self class] updateNotificationWithDate:sender.date completion:^(BOOL success) {
+			[GCD main:^{
+				[self setupAlarmView];
+			}];
+		}];
+
+	((UISlider *)[self.cycleView subview:UISubviewKindOfClass(UISlider)]).value = [sender.date timeIntervalSinceDate:GLOBAL.startDate];
+	if (identifier)
+		self.cycleView.hidden = NO;
+	[UIView animateWithDuration:ANIMATION_DURATION delay:0.0 usingSpringWithDamping:ANIMATION_DAMPING initialSpringVelocity:ANIMATION_VELOCITY options:ANIMATION_OPTIONS animations:^{
+		self.cycleView.frame = CGRectSetY(self.cycleView.frame, identifier ? self.pickerController.view.frame.origin.y - self.cycleView.frame.size.height : self.alarmView.rootview.bounds.size.height);
+	} completion:^(BOOL finished) {
+		if (!identifier)
+			self.cycleView.hidden = YES;
+	}];
+
+	self.pickerController.titleLabel.text = [Localization alarm];
 }
 
 - (instancetype)initWithView:(UIView *)view {

@@ -50,28 +50,27 @@
 }
 
 - (void)setupSunrise:(NSDate *)sunrise sunset:(NSDate *)sunset {
-	NSMutableArray *types = [NSMutableArray arrayWithCapacity:3];
-	NSMutableArray *dates = [NSMutableArray arrayWithCapacity:3];
+	NSMutableArray<NSDictionary *> *dates = [NSMutableArray arrayWithCapacity:3];
 
-	if (sunrise) {
-		[types addObject:ROW_ID_SUNRISE];
-		[dates addObject:sunrise];
-	}
+	if (sunrise)
+		[dates addObject:@{ @"date" : sunrise, @"type" : ROW_ID_SUNRISE }];
 
-	if (sunset) {
-		[types addObject:ROW_ID_SUNSET];
-		[dates addObject:sunset];
-	}
+	if (sunset)
+		[dates addObject:@{ @"date" : sunset, @"type" : ROW_ID_SUNSET }];
 
 	NSDate *date = self.delegate.startDate ? [self.delegate alarmDate] : [self.delegate alertDate];
-	if (date) {
-		[types addObject:self.delegate.startDate ? ROW_ID_WAKE_UP : ROW_ID_GO_TO_BED];
-		[dates addObject:date];
-	}
+	if (date)
+		[dates addObject:@{ @"date" : date, @"type" : self.delegate.startDate ? ROW_ID_WAKE_UP : ROW_ID_GO_TO_BED }];
 
-	[self.table setRowTypes:types];
+	[dates sortUsingComparator:^NSComparisonResult(NSDictionary *obj1, NSDictionary *obj2) {
+		return [obj1[@"date"] compare:obj2[@"date"]];
+	}];
+
+	[self.table setRowTypes:[dates map:^id(NSDictionary *obj) {
+		return obj[@"type"];
+	}]];
 	for (NSUInteger index = 0; index < dates.count && index < self.table.numberOfRows; index++)
-		 [[self.table rowControllerAtIndex:index] setDate:dates[index]];
+		 [[self.table rowControllerAtIndex:index] setDate:dates[index][@"date"]];
 }
 
 - (void)awakeWithContext:(id)context {

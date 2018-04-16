@@ -81,13 +81,29 @@
 @end
 
 
-@interface DetailRowController : NSObject
+@interface InBedRowController : NSObject
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *textLabel;
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *detailTextLabel;
 @end
 
 
-@implementation DetailRowController
+@implementation InBedRowController
+
+- (void)setPresenter:(AnalysisPresenter *)presenter {
+	[self.textLabel setText:presenter.text];
+	[self.detailTextLabel setText:presenter.accessoryText];
+}
+
+@end
+
+
+@interface SleepRowController : NSObject
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *textLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *detailTextLabel;
+@end
+
+
+@implementation SleepRowController
 
 - (void)setPresenter:(AnalysisPresenter *)presenter {
 	[self.textLabel setText:presenter.text];

@@ -99,7 +99,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
-	return section == 2 && self.showActivity ? [Localization mailFooter] : Nil;
+	return section == 2 && self.showActivity ? [Localization mailFooter] : [super tableView:tableView titleForFooterInSection:section];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

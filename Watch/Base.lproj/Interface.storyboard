@@ -17,7 +17,7 @@
                         <table alignment="left" id="QlL-3E-2i4">
                             <items>
                                 <tableRow identifier="Button" selectable="NO" id="Ogb-99-SXt" customClass="ButtonRowController">
-                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="Gir-qa-Vu5">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" radius="0.0" id="Gir-qa-Vu5">
                                         <items>
                                             <button alignment="center" id="2KD-8e-SVT">
                                                 <group key="contentGroup" height="1" alignment="left" backgroundImage="background-fill" contentMode="center" layout="overlap" id="eXB-Ri-VCc">
@@ -53,7 +53,7 @@
                                         <outlet property="timer" destination="qnX-ZO-Crh" id="abG-Di-ytY"/>
                                     </connections>
                                 </tableRow>
-                                <tableRow identifier="In Bed" id="BOs-q1-QZt" customClass="DetailRowController">
+                                <tableRow identifier="In Bed" id="BOs-q1-QZt" customClass="InBedRowController">
                                     <group key="rootItem" width="1" alignment="left" layout="vertical" id="Qiz-Pp-9GX">
                                         <items>
                                             <group width="1" alignment="left" id="oS5-Rw-3cF">
@@ -75,11 +75,11 @@
                                         </items>
                                     </group>
                                     <connections>
-                                        <outlet property="detailTextLabel" destination="KIT-dv-wfl" id="oze-KL-bN2"/>
-                                        <outlet property="textLabel" destination="s9j-Tw-tQu" id="KUG-No-Dh7"/>
+                                        <outlet property="detailTextLabel" destination="KIT-dv-wfl" id="X7h-Ry-MEt"/>
+                                        <outlet property="textLabel" destination="s9j-Tw-tQu" id="H40-6c-cWy"/>
                                     </connections>
                                 </tableRow>
-                                <tableRow identifier="Asleep" id="VmQ-cm-7fR" customClass="DetailRowController">
+                                <tableRow identifier="Asleep" id="VmQ-cm-7fR" customClass="SleepRowController">
                                     <group key="rootItem" width="1" alignment="left" layout="vertical" id="1jN-vt-0Qr">
                                         <items>
                                             <group width="1" alignment="left" id="ap4-JF-dxt">
@@ -101,8 +101,8 @@
                                         </items>
                                     </group>
                                     <connections>
-                                        <outlet property="detailTextLabel" destination="G94-W9-1mP" id="CTc-5q-3Xm"/>
-                                        <outlet property="textLabel" destination="T7D-7c-Kdp" id="Xfd-rT-2S5"/>
+                                        <outlet property="detailTextLabel" destination="G94-W9-1mP" id="4p5-AU-N7h"/>
+                                        <outlet property="textLabel" destination="T7D-7c-Kdp" id="TOO-eb-LgF"/>
                                     </connections>
                                 </tableRow>
                             </items>

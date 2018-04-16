@@ -186,10 +186,16 @@
 	}] : Nil];
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
-	return section == 0 ? (_samples.count ? [_samples any:^BOOL(AnalysisPresenter *obj) {
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	return section == 0 && _samples.count && [_samples any:^BOOL(AnalysisPresenter *obj) {
 		return obj.allPresenters != Nil;
-	}] ? [Localization average:_avg] : [Localization total:_sum] : Nil) : Nil;
+	}] ? [Localization average:_avg] : Nil;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
+	return section == 1 && _samples.count && ![_samples any:^BOOL(AnalysisPresenter *obj) {
+		return obj.allPresenters != Nil;
+	}] ? [Localization total:_sum] : Nil;
 }
 
 @end

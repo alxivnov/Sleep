@@ -29,6 +29,7 @@
 + (NSString *)notificationEnabled;
 
 + (NSString *)noAlarm;
++ (NSString *)alarm;
 
 + (NSString *)yes;
 + (NSString *)no;

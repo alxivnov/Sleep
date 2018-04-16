@@ -162,6 +162,8 @@
 				}];
 			}];
 	}
+
+	self.navigationItem.prompt = [[NSDate date] descriptionForDate:NSDateFormatterMediumStyle];
 }
 
 - (void)viewDidLoad {

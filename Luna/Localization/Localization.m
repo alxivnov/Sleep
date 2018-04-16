@@ -74,6 +74,10 @@
 	return NSLocalizedString(@"No alarm", Nil);
 }
 
++ (NSString *)alarm {
+	return NSLocalizedString(@"Alarm", Nil);
+}
+
 + (NSString *)yes {
 	return NSLocalizedString(@"Yes", Nil);
 }

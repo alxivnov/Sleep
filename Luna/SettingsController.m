@@ -83,9 +83,9 @@ __synthesize(NSArray<UIButton *> *, wakeUpButtons, (@[ self.sunButton, self.monB
 		_pickerController = [[UIDatePickerController alloc] initWithView:self.view.rootview];
 
 		_pickerController.backgroundColor = RGB(23, 23, 23);
+		_pickerController.buttonColor = GLOBAL.tintColor;
 		_pickerController.pickerColor = [UIColor whiteColor];
 		_pickerController.titleColor = [UIColor lightGrayColor];
-		_pickerController.buttonColor = GLOBAL.tintColor;
 		
 		_pickerController.datePicker.datePickerMode = UIDatePickerModeTime;
 
