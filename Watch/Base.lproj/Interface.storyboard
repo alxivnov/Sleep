@@ -47,10 +47,10 @@
                                         <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="16"/>
                                     </group>
                                     <connections>
-                                        <outlet property="group" destination="eXB-Ri-VCc" id="v6G-sm-vdI"/>
-                                        <outlet property="image" destination="ag3-uG-H81" id="Vc5-hB-Q63"/>
-                                        <outlet property="label" destination="8HR-RE-dxP" id="ZRY-MF-5Oz"/>
-                                        <outlet property="timer" destination="qnX-ZO-Crh" id="abG-Di-ytY"/>
+                                        <outlet property="group" destination="eXB-Ri-VCc" id="1qu-RV-TOv"/>
+                                        <outlet property="image" destination="ag3-uG-H81" id="CNV-5n-OTg"/>
+                                        <outlet property="label" destination="8HR-RE-dxP" id="GiL-pu-y6Q"/>
+                                        <outlet property="timer" destination="qnX-ZO-Crh" id="Ox0-PQ-Q74"/>
                                     </connections>
                                 </tableRow>
                                 <tableRow identifier="In Bed" id="BOs-q1-QZt" customClass="InBedRowController">

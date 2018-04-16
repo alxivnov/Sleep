@@ -53,26 +53,23 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
 }
 
 - (void)setup {
-//	NSDate *endDate = [NSDate date];
-//	NSDate *startDate = [endDate addValue:-1 forComponent:NSCalendarUnitWeekOfMonth];
 	self.observer = [AnalysisPresenter observe:NSCalendarUnitWeekOfMonth updateHandler:^(NSArray<AnalysisPresenter *> *presenters) {
-//	self.observer = [HKDataSleepAnalysis observeSamplesWithStartDate:startDate endDate:Nil/*endDate*/ options:HKQueryOptionNone/*HKQueryOptionStrictEndDate*/ limit:HKObjectQueryNoLimit sort:@{ HKSampleSortIdentifierStartDate : @YES } updateHandler:^(NSArray<HKCategorySample *> *samples) {
 		self.presenters = [presenters dictionaryWithKey:^id<NSCopying>(AnalysisPresenter *obj) {
 			return [obj.endDate dateComponent];
 		}];
-/*		self.samples = [samples dictionaryWithKey:^id<NSCopying>(HKCategorySample *obj) {
-			return obj.value == HKCategoryValueSleepAnalysisInBed || obj.value == HKCategoryValueSleepAnalysisAsleep ? obj.endDate.dateComponent : Nil;
-		} value:^id(HKCategorySample *obj, id<NSCopying> key, id val) {
-			NSMutableArray *arr = val ?: [NSMutableArray array];
-			[arr addObject:obj];
-			return arr;
+
+		NSDate *now = [NSDate date];
+		NSDate *today = [now dateComponent];
+		AnalysisPresenter *presenter = self.presenters[today];
+/*
+		[self samplesFromDate:presenter.endDate toDate:now completion:^(NSArray<HKCategorySample *> *samples) {
+			[[HKHealthStore defaultStore] saveObjects:samples completion:Nil];
 		}];
 */
-		NSDate *today = [NSDate today];
-		self.inBedDuration = [self.presenters[today].allPresenters sum:^NSNumber *(AnalysisPresenter *obj) {
+		self.inBedDuration = [presenter.allPresenters sum:^NSNumber *(AnalysisPresenter *obj) {
 			return obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed ? @(obj.duration) : Nil;
 		}];
-		self.sleepDuration = [self.presenters[today].allPresenters sum:^NSNumber *(AnalysisPresenter *obj) {
+		self.sleepDuration = [presenter.allPresenters sum:^NSNumber *(AnalysisPresenter *obj) {
 			return obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisAsleep ? @(obj.duration) : Nil;
 		}];
 
@@ -111,6 +108,15 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
 			[[CLKComplicationServer sharedInstance] reloadTimeline:Nil];
 		}
 	};
+}
+
+- (void)applicationDidFinishLaunching {
+    // Perform any final initialization of your application.
+
+	[HKDataSleepAnalysis requestAuthorizationToShare:YES andRead:YES completion:^(BOOL success) {
+		if (success)
+			[self setup];
+	}];
 
 	[[WCSessionDelegate instance].reachableSession sendMessage:@{ STR_UNDERSCORE : [[Settings class] description] } replyHandler:^(NSDictionary<NSString *,id> *replyMessage) {
 		if (!replyMessage)
@@ -127,19 +133,6 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
 	}];
 }
 
-- (void)applicationDidFinishLaunching {
-    // Perform any final initialization of your application.
-
-	[HKDataSleepAnalysis requestAuthorizationToShare:YES andRead:YES completion:^(BOOL success) {
-		if (success)
-			[self setup];
-	}];
-
-	[[WCSessionDelegate instance].reachableSession sendMessage:@{ STR_UNDERSCORE : STR_EMPTY } replyHandler:^(NSDictionary<NSString *,id> *replyMessage) {
-
-	}];
-}
-
 - (void)applicationDidBecomeActive {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
@@ -147,6 +140,8 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
 - (void)applicationWillResignActive {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, etc.
+
+	[[WKExtension sharedExtension] scheduleBackgroundRefreshWithPreferredDate:[NSDate dateWithTimeIntervalSinceNow:1800.0]];
 }
 
 - (void)handleBackgroundTasks:(NSSet<WKRefreshBackgroundTask *> *)backgroundTasks {
@@ -156,7 +151,18 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
         if ([task isKindOfClass:[WKApplicationRefreshBackgroundTask class]]) {
             // Be sure to complete the background task once you’re done.
             WKApplicationRefreshBackgroundTask *backgroundTask = (WKApplicationRefreshBackgroundTask*)task;
-            [backgroundTask setTaskCompletedWithSnapshot:NO];
+
+			NSDate *now = [NSDate date];
+			NSDate *today = [now dateComponent];
+			AnalysisPresenter *presenter = self.presenters[today];
+
+			[self samplesFromDate:presenter.endDate toDate:now completion:^(NSArray<HKCategorySample *> *samples) {
+				[[HKHealthStore defaultStore] saveObjects:samples completion:^(BOOL success) {
+					[[WKExtension sharedExtension] scheduleBackgroundRefreshWithPreferredDate:[NSDate dateWithTimeIntervalSinceNow:1800.0]];
+
+					[backgroundTask setTaskCompletedWithSnapshot:/*NO*/success];
+				}];
+			}];
         } else if ([task isKindOfClass:[WKSnapshotRefreshBackgroundTask class]]) {
             // Snapshot tasks have a unique completion call, make sure to set your expiration date
             WKSnapshotRefreshBackgroundTask *snapshotTask = (WKSnapshotRefreshBackgroundTask*)task;
@@ -174,6 +180,17 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
             [task setTaskCompletedWithSnapshot:NO];
         }
     }
+}
+
+- (void)samplesFromDate:(NSDate *)startDate toDate:(NSDate *)endDate completion:(void (^)(NSArray<HKCategorySample *> *samples))completion {
+	if (startDate && endDate)
+		[CMMotionActivitySample queryActivityStartingFromDate:startDate toDate:endDate within:self.sleepDuration withHandler:^(NSArray<CMMotionActivitySample *> *activities) {
+			if (completion)
+				completion([self.settings samplesFromActivities:activities]);
+		}];
+	else
+		if (completion)
+			completion(Nil);
 }
 
 @end

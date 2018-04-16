@@ -132,7 +132,7 @@ __synthesize(SKInAppPurchase *, purchase3, [SKInAppPurchase purchaseWithProductI
 /*
 		if ([WatchDelegate instance].reachableSession) {
 			NSDate *date = [NSDate date];
-			[[WatchDelegate instance] getActivitiesFromDate:[date addValue:-1 forComponent:NSCalendarUnitDay] toDate:date handler:^(NSArray<CMMotionActivitySample *> *activities) {
+			[[WatchDelegate instance] getActivitiesFromDate:[date addValue:-3 forComponent:NSCalendarUnitDay] toDate:date handler:^(NSArray<CMMotionActivitySample *> *activities) {
 				NSArray *arr = [activities map:^id(CMMotionActivitySample *obj) {
 					return [NSString stringWithFormat:@"%@,%f,%lu,%lu", [obj.startDate descriptionWithFormat:@"yyyy'-'MM'-'dd' 'HH':'mm':'ss" calendar:Nil], obj.duration, obj.type, obj.confidence];
 				}];

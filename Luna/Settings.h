@@ -38,4 +38,7 @@
 - (NSDate *)alarmDate:(NSArray<AnalysisPresenter *> *)presenters;
 - (NSDate *)alertDate:(NSArray<AnalysisPresenter *> *)presenters;
 
+
+- (NSArray<HKCategorySample *> *)samplesFromActivities:(NSArray<CMMotionActivitySample *> *)activities;
+
 @end

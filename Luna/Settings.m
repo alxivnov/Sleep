@@ -137,4 +137,86 @@ __synthesize(NSUserDefaults *, defaults, [NSUserDefaults standardUserDefaults])
 	return /*date.isPast ? Nil : */date;
 }
 
+
+- (NSArray<HKCategorySample *> *)samplesFromActivities:(NSArray<CMMotionActivitySample *> *)activities {
+	NSTimeInterval sleepLatency = self.sleepLatency;
+
+	if (!activities.count)
+		return Nil;
+
+	NSDate *startDate = activities.firstObject.startDate;
+	NSDate *endDate = activities.lastObject.endDate;
+
+	NSUInteger count = ceil([endDate timeIntervalSinceDate:startDate]);
+	double *bytes = calloc(count, sizeof(double));
+	double fill = -60.0;
+	vDSP_vfillD(&fill, bytes, 1, count);
+	for (CMMotionActivitySample *activity in activities) {
+		double dbl = (activity.type == CMMotionActivityTypeStationary ? activity.duration : -activity.duration) / (activity.confidence == CMMotionActivityConfidenceLow ? 3.0 : activity.confidence == CMMotionActivityConfidenceMedium ? 1.5 : 1);
+		NSUInteger idx = round([activity.startDate timeIntervalSinceDate:startDate]);
+		NSUInteger len = round(activity.duration);
+		vDSP_vfillD(&dbl, bytes + idx, 1, len);
+	}
+
+	NSMutableArray<NSDateInterval *> *sleepArray = [[NSMutableArray alloc] init];
+	NSMutableArray<NSDateInterval *> *inBedArray = [[NSMutableArray alloc] init];
+
+	NSUInteger sleepIndex = 0;
+	NSUInteger inBedIndex = 0;
+
+	double prev = 0.0;
+	vDSP_meanvD(bytes, 1, &prev, (NSUInteger)sleepLatency);
+
+	count -= (NSUInteger)sleepLatency;
+	for (NSUInteger index = 1; index < count; index++) {
+		double curr = 0.0;
+		vDSP_meanvD(bytes + index, 1, &curr, (NSUInteger)sleepLatency);
+
+		if (prev <= 60.0 && curr > 60.0) {
+			sleepIndex = index;
+		} else if (prev > 60.0 && curr <= 60.0) {
+			if (sleepIndex) {
+				double max = 0.0;
+				vDSP_maxvD(bytes + sleepIndex, 1, &max, index - sleepIndex);
+
+				if (max >= sleepLatency)
+					[sleepArray addObject:[[NSDateInterval alloc] initWithStartDate:[startDate dateByAddingTimeInterval:sleepLatency - 1.0 + sleepIndex] duration:index - sleepIndex]];
+			}
+
+			sleepIndex = 0;
+		}
+
+		if (prev <= 1.0 && curr > 1.0) {
+			inBedIndex = index;
+		} else if (prev > 1.0 && curr <= 1.0) {
+			if (inBedIndex) {
+				double max = 0.0;
+				vDSP_maxvD(bytes + inBedIndex, 1, &max, index - inBedIndex);
+
+				if (max >= sleepLatency)
+					[inBedArray addObject:[[NSDateInterval alloc] initWithStartDate:[startDate dateByAddingTimeInterval:sleepLatency - 1.0 + inBedIndex] duration:index - inBedIndex]];
+			}
+
+			inBedIndex = 0;
+		}
+
+		prev = curr;
+	}
+
+	free(bytes);
+
+	NSMutableArray<HKCategorySample *> *arr = [NSMutableArray arrayWithCapacity:sleepArray.count * 2];
+	for (NSDateInterval *interval in sleepArray)
+		[arr addObject:[HKDataSleepAnalysis sampleWithStartDate:interval.startDate endDate:interval.endDate value:HKCategoryValueSleepAnalysisAsleep metadata:@{ HKMetadataKeySleepOnsetLatency : @(sleepLatency) }]];
+	for (NSDateInterval *interval in inBedArray)
+		if ([sleepArray any:^BOOL(NSDateInterval *obj) {
+			return [obj intersectsDateInterval:interval];
+		}])
+			[arr addObject:[HKDataSleepAnalysis sampleWithStartDate:interval.startDate endDate:interval.endDate value:HKCategoryValueSleepAnalysisInBed metadata:@{ HKMetadataKeySampleActivities : [CMMotionActivitySample samplesToString:[activities query:^BOOL(CMMotionActivitySample *obj) {
+				return [interval containsDate:obj.startDate] || [interval containsDate:obj.endDate];
+			}] date:interval.startDate] ?: STR_EMPTY }]];
+
+	return arr;
+}
+
 @end

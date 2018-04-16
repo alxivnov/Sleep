@@ -132,13 +132,15 @@
 	[[self.table rowControllerAtIndex:0] setup];
 
 	NSDate *today = [NSDate date].dateComponent;
-	NSArray<AnalysisPresenter *> *presenters = self.delegate.presenters[today].allPresenters;
+	NSArray<AnalysisPresenter *> *presenters = [self.delegate.presenters[today].allPresenters query:^BOOL(AnalysisPresenter *obj) {
+		return obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed || obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisAsleep;
+	}];
 	if (self.table.numberOfRows > 1)
 		[self.table removeRowsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(1, self.table.numberOfRows - 1)]];
 	for (NSUInteger index = 0; index < presenters.count; index++) {
 		AnalysisPresenter *obj = presenters[index];
 
-		[self.table insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:index + 1] withRowType:obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed ? ROW_ID_IN_BED : obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisAsleep ? ROW_ID_ASLEEP : Nil];
+		[self.table insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:index + 1] withRowType:obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed ? ROW_ID_IN_BED : ROW_ID_ASLEEP];
 		[[self.table rowControllerAtIndex:index + 1] setPresenter:obj];
 	}
 }
