@@ -328,6 +328,8 @@
 
 		[AlarmController updateNotification:^(BOOL succcess) {
 			[GCD main:^{
+				[self.alarmController setupAlarmView];
+
 				[self setup];
 			}];
 		}];

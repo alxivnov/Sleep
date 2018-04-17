@@ -12,6 +12,8 @@
 
 - (instancetype)initWithView:(UIView *)view;
 
+- (void)setupAlarmView;
+
 + (void)updateNotification:(void(^)(BOOL success))completion;
 
 @end
