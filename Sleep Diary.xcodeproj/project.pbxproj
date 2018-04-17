@@ -24,6 +24,8 @@
 		CD254B491F0BD2F40063C50C /* UIBezierPath+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD254B481F0BD2F40063C50C /* UIBezierPath+Convenience.m */; };
 		CD2935701DD884AA002A9FAF /* QuartzCore+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD29356F1DD884AA002A9FAF /* QuartzCore+Convenience.m */; };
 		CD2935731DD884F0002A9FAF /* UIApplication+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2935721DD884F0002A9FAF /* UIApplication+Convenience.m */; };
+		CD4756542085D7AB006FD9C1 /* SamplesController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4756532085D7AB006FD9C1 /* SamplesController.m */; };
+		CD4756572085D857006FD9C1 /* RowControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4756562085D857006FD9C1 /* RowControllers.m */; };
 		CD49F6902080B83F00DAA6C8 /* AnalysisPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0FB16B1C9074E50065558A /* AnalysisPresenter.m */; };
 		CD49F6912080B84200DAA6C8 /* NSArray+AnalysisPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FABFA8C71D819B6A00F79DBD /* NSArray+AnalysisPresenter.m */; };
 		CD49F6942080B8CB00DAA6C8 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = CD49F6932080B8CB00DAA6C8 /* Settings.m */; };
@@ -338,6 +340,10 @@
 		CD29356F1DD884AA002A9FAF /* QuartzCore+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "QuartzCore+Convenience.m"; sourceTree = "<group>"; };
 		CD2935711DD884F0002A9FAF /* UIApplication+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Convenience.h"; sourceTree = "<group>"; };
 		CD2935721DD884F0002A9FAF /* UIApplication+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Convenience.m"; sourceTree = "<group>"; };
+		CD4756522085D7AB006FD9C1 /* SamplesController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SamplesController.h; sourceTree = "<group>"; };
+		CD4756532085D7AB006FD9C1 /* SamplesController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SamplesController.m; sourceTree = "<group>"; };
+		CD4756552085D857006FD9C1 /* RowControllers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RowControllers.h; sourceTree = "<group>"; };
+		CD4756562085D857006FD9C1 /* RowControllers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RowControllers.m; sourceTree = "<group>"; };
 		CD49F6922080B8CB00DAA6C8 /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		CD49F6932080B8CB00DAA6C8 /* Settings.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
 		CD49F69E2081126900DAA6C8 /* moon-fill-128@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moon-fill-128@2x.png"; sourceTree = "<group>"; };
@@ -702,10 +708,14 @@
 			isa = PBXGroup;
 			children = (
 				CD8F8F8B207A6B38007FA86A /* Watch Extension.entitlements */,
+				CD4756552085D857006FD9C1 /* RowControllers.h */,
+				CD4756562085D857006FD9C1 /* RowControllers.m */,
 				CD8F8F60207A1744007FA86A /* InterfaceController.h */,
 				CD8F8F61207A1744007FA86A /* InterfaceController.m */,
 				CD1D5535207C2A5D0091DEFE /* SunriseController.h */,
 				CD1D5536207C2A5D0091DEFE /* SunriseController.m */,
+				CD4756522085D7AB006FD9C1 /* SamplesController.h */,
+				CD4756532085D7AB006FD9C1 /* SamplesController.m */,
 				CD8F8F63207A1744007FA86A /* ExtensionDelegate.h */,
 				CD8F8F64207A1744007FA86A /* ExtensionDelegate.m */,
 				CD8F8F66207A1744007FA86A /* ComplicationController.h */,
@@ -1465,6 +1475,7 @@
 				CD8F8F89207A66E4007FA86A /* Accelerate+Convenience.m in Sources */,
 				CD527E86207B833F00C005F4 /* ClockKit+Convenience.m in Sources */,
 				CD8F8F80207A4CC9007FA86A /* NSObject+Convenience.m in Sources */,
+				CD4756542085D7AB006FD9C1 /* SamplesController.m in Sources */,
 				CD6FE880207CDD87006B1152 /* CoreLocation+Convenience.m in Sources */,
 				CD8F8F93207AB7EA007FA86A /* CoreMotion+Convenience.m in Sources */,
 				CD8F8F82207A5F71007FA86A /* NSFormatter+Convenience.m in Sources */,
@@ -1478,6 +1489,7 @@
 				CD8F8F65207A1744007FA86A /* ExtensionDelegate.m in Sources */,
 				CD8F8F87207A63B1007FA86A /* Dispatch+Convenience.m in Sources */,
 				CD8F8F8F207A7005007FA86A /* WatchKit+Convenience.m in Sources */,
+				CD4756572085D857006FD9C1 /* RowControllers.m in Sources */,
 				CD527E90207B8DDF00C005F4 /* Global.m in Sources */,
 				CD8F8F92207A9795007FA86A /* NSBundle+Convenience.m in Sources */,
 				CD8F8F94207AB81B007FA86A /* CMMotionActivitySample.m in Sources */,

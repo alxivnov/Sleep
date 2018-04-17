@@ -61,11 +61,7 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
 		NSDate *now = [NSDate date];
 		NSDate *today = [now dateComponent];
 		AnalysisPresenter *presenter = self.presenters[today];
-/*
-		[self samplesFromDate:presenter.endDate toDate:now completion:^(NSArray<HKCategorySample *> *samples) {
-			[[HKHealthStore defaultStore] saveObjects:samples completion:Nil];
-		}];
-*/
+
 		self.inBedDuration = [presenter.allPresenters sum:^NSNumber *(AnalysisPresenter *obj) {
 			return obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed ? @(obj.duration) : Nil;
 		}];
@@ -152,11 +148,7 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
             // Be sure to complete the background task once you’re done.
             WKApplicationRefreshBackgroundTask *backgroundTask = (WKApplicationRefreshBackgroundTask*)task;
 
-			NSDate *now = [NSDate date];
-			NSDate *today = [now dateComponent];
-			AnalysisPresenter *presenter = self.presenters[today];
-
-			[self samplesFromDate:presenter.endDate toDate:now completion:^(NSArray<HKCategorySample *> *samples) {
+			[self detect:^(NSArray<HKCategorySample *> *samples) {
 				[[HKHealthStore defaultStore] saveObjects:samples completion:^(BOOL success) {
 					[[WKExtension sharedExtension] scheduleBackgroundRefreshWithPreferredDate:[NSDate dateWithTimeIntervalSinceNow:1800.0]];
 
@@ -182,15 +174,23 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
     }
 }
 
-- (void)samplesFromDate:(NSDate *)startDate toDate:(NSDate *)endDate completion:(void (^)(NSArray<HKCategorySample *> *samples))completion {
-	if (startDate && endDate)
-		[CMMotionActivitySample queryActivityStartingFromDate:startDate toDate:endDate within:self.sleepDuration withHandler:^(NSArray<CMMotionActivitySample *> *activities) {
+- (void)detect:(void (^)(NSArray<HKCategorySample *> *samples))completion {
+	NSDate *endDate = [NSDate date];
+	__block NSDate *startDate = [endDate addValue:-10 forComponent:NSCalendarUnitDay];
+
+	[HKDataSleepAnalysis querySampleWithStartDate:startDate endDate:endDate completion:^(__kindof HKSample *sample) {
+		if (sample)
+			startDate = sample.endDate;
+
+		if (startDate && endDate && [endDate timeIntervalSinceDate:startDate] >= self.sleepDuration)
+			[CMMotionActivitySample queryActivityStartingFromDate:startDate toDate:endDate within:self.sleepDuration withHandler:^(NSArray<CMMotionActivitySample *> *activities) {
+				if (completion)
+					completion([self.settings samplesFromActivities:activities]);
+			}];
+		else
 			if (completion)
-				completion([self.settings samplesFromActivities:activities]);
-		}];
-	else
-		if (completion)
-			completion(Nil);
+				completion(Nil);
+	}];
 }
 
 @end

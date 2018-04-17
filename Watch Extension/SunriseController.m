@@ -9,6 +9,7 @@
 #import "SunriseController.h"
 
 #import "ExtensionDelegate.h"
+#import "RowControllers.h"
 
 #import "EDSunriseSet.h"
 
@@ -17,21 +18,6 @@
 #define ROW_ID_SUNSET @"Sunset"
 #define ROW_ID_WAKE_UP @"Wake Up"
 #define ROW_ID_GO_TO_BED @"Go to Bed"
-
-
-@interface ImageRowController : NSObject
-@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceImage *image;
-@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *textLabel;
-@end
-
-
-@implementation ImageRowController
-
-- (void)setDate:(NSDate *)date {
-	[self.textLabel setText:[date descriptionForTime:NSDateFormatterShortStyle]];
-}
-
-@end
 
 
 @interface SunriseController () <CLLocationManagerDelegate>

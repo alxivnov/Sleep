@@ -38,6 +38,10 @@
 #define IMG_BACK_FILL 		@"background-fill"
 #define IMG_BACK_SIZE		136.0
 
+#define ROW_ID_BUTTON @"Button"
+#define ROW_ID_IN_BED @"In Bed"
+#define ROW_ID_ASLEEP @"Asleep"
+
 @interface ExtensionDelegate : NSObject <WKExtensionDelegate>
 
 @property (strong, nonatomic, readonly) NSDictionary<NSDate *, AnalysisPresenter *> *presenters;
@@ -51,5 +55,8 @@
 
 - (NSDate *)alarmDate;
 - (NSDate *)alertDate;
+
+
+- (void)detect:(void (^)(NSArray<HKCategorySample *> *samples))completion;
 
 @end

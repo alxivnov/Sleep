@@ -9,6 +9,7 @@
 #import "InterfaceController.h"
 
 #import "ExtensionDelegate.h"
+#import "RowControllers.h"
 
 
 #warning Autodetect
@@ -17,100 +18,7 @@
 // Sometimes app does not load sunrise
 
 
-#define ROW_ID_BUTTON @"Button"
-#define ROW_ID_IN_BED @"In Bed"
-#define ROW_ID_ASLEEP @"Asleep"
-
-
-@interface ButtonRowController : NSObject
-@property (strong, nonatomic, readonly) ExtensionDelegate *delegate;
-
-@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceGroup *group;
-@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceImage *image;
-@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceTimer *timer;
-@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *label;
-@end
-
-
-@implementation ButtonRowController
-
-- (ExtensionDelegate *)delegate {
-	return [WKExtension sharedExtension].delegate;
-}
-
-- (void)setup {
-	[self.group setBackgroundImageNamed:self.delegate.startDate ? IMG_BACK_FILL : IMG_BACK_LINE];
-
-	[self.image setImage:self.delegate.image];
-
-	if (self.delegate.startDate) {
-		[self.timer setDate:self.delegate.startDate];
-		[self.timer start];
-	} else {
-		[self.timer setInterval:self.delegate.sleepDuration];
-		[self.timer stop];
-	}
-	[self.timer setTextColor:self.delegate.startDate ? [UIColor whiteColor] : [UIColor color:RGB_LIGHT_TINT]];
-
-	[self.label setText:self.delegate.startDate ? loc(@"wake up") : loc(@"bedtime")];
-	[self.label setTextColor:self.delegate.startDate ? [UIColor lightGrayColor] : [UIColor color:RGB_DARK_TINT]];
-}
-
-- (IBAction)buttonAction {
-	self.delegate.startDate = self.delegate.startDate ? Nil : [NSDate date];
-
-	[self setup];
-
-	[[CLKComplicationServer sharedInstance] reloadTimeline:Nil];
-
-	[[WCSessionDelegate instance].reachableSession sendMessage:@{ KEY_TIMER_START : [self.delegate.startDate serialize] ?: STR_EMPTY } replyHandler:^(NSDictionary<NSString *, id> *replyMessage) {
-		NSDate *date = [NSDate deserialize:replyMessage[KEY_TIMER_START]];
-		if (NSDateIsEqualToDate(self.delegate.startDate, date))
-			return;
-
-		self.delegate.startDate = date;
-
-		[GCD main:^{
-			[self setup];
-		}];
-
-		[[CLKComplicationServer sharedInstance] reloadTimeline:Nil];
-	}];
-}
-
-@end
-
-
-@interface InBedRowController : NSObject
-@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *textLabel;
-@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *detailTextLabel;
-@end
-
-
-@implementation InBedRowController
-
-- (void)setPresenter:(AnalysisPresenter *)presenter {
-	[self.textLabel setText:presenter.text];
-	[self.detailTextLabel setText:presenter.accessoryText];
-}
-
-@end
-
-
-@interface SleepRowController : NSObject
-@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *textLabel;
-@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *detailTextLabel;
-@end
-
-
-@implementation SleepRowController
-
-- (void)setPresenter:(AnalysisPresenter *)presenter {
-	[self.textLabel setText:presenter.text];
-	[self.detailTextLabel setText:presenter.accessoryText];
-}
-
-@end
+#define STR_SAMPLES @"samples"
 
 
 @interface InterfaceController ()
@@ -131,8 +39,10 @@
 		[self.table setRowTypes:@[ ROW_ID_BUTTON ]];
 	[[self.table rowControllerAtIndex:0] setup];
 
-	NSDate *today = [NSDate date].dateComponent;
-	NSArray<AnalysisPresenter *> *presenters = [self.delegate.presenters[today].allPresenters query:^BOOL(AnalysisPresenter *obj) {
+	NSDate *now = [NSDate date];
+	NSDate *today = [now dateComponent];
+	AnalysisPresenter *presenter = self.delegate.presenters[today];
+	NSArray<AnalysisPresenter *> *presenters = [presenter.allPresenters query:^BOOL(AnalysisPresenter *obj) {
 		return obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed || obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisAsleep;
 	}];
 	if (self.table.numberOfRows > 1)
@@ -143,6 +53,13 @@
 		[self.table insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:index + 1] withRowType:obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed ? ROW_ID_IN_BED : ROW_ID_ASLEEP];
 		[[self.table rowControllerAtIndex:index + 1] setPresenter:obj];
 	}
+
+	[self.delegate detect:^(NSArray<HKCategorySample *> *samples) {
+		if (samples.count)
+			[GCD main:^{
+				[self presentControllerWithName:STR_SAMPLES context:samples];
+			}];
+	}];
 }
 
 - (void)awakeWithContext:(id)context {

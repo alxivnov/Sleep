@@ -221,5 +221,93 @@
             </objects>
             <point key="canvasLocation" x="652" y="31"/>
         </scene>
+        <!--samples-->
+        <scene sceneID="85i-wJ-tn8">
+            <objects>
+                <controller identifier="samples" id="PTZ-SX-6b0" customClass="SamplesController">
+                    <items>
+                        <table alignment="left" id="9dH-v2-r9w">
+                            <items>
+                                <tableRow identifier="In Bed" id="i68-sg-1AK" customClass="InBedRowController">
+                                    <group key="rootItem" width="1" alignment="left" layout="vertical" id="AoH-2V-3vE">
+                                        <items>
+                                            <group width="1" alignment="left" id="J0o-LE-zAd">
+                                                <items>
+                                                    <label alignment="left" text="In Bed" id="zli-K9-U10">
+                                                        <color key="textColor" red="0.51832340430000001" green="0.50094353729999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                    </label>
+                                                    <label alignment="right" text="7:40" id="Nqw-Jc-HRN">
+                                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <label alignment="left" text="1:50 - 9:30" minimumScaleFactor="0.5" id="7JX-Z5-0s3">
+                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="detailTextLabel" destination="Nqw-Jc-HRN" id="Nke-ZI-3xr"/>
+                                        <outlet property="textLabel" destination="7JX-Z5-0s3" id="AnJ-Vg-cOD"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="Asleep" id="ShN-rs-Tni" customClass="SleepRowController">
+                                    <group key="rootItem" width="1" alignment="left" layout="vertical" id="fYz-KE-jqZ">
+                                        <items>
+                                            <group width="1" alignment="left" id="LT5-90-HPJ">
+                                                <items>
+                                                    <label alignment="left" text="Asleep" id="SCb-zZ-2zn">
+                                                        <color key="textColor" red="0.51832340430000001" green="0.50094353729999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                    </label>
+                                                    <label alignment="right" text="7:30" id="sL4-xN-ymA">
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <label alignment="left" text="2:00 - 9:30" minimumScaleFactor="0.5" id="s1n-P6-Kqt">
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="detailTextLabel" destination="sL4-xN-ymA" id="7lk-hb-ejB"/>
+                                        <outlet property="textLabel" destination="s1n-P6-Kqt" id="dUC-rb-Jcc"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="Save" id="23h-yV-Od0">
+                                    <group key="rootItem" width="1" alignment="left" id="kTo-Ol-gtB">
+                                        <items>
+                                            <label alignment="center" verticalAlignment="center" text="Save" id="q4e-UD-WMN">
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" red="0.2490108311" green="0.227181673" blue="0.67214268450000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </group>
+                                </tableRow>
+                                <tableRow identifier="Cancel" id="MIO-5j-5yf">
+                                    <group key="rootItem" width="1" alignment="left" id="g6L-Eg-nRy">
+                                        <items>
+                                            <label alignment="center" verticalAlignment="center" text="Cancel" id="NAE-KT-ZLY">
+                                                <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="9dH-v2-r9w" id="d5P-2b-PgP"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="651" y="403"/>
+        </scene>
     </scenes>
 </document>

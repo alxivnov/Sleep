@@ -216,6 +216,10 @@ __synthesize(NSUserDefaults *, defaults, [NSUserDefaults standardUserDefaults])
 				return [interval containsDate:obj.startDate] || [interval containsDate:obj.endDate];
 			}] date:interval.startDate] ?: STR_EMPTY }]];
 
+	[arr sortUsingComparator:^NSComparisonResult(HKCategorySample *obj1, HKCategorySample *obj2) {
+		return [obj1.startDate compare:obj2.startDate];
+	}];
+
 	return arr;
 }
 
