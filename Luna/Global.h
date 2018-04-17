@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#import "UIColor+Convenience.h"
+
 #import "Settings.h"
 
 #define GLOBAL [Global instance]
@@ -74,8 +76,6 @@
 @property (assign, nonatomic) BOOL scale;
 
 + (instancetype)instance;
-
-@property (strong, nonatomic, readonly) UIColor *tintColor;
 
 @property (strong, nonatomic, readonly) NSDictionary *affiliateInfo;
 

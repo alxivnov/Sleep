@@ -63,7 +63,7 @@
 		NSTimeInterval duration = obj.duration;
 		NSUInteger cycleCount = obj.cycleCount;
 
-		return [[UIBezierPath bezierPathWithArcFrame:CGRectMake(0.0, 0.0, 40.0, 40.0)/*self.weekButtons.firstObject.bounds*/ width:-(64.0 / 580.0) start:0.0 end:duration / GLOBAL.sleepDuration lineCap:kCGLineCapRound lineJoin:kCGLineJoinRound] layerWithStrokeColors:@[ [GLOBAL.tintColor colorWithAlphaComponent:(cycleCount + 1.0) / 6.0] ] fillColor:Nil lineWidth:4.0];
+		return [[UIBezierPath bezierPathWithArcFrame:CGRectMake(0.0, 0.0, 40.0, 40.0)/*self.weekButtons.firstObject.bounds*/ width:-(64.0 / 580.0) start:0.0 end:duration / GLOBAL.sleepDuration lineCap:kCGLineCapRound lineJoin:kCGLineJoinRound] layerWithStrokeColors:@[ [[UIColor color:RGB_DARK_TINT] colorWithAlphaComponent:(cycleCount + 1.0) / 6.0] ] fillColor:Nil lineWidth:4.0];
 #warning Remove constant!
 	}];
 
@@ -100,8 +100,11 @@
 			return days[[today addValue:firstWeekday - weekday + index forComponent:NSCalendarUnitDay]] ?: [AnalysisPresenter new];
 		}];
 
+		NSTimeInterval inBed = [days[today].allPresenters sum:^NSNumber *(AnalysisPresenter *obj) {
+			return obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed ? @(obj.duration) : Nil;
+		}];
 		[GCD main:^{
-			[self setSleepDuration:days[today].duration cycleCount:presenters.firstObject.cycleCount animated:YES];
+			[self setSleepDuration:days[today].duration inBedDuration:inBed cycleCount:presenters.firstObject.cycleCount animated:YES];
 
 			for (NSUInteger index = 0; index < self.weekButtons.count; index++) {
 				NSUInteger day = index + firstWeekday;

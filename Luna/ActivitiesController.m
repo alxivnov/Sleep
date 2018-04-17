@@ -44,7 +44,7 @@ __synthesize(NSArray *, dates, ({
 
 	self.view.backgroundColor = RGB(13, 13, 13);
 
-	[UIPageControl appearance].currentPageIndicatorTintColor = GLOBAL.tintColor;
+	[UIPageControl appearance].currentPageIndicatorTintColor = [UIColor color:RGB_DARK_TINT];
 	[UIPageControl appearance].pageIndicatorTintColor = [UIColor lightGrayColor];
 
 //	[self pageViewController:self didFinishAnimating:NO previousViewControllers:@[ ] transitionCompleted:YES];

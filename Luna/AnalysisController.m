@@ -86,7 +86,7 @@
 	cell.textLabel.text = sample.text;
 	cell.detailTextLabel.text = sample.detailText;
 
-	UIColor *color = sample.allPresenters ? [sample.duration < self.avg ? [UIColor color:HEX_NCS_RED] : [UIColor color:HEX_NCS_BLUE] colorWithAlphaComponent:(sample.cycleCount + 1.0) / 6.0] : sample.allSamples.firstObject.value == HKCategoryValueSleepAnalysisAsleep ? GLOBAL.tintColor : [UIColor color:HEX_IOS_GRAY];
+	UIColor *color = sample.allPresenters ? [sample.duration < self.avg ? [UIColor color:HEX_NCS_RED] : [UIColor color:HEX_NCS_BLUE] colorWithAlphaComponent:(sample.cycleCount + 1.0) / 6.0] : sample.allSamples.firstObject.value == HKCategoryValueSleepAnalysisAsleep ? [UIColor color:RGB_DARK_TINT] : [UIColor color:HEX_IOS_GRAY];
 	NSTimeInterval start = (sample.allPresenters ? 0.0 : [[self.samples arrayWithCount:indexPath.row] sum:^NSNumber *(AnalysisPresenter *obj) {
 		return sample.allSamples.firstObject.value == obj.allSamples.firstObject.value ? @(obj.duration) : Nil;
 	}]);

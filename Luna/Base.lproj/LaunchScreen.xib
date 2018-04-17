@@ -16,7 +16,6 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Luna-Button-Normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="4qg-3b-uew">
                     <rect key="frame" x="112" y="112" width="256" height="256"/>
-                    <color key="backgroundColor" red="0.1882353276014328" green="0.14117641746997833" blue="0.60784316062927246" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>

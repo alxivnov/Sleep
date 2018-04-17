@@ -26,9 +26,6 @@
 
 #import "Settings.h"
 
-#define RGB_LIGHT_TINT		0x6C69D1
-#define RGB_DARK_TINT		0x3F3AAB
-
 #define SEC_22_00_EVENING	79200.0
 
 #define KEY_TIMER_START		@"HKSleepAnalysisStartDate"

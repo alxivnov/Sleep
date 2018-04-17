@@ -18,6 +18,9 @@
 #define KEY_TIMER_START @"HKSleepAnalysisStartDate"
 #define KEY_TIMER_END @"HKSleepAnalysisEndDate"
 
+#define RGB_LIGHT_TINT		0x6C69D1
+#define RGB_DARK_TINT		0x3F3AAB
+
 
 @interface Settings : NSObject
 

@@ -83,7 +83,7 @@ __synthesize(NSArray<UIButton *> *, wakeUpButtons, (@[ self.sunButton, self.monB
 		_pickerController = [[UIDatePickerController alloc] initWithView:self.view.rootview];
 
 		_pickerController.backgroundColor = RGB(23, 23, 23);
-		_pickerController.buttonColor = GLOBAL.tintColor;
+		_pickerController.buttonColor = [UIColor color:RGB_DARK_TINT];
 		_pickerController.pickerColor = [UIColor whiteColor];
 		_pickerController.titleColor = [UIColor lightGrayColor];
 		
@@ -193,7 +193,7 @@ __synthesize(NSArray<UIButton *> *, wakeUpButtons, (@[ self.sunButton, self.monB
 
 	if (indexPath.section == 2 && indexPath.row == 0) {
 		UIStepper *stepper = [[UIStepper alloc] initWithFrame:CGRectMake(0.0, 0.0, UIStepperWidth, UIStepperHeight)];
-		stepper.tintColor = GLOBAL.tintColor;
+		stepper.tintColor = [UIColor color:RGB_DARK_TINT];
 		stepper.minimumValue = 0.0;
 		stepper.maximumValue = 30.0 * TIME_MINUTE;
 		stepper.stepValue = TIME_MINUTE;

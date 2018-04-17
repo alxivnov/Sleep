@@ -61,11 +61,16 @@
 	NSUInteger cycleCount = floor(sleepDuration / SLEEP_CYCLE_DURATION);
 
 	if ([[NSDate date] timeComponent] > 22.0 * TIME_HOUR)
-		[self setSleepDuration:sleepDuration cycleCount:cycleCount animated:NO];
+		[self setSleepDuration:0.0 inBedDuration:sleepDuration cycleCount:cycleCount animated:NO];
 	else
 		[AnalysisPresenter query:NSCalendarUnitDay completion:^(NSArray<AnalysisPresenter *> *presenters) {
 			[GCD main:^{
-				[self setSleepDuration:presenters.firstObject.duration + sleepDuration cycleCount:presenters.firstObject.cycleCount + cycleCount animated:NO];
+				NSTimeInterval sleep = presenters.firstObject.duration;
+				NSTimeInterval inBed = [presenters.firstObject.allPresenters sum:^NSNumber *(AnalysisPresenter *obj) {
+					return obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed ? @(obj.duration) : Nil;
+				}];
+
+				[self setSleepDuration:sleep inBedDuration:inBed + sleepDuration cycleCount:presenters.firstObject.cycleCount + cycleCount animated:NO];
 			}];
 		}];
 }
@@ -83,7 +88,7 @@
 			if (!GLOBAL.asleep)
 				return;
 
-			self.timerLabel.text = [[NSDateComponentsFormatter hhmmssFormatter] stringFromValue:GLOBAL.startDate toValue:[NSDate date]];
+			[self.startButton setTitle:[[NSDateComponentsFormatter hhmmssFormatter] stringFromValue:GLOBAL.startDate toValue:[NSDate date]] forState:UIControlStateSelected];
 
 			[self setDuration];
 		} interval:1.0];
@@ -118,7 +123,7 @@
 		self.startButton.selected = YES;
 //		self.startStopLabel.text = [GLOBAL button];
 //		self.startStopLabel.textColor = [[UIColorCache instance] colorWithR:63 G:58 B:171];
-		self.timerLabel.text = [[NSDateComponentsFormatter hhmmssFormatter] stringFromDate:startDate toDate:[NSDate date]];
+		[self.startButton setTitle:[[NSDateComponentsFormatter hhmmssFormatter] stringFromDate:startDate toDate:[NSDate date]] forState:UIControlStateSelected];
 
 		[self setDuration];
 		
@@ -134,7 +139,7 @@
 		self.startButton.selected = NO;
 //		self.startStopLabel.text = [GLOBAL button];
 //		self.startStopLabel.textColor = [UIColor whiteColor];
-		self.timerLabel.text = Nil;
+		[self.startButton setTitle:Nil forState:UIControlStateSelected];
 		
 		self.timer.enabled = NO;
 		

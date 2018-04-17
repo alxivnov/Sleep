@@ -18,7 +18,6 @@
 
 #import "Affiliates+Convenience.h"
 #import "NSDictionary+Convenience.h"
-#import "UIColor+Convenience.h"
 
 @interface Global ()
 
@@ -85,10 +84,6 @@ static id _instance;
 	return _instance;
 }
 
-
-- (UIColor *)tintColor {
-	return [UIColor color:0x3F3AAB];
-}
 
 __synthesize(NSDictionary *, affiliateInfo, [[NSDictionary dictionaryWithProvider:@"10603809" affiliate:@"1l3voBu"] dictionaryWithObject:@"write-review" forKey:@"action"])
 

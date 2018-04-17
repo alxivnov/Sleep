@@ -70,7 +70,7 @@
 				CGFloat width = view.bounds.size.width / cycleCount;
 				for (NSUInteger index = 0; index < cycleCount; index++) {
 					UIView *subview = [[UIView alloc] initWithFrame:CGRectMake(index * width, 0.0, width, view.bounds.size.height)];
-					subview.backgroundColor = [GLOBAL.tintColor colorWithAlphaComponent:0.5 + (index + count) * 0.05];
+					subview.backgroundColor = [[UIColor color:RGB_DARK_TINT] colorWithAlphaComponent:0.5 + (index + count) * 0.05];
 					[view addSubview:subview];
 				}
 			}];
@@ -126,7 +126,7 @@
 		_pickerController = [[UIDatePickerController alloc] initWithView:self.alarmView.rootview];
 
 		_pickerController.backgroundColor = RGB(23, 23, 23);
-		_pickerController.buttonColor = GLOBAL.tintColor;
+		_pickerController.buttonColor = [UIColor color:RGB_DARK_TINT];
 		_pickerController.pickerColor = [UIColor whiteColor];
 		_pickerController.titleColor = [UIColor lightGrayColor];
 		

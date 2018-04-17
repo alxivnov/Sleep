@@ -211,7 +211,6 @@
 		FA6BCA6B1AD5270C006029D5 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6BCA6A1AD5270C006029D5 /* HealthKit.framework */; };
 		FA6BCA7A1AD54732006029D5 /* Luna-Icon-File.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6BCA791AD54732006029D5 /* Luna-Icon-File.png */; };
 		FA829A311A9C82A800B1E47B /* Luna-Button-Normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA829A2E1A9C82A800B1E47B /* Luna-Button-Normal@2x.png */; };
-		FA829A321A9C82A800B1E47B /* Luna-Button-Highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA829A2F1A9C82A800B1E47B /* Luna-Button-Highlighted@2x.png */; };
 		FA829A331A9C82A800B1E47B /* Luna-Button-Selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA829A301A9C82A800B1E47B /* Luna-Button-Selected@2x.png */; };
 		FA829A361A9C8E4400B1E47B /* IntervalController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA829A351A9C8E4400B1E47B /* IntervalController.m */; };
 		FA8856BD1DDCACF6001B869F /* UIAlertController+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8856BC1DDCACF6001B869F /* UIAlertController+Convenience.m */; };
@@ -571,7 +570,6 @@
 		FA6BCA6A1AD5270C006029D5 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		FA6BCA791AD54732006029D5 /* Luna-Icon-File.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Luna-Icon-File.png"; sourceTree = "<group>"; };
 		FA829A2E1A9C82A800B1E47B /* Luna-Button-Normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Luna-Button-Normal@2x.png"; sourceTree = "<group>"; };
-		FA829A2F1A9C82A800B1E47B /* Luna-Button-Highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Luna-Button-Highlighted@2x.png"; sourceTree = "<group>"; };
 		FA829A301A9C82A800B1E47B /* Luna-Button-Selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Luna-Button-Selected@2x.png"; sourceTree = "<group>"; };
 		FA829A341A9C8E4400B1E47B /* IntervalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntervalController.h; sourceTree = "<group>"; };
 		FA829A351A9C8E4400B1E47B /* IntervalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntervalController.m; sourceTree = "<group>"; };
@@ -837,7 +835,6 @@
 				CD81DE2E1DE4B82E009B8DCC /* salad-fill-30@2x.png */,
 				CD81DE2F1DE4B82E009B8DCC /* salad-line-30@2x.png */,
 				FA829A2E1A9C82A800B1E47B /* Luna-Button-Normal@2x.png */,
-				FA829A2F1A9C82A800B1E47B /* Luna-Button-Highlighted@2x.png */,
 				FA829A301A9C82A800B1E47B /* Luna-Button-Selected@2x.png */,
 				FA6BCA791AD54732006029D5 /* Luna-Icon-File.png */,
 				FA403EC31AEC182200827125 /* Luna-Icon-128.png */,
@@ -1340,7 +1337,6 @@
 			files = (
 				CDE33B352049924800F89AD8 /* VK-60.png in Resources */,
 				CD81DE331DE4B82E009B8DCC /* groceries-line-30@2x.png in Resources */,
-				FA829A321A9C82A800B1E47B /* Luna-Button-Highlighted@2x.png in Resources */,
 				FAB93D1A1D31109500D738F6 /* moon-white-line@2x.png in Resources */,
 				FA321D4F1B556D75000FD2CF /* arrow-down@2x.png in Resources */,
 				CDE33B302049924800F89AD8 /* VK-60@2x.png in Resources */,

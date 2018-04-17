@@ -70,7 +70,7 @@
 		_pickerController = [[UIDatePickerController alloc] initWithView:self.view.rootview];
 
 		_pickerController.backgroundColor = RGB(23, 23, 23);
-		_pickerController.buttonColor = GLOBAL.tintColor;
+		_pickerController.buttonColor = [UIColor color:RGB_DARK_TINT];
 		_pickerController.pickerColor = [UIColor whiteColor];
 		_pickerController.titleColor = [UIColor lightGrayColor];
 
@@ -105,7 +105,7 @@
 }
 
 - (void)identifierValueChanged:(NSIndexPath *)indexPath {
-	self.startLabel.textColor = indexPath && !indexPath.row ? GLOBAL.tintColor : [UIColor color:HEX_IOS_DARK_GRAY];
+	self.startLabel.textColor = indexPath && !indexPath.row ? [UIColor color:RGB_DARK_TINT] : [UIColor color:HEX_IOS_DARK_GRAY];
 	self.startLabel.font = indexPath && !indexPath.row ? [self.startLabel.font bold] : [self.startLabel.font original];
 	self.startImage.image = [UIImage originalImage:indexPath && !indexPath.row ? IMG_MOON_FILL : IMG_MOON_LINE];
 
@@ -124,7 +124,7 @@
 	self.pickerController.datePicker.maximumDate = indexPath.row ? [NSDate date] : self.endDate;
 	self.pickerController.datePicker.minimumDate = indexPath.row ? self.startDate : /*sample ? */sample.endDate/* : [self.endDate dateByAddingTimeInterval:0.0 - 10.0 * TIME_HOUR]*/;
 
-	[self.pickerController.doneButton setTitleColor:indexPath.row ? [UIColor color:HEX_NCS_YELLOW] : GLOBAL.tintColor forState:UIControlStateNormal];
+	[self.pickerController.doneButton setTitleColor:indexPath.row ? [UIColor color:HEX_NCS_YELLOW] : [UIColor color:RGB_DARK_TINT] forState:UIControlStateNormal];
 
 	self.pickerController.titleLabel.text = [self.tableView cellForRowAtIndexPath:indexPath].textLabel.text;
 }
@@ -306,7 +306,7 @@
 
 	if (indexPath.section == SLEEP_ONSET_LATENCY_SECTION && indexPath.row == 0) {
 		UIStepper *stepper = [[UIStepper alloc] initWithFrame:CGRectMake(0.0, 0.0, UIStepperWidth, UIStepperHeight)];
-		stepper.tintColor = GLOBAL.tintColor;
+		stepper.tintColor = [UIColor color:RGB_DARK_TINT];
 		stepper.minimumValue = 0.0;
 		stepper.maximumValue = 30.0 * TIME_MINUTE;
 		stepper.stepValue = TIME_MINUTE;
