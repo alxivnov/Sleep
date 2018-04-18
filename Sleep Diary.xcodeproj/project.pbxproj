@@ -35,6 +35,7 @@
 		CD49F6AC20811AE200DAA6C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD49F6A8208117E200DAA6C8 /* Localizable.strings */; };
 		CD49F6AD20811E4B00DAA6C8 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD8F8F51207A1742007FA86A /* Interface.storyboard */; };
 		CD49F6AE20811EF900DAA6C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD49F6A8208117E200DAA6C8 /* Localizable.strings */; };
+		CD4B21E92087C37100871AB9 /* WeekdaysController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4B21E82087C37100871AB9 /* WeekdaysController.m */; };
 		CD527E86207B833F00C005F4 /* ClockKit+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA5C1DB3C50600208F7E /* ClockKit+Convenience.m */; };
 		CD527E90207B8DDF00C005F4 /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = FA394A1D1AD2B5D200138B0B /* Global.m */; };
 		CD5E0C511ED78A4100CE8C72 /* UITableViewCell+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5E0C501ED78A4100CE8C72 /* UITableViewCell+Convenience.m */; };
@@ -351,6 +352,8 @@
 		CD49F6A7208117E200DAA6C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CD49F6A9208117E700DAA6C8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CD49F6AB2081193400DAA6C8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Interface.strings; sourceTree = "<group>"; };
+		CD4B21E72087C37100871AB9 /* WeekdaysController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeekdaysController.h; sourceTree = "<group>"; };
+		CD4B21E82087C37100871AB9 /* WeekdaysController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeekdaysController.m; sourceTree = "<group>"; };
 		CD5E0C4F1ED78A4100CE8C72 /* UITableViewCell+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Convenience.h"; sourceTree = "<group>"; };
 		CD5E0C501ED78A4100CE8C72 /* UITableViewCell+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Convenience.m"; sourceTree = "<group>"; };
 		CD624B821EE4773F008CAEEA /* StatisticsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticsController.h; sourceTree = "<group>"; };
@@ -1140,6 +1143,8 @@
 				FAE94AD51C99E07B00FC2501 /* NavigationController.m */,
 				CDF5C8CE1DA01233006E36ED /* ActivitiesController.h */,
 				CDF5C8CF1DA01233006E36ED /* ActivitiesController.m */,
+				CD4B21E72087C37100871AB9 /* WeekdaysController.h */,
+				CD4B21E82087C37100871AB9 /* WeekdaysController.m */,
 				FA5BDD621CFE156C00DFB0F3 /* ActivityVisualizer.h */,
 				FA5BDD631CFE156C00DFB0F3 /* ActivityVisualizer.m */,
 				CD14034A1EF338EF009F5DDE /* HKCategorySample+JSON.h */,
@@ -1552,6 +1557,7 @@
 				CD811E791E9E90400096974D /* EDSunriseSet.m in Sources */,
 				FA47C78E1BC279D9002D2E02 /* WatchDelegate.m in Sources */,
 				FA403E4F1AEC03E500827125 /* AboutController.m in Sources */,
+				CD4B21E92087C37100871AB9 /* WeekdaysController.m in Sources */,
 				FA4BA6091DDA054B008161D4 /* NSURLSession+Convenience.m in Sources */,
 				FAA8FF081DDB50C700F9B99A /* NSBundle+Convenience.m in Sources */,
 				FABFA8B31D8187A100F79DBD /* UIRateController.m in Sources */,

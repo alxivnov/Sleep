@@ -31,12 +31,12 @@
 __synthesize(NSDateIntervalFormatter *, formatter, [[NSDateIntervalFormatter alloc] initWithDateStyle:NSDateIntervalFormatterMediumStyle timeStyle:NSDateIntervalFormatterNoStyle])
 
 - (void)setup:(NSInteger)index {
-	[AnalysisPresenter query:index == 1 ? NSCalendarUnitWeekOfMonth : index == 2 ? NSCalendarUnitMonth : index == 3 ? NSCalendarUnitYear : NSCalendarUnitWeekday completion:^(NSArray<AnalysisPresenter *> *presenters) {
+	[AnalysisPresenter query:index == 1 ? NSCalendarUnitMonth : index == 2 ? NSCalendarUnitYear : NSCalendarUnitWeekOfMonth completion:^(NSArray<AnalysisPresenter *> *presenters) {
 		[self setSamples:presenters animated:YES];
 	}];
 
 	NSDate *date = [NSDate date];
-	self.navigationItem.title = index == 1 ? [self.formatter stringFromDate:[date addValue:-1 forComponent:NSCalendarUnitWeekOfYear] toDate:date] : index == 2 ? [[NSDateFormatter defaultFormatter] monthSymbolForDate:date] : index == 3 ? [date descriptionWithFormat:@"yyyy" calendar:Nil] : [[NSDate date] descriptionForDate:NSDateFormatterMediumStyle];
+	self.navigationItem.title = index == 1 ? [[NSDateFormatter defaultFormatter] monthSymbolForDate:date] : index == 2 ? [date descriptionWithFormat:@"yyyy" calendar:Nil] : [self.formatter stringFromDate:[date addValue:-1 forComponent:NSCalendarUnitWeekOfYear] toDate:date];
 }
 
 - (void)viewDidLoad {

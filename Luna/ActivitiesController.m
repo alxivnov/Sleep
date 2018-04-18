@@ -37,6 +37,14 @@ __synthesize(NSArray *, dates, ({
 }))
 
 - (void)viewDidLoad {
+	NSDate *now = [NSDate date];
+	NSUInteger weekday = [now weekday];
+	NSUInteger firstWeekday = [NSDate firstWeekday];
+	if (firstWeekday == 1 && weekday == 0)
+		weekday = 7;
+
+	self.weekday = @(weekday - firstWeekday);
+
 	[super viewDidLoad];
 	// Do any additional setup after loading the view.
 
@@ -44,8 +52,8 @@ __synthesize(NSArray *, dates, ({
 
 	self.view.backgroundColor = RGB(13, 13, 13);
 
-	[UIPageControl appearance].currentPageIndicatorTintColor = [UIColor color:RGB_DARK_TINT];
-	[UIPageControl appearance].pageIndicatorTintColor = [UIColor lightGrayColor];
+//	[UIPageControl appearance].currentPageIndicatorTintColor = [UIColor color:RGB_DARK_TINT];
+//	[UIPageControl appearance].pageIndicatorTintColor = [UIColor lightGrayColor];
 
 //	[self pageViewController:self didFinishAnimating:NO previousViewControllers:@[ ] transitionCompleted:YES];
 
@@ -78,10 +86,10 @@ __synthesize(NSArray *, dates, ({
 	ActivityController *vc = [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"activity"];
 	vc.startDate = obj;
 	vc.endDate = [obj addValue:1 forComponent:NSCalendarUnitDay];
-	vc.navigationItem.title = [[obj descriptionForDate:NSDateFormatterMediumStyle] uppercaseString];
+	vc.navigationItem.prompt = [obj descriptionForDate:NSDateFormatterMediumStyle];
 
 	vc.view.tag = index;
-	[vc.tableView.panGestureRecognizer addTarget:self.navigationController action:@selector(pan:)];
+//	[vc.tableView.panGestureRecognizer addTarget:self.navigationController action:@selector(pan:)];
 
 	if (@available(iOS 11.0, *)) {
 
@@ -101,7 +109,7 @@ __synthesize(NSArray *, dates, ({
 - (NSUInteger)currentPage {
 	return self.viewControllers.count > 0 ? super.currentPage : self.weekday.unsignedIntegerValue;
 }
-
+/*
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
 	return self.dates.count;
 }
@@ -109,5 +117,5 @@ __synthesize(NSArray *, dates, ({
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
 	return [self indexForViewController:pageViewController.viewControllers.firstObject];
 }
-
+*/
 @end
