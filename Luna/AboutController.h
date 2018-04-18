@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@interface UIStackViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIStackView *stack;
+@end
+
 @interface AboutController : UITableViewController
 
 @end

@@ -85,6 +85,7 @@
 		CD8F8F94207AB81B007FA86A /* CMMotionActivitySample.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA5E1DB3C50600208F7E /* CMMotionActivitySample.m */; };
 		CD8F8F95207AB895007FA86A /* HKSleepAnalysis+CMMotionActivitySample.m in Sources */ = {isa = PBXBuildFile; fileRef = FACC6D5F1DF02B460009D3FF /* HKSleepAnalysis+CMMotionActivitySample.m */; };
 		CD8F8F96207AB95B007FA86A /* HKActiveEnergy+CMMotionActivitySample.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCC2BEB1E6EF19D00CCD583 /* HKActiveEnergy+CMMotionActivitySample.m */; };
+		CD9210BE20869D37001BB43B /* UIButton+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9210BD20869D37001BB43B /* UIButton+Convenience.m */; };
 		CD9BC08B1E6C8FCC003BD7DE /* MobileCoreServices+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9BC08A1E6C8FCC003BD7DE /* MobileCoreServices+Convenience.m */; };
 		CDA4C317207CF7B600551473 /* sunrise@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD811E7A1E9E92050096974D /* sunrise@2x.png */; };
 		CDA4C318207CF7B600551473 /* sunset@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD811E7B1E9E92050096974D /* sunset@2x.png */; };
@@ -389,6 +390,8 @@
 		CD8F8F8B207A6B38007FA86A /* Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Watch Extension.entitlements"; sourceTree = "<group>"; };
 		CD8F8F8C207A6B38007FA86A /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.3.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		CD8F8F90207A8EAB007FA86A /* background-fill@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-fill@2x.png"; sourceTree = "<group>"; };
+		CD9210BC20869D37001BB43B /* UIButton+Convenience.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Convenience.h"; sourceTree = "<group>"; };
+		CD9210BD20869D37001BB43B /* UIButton+Convenience.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Convenience.m"; sourceTree = "<group>"; };
 		CD9BC0891E6C8FCC003BD7DE /* MobileCoreServices+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MobileCoreServices+Convenience.h"; sourceTree = "<group>"; };
 		CD9BC08A1E6C8FCC003BD7DE /* MobileCoreServices+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MobileCoreServices+Convenience.m"; sourceTree = "<group>"; };
 		CD9C32331DB3907C005B0CA5 /* Sleep Diary.profdata */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sleep Diary.profdata"; sourceTree = "<group>"; };
@@ -1035,6 +1038,8 @@
 				CD2935721DD884F0002A9FAF /* UIApplication+Convenience.m */,
 				CD254B471F0BD2F40063C50C /* UIBezierPath+Convenience.h */,
 				CD254B481F0BD2F40063C50C /* UIBezierPath+Convenience.m */,
+				CD9210BC20869D37001BB43B /* UIButton+Convenience.h */,
+				CD9210BD20869D37001BB43B /* UIButton+Convenience.m */,
 				FA4105B91DE892CE00E76154 /* UIColor+Convenience.h */,
 				FA4105BA1DE892CE00E76154 /* UIColor+Convenience.m */,
 				FA4BA6011DDA0436008161D4 /* UIDocumentPickerViewController+Convenience.h */,
@@ -1541,6 +1546,7 @@
 				FA829A361A9C8E4400B1E47B /* IntervalController.m in Sources */,
 				CD0CB5AD207EB32A00F2B266 /* NSData+Convenience.m in Sources */,
 				CD14034C1EF338EF009F5DDE /* HKCategorySample+JSON.m in Sources */,
+				CD9210BE20869D37001BB43B /* UIButton+Convenience.m in Sources */,
 				FABFA8B01D81877900F79DBD /* NSRateController.m in Sources */,
 				CD811E801E9E93AD0096974D /* CoreLocation+Convenience.m in Sources */,
 				CD811E791E9E90400096974D /* EDSunriseSet.m in Sources */,

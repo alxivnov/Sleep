@@ -15,6 +15,7 @@
 #import "Answers+Convenience.h"
 #import "Affiliates+Convenience.h"
 #import "MessageUI+Convenience.h"
+#import "QuartzCore+Convenience.h"
 #import "NSBundle+Convenience.h"
 #import "NSObject+Convenience.h"
 #import "SKInAppPurchase.h"
@@ -32,6 +33,10 @@
 #define IDX_APPS 5
 
 #define DEV_ID 734258593
+
+@implementation UIStackViewCell
+
+@end
 
 @interface AboutController ()
 @property (strong, nonatomic, readonly) SKInAppPurchase *purchase1;
@@ -78,7 +83,7 @@ __synthesize(SKInAppPurchase *, purchase3, [SKInAppPurchase purchaseWithProductI
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return section == IDX_PURCHASE ? 3 : section == IDX_APPS ? self.apps.count : 1;
+	return /*section == IDX_PURCHASE ? 3 :*/ section == IDX_APPS ? self.apps.count : 1;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -89,13 +94,17 @@ __synthesize(SKInAppPurchase *, purchase3, [SKInAppPurchase purchaseWithProductI
 	return section == IDX_PURCHASE ? self.purchase1.localizedDescription ?: self.purchase2.localizedDescription ?: self.purchase3.localizedDescription ?: [super tableView:tableView titleForFooterInSection:section] : [super tableView:tableView titleForFooterInSection:section];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return indexPath.section == IDX_PURCHASE ? 68.0 : 56.0;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:indexPath.section == IDX_PURCHASE ? [NSString stringWithFormat:@"%ld%ld", indexPath.section, indexPath.row] : str(indexPath.section) forIndexPath:indexPath];
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:/*indexPath.section == IDX_PURCHASE ? [NSString stringWithFormat:@"%ld%ld", indexPath.section, indexPath.row] :*/ str(indexPath.section) forIndexPath:indexPath];
 
 	if (indexPath.section == 0 && indexPath.row == 0) {
 		cell.textLabel.text = [NSBundle bundleDisplayName];
 		cell.detailTextLabel.text = [NSBundle bundleShortVersionString];
-	} else if (indexPath.section == IDX_PURCHASE && indexPath.row == 0 && self.purchase1.localizedTitle) {
+	}/* else if (indexPath.section == IDX_PURCHASE && indexPath.row == 0 && self.purchase1.localizedTitle) {
 		cell.textLabel.text = self.purchase1.localizedTitle;
 		cell.detailTextLabel.text = self.purchase1.localizedPrice;
 	} else if (indexPath.section == IDX_PURCHASE && indexPath.row == 1 && self.purchase2.localizedTitle) {
@@ -104,6 +113,26 @@ __synthesize(SKInAppPurchase *, purchase3, [SKInAppPurchase purchaseWithProductI
 	} else if (indexPath.section == IDX_PURCHASE && indexPath.row == 2 && self.purchase3.localizedTitle) {
 		cell.textLabel.text = self.purchase3.localizedTitle;
 		cell.detailTextLabel.text = self.purchase3.localizedPrice;
+	}*/ else if (indexPath.section == IDX_PURCHASE) {
+		UIStackViewCell *stack = cls(UIStackViewCell, cell);
+
+		if (self.purchase1.localizedTitle && stack.stack.arrangedSubviews.count > 0)
+			[(UIButton *)stack.stack.arrangedSubviews[0] setTitle:self.purchase1.localizedPrice forState:UIControlStateNormal];
+
+		if (self.purchase2.localizedTitle && stack.stack.arrangedSubviews.count > 1)
+			[(UIButton *)stack.stack.arrangedSubviews[1] setTitle:self.purchase2.localizedPrice forState:UIControlStateNormal];
+
+		if (self.purchase3.localizedTitle && stack.stack.arrangedSubviews.count > 2)
+			[(UIButton *)stack.stack.arrangedSubviews[2] setTitle:self.purchase3.localizedPrice forState:UIControlStateNormal];
+
+		for (NSUInteger index = 0; index < stack.stack.arrangedSubviews.count; index++) {
+			UIButton *button = stack.stack.arrangedSubviews[index];
+
+			button.tag = index;
+			[button addTarget:self action:@selector(purchase:) forControlEvents:UIControlEventTouchUpInside];
+
+			[button layoutVertically:8.0];
+		}
 	} else if (indexPath.section == IDX_APPS) {
 		AFMediaItem *app = self.apps[indexPath.row];
 
@@ -141,36 +170,9 @@ __synthesize(SKInAppPurchase *, purchase3, [SKInAppPurchase purchaseWithProductI
 			}];
 		}
 */
-	} else if (indexPath.section == IDX_PURCHASE) {
-		__weak AboutController *__self = self;
+	} /*else if (indexPath.section == IDX_PURCHASE) {
 
-		SKInAppPurchase *purchase = indexPath.row == 1 ? self.purchase2 : indexPath.row == 2 ? self.purchase3 : self.purchase1;
-
-		[purchase requestProduct:^(SKProduct *product, NSError *error) {
-			SKPayment *payment = [purchase requestPayment:product handler:^(NSArray<SKPaymentTransaction *> *transactions) {
-				BOOL success = transactions.lastObject.transactionState == SKPaymentTransactionStatePurchased;
-
-				if (success)
-					[__self presentAlertWithTitle:[Localization thankYou] message:[Localization feedbackMessage] cancelActionTitle:Nil destructiveActionTitle:Nil otherActionTitles:@[ [Localization yes], [Localization no] ] completion:^(UIAlertController *instance, NSInteger index) {
-						if (index == 0)
-							[__self presentMailComposeWithRecipient:STR_EMAIL subject:[NSBundle bundleDisplayNameAndShortVersion]];
-					}];
-				else
-					[__self presentAlertWithError:error cancelActionTitle:[Localization cancel]];
-
-				[Answers logPurchaseWithPrice:product.price currency:product.priceLocale.currencyCode success:@(success) itemName:product.localizedTitle itemType:Nil itemId:product.productIdentifier customAttributes:dic_(@"error", transactions.lastObject.error.shortDescription)];
-
-				for (SKPaymentTransaction *transaction in transactions)
-					[Answers logError:transaction.error];
-			}];
-
-			[Answers logStartCheckoutWithPrice:product.price currency:product.priceLocale.currencyCode itemCount:@(payment.quantity) customAttributes:dic_(@"error", error.shortDescription)];
-
-			[Answers logError:error];
-		}];
-
-		[Answers logAddToCartWithPrice:purchase.price currency:purchase.currencyCode itemName:purchase.localizedTitle itemType:Nil itemId:purchase.productIdentifier customAttributes:Nil];
-	} else if (indexPath.section == 2) {
+	}*/ else if (indexPath.section == 2) {
 		UIImage *screenshot = [self.presentingViewController.view snapshotImageAfterScreenUpdates:YES];
 
 		[self presentMailComposeWithRecipients:arr_(STR_EMAIL) subject:[NSBundle bundleDisplayNameAndShortVersion] body:Nil attachments:screenshot ? @{ @"screenshot.jpg" : [screenshot jpegRepresentation] } : Nil completionHandler:Nil];
@@ -187,6 +189,37 @@ __synthesize(SKInAppPurchase *, purchase3, [SKInAppPurchase purchaseWithProductI
 	}
 	
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (IBAction)purchase:(UIButton *)sender {
+	__weak AboutController *__self = self;
+
+	SKInAppPurchase *purchase = sender.tag == 1 ? self.purchase2 : sender.tag == 2 ? self.purchase3 : self.purchase1;
+
+	[purchase requestProduct:^(SKProduct *product, NSError *error) {
+		SKPayment *payment = [purchase requestPayment:product handler:^(NSArray<SKPaymentTransaction *> *transactions) {
+			BOOL success = transactions.lastObject.transactionState == SKPaymentTransactionStatePurchased;
+
+			if (success)
+				[__self presentAlertWithTitle:[Localization thankYou] message:[Localization feedbackMessage] cancelActionTitle:Nil destructiveActionTitle:Nil otherActionTitles:@[ [Localization yes], [Localization no] ] completion:^(UIAlertController *instance, NSInteger index) {
+					if (index == 0)
+						[__self presentMailComposeWithRecipient:STR_EMAIL subject:[NSBundle bundleDisplayNameAndShortVersion]];
+				}];
+			else
+				[__self presentAlertWithError:error cancelActionTitle:[Localization cancel]];
+
+			[Answers logPurchaseWithPrice:product.price currency:product.priceLocale.currencyCode success:@(success) itemName:product.localizedTitle itemType:Nil itemId:product.productIdentifier customAttributes:dic_(@"error", transactions.lastObject.error.shortDescription)];
+
+			for (SKPaymentTransaction *transaction in transactions)
+				[Answers logError:transaction.error];
+		}];
+
+		[Answers logStartCheckoutWithPrice:product.price currency:product.priceLocale.currencyCode itemCount:@(payment.quantity) customAttributes:dic_(@"error", error.shortDescription)];
+
+		[Answers logError:error];
+	}];
+
+	[Answers logAddToCartWithPrice:purchase.price currency:purchase.currencyCode itemName:purchase.localizedTitle itemType:Nil itemId:purchase.productIdentifier customAttributes:Nil];
 }
 
 @end

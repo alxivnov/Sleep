@@ -61,11 +61,12 @@
 - (void)table:(WKInterfaceTable *)table didSelectRowAtIndex:(NSInteger)rowIndex {
 	NSUInteger index = rowIndex - table.numberOfRows;
 
-	if (index == -2)
-		[[HKHealthStore defaultStore] saveObjects:self.samples completion:Nil];
-
 	if (index == -1)
-		[self dismissController];
+		[[HKHealthStore defaultStore] saveObjects:self.samples completion:^(BOOL success) {
+			[GCD main:^{
+				[self dismissController];
+			}];
+		}];
 }
 
 @end
