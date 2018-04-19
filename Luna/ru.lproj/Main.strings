@@ -45,16 +45,13 @@
 "dD9-tH-nBs.title" = "Атмосферное давление";
 
 /* Class = "UISegmentedControl"; Gzj-x3-q4q.segmentTitles[0] = "Day"; ObjectID = "Gzj-x3-q4q"; */
-"Gzj-x3-q4q.segmentTitles[0]" = "День";
+"Gzj-x3-q4q.segmentTitles[0]" = "Неделя";
 
 /* Class = "UISegmentedControl"; Gzj-x3-q4q.segmentTitles[1] = "Week"; ObjectID = "Gzj-x3-q4q"; */
-"Gzj-x3-q4q.segmentTitles[1]" = "Нед.";
+"Gzj-x3-q4q.segmentTitles[1]" = "Месяц";
 
 /* Class = "UISegmentedControl"; Gzj-x3-q4q.segmentTitles[2] = "Month"; ObjectID = "Gzj-x3-q4q"; */
-"Gzj-x3-q4q.segmentTitles[2]" = "Мес.";
-
-/* Class = "UISegmentedControl"; Gzj-x3-q4q.segmentTitles[3] = "Year"; ObjectID = "Gzj-x3-q4q"; */
-"Gzj-x3-q4q.segmentTitles[3]" = "Год";
+"Gzj-x3-q4q.segmentTitles[2]" = "Год";
 
 /* Class = «UINavigationItem»; title = «Data»; ObjectID = «pcq-gH-aUz»; */
 "pcq-gH-aUz.title" = "Данные";

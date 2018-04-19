@@ -14,13 +14,13 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Luna-Button-Normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="4qg-3b-uew">
-                    <rect key="frame" x="112" y="112" width="256" height="256"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Luna-Button-Normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="4qg-3b-uew">
+                    <rect key="frame" x="95" y="172" width="290" height="290"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="4qg-3b-uew" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="5LG-G6-Udc"/>
+                <constraint firstItem="4qg-3b-uew" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="172" id="b1g-tM-l6d"/>
                 <constraint firstItem="4qg-3b-uew" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="sZV-8b-yFG"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

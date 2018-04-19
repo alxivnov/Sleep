@@ -13,6 +13,8 @@
 #import "Localization.h"
 #import "Widget.h"
 #import "HKCategorySample+JSON.h"
+#import "SleepButtonCell.h"
+#import "SleepSwitchCell.h"
 
 #import "NSArray+Convenience.h"
 #import "NSBundle+Convenience.h"
@@ -33,15 +35,33 @@
 
 @implementation ActivityController
 
+- (BOOL)showSwitch {
+	return self.startDate.isToday;
+}
+
 - (BOOL)showActivity {
 	return self.samples.firstObject.allSamples != Nil;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return (self.showActivity ? /*self.navigationController.navigationBar.barTintColor*/YES ? 2 : 1 : 0) + [super numberOfSectionsInTableView:tableView];
+	return (self.showButton ? self.showSwitch ? 2 : 1 : 0) + (self.showActivity ? /*self.navigationController.navigationBar.barTintColor*/YES ? 2 : 1 : 0) + [super numberOfSectionsInTableView:tableView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	if (self.showButton) {
+		if (section == 0)
+			return 1;
+
+		if (self.showSwitch) {
+			if (section == 1)
+				return 1;
+
+			section--;
+		}
+
+		section--;
+	}
+
 	return self.showActivity && section == 0
 		? 3
 		: self.showActivity && section == 2
@@ -49,9 +69,38 @@
 			: [super tableView:tableView numberOfRowsInSection:section];
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (self.showButton && (indexPath.section == 0 || (self.showSwitch && indexPath.section == 1)))
+		[cell removeSeparators];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	NSInteger section = indexPath.section;
+
+	if (self.showButton) {
+		if (section == 0) {
+			SleepButtonCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Button Cell" forIndexPath:indexPath];
+
+			[cell setup:self.samples];
+			return cell;
+		}
+
+		if (self.showSwitch) {
+			if (section == 1) {
+				SleepSwitchCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Reminder Cell" forIndexPath:indexPath];
+				cell.accessorySwitch.onTintColor = [UIColor color:RGB_DARK_TINT];
+				[cell setupAlertButton:self.samples];
+				return cell;
+			}
+
+			section--;
+		}
+
+		section--;
+	}
+
 	if (self.showActivity) {
-		if (indexPath.section == 0) {
+		if (section == 0) {
 			UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:indexPath.row == 0 ? @"Scale Cell" : indexPath.row == 2 ? GUI_BASIC_CELL_ID : GUI_CUSTOM_CELL_ID forIndexPath:indexPath];
 
 			if (indexPath.row == 1) {
@@ -90,7 +139,7 @@
 			}
 
 			return cell;
-		} else if (indexPath.section == 2) {
+		} else if (section == 2) {
 			return [tableView dequeueReusableCellWithIdentifier:@"Mail Cell" forIndexPath:indexPath];
 		}
 	}
@@ -99,18 +148,49 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
+	if (self.showButton) {
+		if (section == 0)
+			return Nil;
+
+		if (self.showSwitch) {
+			if (section == 1)
+				return Nil;
+
+			section--;
+		}
+
+		section--;
+	}
+
 	return section == 2 && self.showActivity ? [Localization mailFooter] : [super tableView:tableView titleForFooterInSection:section];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (self.showActivity && indexPath.section == 0)
+	NSInteger section = indexPath.section;
+
+	if (self.showButton) {
+		if (section == 0) {
+			return;
+		}
+
+		if (self.showSwitch) {
+			if (section == 1)
+				return;
+
+			section--;
+		}
+
+		section--;
+	}
+
+	if (self.showActivity && section == 0)
 		return;
 
 	AnalysisPresenter *sample = idx(self.samples, indexPath.row);
 	if (sample.allSamples)
-		[(ActivityVisualizer *)[[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]] subview:UISubviewKindOfClass(ActivityVisualizer)] scrollRectToStartDate:sample.startDate endDate:sample.endDate animated:self.showActivity && indexPath.section == 2 ? NO : YES];
+		[(ActivityVisualizer *)[[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]] subview:UISubviewKindOfClass(ActivityVisualizer)] scrollRectToStartDate:sample.startDate endDate:sample.endDate animated:self.showActivity && section == 2 ? NO : YES];
 
-	if (self.showActivity && indexPath.section == 2) {
+	if (self.showActivity && section == 2) {
 		[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
 
 		UIImage *screenshot = [self.view snapshotImageAfterScreenUpdates:YES];
@@ -130,14 +210,48 @@
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (self.showActivity && (indexPath.section == 0 || indexPath.section == 2))
+	NSInteger section = indexPath.section;
+
+	if (self.showButton) {
+		if (section == 0) {
+			return NO;
+		}
+
+		if (self.showSwitch) {
+			if (section == 1)
+				return NO;
+
+			section--;
+		}
+
+		section--;
+	}
+
+	if (self.showActivity && (section == 0 || section == 2))
 		return NO;
 
 	return [super tableView:tableView canEditRowAtIndexPath:indexPath];
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (self.showActivity && (indexPath.section == 0 || indexPath.section == 2))
+	NSInteger section = indexPath.section;
+
+	if (self.showButton) {
+		if (section == 0) {
+			return;
+		}
+
+		if (self.showSwitch) {
+			if (section == 1)
+				return;
+
+			section--;
+		}
+
+		section--;
+	}
+
+	if (self.showActivity && (section == 0 || section == 2))
 		return;
 
 	if (editingStyle != UITableViewCellEditingStyleDelete)
@@ -189,7 +303,24 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (self.showActivity && indexPath.section == 0)
+	NSInteger section = indexPath.section;
+
+	if (self.showButton) {
+		if (section == 0) {
+			return 320.0;
+		}
+
+		if (self.showSwitch) {
+			if (section == 1)
+				return 56.0;
+
+			section--;
+		}
+
+		section--;
+	}
+
+	if (self.showActivity && section == 0)
 		return indexPath.row == 1 ? 128.0 * (GLOBAL.scale ? 2.0 : 1.0) : 22.0;
 
 	return [super tableView:tableView heightForRowAtIndexPath:indexPath];
@@ -228,7 +359,7 @@
 	GLOBAL.scale = !GLOBAL.scale;
 	[self.tableView endUpdates];
 
-	ActivityVisualizer *visualizer = [[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]] subview:UISubviewKindOfClass(ActivityVisualizer)];
+	ActivityVisualizer *visualizer = [[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:self.showSwitch ? 2 : 1]] subview:UISubviewKindOfClass(ActivityVisualizer)];
 	visualizer.zoom = 0.5 * (GLOBAL.scale ? 2.0 : 1.0);
 
 	[sender setTitle:[NSString stringWithFormat:@"%dX", GLOBAL.scale ? 2 : 1] forState:UIControlStateNormal];

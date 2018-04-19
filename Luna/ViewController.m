@@ -129,9 +129,9 @@
 		
 		self.timer.enabled = YES;
 		
-		self.aboutButton.hidden = YES;
-		self.pressureButton.hidden = YES;
-		self.settingsButton.hidden = YES;
+//		self.aboutButton.hidden = YES;
+//		self.pressureButton.hidden = YES;
+//		self.settingsButton.hidden = YES;
 		
 		if (self.alarmController.view)
 			[self setupTodayView:self.alarmController.view];
@@ -142,10 +142,10 @@
 		[self.startButton setTitle:Nil forState:UIControlStateSelected];
 		
 		self.timer.enabled = NO;
-		
-		self.aboutButton.hidden = NO;
-		self.pressureButton.hidden = NO;//![CMAltimeter isRelativeAltitudeAvailable];
-		self.settingsButton.hidden = NO;
+
+//		self.aboutButton.hidden = NO;
+//		self.pressureButton.hidden = NO;//![CMAltimeter isRelativeAltitudeAvailable];
+//		self.settingsButton.hidden = NO;
 
 		[self setupAlertView:^(BOOL hasData) {
 			if (!GLOBAL.isAuthorized.boolValue)

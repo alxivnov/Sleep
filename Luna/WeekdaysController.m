@@ -15,6 +15,9 @@
 #import "UIButton+Convenience.h"
 #import "UIViewController+Convenience.h"
 
+#import "SleepButtonCell.h"
+#import "SleepSwitchCell.h"
+
 @interface WeekdaysController ()
 @property (weak, nonatomic) IBOutlet UIButton *sunButton;
 @property (weak, nonatomic) IBOutlet UIButton *monButton;
@@ -113,7 +116,10 @@
 			return obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed ? @(obj.duration) : Nil;
 		}];
 		[GCD main:^{
-#warning			[self setSleepDuration:days[today].duration inBedDuration:inBed cycleCount:presenters.firstObject.cycleCount animated:YES];
+			UITableViewController *vc = cls(UITableViewController, self.viewControllers.firstObject);
+
+			SleepButtonCell *buttonCell = cls(SleepButtonCell, [vc.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]]);
+			[buttonCell setSleepDuration:days[today].duration inBedDuration:inBed cycleCount:presenters.firstObject.cycleCount animated:YES];
 
 			for (NSUInteger index = 0; index < self.weekButtons.count; index++) {
 				NSUInteger day = index + firstWeekday;
@@ -126,7 +132,8 @@
 			}
 			self.weekdays = weekdays;
 
-#warning			[self setupAlertButton:presenters];
+			SleepSwitchCell *switchCell = cls(SleepSwitchCell, [vc.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]]);
+			[switchCell setupAlertButton:presenters];
 
 			if (completion)
 				completion(presenters.count > 0);

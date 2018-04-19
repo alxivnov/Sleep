@@ -35,14 +35,24 @@
 	return [WKExtension sharedExtension].delegate;
 }
 
-- (void)setupSunrise:(NSDate *)sunrise sunset:(NSDate *)sunset {
+- (void)setup:(CLLocation *)location {
 	NSMutableArray<NSDictionary *> *dates = [NSMutableArray arrayWithCapacity:3];
 
-	if (sunrise)
-		[dates addObject:@{ @"date" : sunrise, @"type" : ROW_ID_SUNRISE }];
+	if (location) {
+		EDSunriseSet *today = [EDSunriseSet sunrisesetWithDate:[NSDate date] timezone:[NSCalendar currentCalendar].timeZone latitude:location.coordinate.latitude longitude:location.coordinate.longitude];
+		NSDate *sunrise = today.sunrise;
+		NSDate *sunset = today.sunset;
+		if (sunrise.isPast) {
+			EDSunriseSet *tomorrow = [EDSunriseSet sunrisesetWithDate:[today.date addValue:1 forComponent:NSCalendarUnitDay] timezone:[NSCalendar currentCalendar].timeZone latitude:location.coordinate.latitude longitude:location.coordinate.longitude];
+			sunrise = tomorrow.sunrise;
 
-	if (sunset)
+			if (sunset.isPast)
+				sunset = tomorrow.sunset;
+		}
+
+		[dates addObject:@{ @"date" : sunrise, @"type" : ROW_ID_SUNRISE }];
 		[dates addObject:@{ @"date" : sunset, @"type" : ROW_ID_SUNSET }];
+	}
 
 	NSDate *date = self.delegate.startDate ? [self.delegate alarmDate] : [self.delegate alertDate];
 	if (date)
@@ -77,7 +87,11 @@
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
 
-	[[CLLocationManager defaultManager] requestWhenInUseAuthorization];
+	CLLocation *location = [CLLocationManager defaultManager].location;
+	if (location)
+		[self setup:location];
+	else
+		[[CLLocationManager defaultManager] requestWhenInUseAuthorization];
 }
 
 - (void)didDeactivate {
@@ -95,21 +109,8 @@
 //	[locations log:@"didUpdateLocations:"];
 
 	CLLocation *location = locations.lastObject;
-	if (!location)
-		return;
 
-	EDSunriseSet *today = [EDSunriseSet sunrisesetWithDate:[NSDate date] timezone:[NSCalendar currentCalendar].timeZone latitude:location.coordinate.latitude longitude:location.coordinate.longitude];
-	NSDate *sunrise = today.sunrise;
-	NSDate *sunset = today.sunset;
-	if (sunrise.isPast) {
-		EDSunriseSet *tomorrow = [EDSunriseSet sunrisesetWithDate:[today.date addValue:1 forComponent:NSCalendarUnitDay] timezone:[NSCalendar currentCalendar].timeZone latitude:location.coordinate.latitude longitude:location.coordinate.longitude];
-		sunrise = tomorrow.sunrise;
-
-		if (sunset.isPast)
-			sunset = tomorrow.sunset;
-	}
-
-	[self setupSunrise:sunrise sunset:sunset];
+	[self setup:location];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {

@@ -45,16 +45,13 @@
 "dD9-tH-nBs.title" = "Atmosfer Basıncı";
 
 /* Class = "UISegmentedControl"; Gzj-x3-q4q.segmentTitles[0] = "Day"; ObjectID = "Gzj-x3-q4q"; */
-"Gzj-x3-q4q.segmentTitles[0]" = "Gün";
+"Gzj-x3-q4q.segmentTitles[0]" = "Hafta";
 
 /* Class = "UISegmentedControl"; Gzj-x3-q4q.segmentTitles[1] = "Week"; ObjectID = "Gzj-x3-q4q"; */
-"Gzj-x3-q4q.segmentTitles[1]" = "Hafta";
+"Gzj-x3-q4q.segmentTitles[1]" = "Ay";
 
 /* Class = "UISegmentedControl"; Gzj-x3-q4q.segmentTitles[2] = "Month"; ObjectID = "Gzj-x3-q4q"; */
-"Gzj-x3-q4q.segmentTitles[2]" = "Ay";
-
-/* Class = "UISegmentedControl"; Gzj-x3-q4q.segmentTitles[3] = "Year"; ObjectID = "Gzj-x3-q4q"; */
-"Gzj-x3-q4q.segmentTitles[3]" = "Yıl";
+"Gzj-x3-q4q.segmentTitles[2]" = "Yıl";
 
 /* Class = «UINavigationItem»; title = «Data»; ObjectID = «pcq-gH-aUz»; */
 "pcq-gH-aUz.title" = "Veri";

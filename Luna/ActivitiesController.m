@@ -86,6 +86,7 @@ __synthesize(NSArray *, dates, ({
 	ActivityController *vc = [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"activity"];
 	vc.startDate = obj;
 	vc.endDate = [obj addValue:1 forComponent:NSCalendarUnitDay];
+	vc.showButton = YES;
 	vc.navigationItem.prompt = [obj descriptionForDate:NSDateFormatterMediumStyle];
 
 	vc.view.tag = index;

@@ -15,6 +15,9 @@
 @property (strong, nonatomic) NSDate *startDate;
 @property (strong, nonatomic) NSDate *endDate;
 
+@property (assign, nonatomic) BOOL showButton;
+@property (assign, nonatomic, readonly) BOOL showSwitch;
+
 @property (assign, nonatomic, readonly) BOOL showActivity;
 
 @end

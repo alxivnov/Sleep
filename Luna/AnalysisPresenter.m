@@ -131,7 +131,7 @@ __synthesize(NSUInteger, cycleCount, floor(self.duration / SLEEP_CYCLE_DURATION)
 }
 
 - (NSString *)detailText {
-	NSString *detailText = self.allSamples.firstObject.value == HKCategoryValueSleepAnalysisAsleep ? loc(@"Asleep") : self.allSamples.firstObject.value == HKCategoryValueSleepAnalysisAsleep ? loc(@"In Bed") : Nil;
+	NSString *detailText = self.allSamples.firstObject.value == HKCategoryValueSleepAnalysisAsleep ? loc(@"Asleep") : self.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed ? loc(@"In Bed") : Nil;
 	if (IS_DEBUGGING && self.allSamples.firstObject.metadata[HKMetadataKeySleepOnsetLatency])
 		detailText = [NSString stringWithFormat:@"%@ (%@)", detailText, [[NSDateComponentsFormatter mmssAbbreviatedFormatter] stringFromTimeInterval:[self.allSamples.firstObject.metadata[HKMetadataKeySleepOnsetLatency] doubleValue]]];
 	return detailText;

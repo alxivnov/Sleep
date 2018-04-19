@@ -96,6 +96,8 @@
 		CDA4C31C207CF84000551473 /* sun-full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA47C7901BC27F0B002D2E02 /* sun-full@2x.png */; };
 		CDA8403A1DDB8C3A0042D2CC /* UIImage+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA840391DDB8C3A0042D2CC /* UIImage+Convenience.m */; };
 		CDA8403D1DDB8C690042D2CC /* NSCalendar+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8403C1DDB8C690042D2CC /* NSCalendar+Convenience.m */; };
+		CDAC1E422088BE1800587CC4 /* SleepButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAC1E412088BE1800587CC4 /* SleepButtonCell.m */; };
+		CDAC1E452088F68400587CC4 /* SleepSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAC1E442088F68400587CC4 /* SleepSwitchCell.m */; };
 		CDAE76731F229C510085F78A /* Answers+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAE76721F229C510085F78A /* Answers+Convenience.m */; };
 		CDCC2BEC1E6EF19D00CCD583 /* HKActiveEnergy+CMMotionActivitySample.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCC2BEB1E6EF19D00CCD583 /* HKActiveEnergy+CMMotionActivitySample.m */; };
 		CDE33AFD2049920C00F89AD8 /* UIScrollView+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE33AFB2049920B00F89AD8 /* UIScrollView+Convenience.m */; };
@@ -155,7 +157,6 @@
 		FA16EFFA1C7B142E006D1721 /* chat-line-30@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA16EFF81C7B142E006D1721 /* chat-line-30@2x.png */; };
 		FA21776E1AF534DE0089740E /* Widget.m in Sources */ = {isa = PBXBuildFile; fileRef = FA21776D1AF534DE0089740E /* Widget.m */; };
 		FA2255831CC261BB0067A10C /* Luna-Week-Background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2255821CC261BB0067A10C /* Luna-Week-Background@2x.png */; };
-		FA2255861CC26B400067A10C /* UIButton+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2255851CC26B400067A10C /* UIButton+Convenience.m */; };
 		FA2EFC3E1DDF211600E24C1E /* UIGestureTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFC3D1DDF211600E24C1E /* UIGestureTransition.m */; };
 		FA2EFC411DDF212000E24C1E /* UIInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFC401DDF212000E24C1E /* UIInteractiveTransition.m */; };
 		FA30FC101D212DBA00EC8D7E /* sleep@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA30FC0D1D212DBA00EC8D7E /* sleep@2x.png */; };
@@ -403,6 +404,10 @@
 		CDA840391DDB8C3A0042D2CC /* UIImage+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Convenience.m"; sourceTree = "<group>"; };
 		CDA8403B1DDB8C690042D2CC /* NSCalendar+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+Convenience.h"; sourceTree = "<group>"; };
 		CDA8403C1DDB8C690042D2CC /* NSCalendar+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+Convenience.m"; sourceTree = "<group>"; };
+		CDAC1E402088BE1800587CC4 /* SleepButtonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SleepButtonCell.h; sourceTree = "<group>"; };
+		CDAC1E412088BE1800587CC4 /* SleepButtonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SleepButtonCell.m; sourceTree = "<group>"; };
+		CDAC1E432088F68400587CC4 /* SleepSwitchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SleepSwitchCell.h; sourceTree = "<group>"; };
+		CDAC1E442088F68400587CC4 /* SleepSwitchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SleepSwitchCell.m; sourceTree = "<group>"; };
 		CDAE76711F229C510085F78A /* Answers+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Answers+Convenience.h"; sourceTree = "<group>"; };
 		CDAE76721F229C510085F78A /* Answers+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Answers+Convenience.m"; sourceTree = "<group>"; };
 		CDCC2BEA1E6EF19D00CCD583 /* HKActiveEnergy+CMMotionActivitySample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HKActiveEnergy+CMMotionActivitySample.h"; sourceTree = "<group>"; };
@@ -491,8 +496,6 @@
 		FA21776C1AF534DE0089740E /* Widget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Widget.h; sourceTree = "<group>"; };
 		FA21776D1AF534DE0089740E /* Widget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Widget.m; sourceTree = "<group>"; };
 		FA2255821CC261BB0067A10C /* Luna-Week-Background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Luna-Week-Background@2x.png"; sourceTree = "<group>"; };
-		FA2255841CC26B400067A10C /* UIButton+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Convenience.h"; sourceTree = "<group>"; };
-		FA2255851CC26B400067A10C /* UIButton+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Convenience.m"; sourceTree = "<group>"; };
 		FA2EFC3C1DDF211600E24C1E /* UIGestureTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIGestureTransition.h; sourceTree = "<group>"; };
 		FA2EFC3D1DDF211600E24C1E /* UIGestureTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIGestureTransition.m; sourceTree = "<group>"; };
 		FA2EFC3F1DDF212000E24C1E /* UIInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIInteractiveTransition.h; sourceTree = "<group>"; };
@@ -959,8 +962,6 @@
 			children = (
 				FA098B6F1C91B98300D83FDF /* UIAccessoryView.h */,
 				FA098B6E1C91B98300D83FDF /* UIAccessoryView.m */,
-				FA2255841CC26B400067A10C /* UIButton+Convenience.h */,
-				FA2255851CC26B400067A10C /* UIButton+Convenience.m */,
 				FAF5EA961C7BB7F20026F791 /* UIDatePicker+Convenience.h */,
 				FAF5EA971C7BB7F20026F791 /* UIDatePicker+Convenience.m */,
 				FA422A671B2EBB060011C7E3 /* UIFont+Modification.h */,
@@ -1109,14 +1110,14 @@
 			children = (
 				FAC497571A7F6CC6006A26AB /* AppDelegate.h */,
 				FAC497581A7F6CC6006A26AB /* AppDelegate.m */,
-				FAB3CD091CBFE41E00523C78 /* BaseController.h */,
-				FAB3CD0A1CBFE41E00523C78 /* BaseController.m */,
-				FA93F4DE1CC50A920055740F /* AlertController.h */,
-				FA93F4DF1CC50A920055740F /* AlertController.m */,
 				FAEDA3F01C0B5F830074941F /* AlarmController.h */,
 				FAEDA3F11C0B5F830074941F /* AlarmController.m */,
 				FAC4975A1A7F6CC6006A26AB /* ViewController.h */,
 				FAC4975B1A7F6CC6006A26AB /* ViewController.m */,
+				FA93F4DE1CC50A920055740F /* AlertController.h */,
+				FA93F4DF1CC50A920055740F /* AlertController.m */,
+				FAB3CD091CBFE41E00523C78 /* BaseController.h */,
+				FAB3CD0A1CBFE41E00523C78 /* BaseController.m */,
 				FAC4975D1A7F6CC6006A26AB /* Main.storyboard */,
 				FAC497601A7F6CC6006A26AB /* Images.xcassets */,
 				FAC497621A7F6CC6006A26AB /* LaunchScreen.xib */,
@@ -1133,6 +1134,10 @@
 				FA21776D1AF534DE0089740E /* Widget.m */,
 				FA0FB16D1C907BBD0065558A /* SegmentController.h */,
 				FA0FB16E1C907BBD0065558A /* SegmentController.m */,
+				CDAC1E402088BE1800587CC4 /* SleepButtonCell.h */,
+				CDAC1E412088BE1800587CC4 /* SleepButtonCell.m */,
+				CDAC1E432088F68400587CC4 /* SleepSwitchCell.h */,
+				CDAC1E442088F68400587CC4 /* SleepSwitchCell.m */,
 				FA6A804A1CCACF88008023A8 /* ActivityController.h */,
 				FA6A804B1CCACF88008023A8 /* ActivityController.m */,
 				FAF0B2F51B554188001D0E66 /* AnalysisController.h */,
@@ -1519,7 +1524,6 @@
 				CD49F6942080B8CB00DAA6C8 /* Settings.m in Sources */,
 				FAF0B2F71B554188001D0E66 /* AnalysisController.m in Sources */,
 				FABFA8C81D819B6A00F79DBD /* NSArray+AnalysisPresenter.m in Sources */,
-				FA2255861CC26B400067A10C /* UIButton+Convenience.m in Sources */,
 				CDFC35301EF07288001F2CAB /* Accelerate+Convenience.m in Sources */,
 				FA098B731C91BAD600D83FDF /* UIImage+View.m in Sources */,
 				FACC6D601DF02B460009D3FF /* HKSleepAnalysis+CMMotionActivitySample.m in Sources */,
@@ -1571,6 +1575,7 @@
 				CD2935701DD884AA002A9FAF /* QuartzCore+Convenience.m in Sources */,
 				CDF5FA761DB3C50700208F7E /* UserNotifications+Convenience.m in Sources */,
 				FA422A691B2EBB060011C7E3 /* UIFont+Modification.m in Sources */,
+				CDAC1E422088BE1800587CC4 /* SleepButtonCell.m in Sources */,
 				CD9BC08B1E6C8FCC003BD7DE /* MobileCoreServices+Convenience.m in Sources */,
 				FAE94AD61C99E07B00FC2501 /* NavigationController.m in Sources */,
 				FA6A804C1CCACF88008023A8 /* ActivityController.m in Sources */,
@@ -1602,6 +1607,7 @@
 				CD0459332049ACDF006D48D0 /* NSXMLDictionary.m in Sources */,
 				FA4BA60C1DDA08DD008161D4 /* CommonCrypto+Convenience.m in Sources */,
 				CDF5C8D01DA01233006E36ED /* ActivitiesController.m in Sources */,
+				CDAC1E452088F68400587CC4 /* SleepSwitchCell.m in Sources */,
 				FAC497561A7F6CC6006A26AB /* main.m in Sources */,
 				CDE3A8D31DE095D900AEB8BB /* UILabel+Convenience.m in Sources */,
 				FA8856BD1DDCACF6001B869F /* UIAlertController+Convenience.m in Sources */,

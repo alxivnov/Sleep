@@ -21,16 +21,13 @@
 "rdQ-ME-qgA.text" = "Bevorzugte Schlafdauer";
 
 /* Class = "UISegmentedControl"; Gzj-x3-q4q.segmentTitles[0] = "Day"; ObjectID = "Gzj-x3-q4q"; */
-"Gzj-x3-q4q.segmentTitles[0]" = "Tag";
+"Gzj-x3-q4q.segmentTitles[0]" = "Woche";
 
 /* Class = "UISegmentedControl"; Gzj-x3-q4q.segmentTitles[1] = "Week"; ObjectID = "Gzj-x3-q4q"; */
-"Gzj-x3-q4q.segmentTitles[1]" = "Woche";
+"Gzj-x3-q4q.segmentTitles[1]" = "Monat";
 
 /* Class = "UISegmentedControl"; Gzj-x3-q4q.segmentTitles[2] = "Month"; ObjectID = "Gzj-x3-q4q"; */
-"Gzj-x3-q4q.segmentTitles[2]" = "Monat";
-
-/* Class = "UISegmentedControl"; Gzj-x3-q4q.segmentTitles[3] = "Year"; ObjectID = "Gzj-x3-q4q"; */
-"Gzj-x3-q4q.segmentTitles[3]" = "Jahr";
+"Gzj-x3-q4q.segmentTitles[2]" = "Jahr";
 
 // segmented
 "GZz-cv-Z7j.text" = "Aktivität";
