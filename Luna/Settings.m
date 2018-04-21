@@ -205,16 +205,20 @@ __synthesize(NSUserDefaults *, defaults, [NSUserDefaults standardUserDefaults])
 
 	free(bytes);
 
-	NSMutableArray<HKCategorySample *> *arr = [NSMutableArray arrayWithCapacity:sleepArray.count * 2];
-	for (NSDateInterval *interval in sleepArray)
+	NSMutableArray<HKCategorySample *> *arr = [NSMutableArray arrayWithCapacity:sleepArray.count + inBedArray.count];
+/*	for (NSDateInterval *interval in sleepArray)
 		[arr addObject:[HKDataSleepAnalysis sampleWithStartDate:interval.startDate endDate:interval.endDate value:HKCategoryValueSleepAnalysisAsleep metadata:@{ HKMetadataKeySleepOnsetLatency : @(sleepLatency) }]];
-	for (NSDateInterval *interval in inBedArray)
+*/	for (NSDateInterval *interval in inBedArray)
 		if ([sleepArray any:^BOOL(NSDateInterval *obj) {
 			return [obj intersectsDateInterval:interval];
-		}])
+		}]) {
 			[arr addObject:[HKDataSleepAnalysis sampleWithStartDate:interval.startDate endDate:interval.endDate value:HKCategoryValueSleepAnalysisInBed metadata:@{ HKMetadataKeySampleActivities : [CMMotionActivitySample samplesToString:[activities query:^BOOL(CMMotionActivitySample *obj) {
 				return [interval containsDate:obj.startDate] || [interval containsDate:obj.endDate];
 			}] date:interval.startDate] ?: STR_EMPTY }]];
+
+			[arr addObjectsFromArray:[HKDataSleepAnalysis samplesFromActivities:activities maxSleepLatency:sleepLatency]];
+		}
+
 
 	[arr sortUsingComparator:^NSComparisonResult(HKCategorySample *obj1, HKCategorySample *obj2) {
 		return [obj1.startDate compare:obj2.startDate];

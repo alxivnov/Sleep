@@ -11,9 +11,6 @@
 #import "ExtensionDelegate.h"
 #import "RowControllers.h"
 
-
-#warning Autodetect
-
 // Sometimes app crashes on activation
 // Sometimes app does not load sunrise
 

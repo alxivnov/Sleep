@@ -25,8 +25,7 @@
 
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceTable *table;
 
-@property (strong, nonatomic) NSDate *wakeUp;
-@property (strong, nonatomic) NSDate *goToBed;
+@property (strong, nonatomic) CLLocation *location;
 @end
 
 @implementation SunriseController
@@ -35,7 +34,20 @@
 	return [WKExtension sharedExtension].delegate;
 }
 
+- (CLLocation *)location {
+	return [CLLocation locationFromString:[[NSUserDefaults standardUserDefaults] objectForKey:@"location"]];
+}
+
+- (void)setLocation:(CLLocation *)location {
+	[[NSUserDefaults standardUserDefaults] setObject:location.locationString forKey:@"location"];
+}
+
 - (void)setup:(CLLocation *)location {
+	if (location)
+		self.location = location;
+	else
+		location = self.location;
+
 	NSMutableArray<NSDictionary *> *dates = [NSMutableArray arrayWithCapacity:3];
 
 	if (location) {
@@ -88,9 +100,10 @@
     [super willActivate];
 
 	CLLocation *location = [CLLocationManager defaultManager].location;
-	if (location)
-		[self setup:location];
-	else
+
+	[self setup:location];
+
+	if (!location)
 		[[CLLocationManager defaultManager] requestWhenInUseAuthorization];
 }
 

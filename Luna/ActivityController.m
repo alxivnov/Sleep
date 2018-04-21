@@ -188,7 +188,7 @@
 
 	AnalysisPresenter *sample = idx(self.samples, indexPath.row);
 	if (sample.allSamples)
-		[(ActivityVisualizer *)[[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]] subview:UISubviewKindOfClass(ActivityVisualizer)] scrollRectToStartDate:sample.startDate endDate:sample.endDate animated:self.showActivity && section == 2 ? NO : YES];
+		[(ActivityVisualizer *)[[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:(self.showButton ? 1 : 0) + (self.showSwitch ? 1 : 0)]] subview:UISubviewKindOfClass(ActivityVisualizer)] scrollRectToStartDate:sample.startDate endDate:sample.endDate animated:self.showActivity && section == 2 ? NO : YES];
 
 	if (self.showActivity && section == 2) {
 		[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
@@ -263,7 +263,7 @@
 		if (index != UIAlertActionDestructive)
 			return;
 
-		ActivityVisualizer *visualizer = [[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]] subview:UISubviewKindOfClass(ActivityVisualizer)];
+		ActivityVisualizer *visualizer = [[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:(self.showButton ? 1 : 0) + (self.showSwitch ? 1 : 0)]] subview:UISubviewKindOfClass(ActivityVisualizer)];
 
 		HKCategorySample *sample = presenter.allSamples.firstObject;
 		if (sample.value == HKCategoryValueSleepAnalysisAsleep)
@@ -349,7 +349,7 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-	ActivityVisualizer *visualizer = [[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]] subview:UISubviewKindOfClass(ActivityVisualizer)];
+	ActivityVisualizer *visualizer = [[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:(self.showButton ? 1 : 0) + (self.showSwitch ? 1 : 0)]] subview:UISubviewKindOfClass(ActivityVisualizer)];
 
 	visualizer.location = manager.location;
 }
