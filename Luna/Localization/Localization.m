@@ -114,7 +114,7 @@
 
 + (NSString *)total:(NSTimeInterval)time {
 	NSString *string = NSLocalizedString(@"Total", Nil);
-	return time ? [NSString stringWithFormat:@"%@: %@", string, [[NSDateComponentsFormatter hhmmFormatter] stringFromTimeInterval:time]] : string;
+	return /*time ? */[NSString stringWithFormat:@"%@: %@", string, [[NSDateComponentsFormatter hhmmFormatter] stringFromTimeInterval:time]]/* : string*/;
 }
 
 + (NSString *)starts:(NSTimeInterval)time {

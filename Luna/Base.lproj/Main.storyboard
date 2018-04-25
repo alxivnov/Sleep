@@ -1005,7 +1005,6 @@
                         <outlet property="thuButton" destination="lTV-tN-Str" id="1ZV-tO-Tbn"/>
                         <outlet property="tueButton" destination="j39-G4-EBG" id="gzi-bC-Zqr"/>
                         <outlet property="wedButton" destination="xwz-SJ-UUV" id="Zg0-fS-GKL"/>
-                        <segue destination="Fvd-gf-oYC" kind="show" identifier="interval" id="Rpd-in-7eo"/>
                     </connections>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zvP-lC-NoM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1468,6 +1467,7 @@
                     <connections>
                         <outlet property="leftBarButtonItem" destination="hO2-kL-KDl" id="M0B-l4-52y"/>
                         <outlet property="rightBarButtonItem" destination="42c-g1-lfF" id="gCv-23-2dR"/>
+                        <segue destination="Fvd-gf-oYC" kind="show" identifier="interval" id="SPb-wX-aAo"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SAN-H6-QLg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2242,7 +2242,7 @@
         <image name="timer-line.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Inh-cb-GaY"/>
+        <segue reference="SPb-wX-aAo"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.2490108311" green="0.227181673" blue="0.67214268450000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

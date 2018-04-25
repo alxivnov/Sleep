@@ -12,8 +12,6 @@
 
 @property (strong, nonatomic, readonly) NSNumber *buttonShapes;
 
-@property (strong, nonatomic) IBOutlet UIView *alertView;
-
 - (void)setupAlertView:(void(^)(BOOL hasData))completion;
 
 @end

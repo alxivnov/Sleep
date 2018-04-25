@@ -10,4 +10,6 @@
 
 @interface WeekdaysController : ActivitiesController
 
+- (void)setupAlertView:(void(^)(BOOL))completion;
+
 @end

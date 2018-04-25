@@ -12,6 +12,8 @@
 
 @interface SleepButtonCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIButton *button;
+
 - (void)setup:(NSArray<AnalysisPresenter *> *)presenters;
 
 - (void)setSleepDuration:(NSTimeInterval)sleepDuration inBedDuration:(NSTimeInterval)inBedDuration cycleCount:(NSUInteger)cycleCount animated:(BOOL)animated;

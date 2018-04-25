@@ -100,6 +100,7 @@
 		CDAC1E452088F68400587CC4 /* SleepSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAC1E442088F68400587CC4 /* SleepSwitchCell.m */; };
 		CDAE76731F229C510085F78A /* Answers+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAE76721F229C510085F78A /* Answers+Convenience.m */; };
 		CDCC2BEC1E6EF19D00CCD583 /* HKActiveEnergy+CMMotionActivitySample.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCC2BEB1E6EF19D00CCD583 /* HKActiveEnergy+CMMotionActivitySample.m */; };
+		CDE2AE1E2090E1020054A0B2 /* SleepButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE2AE1D2090E1020054A0B2 /* SleepButtonController.m */; };
 		CDE33AFD2049920C00F89AD8 /* UIScrollView+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE33AFB2049920B00F89AD8 /* UIScrollView+Convenience.m */; };
 		CDE33B1C2049924800F89AD8 /* Twitter-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CDE33AFE2049924500F89AD8 /* Twitter-60@2x.png */; };
 		CDE33B1D2049924800F89AD8 /* Google+-76.png in Resources */ = {isa = PBXBuildFile; fileRef = CDE33AFF2049924500F89AD8 /* Google+-76.png */; };
@@ -412,6 +413,8 @@
 		CDAE76721F229C510085F78A /* Answers+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Answers+Convenience.m"; sourceTree = "<group>"; };
 		CDCC2BEA1E6EF19D00CCD583 /* HKActiveEnergy+CMMotionActivitySample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HKActiveEnergy+CMMotionActivitySample.h"; sourceTree = "<group>"; };
 		CDCC2BEB1E6EF19D00CCD583 /* HKActiveEnergy+CMMotionActivitySample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HKActiveEnergy+CMMotionActivitySample.m"; sourceTree = "<group>"; };
+		CDE2AE1C2090E1020054A0B2 /* SleepButtonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SleepButtonController.h; sourceTree = "<group>"; };
+		CDE2AE1D2090E1020054A0B2 /* SleepButtonController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SleepButtonController.m; sourceTree = "<group>"; };
 		CDE33AFB2049920B00F89AD8 /* UIScrollView+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Convenience.m"; sourceTree = "<group>"; };
 		CDE33AFC2049920B00F89AD8 /* UIScrollView+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Convenience.h"; sourceTree = "<group>"; };
 		CDE33AFE2049924500F89AD8 /* Twitter-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Twitter-60@2x.png"; path = "../../Frameworks/Images/Twitter-60@2x.png"; sourceTree = "<group>"; };
@@ -1138,6 +1141,8 @@
 				CDAC1E412088BE1800587CC4 /* SleepButtonCell.m */,
 				CDAC1E432088F68400587CC4 /* SleepSwitchCell.h */,
 				CDAC1E442088F68400587CC4 /* SleepSwitchCell.m */,
+				CDE2AE1C2090E1020054A0B2 /* SleepButtonController.h */,
+				CDE2AE1D2090E1020054A0B2 /* SleepButtonController.m */,
 				FA6A804A1CCACF88008023A8 /* ActivityController.h */,
 				FA6A804B1CCACF88008023A8 /* ActivityController.m */,
 				FAF0B2F51B554188001D0E66 /* AnalysisController.h */,
@@ -1557,6 +1562,7 @@
 				CD14034C1EF338EF009F5DDE /* HKCategorySample+JSON.m in Sources */,
 				CD9210BE20869D37001BB43B /* UIButton+Convenience.m in Sources */,
 				FABFA8B01D81877900F79DBD /* NSRateController.m in Sources */,
+				CDE2AE1E2090E1020054A0B2 /* SleepButtonController.m in Sources */,
 				CD811E801E9E93AD0096974D /* CoreLocation+Convenience.m in Sources */,
 				CD811E791E9E90400096974D /* EDSunriseSet.m in Sources */,
 				FA47C78E1BC279D9002D2E02 /* WatchDelegate.m in Sources */,

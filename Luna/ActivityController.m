@@ -80,6 +80,8 @@
 	if (self.showButton) {
 		if (section == 0) {
 			SleepButtonCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Button Cell" forIndexPath:indexPath];
+			[cell.button addTarget:self action:@selector(startStopButtonTouchDown:) forControlEvents:UIControlEventTouchDown];
+			[cell.button addTarget:self action:@selector(startStopButtonTouchUp:) forControlEvents:UIControlEventTouchUpInside];
 
 			[cell setup:self.samples];
 			return cell;
@@ -287,10 +289,16 @@
 				[tableView deleteRowAtIndexPath:indexPath];
 
 				if (!self.showActivity) {
-					[tableView deleteSection:0];
+					[tableView deleteSection:indexPath.section - 1];
 
-					[tableView deleteSection:2];
+					[tableView deleteSection:indexPath.section + 1];
 				}
+
+				[tableView footerViewForSection:indexPath.section].textLabel.text = [self tableView:tableView titleForFooterInSection:indexPath.section];
+//				[tableView reloadSection:indexPath.section];
+
+				if (self.showButton)
+					[cls(SleepButtonCell, [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]]) setup:self.samples];
 
 				[tableView endUpdates];
 			}];

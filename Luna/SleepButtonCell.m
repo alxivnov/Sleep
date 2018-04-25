@@ -18,8 +18,6 @@
 @property (strong, nonatomic) CAShapeLayer *inBedDurationLayer;
 @property (assign, nonatomic) NSTimeInterval sleepDuration;
 @property (assign, nonatomic) NSTimeInterval inBedDuration;
-
-@property (weak, nonatomic) IBOutlet UIButton *button;
 @end
 
 @implementation SleepButtonCell
@@ -92,7 +90,7 @@
 	}];
 	[self setSleepDuration:sleep inBedDuration:inBed cycleCount:0.0 animated:YES];
 
-	self.button.enabled = presenters.lastObject.endDate.isToday;
+//	self.button.enabled = presenters.lastObject.endDate.isToday;
 }
 
 @end
