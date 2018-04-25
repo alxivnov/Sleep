@@ -17,6 +17,8 @@
 @property (assign, nonatomic) NSTimeInterval inBedDuration;
 @property (assign, nonatomic) NSTimeInterval sleepDuration;
 @property (strong, nonatomic) UIImage *image;
+
+@property (strong, nonatomic) NSDate *lastDetectDate;
 @end
 
 @implementation ExtensionDelegate
@@ -79,7 +81,9 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
 			[[UIBezierPath bezierPathWithArcFrame:frame width:12.0 start:0.0 end:self.sleepDuration / self.settings.sleepDuration lineCap:kCGLineCapRound lineJoin:kCGLineJoinRound] stroke];
 		}];
 
-		sel([WKExtension sharedExtension].visibleInterfaceController, setup);
+		[GCD main:^{
+			sel([WKExtension sharedExtension].visibleInterfaceController, setup);
+		}];
 
 		[[CLKComplicationServer sharedInstance] reloadTimeline:Nil];
 	}];
@@ -137,7 +141,7 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, etc.
 
-	[[WKExtension sharedExtension] scheduleBackgroundRefreshWithPreferredDate:[NSDate dateWithTimeIntervalSinceNow:1800.0]];
+	[[WKExtension sharedExtension] scheduleBackgroundRefreshWithTimeIntervalSinceNow:1800.0];
 }
 
 - (void)handleBackgroundTasks:(NSSet<WKRefreshBackgroundTask *> *)backgroundTasks {
@@ -148,12 +152,15 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
             // Be sure to complete the background task once you’re done.
             WKApplicationRefreshBackgroundTask *backgroundTask = (WKApplicationRefreshBackgroundTask*)task;
 
-			[self detect:^(NSArray<HKCategorySample *> *samples) {
-				[[HKHealthStore defaultStore] saveObjects:samples completion:^(BOOL success) {
-					[[WKExtension sharedExtension] scheduleBackgroundRefreshWithPreferredDate:[NSDate dateWithTimeIntervalSinceNow:1800.0]];
+			[self detectFromUI:NO completion:^(NSArray<HKCategorySample *> *samples) {
+				if (samples.count)
+					[[HKHealthStore defaultStore] saveObjects:samples completion:^(BOOL success) {
+						[[WKExtension sharedExtension] scheduleBackgroundRefreshWithTimeIntervalSinceNow:1800.0];
 
-					[backgroundTask setTaskCompletedWithSnapshot:/*NO*/success];
-				}];
+						[backgroundTask setTaskCompletedWithSnapshot:/*NO*/success];
+					}];
+				else
+					[backgroundTask setTaskCompletedWithSnapshot:NO];
 			}];
         } else if ([task isKindOfClass:[WKSnapshotRefreshBackgroundTask class]]) {
             // Snapshot tasks have a unique completion call, make sure to set your expiration date
@@ -174,9 +181,17 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
     }
 }
 
-- (void)detect:(void (^)(NSArray<HKCategorySample *> *samples))completion {
+- (NSDate *)lastDetectDate {
+	return [[NSUserDefaults standardUserDefaults] objectForKey:@"lastDetectDate"];
+}
+
+- (void)setLastDetectDate:(NSDate *)lastDetectDate {
+	[[NSUserDefaults standardUserDefaults] setObject:lastDetectDate forKey:@"lastDetectDate"];
+}
+
+- (void)detectFromUI:(BOOL)fromUI completion:(void (^)(NSArray<HKCategorySample *> *samples))completion {
 	NSDate *endDate = [NSDate date];
-	__block NSDate *startDate = [endDate addValue:-10 forComponent:NSCalendarUnitDay];
+	__block NSDate *startDate = self.lastDetectDate ?: [endDate addValue:-10 forComponent:NSCalendarUnitDay];
 
 	[HKDataSleepAnalysis querySampleWithStartDate:startDate endDate:endDate completion:^(__kindof HKSample *sample) {
 		if (sample)
@@ -184,8 +199,13 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
 
 		if (startDate && endDate && [endDate timeIntervalSinceDate:startDate] >= self.sleepDuration)
 			[CMMotionActivitySample queryActivityStartingFromDate:startDate toDate:endDate within:self.sleepDuration withHandler:^(NSArray<CMMotionActivitySample *> *activities) {
+				NSArray<HKCategorySample *> *samples = [self.settings samplesFromActivities:activities fromUI:fromUI];
+
 				if (completion)
-					completion([self.settings samplesFromActivities:activities]);
+					completion(samples);
+
+				if (samples.count)
+					self.lastDetectDate = endDate;
 			}];
 		else
 			if (completion)

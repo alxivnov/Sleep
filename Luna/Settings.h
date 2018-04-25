@@ -42,6 +42,6 @@
 - (NSDate *)alertDate:(NSArray<AnalysisPresenter *> *)presenters;
 
 
-- (NSArray<HKCategorySample *> *)samplesFromActivities:(NSArray<CMMotionActivitySample *> *)activities;
+- (NSArray<HKCategorySample *> *)samplesFromActivities:(NSArray<CMMotionActivitySample *> *)activities fromUI:(BOOL)fromUI;
 
 @end

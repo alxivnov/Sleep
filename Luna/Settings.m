@@ -138,7 +138,7 @@ __synthesize(NSUserDefaults *, defaults, [NSUserDefaults standardUserDefaults])
 }
 
 
-- (NSArray<HKCategorySample *> *)samplesFromActivities:(NSArray<CMMotionActivitySample *> *)activities {
+- (NSArray<HKCategorySample *> *)samplesFromActivities:(NSArray<CMMotionActivitySample *> *)activities fromUI:(BOOL)fromUI {
 	NSTimeInterval sleepLatency = self.sleepLatency;
 
 	if (!activities.count)
@@ -203,6 +203,11 @@ __synthesize(NSUserDefaults *, defaults, [NSUserDefaults standardUserDefaults])
 		prev = curr;
 	}
 
+	if (fromUI)
+		if (inBedIndex)
+			[inBedArray addObject:[[NSDateInterval alloc] initWithStartDate:[startDate dateByAddingTimeInterval:sleepLatency - 1.0 + inBedIndex] endDate:endDate]];
+
+
 	free(bytes);
 
 	NSMutableArray<HKCategorySample *> *arr = [NSMutableArray arrayWithCapacity:sleepArray.count + inBedArray.count];
@@ -212,11 +217,13 @@ __synthesize(NSUserDefaults *, defaults, [NSUserDefaults standardUserDefaults])
 		if ([sleepArray any:^BOOL(NSDateInterval *obj) {
 			return [obj intersectsDateInterval:interval];
 		}]) {
-			[arr addObject:[HKDataSleepAnalysis sampleWithStartDate:interval.startDate endDate:interval.endDate value:HKCategoryValueSleepAnalysisInBed metadata:@{ HKMetadataKeySampleActivities : [CMMotionActivitySample samplesToString:[activities query:^BOOL(CMMotionActivitySample *obj) {
+			NSArray *motion = [activities query:^BOOL(CMMotionActivitySample *obj) {
 				return [interval containsDate:obj.startDate] || [interval containsDate:obj.endDate];
-			}] date:interval.startDate] ?: STR_EMPTY }]];
+			}];
 
-			[arr addObjectsFromArray:[HKDataSleepAnalysis samplesFromActivities:activities maxSleepLatency:sleepLatency]];
+			[arr addObject:[HKDataSleepAnalysis sampleWithStartDate:interval.startDate endDate:interval.endDate value:HKCategoryValueSleepAnalysisInBed metadata:@{ HKMetadataKeySampleActivities : [CMMotionActivitySample samplesToString:motion date:interval.startDate] ?: STR_EMPTY }]];
+
+			[arr addObjectsFromArray:[HKDataSleepAnalysis samplesFromActivities:motion maxSleepLatency:sleepLatency]];
 		}
 
 

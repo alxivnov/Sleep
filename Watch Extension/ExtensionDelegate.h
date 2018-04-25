@@ -54,6 +54,6 @@
 - (NSDate *)alertDate;
 
 
-- (void)detect:(void (^)(NSArray<HKCategorySample *> *samples))completion;
+- (void)detectFromUI:(BOOL)fromUI completion:(void (^)(NSArray<HKCategorySample *> *samples))completion;
 
 @end

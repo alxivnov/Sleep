@@ -51,7 +51,7 @@
 		[[self.table rowControllerAtIndex:index + 1] setPresenter:obj];
 	}
 
-	[self.delegate detect:^(NSArray<HKCategorySample *> *samples) {
+	[self.delegate detectFromUI:[WKExtension sharedExtension].applicationState == WKApplicationStateActive completion:^(NSArray<HKCategorySample *> *samples) {
 		if (samples.count)
 			[GCD main:^{
 				[self presentControllerWithName:STR_SAMPLES context:samples];
