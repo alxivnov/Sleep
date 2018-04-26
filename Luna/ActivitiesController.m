@@ -9,6 +9,7 @@
 #import "ActivitiesController.h"
 #import "ActivityController.h"
 #import "Global.h"
+#import "Widget.h"
 
 #import "NSArray+Convenience.h"
 #import "NSCalendar+Convenience.h"
@@ -61,6 +62,11 @@ __synthesize(NSArray *, dates, ({
 	
 	UIScrollView *scrollView = [self.view subview:UISubviewKindOfClass(UIScrollView)];
 	scrollView.canCancelContentTouches = NO;
+
+
+
+	[WIDGET updateNotification:Nil];
+	[WIDGET updateQuickActions];
 }
 
 - (void)didReceiveMemoryWarning {

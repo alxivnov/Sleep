@@ -10,7 +10,7 @@
 #import "AnalysisPresenter.h"
 #import "Global.h"
 #import "Widget.h"
-#import "AlarmController.h"
+#import "AlarmPickerController.h"
 
 #import "NSFormatter+Convenience.h"
 #import "UITableView+Convenience.h"
@@ -74,7 +74,7 @@ __synthesize(NSDateIntervalFormatter *, formatter, [[NSDateIntervalFormatter all
 }
 
 - (IBAction)save:(UIStoryboardSegue *)segue {
-	[AlarmController updateNotification:Nil];
+	[AlarmPickerController updateNotification:Nil];
 	[WIDGET updateNotification:Nil];
 	[WIDGET updateQuickActions];
 

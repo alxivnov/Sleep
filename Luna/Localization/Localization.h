@@ -23,6 +23,9 @@
 + (NSString *)wakeUpNow;
 + (NSString *)wakeUpNowBody;
 
++ (NSString *)wakeUp:(NSDate *)date;
++ (NSString *)alarmDisabled;
++ (NSString *)alarmEnabled;
 + (NSString *)goToSleep:(NSDate *)date;
 + (NSString *)notification:(NSDate *)date;
 + (NSString *)notificationDisabled;

@@ -8,7 +8,7 @@
 
 #import "SleepButtonController.h"
 
-#import "AlarmController.h"
+#import "AlarmPickerController.h"
 #import "SleepButtonCell.h"
 #import "Global.h"
 #import "Widget.h"
@@ -24,6 +24,8 @@
 #import "WatchDelegate.h"
 #import "WeekdaysController.h"
 
+#import "AlarmSwitchCell.h"
+
 @interface SleepButtonController ()
 @property (strong, nonatomic) NSSelectorTimer *timer;
 
@@ -37,17 +39,10 @@
 @property (strong, nonatomic) IBOutlet UIView *notificationsView;
 @property (strong, nonatomic) IBOutlet UIView *emptyStateView;
 @property (strong, nonatomic) IBOutlet UIView *alarmClockView;
-@property (strong, nonatomic) AlarmController *alarmController;
+//@property (strong, nonatomic) AlarmController *alarmController;
 @end
 
 @implementation SleepButtonController
-
-- (void)viewDidLoad {
-	[super viewDidLoad];
-
-	[WIDGET updateNotification:Nil];
-	[WIDGET updateQuickActions];
-}
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
@@ -74,14 +69,14 @@
 - (UIButton *)startButton {
 	return self.sleepCell.button;
 }
-
+/*
 - (AlarmController *)alarmController {
 	if (!_alarmController)
-		_alarmController = [[AlarmController alloc] initWithView:self.alarmClockView];
+		_alarmController = [[AlarmController alloc] init];
 
 	return _alarmController;
 }
-
+*/
 - (void)setupTodayView:(UIView *)view {
 	if (self.healthKitView != view)
 		[self.healthKitView removeFromSuperview];
@@ -91,10 +86,10 @@
 		[self.emptyStateView removeFromSuperview];
 	if ([UIRateController instance].view != view)
 		[[UIRateController instance].view removeFromSuperview];
-	//	if (self.alertView != view)
-	//		[self.alertView removeFromSuperview];
-	if (self.alarmController.view != view)
-		[self.alarmController.view removeFromSuperview];
+//	if (self.alertView != view)
+//		[self.alertView removeFromSuperview];
+//	if (self.alarmController.view != view)
+//		[self.alarmController.view removeFromSuperview];
 
 	if (self.todayView != view.superview)
 		[self.todayView addSubview:view];
@@ -140,31 +135,31 @@
 
 	if (startDate) {
 		self.startButton.selected = YES;
-		//		self.startStopLabel.text = [GLOBAL button];
-		//		self.startStopLabel.textColor = [[UIColorCache instance] colorWithR:63 G:58 B:171];
+//		self.startStopLabel.text = [GLOBAL button];
+//		self.startStopLabel.textColor = [[UIColorCache instance] colorWithR:63 G:58 B:171];
 		[self.startButton setTitle:[[NSDateComponentsFormatter hhmmssFormatter] stringFromDate:startDate toDate:[NSDate date]] forState:UIControlStateSelected];
 
 		[self setDuration];
 
 		self.timer.enabled = YES;
 
-		//		self.aboutButton.hidden = YES;
-		//		self.pressureButton.hidden = YES;
-		//		self.settingsButton.hidden = YES;
+//		self.aboutButton.hidden = YES;
+//		self.pressureButton.hidden = YES;
+//		self.settingsButton.hidden = YES;
 
-		if (self.alarmController.view)
-			[self setupTodayView:self.alarmController.view];
+//		if (self.alarmController.view)
+//			[self setupTodayView:self.alarmController.view];
 	} else {
 		self.startButton.selected = NO;
-		//		self.startStopLabel.text = [GLOBAL button];
-		//		self.startStopLabel.textColor = [UIColor whiteColor];
+//		self.startStopLabel.text = [GLOBAL button];
+//		self.startStopLabel.textColor = [UIColor whiteColor];
 		[self.startButton setTitle:Nil forState:UIControlStateSelected];
 
 		self.timer.enabled = NO;
 
-		//		self.aboutButton.hidden = NO;
-		//		self.pressureButton.hidden = NO;//![CMAltimeter isRelativeAltitudeAvailable];
-		//		self.settingsButton.hidden = NO;
+//		self.aboutButton.hidden = NO;
+//		self.pressureButton.hidden = NO;//![CMAltimeter isRelativeAltitudeAvailable];
+//		self.settingsButton.hidden = NO;
 
 		WeekdaysController *vc = cls(WeekdaysController, self.parentViewController);
 
@@ -182,8 +177,8 @@
 							[self setupTodayView:self.emptyStateView];
 						else if ([UIRateController instance].view)
 							[self setupTodayView:[UIRateController instance].view];
-						//						else
-						//							[self setupTodayView:self.alertView];
+//						else
+//							[self setupTodayView:self.alertView];
 					}];
 				}];
 		}];
@@ -194,8 +189,26 @@
 	self.startButton.enabled = self.startDate.isToday;
 }
 
+- (void)setupAlarmView {
+//	[WIDGET isRegistered:^(BOOL registered) {
+//		if (registered)
+//		[UNUserNotificationCenter getPendingNotificationRequestWithIdentifier:GUI_WAKE_UP completionHandler:^(UNNotificationRequest *request) {
+//			[GCD main:^{
+				AlarmSwitchCell *cell = cls(AlarmSwitchCell, [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]]);
+
+				[cell setupAlarmButton:self.samples];
+//				[self.alarmButton setTitle:request ? [request.nextTriggerDate descriptionForTime:NSDateFormatterShortStyle] : [Localization noAlarm]];
+//				[self.alarmButton setImage:[UIImage templateImage:request ? /*IMG_SUN_LINE*/IMG_ALARM_FULL : /*IMG_MOON_LINE*/IMG_ALARM_LINE]];
+//			}];
+//		}];
+//	}];
+
+//	[self.alarmView.alarmButton setImage:[UIImage templateImage:notification ? IMG_SUN_FULL : IMG_MOON_FULL] forState:UIControlStateHighlighted];
+//	self.alarmView.alarmSwitch.on = notification != Nil;
+}
+
 - (IBAction)cancel:(UIStoryboardSegue *)segue {
-	[AlarmController updateNotification:Nil];
+	[AlarmPickerController updateNotification:Nil];
 	[WIDGET updateNotification:^(BOOL scheduled) {
 		[GCD main:^{
 			[self setup];
@@ -207,7 +220,7 @@
 }
 
 - (IBAction)save:(UIStoryboardSegue *)segue {
-	[AlarmController updateNotification:Nil];
+	[AlarmPickerController updateNotification:Nil];
 	[WIDGET updateNotification:^(BOOL scheduled) {
 		[GCD main:^{
 			[self setup];
@@ -264,10 +277,10 @@
 
 	if (GLOBAL.asleep) {
 		[GLOBAL endSleeping:^(BOOL success) {
-			//			if (!success)
-			//				return;
+//			if (!success)
+//				return;
 
-			[AlarmController updateNotification:Nil];
+			[AlarmPickerController updateNotification:Nil];
 			[WIDGET updateNotification:^(BOOL scheduled) {
 				[GCD main:^{
 					[self setup];
@@ -280,9 +293,9 @@
 	} else {
 		[GLOBAL startSleeping];
 
-		[AlarmController updateNotification:^(BOOL succcess) {
+		[AlarmPickerController updateNotification:^(BOOL succcess) {
 			[GCD main:^{
-				[self.alarmController setupAlarmView];
+				[self setupAlarmView];
 
 				[self setup];
 			}];
@@ -292,6 +305,8 @@
 
 		[[WatchDelegate instance] sendMessage];
 	}
+
+	[self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 - (void)handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UNNotification *)notification {

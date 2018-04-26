@@ -34,7 +34,7 @@
 @end
 
 @implementation ViewController
-
+/*
 - (IBAction)healthKitButtonAction:(UIButton *)sender {
 //	[self requestAuthorization];
 }
@@ -46,7 +46,7 @@
 		}];
 	}];
 }
-
+*/
 - (void)viewDidLoad {
 	[super viewDidLoad];
 

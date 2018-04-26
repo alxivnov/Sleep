@@ -60,10 +60,10 @@
 	}];
 }
 
-- (void)scheduleNotification:(NSArray<AnalysisPresenter *> *)presenters {
+- (void)scheduleNotification:(NSArray<AnalysisPresenter *> *)presenters completion:(void(^)(BOOL))completion {
 	NSDate *fireDate = [GLOBAL alertDate:presenters];
 
-	[[UNNotificationContent contentWithTitle:[Localization goToSleep] subtitle:Nil body:[Localization goToSleepBody] badge:Nil sound:STR_EMPTY attachments:arr_([UIImage URLForResource:IMG_LUNA_MOON withExtension:@"png"]) userInfo:Nil categoryIdentifier:GUI_FALL_ASLEEP] scheduleWithIdentifier:GUI_FALL_ASLEEP date:fireDate];
+	[[UNNotificationContent contentWithTitle:[Localization goToSleep] subtitle:Nil body:[Localization goToSleepBody] badge:Nil sound:STR_EMPTY attachments:arr_([UIImage URLForResource:IMG_LUNA_MOON withExtension:@"png"]) userInfo:Nil categoryIdentifier:GUI_FALL_ASLEEP] scheduleWithIdentifier:GUI_FALL_ASLEEP date:fireDate repeats:NO completion:completion];
 }
 
 - (void)updateNotification:(void(^)(BOOL scheduled))completion {
@@ -76,11 +76,11 @@
 			completion(NO);
 	} else {
 		[AnalysisPresenter query:NSCalendarUnitWeekOfMonth completion:^(NSArray<AnalysisPresenter *> *presenters) {
-			[self scheduleNotification:presenters];
-
-			[GCD main:^{
-				if (completion)
-					completion(YES);
+			[self scheduleNotification:presenters completion:^(BOOL success) {
+				[GCD main:^{
+					if (completion)
+						completion(YES);
+				}];
 			}];
 		}];
 	}

@@ -7,7 +7,6 @@
 //
 
 #import "SettingsController.h"
-#import "AlarmController.h"
 #import "Localization.h"
 #import "Global.h"
 #import "Widget.h"

@@ -54,6 +54,18 @@
 	return NSLocalizedString(@"It's time to wake up.", Nil);
 }
 
++ (NSString *)wakeUp:(NSDate *)date {
+	return date ? [NSString stringWithFormat:NSLocalizedString(@"Wake up at %@", Nil), [date descriptionForTime:NSDateFormatterShortStyle]] : Nil;
+}
+
++ (NSString *)alarmDisabled {
+	return NSLocalizedString(@"Alarm disabled", Nil);
+}
+
++ (NSString *)alarmEnabled {
+	return NSLocalizedString(@"Alarm enabled", Nil);
+}
+
 + (NSString *)goToSleep:(NSDate *)date {
 	return date ? [NSString stringWithFormat:NSLocalizedString(@"Go to sleep at %@", Nil), [date descriptionForTime:NSDateFormatterShortStyle]] : Nil;
 }

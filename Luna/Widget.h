@@ -18,7 +18,7 @@
 - (void)requestRegistration:(void(^)(BOOL granted))handler;
 
 //- (NSDate *)notificationDate:(NSArray<AnalysisPresenter *> *)samples;
-- (void)scheduleNotification:(NSArray<AnalysisPresenter *> *)samples;
+- (void)scheduleNotification:(NSArray<AnalysisPresenter *> *)samples completion:(void(^)(BOOL success))completion;
 - (void)updateNotification:(void(^)(BOOL scheduled))completion;
 - (void)updateQuickActions;
 

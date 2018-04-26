@@ -8,13 +8,14 @@
 
 #import "ActivityController.h"
 #import "ActivityVisualizer.h"
-#import "AlarmController.h"
+#import "AlarmPickerController.h"
 #import "Global.h"
 #import "Localization.h"
 #import "Widget.h"
 #import "HKCategorySample+JSON.h"
 #import "SleepButtonCell.h"
 #import "SleepSwitchCell.h"
+#import "AlarmSwitchCell.h"
 
 #import "NSArray+Convenience.h"
 #import "NSBundle+Convenience.h"
@@ -89,10 +90,17 @@
 
 		if (self.showSwitch) {
 			if (section == 1) {
-				SleepSwitchCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Reminder Cell" forIndexPath:indexPath];
-				cell.accessorySwitch.onTintColor = [UIColor color:RGB_DARK_TINT];
-				[cell setupAlertButton:self.samples];
-				return cell;
+				if (GLOBAL.asleep) {
+					AlarmSwitchCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Alarm Cell" forIndexPath:indexPath];
+					cell.accessorySwitch.onTintColor = [UIColor color:HEX_NCS_YELLOW];
+					[cell setupAlarmButton:self.samples];
+					return cell;
+				} else {
+					SleepSwitchCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Alert Cell" forIndexPath:indexPath];
+					cell.accessorySwitch.onTintColor = [UIColor color:RGB_DARK_TINT];
+					[cell setupAlertButton:self.samples];
+					return cell;
+				}
 			}
 
 			section--;
@@ -304,7 +312,7 @@
 			}];
 		}];
 
-		[AlarmController updateNotification:Nil];
+		[AlarmPickerController updateNotification:Nil];
 		[WIDGET updateNotification:Nil];
 		[WIDGET updateQuickActions];
 	}];

@@ -10,6 +10,4 @@
 
 @interface BaseController : UIViewController
 
-- (void)setSleepDuration:(NSTimeInterval)sleepDuration inBedDuration:(NSTimeInterval)inBedDuration cycleCount:(NSUInteger)cycleCount animated:(BOOL)animated;
-
 @end

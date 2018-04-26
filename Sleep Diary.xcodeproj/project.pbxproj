@@ -40,6 +40,8 @@
 		CD527E90207B8DDF00C005F4 /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = FA394A1D1AD2B5D200138B0B /* Global.m */; };
 		CD5E0C511ED78A4100CE8C72 /* UITableViewCell+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5E0C501ED78A4100CE8C72 /* UITableViewCell+Convenience.m */; };
 		CD624B841EE4773F008CAEEA /* StatisticsController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD624B831EE4773F008CAEEA /* StatisticsController.m */; };
+		CD6DD8DC2092165000762ABC /* AlarmPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6DD8DB2092165000762ABC /* AlarmPickerController.m */; };
+		CD6DD8DF20921DB100762ABC /* AlarmSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6DD8DE20921DB100762ABC /* AlarmSwitchCell.m */; };
 		CD6FE87F207CD82D006B1152 /* EDSunriseSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CD811E781E9E90400096974D /* EDSunriseSet.m */; };
 		CD6FE880207CDD87006B1152 /* CoreLocation+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD811E7F1E9E93AD0096974D /* CoreLocation+Convenience.m */; };
 		CD75B5031F19536D00BAB7DC /* SKInAppPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = CD75B5001F19536D00BAB7DC /* SKInAppPurchase.m */; };
@@ -360,6 +362,10 @@
 		CD5E0C501ED78A4100CE8C72 /* UITableViewCell+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Convenience.m"; sourceTree = "<group>"; };
 		CD624B821EE4773F008CAEEA /* StatisticsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticsController.h; sourceTree = "<group>"; };
 		CD624B831EE4773F008CAEEA /* StatisticsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatisticsController.m; sourceTree = "<group>"; };
+		CD6DD8DA2092165000762ABC /* AlarmPickerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlarmPickerController.h; sourceTree = "<group>"; };
+		CD6DD8DB2092165000762ABC /* AlarmPickerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlarmPickerController.m; sourceTree = "<group>"; };
+		CD6DD8DD20921DB100762ABC /* AlarmSwitchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlarmSwitchCell.h; sourceTree = "<group>"; };
+		CD6DD8DE20921DB100762ABC /* AlarmSwitchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlarmSwitchCell.m; sourceTree = "<group>"; };
 		CD75B4FF1F19536D00BAB7DC /* SKInAppPurchase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKInAppPurchase.h; sourceTree = "<group>"; };
 		CD75B5001F19536D00BAB7DC /* SKInAppPurchase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKInAppPurchase.m; sourceTree = "<group>"; };
 		CD75B5011F19536D00BAB7DC /* StoreKit+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "StoreKit+Convenience.h"; sourceTree = "<group>"; };
@@ -1143,6 +1149,10 @@
 				CDAC1E442088F68400587CC4 /* SleepSwitchCell.m */,
 				CDE2AE1C2090E1020054A0B2 /* SleepButtonController.h */,
 				CDE2AE1D2090E1020054A0B2 /* SleepButtonController.m */,
+				CD6DD8DD20921DB100762ABC /* AlarmSwitchCell.h */,
+				CD6DD8DE20921DB100762ABC /* AlarmSwitchCell.m */,
+				CD6DD8DA2092165000762ABC /* AlarmPickerController.h */,
+				CD6DD8DB2092165000762ABC /* AlarmPickerController.m */,
 				FA6A804A1CCACF88008023A8 /* ActivityController.h */,
 				FA6A804B1CCACF88008023A8 /* ActivityController.m */,
 				FAF0B2F51B554188001D0E66 /* AnalysisController.h */,
@@ -1532,6 +1542,7 @@
 				CDFC35301EF07288001F2CAB /* Accelerate+Convenience.m in Sources */,
 				FA098B731C91BAD600D83FDF /* UIImage+View.m in Sources */,
 				FACC6D601DF02B460009D3FF /* HKSleepAnalysis+CMMotionActivitySample.m in Sources */,
+				CD6DD8DF20921DB100762ABC /* AlarmSwitchCell.m in Sources */,
 				FAB3CD0B1CBFE41E00523C78 /* BaseController.m in Sources */,
 				FA5BDD641CFE156C00DFB0F3 /* ActivityVisualizer.m in Sources */,
 				CDF5FA711DB3C50600208F7E /* CoreMotion+Convenience.m in Sources */,
@@ -1609,6 +1620,7 @@
 				FA098B701C91B98300D83FDF /* UIAccessoryView.m in Sources */,
 				CD8CB7A31DD8C98A00450799 /* UIViewController+Convenience.m in Sources */,
 				CD0988C81F02E494006E2A65 /* FBSDKShareKit+Convenience.m in Sources */,
+				CD6DD8DC2092165000762ABC /* AlarmPickerController.m in Sources */,
 				FA38A0B01DDDFB2F004B963A /* NSURL+Convenience.m in Sources */,
 				CD0459332049ACDF006D48D0 /* NSXMLDictionary.m in Sources */,
 				FA4BA60C1DDA08DD008161D4 /* CommonCrypto+Convenience.m in Sources */,

@@ -10,4 +10,6 @@
 
 @interface SleepButtonController : ActivityController
 
+- (void)setupAlarmView;
+
 @end

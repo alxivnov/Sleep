@@ -7,7 +7,7 @@
 //
 
 #import "WatchDelegate.h"
-#import "AlarmController.h"
+#import "AlarmPickerController.h"
 #import "Global.h"
 #import "Widget.h"
 #import "ViewController.h"
@@ -69,7 +69,7 @@
 
 		if (GLOBAL.asleep) {
 //			[GLOBAL endSleeping:^(BOOL success) {
-				[AlarmController updateNotification:Nil];
+				[AlarmPickerController updateNotification:Nil];
 				[WIDGET updateNotification:^(BOOL scheduled) {
 //					[self message:^(NSDictionary *message) {
 //						replyHandler(message);
@@ -84,7 +84,7 @@
 		} else {
 //			[GLOBAL startSleeping];
 
-			[AlarmController updateNotification:^(BOOL succcess) {
+			[AlarmPickerController updateNotification:^(BOOL succcess) {
 //				[self message:^(NSDictionary *message) {
 //					replyHandler(message);
 //				}];

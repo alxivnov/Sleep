@@ -14,9 +14,5 @@
 
 @interface ViewController : AlertController
 
-- (void)setup;
-
-- (void)handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UNNotification *)notification;
-
 @end
 

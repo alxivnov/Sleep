@@ -18,6 +18,9 @@
 "It's time to go to bed." = "Пора ложиться спать.";
 "Wake up now!" = "Подъем!";
 "It's time to wake up." = "Пора вставать.";
+"Wake up at %@" = "Будильник прозвенит в %@";
+"Alarm disabled" = "Будильник выключен";
+"Alarm enabled" = "Будильник включен";
 "Go to sleep at %@" = "Ложитесь спать в %@";
 "Notification at %@." = "Уведомление в %@.";
 "Notification disabled." = "Уведомление отключено.";
