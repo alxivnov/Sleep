@@ -10,7 +10,6 @@
 #import "AlarmPickerController.h"
 #import "Global.h"
 #import "Widget.h"
-#import "ViewController.h"
 
 #import "NSObject+Convenience.h"
 #import "UIApplication+Convenience.h"

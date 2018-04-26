@@ -220,7 +220,6 @@
 		FA829A331A9C82A800B1E47B /* Luna-Button-Selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA829A301A9C82A800B1E47B /* Luna-Button-Selected@2x.png */; };
 		FA829A361A9C8E4400B1E47B /* IntervalController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA829A351A9C8E4400B1E47B /* IntervalController.m */; };
 		FA8856BD1DDCACF6001B869F /* UIAlertController+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8856BC1DDCACF6001B869F /* UIAlertController+Convenience.m */; };
-		FA93F4E01CC50A920055740F /* AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA93F4DF1CC50A920055740F /* AlertController.m */; };
 		FA9A88B91DB11A0D007A0754 /* Luna-Moon-64@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA592961AD6878E00E4430D /* Luna-Moon-64@3x.png */; };
 		FA9A88BA1DB11A10007A0754 /* Luna-Moon-64@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA592951AD6878E00E4430D /* Luna-Moon-64@2x.png */; };
 		FA9A88BB1DB11A13007A0754 /* Luna-Sun-64@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA592971AD6878E00E4430D /* Luna-Sun-64@2x.png */; };
@@ -228,7 +227,6 @@
 		FAA8FF081DDB50C700F9B99A /* NSBundle+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA8FF071DDB50C700F9B99A /* NSBundle+Convenience.m */; };
 		FAB39E1F1CB15CB50016D307 /* long-press-full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB39E1D1CB15CB50016D307 /* long-press-full@2x.png */; };
 		FAB39E201CB15CB50016D307 /* long-press-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB39E1E1CB15CB50016D307 /* long-press-line@2x.png */; };
-		FAB3CD0B1CBFE41E00523C78 /* BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB3CD0A1CBFE41E00523C78 /* BaseController.m */; };
 		FAB93D191D31109500D738F6 /* moon-white-full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB93D171D31109500D738F6 /* moon-white-full@2x.png */; };
 		FAB93D1A1D31109500D738F6 /* moon-white-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB93D181D31109500D738F6 /* moon-white-line@2x.png */; };
 		FAB93D1F1D31228000D738F6 /* steps@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB93D1E1D31228000D738F6 /* steps@2x.png */; };
@@ -240,7 +238,6 @@
 		FABFA8C81D819B6A00F79DBD /* NSArray+AnalysisPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FABFA8C71D819B6A00F79DBD /* NSArray+AnalysisPresenter.m */; };
 		FAC497561A7F6CC6006A26AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC497551A7F6CC6006A26AB /* main.m */; };
 		FAC497591A7F6CC6006A26AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC497581A7F6CC6006A26AB /* AppDelegate.m */; };
-		FAC4975C1A7F6CC6006A26AB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC4975B1A7F6CC6006A26AB /* ViewController.m */; };
 		FAC4975F1A7F6CC6006A26AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC4975D1A7F6CC6006A26AB /* Main.storyboard */; };
 		FAC497611A7F6CC6006A26AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC497601A7F6CC6006A26AB /* Images.xcassets */; };
 		FAC497641A7F6CC6006A26AB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC497621A7F6CC6006A26AB /* LaunchScreen.xib */; };
@@ -258,7 +255,6 @@
 		FAE94AD31C99AC0B00FC2501 /* UIViewController+Answers.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE94AD21C99AC0B00FC2501 /* UIViewController+Answers.m */; };
 		FAE94AD61C99E07B00FC2501 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE94AD51C99E07B00FC2501 /* NavigationController.m */; };
 		FAEBB6B91D89705500D235CC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAEBB6BB1D89705500D235CC /* InfoPlist.strings */; };
-		FAEDA3F21C0B5F830074941F /* AlarmController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEDA3F11C0B5F830074941F /* AlarmController.m */; };
 		FAF0B2F71B554188001D0E66 /* AnalysisController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF0B2F61B554188001D0E66 /* AnalysisController.m */; };
 		FAF4014D1C7DC04A003C528D /* circle-full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF4014B1C7DC04A003C528D /* circle-full@2x.png */; };
 		FAF4014E1C7DC04A003C528D /* circle-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF4014C1C7DC04A003C528D /* circle-line@2x.png */; };
@@ -593,8 +589,6 @@
 		FA829A351A9C8E4400B1E47B /* IntervalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntervalController.m; sourceTree = "<group>"; };
 		FA8856BB1DDCACF6001B869F /* UIAlertController+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Convenience.h"; sourceTree = "<group>"; };
 		FA8856BC1DDCACF6001B869F /* UIAlertController+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Convenience.m"; sourceTree = "<group>"; };
-		FA93F4DE1CC50A920055740F /* AlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertController.h; sourceTree = "<group>"; };
-		FA93F4DF1CC50A920055740F /* AlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertController.m; sourceTree = "<group>"; };
 		FAA004701B21DDEC00ED20FB /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
 		FAA004711B21DDED00ED20FB /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FAA592951AD6878E00E4430D /* Luna-Moon-64@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Luna-Moon-64@2x.png"; sourceTree = "<group>"; };
@@ -605,8 +599,6 @@
 		FAA8FF071DDB50C700F9B99A /* NSBundle+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Convenience.m"; sourceTree = "<group>"; };
 		FAB39E1D1CB15CB50016D307 /* long-press-full@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "long-press-full@2x.png"; sourceTree = "<group>"; };
 		FAB39E1E1CB15CB50016D307 /* long-press-line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "long-press-line@2x.png"; sourceTree = "<group>"; };
-		FAB3CD091CBFE41E00523C78 /* BaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseController.h; sourceTree = "<group>"; };
-		FAB3CD0A1CBFE41E00523C78 /* BaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseController.m; sourceTree = "<group>"; };
 		FAB4B6C31A7FD23E00DBA7A5 /* Luna.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Luna.entitlements; sourceTree = "<group>"; };
 		FAB93D171D31109500D738F6 /* moon-white-full@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moon-white-full@2x.png"; sourceTree = "<group>"; };
 		FAB93D181D31109500D738F6 /* moon-white-line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moon-white-line@2x.png"; sourceTree = "<group>"; };
@@ -626,8 +618,6 @@
 		FAC497551A7F6CC6006A26AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FAC497571A7F6CC6006A26AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FAC497581A7F6CC6006A26AB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FAC4975A1A7F6CC6006A26AB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FAC4975B1A7F6CC6006A26AB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FAC4975E1A7F6CC6006A26AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAC497601A7F6CC6006A26AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FAC497631A7F6CC6006A26AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -650,8 +640,6 @@
 		FAE94AD51C99E07B00FC2501 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		FAEBB6BA1D89705500D235CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FAEBB6BC1D89705900D235CC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		FAEDA3F01C0B5F830074941F /* AlarmController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmController.h; sourceTree = "<group>"; };
-		FAEDA3F11C0B5F830074941F /* AlarmController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmController.m; sourceTree = "<group>"; };
 		FAF0B2F51B554188001D0E66 /* AnalysisController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisController.h; sourceTree = "<group>"; };
 		FAF0B2F61B554188001D0E66 /* AnalysisController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisController.m; sourceTree = "<group>"; };
 		FAF4014B1C7DC04A003C528D /* circle-full@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle-full@2x.png"; sourceTree = "<group>"; };
@@ -1119,14 +1107,6 @@
 			children = (
 				FAC497571A7F6CC6006A26AB /* AppDelegate.h */,
 				FAC497581A7F6CC6006A26AB /* AppDelegate.m */,
-				FAEDA3F01C0B5F830074941F /* AlarmController.h */,
-				FAEDA3F11C0B5F830074941F /* AlarmController.m */,
-				FAC4975A1A7F6CC6006A26AB /* ViewController.h */,
-				FAC4975B1A7F6CC6006A26AB /* ViewController.m */,
-				FA93F4DE1CC50A920055740F /* AlertController.h */,
-				FA93F4DF1CC50A920055740F /* AlertController.m */,
-				FAB3CD091CBFE41E00523C78 /* BaseController.h */,
-				FAB3CD0A1CBFE41E00523C78 /* BaseController.m */,
 				FAC4975D1A7F6CC6006A26AB /* Main.storyboard */,
 				FAC497601A7F6CC6006A26AB /* Images.xcassets */,
 				FAC497621A7F6CC6006A26AB /* LaunchScreen.xib */,
@@ -1543,7 +1523,6 @@
 				FA098B731C91BAD600D83FDF /* UIImage+View.m in Sources */,
 				FACC6D601DF02B460009D3FF /* HKSleepAnalysis+CMMotionActivitySample.m in Sources */,
 				CD6DD8DF20921DB100762ABC /* AlarmSwitchCell.m in Sources */,
-				FAB3CD0B1CBFE41E00523C78 /* BaseController.m in Sources */,
 				FA5BDD641CFE156C00DFB0F3 /* ActivityVisualizer.m in Sources */,
 				CDF5FA711DB3C50600208F7E /* CoreMotion+Convenience.m in Sources */,
 				FA2EFC3E1DDF211600E24C1E /* UIGestureTransition.m in Sources */,
@@ -1555,7 +1534,6 @@
 				FA4BA6061DDA04B6008161D4 /* NSFileManager+Convenience.m in Sources */,
 				CDAE76731F229C510085F78A /* Answers+Convenience.m in Sources */,
 				FA21776E1AF534DE0089740E /* Widget.m in Sources */,
-				FAEDA3F21C0B5F830074941F /* AlarmController.m in Sources */,
 				FA4BA62A1DDA1CC0008161D4 /* UIView+Convenience.m in Sources */,
 				CDA8403A1DDB8C3A0042D2CC /* UIImage+Convenience.m in Sources */,
 				FA4BA5FF1DDA0408008161D4 /* UIActivity+Convenience.m in Sources */,
@@ -1567,7 +1545,6 @@
 				FAFE58A61B6CCA6B00075724 /* SettingsController.m in Sources */,
 				FA4BA5F41DDA0362008161D4 /* Affiliates+Convenience.m in Sources */,
 				CDF5FA731DB3C50700208F7E /* NSArray+Convenience.m in Sources */,
-				FA93F4E01CC50A920055740F /* AlertController.m in Sources */,
 				FA829A361A9C8E4400B1E47B /* IntervalController.m in Sources */,
 				CD0CB5AD207EB32A00F2B266 /* NSData+Convenience.m in Sources */,
 				CD14034C1EF338EF009F5DDE /* HKCategorySample+JSON.m in Sources */,
@@ -1582,7 +1559,6 @@
 				FA4BA6091DDA054B008161D4 /* NSURLSession+Convenience.m in Sources */,
 				FAA8FF081DDB50C700F9B99A /* NSBundle+Convenience.m in Sources */,
 				FABFA8B31D8187A100F79DBD /* UIRateController.m in Sources */,
-				FAC4975C1A7F6CC6006A26AB /* ViewController.m in Sources */,
 				FA0FB16F1C907BBD0065558A /* SegmentController.m in Sources */,
 				CDE3A8C61DE08D1D00AEB8BB /* HKData.m in Sources */,
 				FA4BA62D1DDA1D51008161D4 /* NSLayoutConstraint+Convenience.m in Sources */,

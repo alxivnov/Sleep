@@ -12,7 +12,6 @@
 #import "AppDelegate.h"
 #import "Global.h"
 #import "WatchDelegate.h"
-#import "ViewController.h"
 #import "Widget.h"
 
 #import "UIViewController+Answers.h"

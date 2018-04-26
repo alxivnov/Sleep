@@ -5,238 +5,9 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPp-rt-0k2">
-                                <rect key="frame" x="42.5" y="188.5" width="290" height="290"/>
-                                <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="290" id="Pyo-of-zED"/>
-                                    <constraint firstAttribute="width" constant="290" id="YOb-Lq-A0R"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
-                                <state key="normal" title="0:00:00" backgroundImage="Luna-Button-Normal.png">
-                                    <color key="titleColor" red="0.2490108311" green="0.227181673" blue="0.67214268450000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <state key="selected" backgroundImage="Luna-Button-Selected.png">
-                                    <color key="titleColor" red="0.424549073" green="0.41031354669999998" blue="0.81908142569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="startStopButtonTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="0QJ-14-l16"/>
-                                    <action selector="startStopButtonTouchUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6uv-Cm-Dfa"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMc-ia-qax">
-                                <rect key="frame" x="16" y="486.5" width="343" height="172.5"/>
-                                <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="centerY" secondItem="gPp-rt-0k2" secondAttribute="centerY" id="6u0-Kf-2rZ"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kMc-ia-qax" secondAttribute="bottom" constant="8" symbolic="YES" id="CX4-BG-nhX"/>
-                            <constraint firstAttribute="centerX" secondItem="gPp-rt-0k2" secondAttribute="centerX" id="DPI-SL-ig8"/>
-                            <constraint firstItem="kMc-ia-qax" firstAttribute="top" secondItem="gPp-rt-0k2" secondAttribute="bottom" constant="8" symbolic="YES" id="ayV-xw-ysh"/>
-                            <constraint firstItem="kMc-ia-qax" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="jSJ-NW-9L9"/>
-                            <constraint firstItem="kMc-ia-qax" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="uU4-Nr-XLd"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="ESF-Ey-Oha"/>
-                    <connections>
-                        <outlet property="alarmClockView" destination="zhF-ZG-ytz" id="GLZ-4c-QIZ"/>
-                        <outlet property="alertButton" destination="nB9-Eb-V3t" id="ieC-CV-dca"/>
-                        <outlet property="alertView" destination="zKc-xq-Ifp" id="oqZ-00-Zl7"/>
-                        <outlet property="emptyStateView" destination="GuI-kg-aLx" id="2Rt-u1-8Ib"/>
-                        <outlet property="healthKitView" destination="Pmi-FJ-Fsy" id="IHp-YF-JJw"/>
-                        <outlet property="notificationsView" destination="r6f-9y-xmK" id="NtP-T4-SzY"/>
-                        <outlet property="startButton" destination="gPp-rt-0k2" id="BkB-6O-KRW"/>
-                        <outlet property="todayView" destination="kMc-ia-qax" id="JcP-sO-tsk"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="zKc-xq-Ifp">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nB9-Eb-V3t">
-                            <rect key="frame" x="83" y="98" width="154" height="30"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                            <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="-4" maxY="0.0"/>
-                            <inset key="imageEdgeInsets" minX="-4" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="Go to sleep at 23:30" image="moon-white-line.png"/>
-                            <state key="selected" image="moon-white-full.png"/>
-                            <connections>
-                                <action selector="alertButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sgU-YN-4fO"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstItem="nB9-Eb-V3t" firstAttribute="centerX" secondItem="zKc-xq-Ifp" secondAttribute="centerX" id="X1e-4l-dha"/>
-                        <constraint firstAttribute="bottom" secondItem="nB9-Eb-V3t" secondAttribute="bottom" id="hGz-3a-V17"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" id="zhF-ZG-ytz">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8B-Si-IbE">
-                            <rect key="frame" x="77.5" y="48" width="86" height="32"/>
-                            <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="44" id="0MV-Zp-p1P"/>
-                                <constraint firstAttribute="width" constant="128" id="rte-cb-sP0"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                            <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="-4" maxY="0.0"/>
-                            <inset key="imageEdgeInsets" minX="-4" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="8:00" image="alarm-line.png"/>
-                            <state key="highlighted" image="alarm-full.png"/>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="0MV-Zp-p1P"/>
-                                    <exclude reference="rte-cb-sP0"/>
-                                </mask>
-                            </variation>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstItem="c8B-Si-IbE" firstAttribute="centerX" secondItem="zhF-ZG-ytz" secondAttribute="centerX" id="OE3-4q-vew"/>
-                        <constraint firstItem="c8B-Si-IbE" firstAttribute="centerY" secondItem="zhF-ZG-ytz" secondAttribute="centerY" id="yAg-a7-JkU"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" id="Pmi-FJ-Fsy">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To use &quot;Sleep Diary&quot; allow it to read and write Sleep Analysis data." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fw2-vh-Q1K">
-                            <rect key="frame" x="0.0" y="8" width="240" height="72"/>
-                            <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fqx-SJ-uiC">
-                            <rect key="frame" x="98" y="88" width="44" height="32"/>
-                            <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="32" id="VQW-7c-tff"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                            <state key="normal" title="Allow"/>
-                            <connections>
-                                <action selector="healthKitButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uk4-92-0co"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstItem="Fqx-SJ-uiC" firstAttribute="centerX" secondItem="Pmi-FJ-Fsy" secondAttribute="centerX" id="00U-bj-Qvz"/>
-                        <constraint firstAttribute="bottom" secondItem="Fqx-SJ-uiC" secondAttribute="bottom" constant="8" id="FF5-8h-LFl"/>
-                        <constraint firstItem="fw2-vh-Q1K" firstAttribute="leading" secondItem="Pmi-FJ-Fsy" secondAttribute="leading" id="Ozh-PL-pRW"/>
-                        <constraint firstAttribute="trailing" secondItem="fw2-vh-Q1K" secondAttribute="trailing" id="XeN-v5-bQM"/>
-                        <constraint firstItem="fw2-vh-Q1K" firstAttribute="top" secondItem="Pmi-FJ-Fsy" secondAttribute="top" constant="8" id="doV-f1-QCw"/>
-                        <constraint firstItem="Fqx-SJ-uiC" firstAttribute="top" secondItem="fw2-vh-Q1K" secondAttribute="bottom" constant="8" id="miz-UR-eeu"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" id="r6f-9y-xmK">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To use alarm clock allow &quot;Sleep Diary&quot; to send you notifications." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jfi-q3-aG6">
-                            <rect key="frame" x="0.0" y="8" width="240" height="72"/>
-                            <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ZL-3Y-1ea">
-                            <rect key="frame" x="98" y="88" width="44" height="32"/>
-                            <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="32" id="ul9-rB-HrG"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                            <state key="normal" title="Allow"/>
-                            <connections>
-                                <action selector="notificationsButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="baC-2l-OL8"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstItem="Jfi-q3-aG6" firstAttribute="top" secondItem="r6f-9y-xmK" secondAttribute="top" constant="8" id="4wJ-Gq-lYj"/>
-                        <constraint firstAttribute="trailing" secondItem="Jfi-q3-aG6" secondAttribute="trailing" id="BJd-wN-Xpy"/>
-                        <constraint firstItem="8ZL-3Y-1ea" firstAttribute="centerX" secondItem="r6f-9y-xmK" secondAttribute="centerX" id="GMe-l8-bJL"/>
-                        <constraint firstItem="Jfi-q3-aG6" firstAttribute="leading" secondItem="r6f-9y-xmK" secondAttribute="leading" id="S10-2j-Xmy"/>
-                        <constraint firstAttribute="bottom" secondItem="8ZL-3Y-1ea" secondAttribute="bottom" constant="8" id="WBN-Ub-qb6"/>
-                        <constraint firstItem="8ZL-3Y-1ea" firstAttribute="top" secondItem="Jfi-q3-aG6" secondAttribute="bottom" constant="8" id="yBB-tj-Wj3"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" id="GuI-kg-aLx">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start tracking your sleep by pressing &quot;FALL ASLEEP&quot; button when you will go to bed." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObX-wQ-qZP">
-                            <rect key="frame" x="10" y="68" width="300.5" height="38"/>
-                            <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="jaf-bP-baR"/>
-                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="64" id="uT9-jR-VBJ"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLR-4z-KTX">
-                            <rect key="frame" x="0.0" y="64" width="320" height="0.0"/>
-                            <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" id="yai-pw-Xms"/>
-                            </constraints>
-                        </view>
-                        <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Sleep Diary&quot; helps you analyse and improve sleep habits." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PG-Rm-0LD">
-                            <rect key="frame" x="20.5" y="17.5" width="279" height="42.5"/>
-                            <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="64" id="7ii-bT-kXF"/>
-                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="WDi-D6-YsT"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="aLR-4z-KTX" secondAttribute="trailing" id="7F7-D5-Jwc"/>
-                        <constraint firstItem="ObX-wQ-qZP" firstAttribute="centerX" secondItem="GuI-kg-aLx" secondAttribute="centerX" id="B08-E3-VMe"/>
-                        <constraint firstItem="aLR-4z-KTX" firstAttribute="centerY" secondItem="GuI-kg-aLx" secondAttribute="centerY" id="Nhi-Vk-Bwn"/>
-                        <constraint firstItem="aLR-4z-KTX" firstAttribute="leading" secondItem="GuI-kg-aLx" secondAttribute="leading" id="OiN-53-6BO"/>
-                        <constraint firstItem="2PG-Rm-0LD" firstAttribute="centerX" secondItem="GuI-kg-aLx" secondAttribute="centerX" id="PmF-WK-8n8"/>
-                        <constraint firstItem="aLR-4z-KTX" firstAttribute="top" secondItem="2PG-Rm-0LD" secondAttribute="bottom" constant="4" id="Ss7-mf-Axp"/>
-                        <constraint firstItem="ObX-wQ-qZP" firstAttribute="top" secondItem="aLR-4z-KTX" secondAttribute="bottom" constant="4" id="T1L-io-UAA"/>
-                    </constraints>
-                </view>
-            </objects>
-            <point key="canvasLocation" x="2132" y="349"/>
-        </scene>
         <!--Data-->
         <scene sceneID="MPB-HE-bhO">
             <objects>
@@ -1191,10 +962,6 @@
                                             <state key="selected" backgroundImage="Luna-Button-Selected.png">
                                                 <color key="titleColor" red="0.424549073" green="0.41031354669999998" blue="0.81908142569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
-                                            <connections>
-                                                <action selector="startStopButtonTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="pVN-ms-XqI"/>
-                                                <action selector="startStopButtonTouchUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w2W-r0-vdY"/>
-                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1503,6 +1270,113 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SAN-H6-QLg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="Pmi-FJ-Fsy">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To use &quot;Sleep Diary&quot; allow it to read and write Sleep Analysis data." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fw2-vh-Q1K">
+                            <rect key="frame" x="0.0" y="8" width="240" height="72"/>
+                            <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fqx-SJ-uiC">
+                            <rect key="frame" x="98" y="88" width="44" height="32"/>
+                            <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="VQW-7c-tff"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <state key="normal" title="Allow"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="Fqx-SJ-uiC" firstAttribute="centerX" secondItem="Pmi-FJ-Fsy" secondAttribute="centerX" id="00U-bj-Qvz"/>
+                        <constraint firstAttribute="bottom" secondItem="Fqx-SJ-uiC" secondAttribute="bottom" constant="8" id="FF5-8h-LFl"/>
+                        <constraint firstItem="fw2-vh-Q1K" firstAttribute="leading" secondItem="Pmi-FJ-Fsy" secondAttribute="leading" id="Ozh-PL-pRW"/>
+                        <constraint firstAttribute="trailing" secondItem="fw2-vh-Q1K" secondAttribute="trailing" id="XeN-v5-bQM"/>
+                        <constraint firstItem="fw2-vh-Q1K" firstAttribute="top" secondItem="Pmi-FJ-Fsy" secondAttribute="top" constant="8" id="doV-f1-QCw"/>
+                        <constraint firstItem="Fqx-SJ-uiC" firstAttribute="top" secondItem="fw2-vh-Q1K" secondAttribute="bottom" constant="8" id="miz-UR-eeu"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" id="r6f-9y-xmK">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To use alarm clock allow &quot;Sleep Diary&quot; to send you notifications." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jfi-q3-aG6">
+                            <rect key="frame" x="0.0" y="8" width="240" height="72"/>
+                            <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ZL-3Y-1ea">
+                            <rect key="frame" x="98" y="88" width="44" height="32"/>
+                            <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="ul9-rB-HrG"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <state key="normal" title="Allow"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="Jfi-q3-aG6" firstAttribute="top" secondItem="r6f-9y-xmK" secondAttribute="top" constant="8" id="4wJ-Gq-lYj"/>
+                        <constraint firstAttribute="trailing" secondItem="Jfi-q3-aG6" secondAttribute="trailing" id="BJd-wN-Xpy"/>
+                        <constraint firstItem="8ZL-3Y-1ea" firstAttribute="centerX" secondItem="r6f-9y-xmK" secondAttribute="centerX" id="GMe-l8-bJL"/>
+                        <constraint firstItem="Jfi-q3-aG6" firstAttribute="leading" secondItem="r6f-9y-xmK" secondAttribute="leading" id="S10-2j-Xmy"/>
+                        <constraint firstAttribute="bottom" secondItem="8ZL-3Y-1ea" secondAttribute="bottom" constant="8" id="WBN-Ub-qb6"/>
+                        <constraint firstItem="8ZL-3Y-1ea" firstAttribute="top" secondItem="Jfi-q3-aG6" secondAttribute="bottom" constant="8" id="yBB-tj-Wj3"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" id="GuI-kg-aLx">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start tracking your sleep by pressing &quot;FALL ASLEEP&quot; button when you will go to bed." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObX-wQ-qZP">
+                            <rect key="frame" x="10" y="68" width="300.5" height="38"/>
+                            <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="jaf-bP-baR"/>
+                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="64" id="uT9-jR-VBJ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLR-4z-KTX">
+                            <rect key="frame" x="0.0" y="64" width="320" height="0.0"/>
+                            <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" id="yai-pw-Xms"/>
+                            </constraints>
+                        </view>
+                        <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Sleep Diary&quot; helps you analyse and improve sleep habits." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PG-Rm-0LD">
+                            <rect key="frame" x="20.5" y="17.5" width="279" height="42.5"/>
+                            <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="64" id="7ii-bT-kXF"/>
+                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="WDi-D6-YsT"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="aLR-4z-KTX" secondAttribute="trailing" id="7F7-D5-Jwc"/>
+                        <constraint firstItem="ObX-wQ-qZP" firstAttribute="centerX" secondItem="GuI-kg-aLx" secondAttribute="centerX" id="B08-E3-VMe"/>
+                        <constraint firstItem="aLR-4z-KTX" firstAttribute="centerY" secondItem="GuI-kg-aLx" secondAttribute="centerY" id="Nhi-Vk-Bwn"/>
+                        <constraint firstItem="aLR-4z-KTX" firstAttribute="leading" secondItem="GuI-kg-aLx" secondAttribute="leading" id="OiN-53-6BO"/>
+                        <constraint firstItem="2PG-Rm-0LD" firstAttribute="centerX" secondItem="GuI-kg-aLx" secondAttribute="centerX" id="PmF-WK-8n8"/>
+                        <constraint firstItem="aLR-4z-KTX" firstAttribute="top" secondItem="2PG-Rm-0LD" secondAttribute="bottom" constant="4" id="Ss7-mf-Axp"/>
+                        <constraint firstItem="ObX-wQ-qZP" firstAttribute="top" secondItem="aLR-4z-KTX" secondAttribute="bottom" constant="4" id="T1L-io-UAA"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="4610.3999999999996" y="-379.16041979010498"/>
         </scene>
@@ -2262,8 +2136,6 @@
         <image name="luna-30.png" width="30" height="30"/>
         <image name="moon-full.png" width="30" height="30"/>
         <image name="moon-line.png" width="30" height="30"/>
-        <image name="moon-white-full.png" width="30" height="30"/>
-        <image name="moon-white-line.png" width="30" height="30"/>
         <image name="salad-fill-30.png" width="30" height="30"/>
         <image name="salad-line-30.png" width="30" height="30"/>
         <image name="sleep.png" width="30" height="30"/>
