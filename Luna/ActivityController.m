@@ -41,11 +41,11 @@
 }
 
 - (BOOL)showActivity {
-	return self.samples.firstObject.allSamples != Nil;
+	return self.samples.firstObject.allSamples != Nil || self.showButton;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return (self.showButton ? self.showSwitch ? 2 : 1 : 0) + (self.showActivity ? /*self.navigationController.navigationBar.barTintColor*/YES ? 2 : 1 : 0) + [super numberOfSectionsInTableView:tableView];
+	return (self.showButton ? self.showSwitch ? 2 : 1 : 0) + (self.showActivity ? /*self.navigationController.navigationBar.barTintColor*/self.samples.count ? 2 : 1 : 0) + [super numberOfSectionsInTableView:tableView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -64,7 +64,7 @@
 	}
 
 	return self.showActivity && section == 0
-		? 3
+		? (self.samples.count ? 3 : 1)
 		: self.showActivity && section == 2
 			? 1
 			: [super tableView:tableView numberOfRowsInSection:section];
@@ -111,9 +111,9 @@
 
 	if (self.showActivity) {
 		if (section == 0) {
-			UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:indexPath.row == 0 ? @"Scale Cell" : indexPath.row == 2 ? GUI_BASIC_CELL_ID : GUI_CUSTOM_CELL_ID forIndexPath:indexPath];
+			UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.samples.count ? (indexPath.row == 0 ? @"Scale Cell" : indexPath.row == 2 ? GUI_BASIC_CELL_ID : GUI_CUSTOM_CELL_ID) : (![HKDataSleepAnalysis isAuthorized] ? @"Health Cell" : @"Empty State Cell") forIndexPath:indexPath];
 
-			if (indexPath.row == 1) {
+			if (self.samples.count && indexPath.row == 1) {
 				ActivityVisualizer *visualizer = [cell subview:UISubviewKindOfClass(ActivityVisualizer)];
 
 				visualizer.zoom = 0.5 * (GLOBAL.scale ? 2.0 : 1.0);
@@ -337,7 +337,7 @@
 	}
 
 	if (self.showActivity && section == 0)
-		return indexPath.row == 1 ? 128.0 * (GLOBAL.scale ? 2.0 : 1.0) : 22.0;
+		return indexPath.row == 1 ? 128.0 * (GLOBAL.scale ? 2.0 : 1.0) : (self.samples.count ? 22.0 : 128.0);
 
 	return [super tableView:tableView heightForRowAtIndexPath:indexPath];
 }

@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -671,10 +672,10 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="J2d-YZ-fEs">
-                                    <rect key="frame" x="0.0" y="0.0" width="304" height="40"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="304" height="0.0"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HI1-3K-w9H">
-                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="40" height="0.0"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="0oz-0J-5ig"/>
                                                 <constraint firstAttribute="width" constant="40" id="fd6-Xv-Xfg"/>
@@ -686,7 +687,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v66-PY-IaT">
-                                            <rect key="frame" x="44" y="0.0" width="40" height="40"/>
+                                            <rect key="frame" x="44" y="0.0" width="40" height="0.0"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="Cow-or-Xb1"/>
                                                 <constraint firstAttribute="width" constant="40" id="ohY-dH-ue5"/>
@@ -698,7 +699,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j39-G4-EBG">
-                                            <rect key="frame" x="88" y="0.0" width="40" height="40"/>
+                                            <rect key="frame" x="88" y="0.0" width="40" height="0.0"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="c0m-a9-BYp"/>
                                                 <constraint firstAttribute="height" constant="40" id="ytP-J3-b2c"/>
@@ -710,7 +711,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xwz-SJ-UUV">
-                                            <rect key="frame" x="132" y="0.0" width="40" height="40"/>
+                                            <rect key="frame" x="132" y="0.0" width="40" height="0.0"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="eCU-B5-Cbp"/>
                                                 <constraint firstAttribute="height" constant="40" id="sEV-G2-Svm"/>
@@ -722,7 +723,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTV-tN-Str">
-                                            <rect key="frame" x="176" y="0.0" width="40" height="40"/>
+                                            <rect key="frame" x="176" y="0.0" width="40" height="0.0"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="HsO-14-4Fl"/>
                                                 <constraint firstAttribute="width" constant="40" id="r4Q-Ff-6BT"/>
@@ -734,7 +735,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ajs-cJ-aXZ">
-                                            <rect key="frame" x="220" y="0.0" width="40" height="40"/>
+                                            <rect key="frame" x="220" y="0.0" width="40" height="0.0"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="79o-gT-tFL"/>
                                                 <constraint firstAttribute="height" constant="40" id="vmh-DV-3fd"/>
@@ -746,7 +747,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRQ-84-FP1">
-                                            <rect key="frame" x="264" y="0.0" width="40" height="40"/>
+                                            <rect key="frame" x="264" y="0.0" width="40" height="0.0"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="I2y-m3-iSB"/>
                                                 <constraint firstAttribute="height" constant="40" id="Ryr-lv-b80"/>
@@ -1197,7 +1198,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label multipleTouchEnabled="YES" contentMode="left" text="Interval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6yh-Bl-I4P">
-                                            <rect key="frame" x="15" y="9" width="56.5" height="20.5"/>
+                                            <rect key="frame" x="16" y="9" width="56.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -1205,7 +1206,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label multipleTouchEnabled="YES" contentMode="left" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SN3-e2-0eg">
-                                            <rect key="frame" x="15" y="30.5" width="28.5" height="16"/>
+                                            <rect key="frame" x="16" y="30.5" width="28.5" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
@@ -1225,7 +1226,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label multipleTouchEnabled="YES" contentMode="left" text="Send sleep data to the developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="al6-oO-mh8">
-                                            <rect key="frame" x="53" y="9" width="252.5" height="20.5"/>
+                                            <rect key="frame" x="61" y="9" width="252.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -1233,7 +1234,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label multipleTouchEnabled="YES" contentMode="left" text="alex@apptag.me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cW3-0g-A0Y">
-                                            <rect key="frame" x="53" y="30.5" width="101" height="16"/>
+                                            <rect key="frame" x="61" y="30.5" width="101" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
@@ -1241,11 +1242,130 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="envelope-line-30.png" highlightedImage="envelope-full-30.png" id="eOi-Qf-owJ">
-                                            <rect key="frame" x="8" y="12" width="30" height="30"/>
+                                            <rect key="frame" x="16" y="12" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Health Cell" rowHeight="128" id="DOE-Ge-wio">
+                                <rect key="frame" x="0.0" y="771.5" width="375" height="128"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DOE-Ge-wio" id="ZBT-et-LY4">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="127.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fqx-SJ-uiC">
+                                            <rect key="frame" x="165" y="87.5" width="44" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="32" id="VQW-7c-tff"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <state key="normal" title="Allow"/>
+                                            <connections>
+                                                <action selector="allowHealthButton:" destination="mZN-DK-p5c" eventType="touchUpInside" id="xzZ-aP-QL9"/>
+                                            </connections>
+                                        </button>
+                                        <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To use &quot;Sleep Diary&quot; allow it to read and write Sleep Analysis data." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fw2-vh-Q1K">
+                                            <rect key="frame" x="8" y="8" width="359" height="79.5"/>
+                                            <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="fw2-vh-Q1K" firstAttribute="leading" secondItem="ZBT-et-LY4" secondAttribute="leadingMargin" id="3nC-Kn-XKV"/>
+                                        <constraint firstItem="Fqx-SJ-uiC" firstAttribute="centerX" secondItem="ZBT-et-LY4" secondAttribute="centerX" id="Bau-xt-140"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="fw2-vh-Q1K" secondAttribute="trailing" id="Ohc-as-Fht"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Fqx-SJ-uiC" secondAttribute="bottom" id="VUh-7Z-DRC"/>
+                                        <constraint firstItem="Fqx-SJ-uiC" firstAttribute="top" secondItem="fw2-vh-Q1K" secondAttribute="bottom" id="WxE-m0-2wL"/>
+                                        <constraint firstItem="fw2-vh-Q1K" firstAttribute="top" secondItem="ZBT-et-LY4" secondAttribute="topMargin" id="xKa-s2-qY2"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Notifications Cell" rowHeight="128" id="IHi-kS-Spr">
+                                <rect key="frame" x="0.0" y="899.5" width="375" height="128"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IHi-kS-Spr" id="NHl-b7-yqH">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="127.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ZL-3Y-1ea">
+                                            <rect key="frame" x="165" y="87.5" width="44" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="32" id="ul9-rB-HrG"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <state key="normal" title="Allow"/>
+                                        </button>
+                                        <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To use alarm clock allow &quot;Sleep Diary&quot; to send you notifications." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jfi-q3-aG6">
+                                            <rect key="frame" x="8" y="8" width="359" height="79.5"/>
+                                            <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="Jfi-q3-aG6" firstAttribute="top" secondItem="NHl-b7-yqH" secondAttribute="topMargin" id="PXR-SP-fdz"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="8ZL-3Y-1ea" secondAttribute="bottom" id="WGT-em-mci"/>
+                                        <constraint firstItem="8ZL-3Y-1ea" firstAttribute="top" secondItem="Jfi-q3-aG6" secondAttribute="bottom" id="Xqq-2A-DbB"/>
+                                        <constraint firstItem="8ZL-3Y-1ea" firstAttribute="centerX" secondItem="NHl-b7-yqH" secondAttribute="centerX" id="aTd-ti-2IM"/>
+                                        <constraint firstItem="Jfi-q3-aG6" firstAttribute="leading" secondItem="NHl-b7-yqH" secondAttribute="leadingMargin" id="lO4-Nb-48n"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Jfi-q3-aG6" secondAttribute="trailing" id="oXm-vx-fIJ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Empty State Cell" rowHeight="128" id="mef-Cb-gSl">
+                                <rect key="frame" x="0.0" y="1027.5" width="375" height="128"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mef-Cb-gSl" id="IX3-s3-AQJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="127.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLR-4z-KTX">
+                                            <rect key="frame" x="0.0" y="63.5" width="375" height="0.0"/>
+                                            <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" id="yai-pw-Xms"/>
+                                            </constraints>
+                                        </view>
+                                        <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Sleep Diary&quot; helps you analyse and improve sleep habits." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PG-Rm-0LD">
+                                            <rect key="frame" x="8" y="8" width="359" height="55.5"/>
+                                            <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start tracking your sleep by pressing &quot;FALL ASLEEP&quot; button when you will go to bed." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObX-wQ-qZP">
+                                            <rect key="frame" x="8" y="63.5" width="359" height="56"/>
+                                            <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="ObX-wQ-qZP" firstAttribute="leading" secondItem="IX3-s3-AQJ" secondAttribute="leadingMargin" id="0nP-D6-Uyi"/>
+                                        <constraint firstItem="ObX-wQ-qZP" firstAttribute="top" secondItem="aLR-4z-KTX" secondAttribute="bottom" id="Di7-E7-1fr"/>
+                                        <constraint firstItem="2PG-Rm-0LD" firstAttribute="leading" secondItem="IX3-s3-AQJ" secondAttribute="leadingMargin" id="Ese-OP-Xgq"/>
+                                        <constraint firstAttribute="trailing" secondItem="aLR-4z-KTX" secondAttribute="trailing" id="MoD-Ef-JOd"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ObX-wQ-qZP" secondAttribute="trailing" id="ODv-jC-PFw"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ObX-wQ-qZP" secondAttribute="bottom" id="duo-vA-KVv"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="2PG-Rm-0LD" secondAttribute="trailing" id="eSP-aE-5b5"/>
+                                        <constraint firstItem="ObX-wQ-qZP" firstAttribute="top" secondItem="2PG-Rm-0LD" secondAttribute="bottom" id="jSg-UK-aIL"/>
+                                        <constraint firstItem="2PG-Rm-0LD" firstAttribute="top" secondItem="IX3-s3-AQJ" secondAttribute="topMargin" id="jnN-LE-9NZ"/>
+                                        <constraint firstItem="aLR-4z-KTX" firstAttribute="centerY" secondItem="IX3-s3-AQJ" secondAttribute="centerY" id="tVr-qz-dZO"/>
+                                        <constraint firstItem="aLR-4z-KTX" firstAttribute="leading" secondItem="IX3-s3-AQJ" secondAttribute="leading" id="vqr-ni-brg"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
@@ -1270,113 +1390,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SAN-H6-QLg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="Pmi-FJ-Fsy">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To use &quot;Sleep Diary&quot; allow it to read and write Sleep Analysis data." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fw2-vh-Q1K">
-                            <rect key="frame" x="0.0" y="8" width="240" height="72"/>
-                            <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fqx-SJ-uiC">
-                            <rect key="frame" x="98" y="88" width="44" height="32"/>
-                            <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="32" id="VQW-7c-tff"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                            <state key="normal" title="Allow"/>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstItem="Fqx-SJ-uiC" firstAttribute="centerX" secondItem="Pmi-FJ-Fsy" secondAttribute="centerX" id="00U-bj-Qvz"/>
-                        <constraint firstAttribute="bottom" secondItem="Fqx-SJ-uiC" secondAttribute="bottom" constant="8" id="FF5-8h-LFl"/>
-                        <constraint firstItem="fw2-vh-Q1K" firstAttribute="leading" secondItem="Pmi-FJ-Fsy" secondAttribute="leading" id="Ozh-PL-pRW"/>
-                        <constraint firstAttribute="trailing" secondItem="fw2-vh-Q1K" secondAttribute="trailing" id="XeN-v5-bQM"/>
-                        <constraint firstItem="fw2-vh-Q1K" firstAttribute="top" secondItem="Pmi-FJ-Fsy" secondAttribute="top" constant="8" id="doV-f1-QCw"/>
-                        <constraint firstItem="Fqx-SJ-uiC" firstAttribute="top" secondItem="fw2-vh-Q1K" secondAttribute="bottom" constant="8" id="miz-UR-eeu"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" id="r6f-9y-xmK">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To use alarm clock allow &quot;Sleep Diary&quot; to send you notifications." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jfi-q3-aG6">
-                            <rect key="frame" x="0.0" y="8" width="240" height="72"/>
-                            <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ZL-3Y-1ea">
-                            <rect key="frame" x="98" y="88" width="44" height="32"/>
-                            <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="32" id="ul9-rB-HrG"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                            <state key="normal" title="Allow"/>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstItem="Jfi-q3-aG6" firstAttribute="top" secondItem="r6f-9y-xmK" secondAttribute="top" constant="8" id="4wJ-Gq-lYj"/>
-                        <constraint firstAttribute="trailing" secondItem="Jfi-q3-aG6" secondAttribute="trailing" id="BJd-wN-Xpy"/>
-                        <constraint firstItem="8ZL-3Y-1ea" firstAttribute="centerX" secondItem="r6f-9y-xmK" secondAttribute="centerX" id="GMe-l8-bJL"/>
-                        <constraint firstItem="Jfi-q3-aG6" firstAttribute="leading" secondItem="r6f-9y-xmK" secondAttribute="leading" id="S10-2j-Xmy"/>
-                        <constraint firstAttribute="bottom" secondItem="8ZL-3Y-1ea" secondAttribute="bottom" constant="8" id="WBN-Ub-qb6"/>
-                        <constraint firstItem="8ZL-3Y-1ea" firstAttribute="top" secondItem="Jfi-q3-aG6" secondAttribute="bottom" constant="8" id="yBB-tj-Wj3"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" id="GuI-kg-aLx">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start tracking your sleep by pressing &quot;FALL ASLEEP&quot; button when you will go to bed." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObX-wQ-qZP">
-                            <rect key="frame" x="10" y="68" width="300.5" height="38"/>
-                            <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="jaf-bP-baR"/>
-                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="64" id="uT9-jR-VBJ"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLR-4z-KTX">
-                            <rect key="frame" x="0.0" y="64" width="320" height="0.0"/>
-                            <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" id="yai-pw-Xms"/>
-                            </constraints>
-                        </view>
-                        <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Sleep Diary&quot; helps you analyse and improve sleep habits." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PG-Rm-0LD">
-                            <rect key="frame" x="20.5" y="17.5" width="279" height="42.5"/>
-                            <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="64" id="7ii-bT-kXF"/>
-                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="WDi-D6-YsT"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="aLR-4z-KTX" secondAttribute="trailing" id="7F7-D5-Jwc"/>
-                        <constraint firstItem="ObX-wQ-qZP" firstAttribute="centerX" secondItem="GuI-kg-aLx" secondAttribute="centerX" id="B08-E3-VMe"/>
-                        <constraint firstItem="aLR-4z-KTX" firstAttribute="centerY" secondItem="GuI-kg-aLx" secondAttribute="centerY" id="Nhi-Vk-Bwn"/>
-                        <constraint firstItem="aLR-4z-KTX" firstAttribute="leading" secondItem="GuI-kg-aLx" secondAttribute="leading" id="OiN-53-6BO"/>
-                        <constraint firstItem="2PG-Rm-0LD" firstAttribute="centerX" secondItem="GuI-kg-aLx" secondAttribute="centerX" id="PmF-WK-8n8"/>
-                        <constraint firstItem="aLR-4z-KTX" firstAttribute="top" secondItem="2PG-Rm-0LD" secondAttribute="bottom" constant="4" id="Ss7-mf-Axp"/>
-                        <constraint firstItem="ObX-wQ-qZP" firstAttribute="top" secondItem="aLR-4z-KTX" secondAttribute="bottom" constant="4" id="T1L-io-UAA"/>
-                    </constraints>
-                </view>
             </objects>
             <point key="canvasLocation" x="4610.3999999999996" y="-379.16041979010498"/>
         </scene>

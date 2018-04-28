@@ -328,6 +328,14 @@
 	return GLOBAL.isAuthorized.boolValue;
 }
 
+- (IBAction)allowHealthButton:(UIButton *)sender {
+	[GLOBAL requestAuthorization:^(BOOL success) {
+		[GCD main:^{
+			[self.tableView reloadSections:[NSIndexSet indexSetWithIndex:(self.showButton ? 1 : 0) + (self.showSwitch ? 1 : 0)] withRowAnimation:UITableViewRowAnimationAutomatic];
+		}];
+	}];
+}
+
 - (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
 	if (GLOBAL.asleep) {
 		if ([shortcutItem.type isEqualToString:GUI_WAKE_UP]) {
