@@ -102,7 +102,11 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
 			self.startDate = date;
 
 			[GCD main:^{
-				sel([WKExtension sharedExtension].visibleInterfaceController, setup);
+				WKInterfaceController *root = [WKExtension sharedExtension].rootInterfaceController;
+				WKInterfaceController *visible = [WKExtension sharedExtension].visibleInterfaceController;
+				sel(root, setup);
+				if (visible != root)
+					sel(visible, setup);
 			}];
 
 			[[CLKComplicationServer sharedInstance] reloadTimeline:Nil];

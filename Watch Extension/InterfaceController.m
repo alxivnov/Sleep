@@ -50,13 +50,6 @@
 		[self.table insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:index + 1] withRowType:obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed ? ROW_ID_IN_BED : ROW_ID_ASLEEP];
 		[[self.table rowControllerAtIndex:index + 1] setPresenter:obj];
 	}
-
-	[self.delegate detectFromUI:[WKExtension sharedExtension].applicationState == WKApplicationStateActive completion:^(NSArray<HKCategorySample *> *samples) {
-		if (samples.count)
-			[GCD main:^{
-				[self presentControllerWithName:STR_SAMPLES context:samples];
-			}];
-	}];
 }
 
 - (void)awakeWithContext:(id)context {
@@ -70,11 +63,31 @@
     [super willActivate];
 
 	[self setup];
+
+	[self.delegate detectFromUI:[WKExtension sharedExtension].applicationState == WKApplicationStateActive completion:^(NSArray<HKCategorySample *> *samples) {
+		if (samples.count)
+			[GCD main:^{
+				[self presentControllerWithName:STR_SAMPLES context:samples];
+			}];
+	}];
 }
 
 - (void)didDeactivate {
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
+}
+
+- (void)table:(WKInterfaceTable *)table didSelectRowAtIndex:(NSInteger)rowIndex {
+	NSArray<AnalysisPresenter *> *presenters = [self.delegate.presenters[[[NSDate date] dateComponent]].allPresenters query:^BOOL(AnalysisPresenter *obj) {
+		return obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed || obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisAsleep;
+	}];
+
+	AnalysisPresenter *presenter = presenters[rowIndex - 1];
+	[self presentAlertControllerWithTitle:loc(@"Delete sample?") message:presenter.text preferredStyle:WKAlertControllerStyleActionSheet actions:@[ [WKAlertAction actionWithTitle:loc(@"Delete") style:WKAlertActionStyleDestructive handler:^{
+		[[HKHealthStore defaultStore] deleteObjects:presenter.allSamples completion:Nil];
+	}], [WKAlertAction actionWithTitle:loc(@"Cancel") style:WKAlertActionStyleCancel handler:^{
+		
+	}] ]];
 }
 
 @end

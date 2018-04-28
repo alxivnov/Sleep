@@ -17,6 +17,7 @@
 
 #import "SleepButtonCell.h"
 #import "SleepSwitchCell.h"
+#import "AlarmSwitchCell.h"
 
 @interface WeekdaysController ()
 @property (weak, nonatomic) IBOutlet UIButton *sunButton;
@@ -95,6 +96,10 @@
 	}
 }
 
+- (void)setup {
+	[self setupAlertView:Nil];
+}
+
 - (void)setupAlertView:(void(^)(BOOL))completion {
 	NSDate *now = [NSDate date];
 	NSDate *today = [now dateComponent];
@@ -132,8 +137,9 @@
 			}
 			self.weekdays = weekdays;
 
-			SleepSwitchCell *switchCell = cls(SleepSwitchCell, [vc.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]]);
-			[switchCell setupAlertButton:presenters];
+			UITableViewCell *cell = [vc.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+			[cls(SleepSwitchCell, cell) setupAlertButton:presenters];
+			[cls(AlarmSwitchCell, cell) setupAlarmButton:presenters];
 
 			if (completion)
 				completion(presenters.count > 0);

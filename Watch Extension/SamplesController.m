@@ -61,12 +61,20 @@
 - (void)table:(WKInterfaceTable *)table didSelectRowAtIndex:(NSInteger)rowIndex {
 	NSUInteger index = rowIndex - table.numberOfRows;
 
-	if (index == -1)
+	if (index == -1) {
 		[[HKHealthStore defaultStore] saveObjects:self.samples completion:^(BOOL success) {
 			[GCD main:^{
 				[self dismissController];
 			}];
 		}];
+	} else {
+		HKCategorySample *sample = self.samples[rowIndex];
+		[self presentAlertControllerWithTitle:loc(@"Remove sample?") message:[NSString stringWithFormat:@"%@ - %@", [sample.startDate descriptionForTime:NSDateFormatterShortStyle], [sample.endDate descriptionForTime:NSDateFormatterShortStyle]] preferredStyle:WKAlertControllerStyleActionSheet actions:@[ [WKAlertAction actionWithTitle:loc(@"Delete") style:WKAlertActionStyleDestructive handler:^{
+			self.samples = [self.samples arrayByRemovingObject:sample];
+		}], [WKAlertAction actionWithTitle:loc(@"Cancel") style:WKAlertActionStyleCancel handler:^{
+
+		}] ]];
+	}
 }
 
 @end
