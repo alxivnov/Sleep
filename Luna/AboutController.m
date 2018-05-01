@@ -70,10 +70,10 @@ __synthesize(SKInAppPurchase *, purchase3, [SKInAppPurchase purchaseWithProductI
 
 		if (self.apps.count)
 			[GCD main:^{
-				if (self.tableView.numberOfSections > 4)
-					[self.tableView reloadSections:[NSIndexSet indexSetWithIndex:4] withRowAnimation:UITableViewRowAnimationAutomatic];
+				if (self.tableView.numberOfSections > IDX_APPS)
+					[self.tableView reloadSections:[NSIndexSet indexSetWithIndex:IDX_APPS] withRowAnimation:UITableViewRowAnimationAutomatic];
 				else
-					[self.tableView insertSections:[NSIndexSet indexSetWithIndex:4] withRowAnimation:UITableViewRowAnimationAutomatic];
+					[self.tableView insertSections:[NSIndexSet indexSetWithIndex:IDX_APPS] withRowAnimation:UITableViewRowAnimationAutomatic];
 			}];
 	}];
 }
@@ -184,7 +184,7 @@ __synthesize(SKInAppPurchase *, purchase3, [SKInAppPurchase purchaseWithProductI
 		[UIApplication openURL:[NSURL URLForMobileAppWithIdentifier:APP_ID_LUNA affiliateInfo:GLOBAL.affiliateInfo] options:Nil completionHandler:^(BOOL success) {
 			[UIRateController logRateWithMethod:@"AboutController" success:success];
 		}];
-	} else if (indexPath.section == 5) {
+	} else if (indexPath.section == IDX_APPS) {
 		[self presentProductWithIdentifier:[self.apps[indexPath.row].trackId integerValue] parameters:Nil];
 	}
 	

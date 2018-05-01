@@ -64,6 +64,7 @@
 
 	[self setup];
 
+//	NSArray *samples = @[ [HKDataSleepAnalysis sampleWithStartDate:[[NSDate date] addValue:-1 forComponent:NSCalendarUnitHour] endDate:[NSDate date] value:HKCategoryValueSleepAnalysisInBed metadata:Nil], [HKDataSleepAnalysis sampleWithStartDate:[[NSDate date] addValue:-1 forComponent:NSCalendarUnitHour] endDate:[NSDate date] value:HKCategoryValueSleepAnalysisAsleep metadata:Nil] ];
 	[self.delegate detectFromUI:[WKExtension sharedExtension].applicationState == WKApplicationStateActive completion:^(NSArray<HKCategorySample *> *samples) {
 		if (samples.count)
 			[GCD main:^{

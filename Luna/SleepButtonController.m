@@ -55,10 +55,15 @@
 
 				[GCD main:^{
 					[self setup];
+
+//					[self setupVisualizer:Nil];
 				}];
 			}];
-		else
+		else {
 			[self setup];
+
+//			[self setupVisualizer:Nil];
+		}
 	}
 }
 
@@ -224,6 +229,8 @@
 	[WIDGET updateNotification:^(BOOL scheduled) {
 		[GCD main:^{
 			[self setup];
+
+			[self setupVisualizer:Nil];
 		}];
 	}];
 	[WIDGET updateQuickActions];
@@ -298,6 +305,8 @@
 				[self setupAlarmView];
 
 				[self setup];
+
+				[self reloadData];
 			}];
 		}];
 		[WIDGET updateNotification:Nil];

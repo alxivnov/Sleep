@@ -52,7 +52,7 @@ __property(NSTimeInterval, duration, [self.endDate timeIntervalSinceDate:self.st
 //__property(CGFloat, pointsPerSecond, self.contentSize.width / self.duration)
 
 - (CGFloat)pointsPerSecond {
-	return self.contentSize.width / self.duration;
+	return self.contentSize.width / (self.startDate && self.endDate ? self.duration : TIME_DAY);
 }
 
 __synthesize(CAShapeLayer *, inBedLayer, ({ CAShapeLayer *x = [CAShapeLayer new]; [self.layer addSublayer:x]; x; }))
@@ -82,7 +82,7 @@ __synthesize(UIImageView *, sunsetView, ({ UIImageView *x = [[UIImageView alloc]
 }
 
 - (CGFloat)x:(NSDate *)date {
-	return [date timeIntervalSinceDate:self.startDate] * self.pointsPerSecond;
+	return (date && self.startDate ? [date timeIntervalSinceDate:self.startDate] : 0.0) * self.pointsPerSecond;
 }
 
 - (CGFloat)y:(double)fraction {

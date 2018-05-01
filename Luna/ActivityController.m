@@ -121,31 +121,7 @@
 				if (visualizer.startDate && visualizer.endDate)
 					return cell;
 
-				AnalysisPresenter *presenter = cls(AnalysisPresenter, self.samples.firstObject);
-				NSDate *startDate = [presenter.endDate dateComponent];
-				NSDate *endDate = [startDate addValue:1 forComponent:NSCalendarUnitDay];
-
-				if (/*self.navigationController.navigationBar.barTintColor*/YES) {
-					[visualizer loadWithStartDate:startDate endDate:endDate completion:^{
-						[UNUserNotificationCenter getPendingNotificationRequestsWithIdentifier:GUI_FALL_ASLEEP completionHandler:^(NSArray<UNNotificationRequest *> *requests) {
-							visualizer.fallAsleep = requests.firstObject.nextTriggerDate;
-						}];
-
-						[GCD main:^{
-							[visualizer scrollRectToVisibleDate:[NSDate date] animated:YES];
-						}];
-					}];
-
-					visualizer.location = [CLLocationManager defaultManager].location;
-				} else {
-					NSMutableArray *samples = [NSMutableArray arrayWithCapacity:self.samples.count];
-					for (AnalysisPresenter *presenter in self.samples)
-						[samples addObjectsFromArray:presenter.allSamples];
-
-					[visualizer setSamples:samples startDate:startDate endDate:endDate];
-
-					[visualizer scrollRectToVisibleDate:startDate animated:YES];
-				}
+				[self setupVisualizer:visualizer];
 			}
 
 			return cell;
@@ -155,6 +131,40 @@
 	}
 
 	return [super tableView:tableView cellForRowAtIndexPath:indexPath];
+}
+
+- (void)setupVisualizer:(ActivityVisualizer *)visualizer {
+	if (!visualizer) {
+		UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:(self.showButton ? 1 : 0) + (self.showSwitch ? 1 : 0)]];
+
+		visualizer = [cell subview:UISubviewKindOfClass(ActivityVisualizer)];
+	}
+
+	AnalysisPresenter *presenter = cls(AnalysisPresenter, self.samples.firstObject);
+	NSDate *startDate = [presenter.endDate dateComponent] ?: self.startDate;
+	NSDate *endDate = [startDate addValue:1 forComponent:NSCalendarUnitDay] ?: self.endDate;
+
+	if (/*self.navigationController.navigationBar.barTintColor*/!self.samples.count) {
+		[visualizer loadWithStartDate:startDate endDate:endDate completion:^{
+			[UNUserNotificationCenter getPendingNotificationRequestsWithIdentifier:GUI_FALL_ASLEEP completionHandler:^(NSArray<UNNotificationRequest *> *requests) {
+				visualizer.fallAsleep = requests.firstObject.nextTriggerDate;
+			}];
+
+			[GCD main:^{
+				[visualizer scrollRectToVisibleDate:[NSDate date] animated:YES];
+			}];
+		}];
+
+		visualizer.location = [CLLocationManager defaultManager].location;
+	} else {
+		NSMutableArray *samples = [NSMutableArray arrayWithCapacity:self.samples.count];
+		for (AnalysisPresenter *presenter in self.samples)
+			[samples addObjectsFromArray:presenter.allSamples];
+
+		[visualizer setSamples:samples startDate:startDate endDate:endDate];
+
+		[visualizer scrollRectToVisibleDate:startDate animated:YES];
+	}
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
@@ -342,15 +352,19 @@
 	return [super tableView:tableView heightForRowAtIndexPath:indexPath];
 }
 
+- (void)reloadData {
+	[AnalysisPresenter query:NSCalendarUnitWeekday startDate:self.startDate endDate:self.endDate completion:^(NSArray<AnalysisPresenter *> *presenters) {
+		[self setSamples:presenters animated:YES];
+	}];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 
 	if (!self.startDate || !self.endDate)
 		return;
 
-	[AnalysisPresenter query:NSCalendarUnitWeekday startDate:self.startDate endDate:self.endDate completion:^(NSArray<AnalysisPresenter *> *presenters) {
-		[self setSamples:presenters animated:YES];
-	}];
+	[self reloadData];
 
 	[CMMotionActivitySample queryActivityStartingFromDate:self.startDate toDate:self.endDate within:2.0 * TIME_HOUR withHandler:^(NSArray<CMMotionActivitySample *> *activities) {
 		NSTimeInterval time = [activities sum:^NSNumber *(CMMotionActivitySample *obj) {

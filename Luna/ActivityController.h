@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ActivityVisualizer.h"
 #import "AnalysisController.h"
 
 @interface ActivityController : AnalysisController
@@ -19,5 +20,8 @@
 @property (assign, nonatomic, readonly) BOOL showSwitch;
 
 @property (assign, nonatomic, readonly) BOOL showActivity;
+
+- (void)reloadData;
+- (void)setupVisualizer:(ActivityVisualizer *)visualizer;
 
 @end
