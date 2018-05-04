@@ -19,7 +19,7 @@
 #import "UIViewController+Convenience.h"
 
 @interface ActivitiesController ()
-@property (strong, nonatomic) NSArray<NSDate *> *dates;
+
 @end
 
 @implementation ActivitiesController

@@ -291,6 +291,8 @@
 			[WIDGET updateNotification:^(BOOL scheduled) {
 				[GCD main:^{
 					[self setup];
+
+					[self reloadData];
 				}];
 			}];
 			[WIDGET updateQuickActions];
@@ -305,8 +307,6 @@
 				[self setupAlarmView];
 
 				[self setup];
-
-				[self reloadData];
 			}];
 		}];
 		[WIDGET updateNotification:Nil];

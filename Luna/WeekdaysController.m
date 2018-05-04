@@ -66,7 +66,7 @@
 
 - (void)setWeekdays:(NSArray<AnalysisPresenter *> *)weekdays {
 	if ([_weekdays isEqualToArray:weekdays block:^BOOL(AnalysisPresenter *obj, AnalysisPresenter *otherObj) {
-		return obj.duration == otherObj.duration;
+		return [obj.startDate isEqualToDate:otherObj.startDate];
 	}])
 		return;
 
@@ -121,11 +121,6 @@
 			return obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed ? @(obj.duration) : Nil;
 		}];
 		[GCD main:^{
-			UITableViewController *vc = cls(UITableViewController, self.viewControllers.firstObject);
-
-			SleepButtonCell *buttonCell = cls(SleepButtonCell, [vc.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]]);
-			[buttonCell setSleepDuration:days[today].duration inBedDuration:inBed cycleCount:presenters.firstObject.cycleCount animated:YES];
-
 			for (NSUInteger index = 0; index < self.weekButtons.count; index++) {
 				NSUInteger day = index + firstWeekday;
 				self.weekButtons[index].enabled = day <= weekday;
@@ -135,11 +130,29 @@
 				[self.weekButtons[index] setTitle:[NSCalendar currentCalendar].shortWeekdaySymbols[day].uppercaseString];
 
 			}
-			self.weekdays = weekdays;
 
-			UITableViewCell *cell = [vc.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
-			[cls(SleepSwitchCell, cell) setupAlertButton:presenters];
-			[cls(AlarmSwitchCell, cell) setupAlarmButton:presenters];
+			UITableViewController *vc = cls(UITableViewController, self.viewControllers.firstObject);
+			if ([self.weekdays isEqualToArray:weekdays block:^BOOL(AnalysisPresenter *obj, AnalysisPresenter *otherObj) {
+				return [obj.startDate isEqualToDate:otherObj.startDate];
+			}]) {
+				SleepButtonCell *buttonCell = cls(SleepButtonCell, [vc.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]]);
+				[buttonCell setSleepDuration:days[today].duration inBedDuration:inBed cycleCount:presenters.firstObject.cycleCount animated:YES];
+
+				UITableViewCell *cell = [vc.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+				[cls(SleepSwitchCell, cell) setupAlertButton:presenters];
+				[cls(AlarmSwitchCell, cell) setupAlarmButton:presenters];
+
+				self.navigationItem.prompt = vc.navigationItem.prompt;
+
+			} else {
+				self.weekdays = weekdays;
+
+				self.dates = [NSArray arrayFromCount:weekday - firstWeekday + 1 block:^id(NSUInteger index) {
+					return [today addValue:firstWeekday - weekday + index forComponent:NSCalendarUnitDay];
+				}];
+
+				[vc.tableView reloadData];
+			}
 
 			if (completion)
 				completion(presenters.count > 0);

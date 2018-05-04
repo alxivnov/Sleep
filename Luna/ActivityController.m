@@ -144,7 +144,7 @@
 	NSDate *startDate = [presenter.endDate dateComponent] ?: self.startDate;
 	NSDate *endDate = [startDate addValue:1 forComponent:NSCalendarUnitDay] ?: self.endDate;
 
-	if (/*self.navigationController.navigationBar.barTintColor*/!self.samples.count) {
+	if (/*self.navigationController.navigationBar.barTintColor*/YES/*!self.samples.count*/) {
 		[visualizer loadWithStartDate:startDate endDate:endDate completion:^{
 			[UNUserNotificationCenter getPendingNotificationRequestsWithIdentifier:GUI_FALL_ASLEEP completionHandler:^(NSArray<UNNotificationRequest *> *requests) {
 				visualizer.fallAsleep = requests.firstObject.nextTriggerDate;

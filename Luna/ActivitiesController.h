@@ -12,6 +12,7 @@
 
 @interface ActivitiesController : UIPagingController <UIPageViewControllerDelegate>
 
+@property (strong, nonatomic) NSArray<NSDate *> *dates;
 @property (assign, nonatomic) NSNumber *weekday;
 
 @end
