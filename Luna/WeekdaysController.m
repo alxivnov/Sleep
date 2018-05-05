@@ -10,6 +10,7 @@
 
 #import "Global.h"
 #import "AnalysisPresenter.h"
+#import "ActivityController.h"
 
 #import "UIBezierPath+Convenience.h"
 #import "UIButton+Convenience.h"
@@ -109,17 +110,22 @@
 		weekday = 7;
 
 	[AnalysisPresenter query:NSCalendarUnitWeekOfMonth completion:^(NSArray<AnalysisPresenter *> *presenters) {
+		NSArray<NSDate *> *dates = [NSArray arrayFromCount:weekday - firstWeekday + 1 block:^id(NSUInteger index) {
+			return [today addValue:firstWeekday - weekday + index forComponent:NSCalendarUnitDay];
+		}];
+
 		NSDictionary<NSDate *, AnalysisPresenter *> *days = [presenters dictionaryWithKey:^id<NSCopying>(AnalysisPresenter *obj) {
 			return [obj.endDate dateComponent];
 		}];
 
-		NSArray<AnalysisPresenter *> *weekdays = [NSArray arrayFromCount:7 block:^id(NSUInteger index) {
-			return days[[today addValue:firstWeekday - weekday + index forComponent:NSCalendarUnitDay]] ?: [AnalysisPresenter new];
+		NSArray<AnalysisPresenter *> *weekdays = [dates map:^id(NSDate *obj) {
+			return days[obj] ?: [[AnalysisPresenter alloc] init];
 		}];
 
 		NSTimeInterval inBed = [days[today].allPresenters sum:^NSNumber *(AnalysisPresenter *obj) {
 			return obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed ? @(obj.duration) : Nil;
 		}];
+		
 		[GCD main:^{
 			for (NSUInteger index = 0; index < self.weekButtons.count; index++) {
 				NSUInteger day = index + firstWeekday;
@@ -132,8 +138,8 @@
 			}
 
 			UITableViewController *vc = cls(UITableViewController, self.viewControllers.firstObject);
-			if ([self.weekdays isEqualToArray:weekdays block:^BOOL(AnalysisPresenter *obj, AnalysisPresenter *otherObj) {
-				return [obj.startDate isEqualToDate:otherObj.startDate];
+			if ([self.dates isEqualToArray:dates block:^BOOL(NSDate *obj, NSDate *otherObj) {
+				return [obj isEqualToDate:otherObj];
 			}]) {
 				SleepButtonCell *buttonCell = cls(SleepButtonCell, [vc.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]]);
 				[buttonCell setSleepDuration:days[today].duration inBedDuration:inBed cycleCount:presenters.firstObject.cycleCount animated:YES];
@@ -147,11 +153,12 @@
 			} else {
 				self.weekdays = weekdays;
 
-				self.dates = [NSArray arrayFromCount:weekday - firstWeekday + 1 block:^id(NSUInteger index) {
-					return [today addValue:firstWeekday - weekday + index forComponent:NSCalendarUnitDay];
-				}];
+				self.dates = dates;
 
-				[vc.tableView reloadData];
+				NSUInteger currentPage = [self.dates indexOfObject:today];
+				if (currentPage == self.currentPage)
+					currentPage = NSNotFound;
+				[self setCurrentPage:currentPage animated:YES completion:Nil];
 			}
 
 			if (completion)
