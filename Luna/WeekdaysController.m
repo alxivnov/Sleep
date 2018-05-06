@@ -150,6 +150,10 @@
 
 				self.navigationItem.prompt = vc.navigationItem.prompt;
 
+				if (![self.weekdays isEqualToArray:weekdays block:^BOOL(AnalysisPresenter *obj, AnalysisPresenter *otherObj) {
+					return [[obj.startDate dateComponent] isEqualToDate:[otherObj.startDate dateComponent]];
+				}])
+					self.weekdays = weekdays;
 			} else {
 				self.weekdays = weekdays;
 

@@ -290,12 +290,14 @@
 				if (activities)
 					self.watchActivities = activities;
 				else
-					[HKActiveEnergy queryActivityStartingFromDate:self.visualizer.startDate toDate:self.visualizer.endDate /*within:0.0*/ withHandler:^(NSArray<CMMotionActivitySample *> *activities) {
+					[CMMotionActivitySample queryActivityStartingFromDate:self.visualizer.startDate toDate:self.visualizer.endDate within:0.0 withHandler:^(NSArray<CMMotionActivitySample *> *activities) {
+//					[HKActiveEnergy queryActivityStartingFromDate:self.visualizer.startDate toDate:self.visualizer.endDate /*within:0.0*/ withHandler:^(NSArray<CMMotionActivitySample *> *activities) {
 						self.activities = activities;
 					}];
 			}];
 		else
-			[HKActiveEnergy queryActivityStartingFromDate:self.visualizer.startDate toDate:self.visualizer.endDate /*within:0.0*/ withHandler:^(NSArray<CMMotionActivitySample *> *activities) {
+			[CMMotionActivitySample queryActivityStartingFromDate:self.visualizer.startDate toDate:self.visualizer.endDate within:0.0 withHandler:^(NSArray<CMMotionActivitySample *> *activities) {
+//			[HKActiveEnergy queryActivityStartingFromDate:self.visualizer.startDate toDate:self.visualizer.endDate /*within:0.0*/ withHandler:^(NSArray<CMMotionActivitySample *> *activities) {
 				self.activities = activities;
 			}];
 	}
