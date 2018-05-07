@@ -1198,7 +1198,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label multipleTouchEnabled="YES" contentMode="left" text="Interval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6yh-Bl-I4P">
-                                            <rect key="frame" x="16" y="9" width="56.5" height="20.5"/>
+                                            <rect key="frame" x="15" y="9" width="56.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -1206,7 +1206,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label multipleTouchEnabled="YES" contentMode="left" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SN3-e2-0eg">
-                                            <rect key="frame" x="16" y="30.5" width="28.5" height="16"/>
+                                            <rect key="frame" x="15" y="30.5" width="28.5" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
@@ -1226,7 +1226,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label multipleTouchEnabled="YES" contentMode="left" text="Send sleep data to the developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="al6-oO-mh8">
-                                            <rect key="frame" x="61" y="9" width="252.5" height="20.5"/>
+                                            <rect key="frame" x="53" y="9" width="252.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -1234,7 +1234,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label multipleTouchEnabled="YES" contentMode="left" text="alex@apptag.me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cW3-0g-A0Y">
-                                            <rect key="frame" x="61" y="30.5" width="101" height="16"/>
+                                            <rect key="frame" x="53" y="30.5" width="101" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
@@ -1242,7 +1242,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="envelope-line-30.png" highlightedImage="envelope-full-30.png" id="eOi-Qf-owJ">
-                                            <rect key="frame" x="16" y="12" width="30" height="30"/>
+                                            <rect key="frame" x="8" y="12" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -1693,7 +1693,7 @@
         <scene sceneID="Ow9-lo-0QR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9ve-RU-1WA" customClass="NavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Thank" image="like-line.png" selectedImage="like-fill.png" id="1o4-i4-Nld"/>
+                    <tabBarItem key="tabBarItem" title="Thank" image="like-fill.png" id="1o4-i4-Nld"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" largeTitles="YES" id="4t3-MG-cvH">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
@@ -2042,7 +2042,7 @@
         <scene sceneID="SaR-vC-ETr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uYO-CG-4YC" customClass="NavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Stats" image="graph-line-30.png" selectedImage="graph-full-30.png" id="upp-qf-d4g"/>
+                    <tabBarItem key="tabBarItem" title="Stats" image="graph-full-30.png" id="upp-qf-d4g"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" largeTitles="YES" id="SGB-dm-dgR">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
@@ -2065,7 +2065,7 @@
         <scene sceneID="QAP-6c-zJT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CrN-oJ-fC2" customClass="NavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Alarm" image="alarm-line.png" selectedImage="alarm-full.png" id="9mq-MT-fNB"/>
+                    <tabBarItem key="tabBarItem" title="Alarm" image="alarm-full.png" id="9mq-MT-fNB"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" largeTitles="YES" id="wxG-0c-Utu">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
@@ -2106,7 +2106,7 @@
         <scene sceneID="oak-e3-rPY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tgw-A4-Dzc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Sleep" image="moon-line.png" selectedImage="moon-full.png" id="lcE-c7-xTx"/>
+                    <tabBarItem key="tabBarItem" title="Sleep" image="moon-full.png" id="lcE-c7-xTx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="n9c-SG-GEy">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -2138,12 +2138,10 @@
         <image name="envelope-full-30.png" width="30" height="30"/>
         <image name="envelope-line-30.png" width="30" height="30"/>
         <image name="graph-full-30.png" width="30" height="30"/>
-        <image name="graph-line-30.png" width="30" height="30"/>
         <image name="groceries-fill-30.png" width="30" height="30"/>
         <image name="groceries-line-30.png" width="30" height="30"/>
         <image name="heart.png" width="30" height="30"/>
         <image name="like-fill.png" width="30" height="30"/>
-        <image name="like-line.png" width="30" height="30"/>
         <image name="long-press-full.png" width="30" height="30"/>
         <image name="long-press-line.png" width="30" height="30"/>
         <image name="luna-30.png" width="30" height="30"/>
