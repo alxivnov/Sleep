@@ -161,7 +161,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForSwipeAccessoryButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return self.samples[indexPath.row].allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed ? [Localization change] : Nil;
+	return idx(self.samples, indexPath.row).allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed ? [Localization change] : Nil;
 }
 
 - (void)tableView:(UITableView *)tableView swipeAccessoryButtonPushedForRowAtIndexPath:(NSIndexPath *)indexPath {
