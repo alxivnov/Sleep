@@ -61,7 +61,7 @@
 
 	CGFloat width = fmin(self.button.bounds.size.width, self.button.bounds.size.height) * (64.0 / 580.0);
 	self.inBedDurationLayer = [[UIBezierPath bezierPathWithArcFrame:self.button.bounds width:width start:0.0 end:fmin(1.0, inBedDuration / (GLOBAL.sleepDuration + GLOBAL.sleepLatency)) lineCap:kCGLineCapRound lineJoin:kCGLineJoinRound] layerWithStrokeColors:@[ /*[*/[UIColor color:RGB_LIGHT_TINT]/* colorWithAlphaComponent:(cycleCount + 1.0) / 6.0]*//*, RGB(23, 23, 23)*/ ]];
-	self.sleepDurationLayer = [[UIBezierPath bezierPathWithArcFrame:CGRectInset(self.button.bounds, width, width) width:width start:0.0 end:fmin(1.0, sleepDuration / GLOBAL.sleepDuration) lineCap:kCGLineCapRound lineJoin:kCGLineJoinRound] layerWithStrokeColors:@[ /*[*/[UIColor color:RGB_DARK_TINT]/* colorWithAlphaComponent:(cycleCount + 1.0) / 6.0]*//*, RGB(23, 23, 23)*/ ]];
+	self.sleepDurationLayer = [[UIBezierPath bezierPathWithArcFrame:CGRectInset(self.button.bounds, width + 2.0, width + 2.0) width:width start:0.0 end:fmin(1.0, sleepDuration / GLOBAL.sleepDuration) lineCap:kCGLineCapRound lineJoin:kCGLineJoinRound] layerWithStrokeColors:@[ /*[*/[UIColor color:RGB_DARK_TINT]/* colorWithAlphaComponent:(cycleCount + 1.0) / 6.0]*//*, RGB(23, 23, 23)*/ ]];
 
 	if (animated) {
 		if (inBedPath)

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="t0I-PW-JGY">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="t0I-PW-JGY">
     <device id="watch42" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14031"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14033"/>
     </dependencies>
     <scenes>
         <!--Sleep Diary-->
@@ -27,7 +27,7 @@
                                                             <items>
                                                                 <timer alignment="center" previewedSeconds="0" id="qnX-ZO-Crh">
                                                                     <color key="textColor" red="0.424549073" green="0.41031354669999998" blue="0.81908142569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <fontDescription key="font" type="boldSystem" pointSize="20"/>
+                                                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                                                 </timer>
                                                                 <label alignment="center" text="loading" id="8HR-RE-dxP">
                                                                     <color key="textColor" red="0.2490108311" green="0.227181673" blue="0.67214268450000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

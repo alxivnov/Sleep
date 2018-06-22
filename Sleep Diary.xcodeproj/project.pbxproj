@@ -150,7 +150,6 @@
 		CDF5FA761DB3C50700208F7E /* UserNotifications+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA6A1DB3C50600208F7E /* UserNotifications+Convenience.m */; };
 		CDF5FA771DB3C50700208F7E /* WatchConnectivity+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA6C1DB3C50600208F7E /* WatchConnectivity+Convenience.m */; };
 		CDFC35301EF07288001F2CAB /* Accelerate+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFC352F1EF07287001F2CAB /* Accelerate+Convenience.m */; };
-		CDFDD69F1F0F6EDC00030626 /* Answers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFDD69E1F0F6EDC00030626 /* Answers.framework */; };
 		FA098B701C91B98300D83FDF /* UIAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA098B6E1C91B98300D83FDF /* UIAccessoryView.m */; };
 		FA098B731C91BAD600D83FDF /* UIImage+View.m in Sources */ = {isa = PBXBuildFile; fileRef = FA098B721C91BAD600D83FDF /* UIImage+View.m */; };
 		FA098B771C91C0ED00D83FDF /* disclosure@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA098B761C91C0ED00D83FDF /* disclosure@2x.png */; };
@@ -485,7 +484,6 @@
 		CDF5FA6E1DB3C50600208F7E /* WatchKit+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WatchKit+Convenience.m"; sourceTree = "<group>"; };
 		CDFC352E1EF07287001F2CAB /* Accelerate+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Accelerate+Convenience.h"; sourceTree = "<group>"; };
 		CDFC352F1EF07287001F2CAB /* Accelerate+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Accelerate+Convenience.m"; sourceTree = "<group>"; };
-		CDFDD69E1F0F6EDC00030626 /* Answers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Answers.framework; path = ../Frameworks/Fabric/Answers.framework; sourceTree = "<group>"; };
 		FA098B6E1C91B98300D83FDF /* UIAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAccessoryView.m; sourceTree = "<group>"; };
 		FA098B6F1C91B98300D83FDF /* UIAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAccessoryView.h; sourceTree = "<group>"; };
 		FA098B711C91BAD600D83FDF /* UIImage+View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+View.h"; sourceTree = "<group>"; };
@@ -665,7 +663,6 @@
 			files = (
 				FA6BCA6B1AD5270C006029D5 /* HealthKit.framework in Frameworks */,
 				FA3949DD1AD2B11200138B0B /* StoreKit.framework in Frameworks */,
-				CDFDD69F1F0F6EDC00030626 /* Answers.framework in Frameworks */,
 				FA3718D21B67A4F10004FCEF /* Crashlytics.framework in Frameworks */,
 				FA3718D01B67A3510004FCEF /* Fabric.framework in Frameworks */,
 			);
@@ -910,7 +907,6 @@
 			children = (
 				FA6BCA6A1AD5270C006029D5 /* HealthKit.framework */,
 				FA3949DC1AD2B11200138B0B /* StoreKit.framework */,
-				CDFDD69E1F0F6EDC00030626 /* Answers.framework */,
 				FA3718D11B67A4F10004FCEF /* Crashlytics.framework */,
 				FA3718CF1B67A3510004FCEF /* Fabric.framework */,
 				CD8F8F8C207A6B38007FA86A /* HealthKit.framework */,
