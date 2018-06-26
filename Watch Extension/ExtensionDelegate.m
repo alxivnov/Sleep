@@ -80,8 +80,10 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
 			[[UIColor color:RGB_DARK_TINT] setStroke];
 			[[UIBezierPath bezierPathWithArcFrame:frame width:15.0 start:0.0 end:self.sleepDuration / self.settings.sleepDuration lineCap:kCGLineCapRound lineJoin:kCGLineJoinRound] stroke];
 
-#warning Fix image on smaller watch!
+#warning Fix sample deleteion!
+#warning Fix image on the smaller watch!
 #warning Fix phone-watch syncronization!
+#warning Fix automatic detection!
 		}];
 
 		[GCD main:^{

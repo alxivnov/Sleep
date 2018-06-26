@@ -19,9 +19,11 @@
 //	}] avg:^NSNumber *(CMMotionActivitySample *obj) {
 //		return obj.type == CMMotionActivityTypeStationary && obj.confidence == CMMotionActivityConfidenceHigh ? @(obj.duration) : Nil;
 //	}];
-	double duration = [activities quartiles:^NSNumber *(CMMotionActivitySample *obj) {
+	NSArray<NSNumber *> *quartiles = [activities quartiles:^NSNumber *(CMMotionActivitySample *obj) {
 		return obj.type == CMMotionActivityTypeStationary && obj.confidence == CMMotionActivityConfidenceHigh ? @(obj.duration) : Nil;
-	}][1].doubleValue * sleepLatency / TIME_MINUTE;
+	}];
+	double q1 = quartiles[1].isNotANumber ? 0.0 : quartiles[1].doubleValue;
+	double duration = q1 * sleepLatency / TIME_MINUTE;
 	CMMotionActivitySample *last = [activities lastObject:^BOOL(CMMotionActivitySample *obj) {
 		return obj.duration >= duration;
 	}];

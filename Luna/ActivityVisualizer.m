@@ -264,24 +264,48 @@ __synthesize(UIImageView *, sunsetView, ({ UIImageView *x = [[UIImageView alloc]
 - (void)setActivities:(NSArray<CMMotionActivitySample *> *)activities {
 	_activities = activities;
 
+	if (activities.count > 960) {
+		NSMutableArray *arr = [NSMutableArray arrayWithCapacity:activities.count];
+
+		CMMotionActivitySample *prev = activities.lastObject;
+		for (NSInteger index = activities.count - 2; index >= 0 && arr.count < 960; index--) {
+			CMMotionActivitySample *curr = activities[index];
+
+			if (prev.type == curr.type && prev.confidence == curr.confidence && prev.duration + curr.duration <= 60.0 && [prev.startDate timeIntervalSinceDate:curr.endDate] < fmin(prev.duration, curr.duration)) {
+				prev = [CMMotionActivitySample sampleWithStartDate:curr.startDate endDate:prev.endDate type:prev.type confidence:prev.confidence];
+			} else {
+				[arr addObject:prev];
+
+				prev = curr;
+			}
+		}
+		if (arr.count < 960)
+			[arr addObject:prev];
+
+		activities = arr;
+	}
+
 	CGMutablePathRef from = CGPathCreateMutable();
 
 	CGMutablePathRef path = CGPathCreateMutable();
 	NSArray<NSNumber *> *quartiles = [activities quartiles:^NSNumber *(CMMotionActivitySample *obj) {
 		return obj.type == CMMotionActivityTypeStationary && obj.confidence == CMMotionActivityConfidenceHigh ? @(obj.duration) : Nil;
 	}];
+	double q1 = quartiles[1].isNotANumber ? 0.0 : quartiles[1].doubleValue;
+	double q2 = quartiles[2].isNotANumber ? 0.0 : quartiles[2].doubleValue;
+	double q3 = quartiles[3].isNotANumber ? 0.0 : quartiles[3].doubleValue;
 
 //	NSLog(@"avg: %f", avg / 60.0);
 	for (CMMotionActivitySample *activity in activities) {
 		CGFloat x = [self x:activity.startDate];
-		CGFloat y = [self y:(activity.type == CMMotionActivityTypeAutomotive ? 6 : activity.type == CMMotionActivityTypeCycling ? 5 : activity.type == CMMotionActivityTypeRunning ? 4 : activity.type == CMMotionActivityTypeWalking ? 3 : activity.type == CMMotionActivityTypeStationary ? 2 : 1) / 7.0];
+		CGFloat y = [self y:(activity.type == CMMotionActivityTypeAutomotive ? 6.0 : activity.type == CMMotionActivityTypeCycling ? 5.0 : activity.type == CMMotionActivityTypeRunning ? 4.0 : activity.type == CMMotionActivityTypeWalking ? 3.0 : activity.type == CMMotionActivityTypeStationary ? 2.0 : 1.0) / 7.0];
 		CGFloat width = [self x:activity.endDate] - x;
 		CGFloat height = activity.confidence == CMMotionActivityConfidenceHigh ? 4.0 : activity.confidence == CMMotionActivityConfidenceMedium ? 2.0 : 1.0;
-		if (activity.duration >= quartiles[3].doubleValue)
+		if (activity.duration >= q3)
 			height *= 4.0;
-		else if (activity.duration >= quartiles[2].doubleValue)
+		else if (activity.duration >= q2)
 			height *= 3.0;
-		else if (activity.duration >= quartiles[1].doubleValue)
+		else if (activity.duration >= q1)
 			height *= 2.0;
 
 		CGPathAddRoundedRect(path, NULL, CGRectMake(x, y - height / 2.0, width, height), fmin(width / 2.0, height / 2.0), height / 2.0);

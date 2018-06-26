@@ -48,14 +48,14 @@
 	self.mean.text = [formatter stringFromTimeInterval:avg];
 	self.standardDeviation.text = [formatter stringFromTimeInterval:dev];
 
-	NSArray<NSNumber *> *fiveNumberSummary = [self.samples quartiles:^NSNumber *(CMMotionActivitySample *obj) {
+	NSArray<NSNumber *> *quartiles = [self.samples quartiles:^NSNumber *(CMMotionActivitySample *obj) {
 		return obj.confidence == CMMotionActivityConfidenceHigh ? @(obj.duration) : Nil;
 	}];
-	double q0 = fiveNumberSummary.firstObject.doubleValue;
-	double q1 = fiveNumberSummary[1].doubleValue;
-	double q2 = fiveNumberSummary[2].doubleValue;
-	double q3 = fiveNumberSummary[3].doubleValue;
-	double q4 = fiveNumberSummary.lastObject.doubleValue;
+	double q0 = quartiles[0].isNotANumber ? 0.0 : quartiles[0].doubleValue;
+	double q1 = quartiles[1].isNotANumber ? 0.0 : quartiles[1].doubleValue;
+	double q2 = quartiles[2].isNotANumber ? 0.0 : quartiles[2].doubleValue;
+	double q3 = quartiles[3].isNotANumber ? 0.0 : quartiles[3].doubleValue;
+	double q4 = quartiles[4].isNotANumber ? 0.0 : quartiles[4].doubleValue;
 	self.min.text = [formatter stringFromTimeInterval:q0];
 	self.q1.text = [formatter stringFromTimeInterval:q1];
 	self.median.text = [formatter stringFromTimeInterval:q2];
