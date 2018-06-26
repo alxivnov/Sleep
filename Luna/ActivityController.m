@@ -310,6 +310,10 @@
 					[tableView deleteSection:indexPath.section - 1];
 
 					[tableView deleteSection:indexPath.section + 1];
+				} else if (!self.samples.count) {
+					[tableView reloadSection:indexPath.section - 1];
+
+					[tableView deleteSection:indexPath.section + 1];
 				}
 
 				[tableView footerViewForSection:indexPath.section].textLabel.text = [self tableView:tableView titleForFooterInSection:indexPath.section];
