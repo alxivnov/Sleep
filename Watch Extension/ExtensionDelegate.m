@@ -80,7 +80,6 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
 			[[UIColor color:RGB_DARK_TINT] setStroke];
 			[[UIBezierPath bezierPathWithArcFrame:frame width:15.0 start:0.0 end:self.sleepDuration / self.settings.sleepDuration lineCap:kCGLineCapRound lineJoin:kCGLineJoinRound] stroke];
 
-#warning Fix sample deleteion!
 #warning Fix image on the smaller watch!
 #warning Fix phone-watch syncronization!
 #warning Fix automatic detection!
@@ -214,10 +213,14 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
 			[CMMotionActivitySample queryActivityStartingFromDate:startDate toDate:endDate within:self.sleepDuration withHandler:^(NSArray<CMMotionActivitySample *> *activities) {
 				NSArray<HKCategorySample *> *samples = [self.settings samplesFromActivities:activities fromUI:fromUI];
 
-				if (completion)
-					completion(samples);
+				BOOL inBed = [samples any:^BOOL(HKCategorySample *obj) {
+					return obj.value == HKCategoryValueSleepAnalysisInBed;
+				}];
 
-				if (samples.count)
+				if (completion)
+					completion(fromUI || inBed ? samples : Nil);
+
+				if (fromUI || inBed)
 					self.lastDetectDate = endDate;
 			}];
 		else

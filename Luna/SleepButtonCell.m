@@ -75,7 +75,8 @@
 			[self.sleepDurationLayer addAnimationFromValue:_sleepDuration <= 0.0 || sleepDuration <= 0.0 ? @0 : @(fmin(1.0, _sleepDuration / sleepDuration)) toValue:@1 forKey:CALayerKeyStrokeEnd];
 	}
 
-	[self.button setTitle:[[NSDateComponentsFormatter hhmmssFormatter] stringFromTimeInterval:sleepDuration ?: inBedDuration] forState:UIControlStateNormal];
+	NSTimeInterval duration = isfinite(sleepDuration) && !isnan(sleepDuration) && sleepDuration > 0.0 ? sleepDuration : isfinite(inBedDuration) && !isnan(inBedDuration) && inBedDuration > 0.0 ? inBedDuration : 0.0;
+	[self.button setTitle:[[NSDateComponentsFormatter hhmmssFormatter] stringFromTimeInterval:duration] forState:UIControlStateNormal];
 
 	_inBedDuration = inBedDuration;
 	_sleepDuration = sleepDuration;

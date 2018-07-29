@@ -203,7 +203,7 @@ __synthesize(NSUserDefaults *, defaults, [NSUserDefaults standardUserDefaults])
 		prev = curr;
 	}
 
-	if (fromUI)
+//	if (fromUI)
 		if (inBedIndex)
 			[inBedArray addObject:[[NSDateInterval alloc] initWithStartDate:[startDate dateByAddingTimeInterval:sleepLatency - 1.0 + inBedIndex] endDate:endDate]];
 
