@@ -85,7 +85,7 @@ __synthesize(NSArray *, dates, ({
  */
 
 - (UIViewController *)viewControllerForIndex:(NSUInteger)index {
-	NSDate *obj = idx(self.dates, index);
+	NSDate *obj = index < self.dates.count ? self.dates[index] : Nil;//idx(self.dates, index);
 	if (!obj)
 		return Nil;
 

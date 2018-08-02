@@ -104,7 +104,7 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
 			}];
 		} else {
 			NSDate *date = [NSDate deserialize:message[KEY_TIMER_START]];
-			if (NSDateIsEqualToDate(self.startDate, date))
+			if (eql(self.startDate, date))
 				return;
 
 			self.startDate = date;
@@ -165,6 +165,13 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
             WKApplicationRefreshBackgroundTask *backgroundTask = (WKApplicationRefreshBackgroundTask*)task;
 
 			[self detectFromUI:NO completion:^(NSArray<HKCategorySample *> *samples) {
+				for (HKCategorySample *sample in samples)
+					if (sample.value == HKCategoryValueSleepAnalysisAsleep)
+						[[UNNotificationContent contentWithTitle:[NSString stringWithFormat:@"You slept %@.", [[NSDateComponentsFormatter hhmmFullFormatter] stringFromTimeInterval:sample.duration]] body:[NSString stringWithFormat:@"%@ - %@", [sample.startDate descriptionForTime:NSDateFormatterShortStyle], [sample.endDate descriptionForTime:NSDateFormatterShortStyle]] badge:Nil sound:Nil attachments:Nil] scheduleWithIdentifier:[sample.startDate descriptionForDateAndTime:NSDateFormatterShortStyle]];
+/*
+				if (!samples.count)
+					[[UNNotificationContent contentWithTitle:@"Background Task" body:[NSString stringWithFormat:@"Ran background task at %@", [[NSDate date] descriptionForDateAndTime:NSDateFormatterShortStyle]] badge:Nil sound:Nil attachments:Nil] scheduleWithIdentifier:[[NSDate date] descriptionForDateAndTime:NSDateFormatterShortStyle]];
+*/
 				if (samples.count)
 					[[HKHealthStore defaultStore] saveObjects:samples completion:^(BOOL success) {
 						[[WKExtension sharedExtension] scheduleBackgroundRefreshWithTimeIntervalSinceNow:1800.0];

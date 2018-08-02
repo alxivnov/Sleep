@@ -146,8 +146,11 @@ __synthesize(NSUserDefaults *, defaults, [NSUserDefaults standardUserDefaults])
 
 	NSDate *startDate = activities.firstObject.startDate;
 	NSDate *endDate = activities.lastObject.endDate;
+	NSTimeInterval duration = [endDate timeIntervalSinceDate:startDate];
+	if (duration < sleepLatency)
+		return Nil;
 
-	NSUInteger count = ceil([endDate timeIntervalSinceDate:startDate]);
+	NSUInteger count = ceil(duration);
 	double *bytes = calloc(count, sizeof(double));
 	double fill = -60.0;
 	vDSP_vfillD(&fill, bytes, 1, count);

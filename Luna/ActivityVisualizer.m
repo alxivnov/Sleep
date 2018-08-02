@@ -73,7 +73,7 @@ __synthesize(UIImageView *, sunsetView, ({ UIImageView *x = [[UIImageView alloc]
 }
 
 - (void)setSleepLatency:(NSNumber *)sleepLatency {
-	if (NSNumberIsEqualToNumber(_sleepLatency, sleepLatency))
+	if (eql(_sleepLatency, sleepLatency))
 		return;
 
 	_sleepLatency = sleepLatency;
@@ -209,7 +209,7 @@ __synthesize(UIImageView *, sunsetView, ({ UIImageView *x = [[UIImageView alloc]
 //		double logCount = log(sample.count);
 
 		CGFloat x = [self x:sample.startDate];
-		CGFloat y = [self y:/*logCount / logMax*/sample.count / max];
+		CGFloat y = [self y:/*logCount / logMax*/[sample doubleValueForUnit:[HKUnit countUnit]] / max];
 		CGFloat width = sample.duration * self.pointsPerSecond;
 		CGFloat height = self.contentSize.height - y;
 
@@ -263,7 +263,7 @@ __synthesize(UIImageView *, sunsetView, ({ UIImageView *x = [[UIImageView alloc]
 
 - (void)setActivities:(NSArray<CMMotionActivitySample *> *)activities {
 	_activities = activities;
-
+/*
 	if (activities.count > 960) {
 		NSMutableArray *arr = [NSMutableArray arrayWithCapacity:activities.count];
 
@@ -284,7 +284,7 @@ __synthesize(UIImageView *, sunsetView, ({ UIImageView *x = [[UIImageView alloc]
 
 		activities = arr;
 	}
-
+*/
 	CGMutablePathRef from = CGPathCreateMutable();
 
 	CGMutablePathRef path = CGPathCreateMutable();

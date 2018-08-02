@@ -101,6 +101,7 @@
 		CDAC1E422088BE1800587CC4 /* SleepButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAC1E412088BE1800587CC4 /* SleepButtonCell.m */; };
 		CDAC1E452088F68400587CC4 /* SleepSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAC1E442088F68400587CC4 /* SleepSwitchCell.m */; };
 		CDAE76731F229C510085F78A /* Answers+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAE76721F229C510085F78A /* Answers+Convenience.m */; };
+		CDB63D6D2113355A00546F70 /* UserNotifications+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA6A1DB3C50600208F7E /* UserNotifications+Convenience.m */; };
 		CDCC2BEC1E6EF19D00CCD583 /* HKActiveEnergy+CMMotionActivitySample.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCC2BEB1E6EF19D00CCD583 /* HKActiveEnergy+CMMotionActivitySample.m */; };
 		CDE2AE1E2090E1020054A0B2 /* SleepButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE2AE1D2090E1020054A0B2 /* SleepButtonController.m */; };
 		CDE33AFD2049920C00F89AD8 /* UIScrollView+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE33AFB2049920B00F89AD8 /* UIScrollView+Convenience.m */; };
@@ -1487,6 +1488,7 @@
 				CD1D5537207C2A5D0091DEFE /* SunriseController.m in Sources */,
 				CD8F8F86207A63A9007FA86A /* NSURL+Convenience.m in Sources */,
 				CD6FE87F207CD82D006B1152 /* EDSunriseSet.m in Sources */,
+				CDB63D6D2113355A00546F70 /* UserNotifications+Convenience.m in Sources */,
 				CD8F8F84207A6389007FA86A /* UIImage+Convenience.m in Sources */,
 				CD8F8F65207A1744007FA86A /* ExtensionDelegate.m in Sources */,
 				CD8F8F87207A63B1007FA86A /* Dispatch+Convenience.m in Sources */,

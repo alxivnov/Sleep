@@ -28,13 +28,13 @@
 }
 
 - (void)setup {
-	[self.table setRowTypes:[self.samples map:^id(HKCategorySample *obj) {
+	[self.table setRowTypes:[[self.samples map:^id(HKCategorySample *obj) {
 		return obj.value == HKCategoryValueSleepAnalysisInBed ? ROW_ID_IN_BED : ROW_ID_ASLEEP;
-	}]];
+	}] arrayByAddingObject:@"Save"]];
 	for (NSUInteger index = 0; index < self.samples.count; index++)
 		[[self.table rowControllerAtIndex:index] setSample:self.samples[index]];
 
-	[self.table insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:self.samples.count] withRowType:@"Save"];
+//	[self.table insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:self.samples.count] withRowType:@"Save"];
 //	[self.table insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:self.samples.count + 1] withRowType:@"Cancel"];
 }
 

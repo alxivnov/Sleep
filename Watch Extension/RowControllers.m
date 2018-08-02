@@ -47,7 +47,7 @@
 
 	[[WCSessionDelegate instance].reachableSession sendMessage:@{ KEY_TIMER_START : [self.delegate.startDate serialize] ?: STR_EMPTY } replyHandler:^(NSDictionary<NSString *, id> *replyMessage) {
 		NSDate *date = [NSDate deserialize:replyMessage[KEY_TIMER_START]];
-		if (NSDateIsEqualToDate(self.delegate.startDate, date))
+		if (eql(self.delegate.startDate, date))
 			return;
 
 		self.delegate.startDate = date;
