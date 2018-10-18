@@ -44,6 +44,7 @@
 		CD6DD8DF20921DB100762ABC /* AlarmSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6DD8DE20921DB100762ABC /* AlarmSwitchCell.m */; };
 		CD6FE87F207CD82D006B1152 /* EDSunriseSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CD811E781E9E90400096974D /* EDSunriseSet.m */; };
 		CD6FE880207CDD87006B1152 /* CoreLocation+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD811E7F1E9E93AD0096974D /* CoreLocation+Convenience.m */; };
+		CD715A792175F5D30085BE83 /* UIDatePicker+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD715A772175F5D20085BE83 /* UIDatePicker+Convenience.m */; };
 		CD75B5031F19536D00BAB7DC /* SKInAppPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = CD75B5001F19536D00BAB7DC /* SKInAppPurchase.m */; };
 		CD75B5041F19536D00BAB7DC /* StoreKit+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CD75B5021F19536D00BAB7DC /* StoreKit+Convenience.m */; };
 		CD811E791E9E90400096974D /* EDSunriseSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CD811E781E9E90400096974D /* EDSunriseSet.m */; };
@@ -151,8 +152,6 @@
 		CDF5FA761DB3C50700208F7E /* UserNotifications+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA6A1DB3C50600208F7E /* UserNotifications+Convenience.m */; };
 		CDF5FA771DB3C50700208F7E /* WatchConnectivity+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5FA6C1DB3C50600208F7E /* WatchConnectivity+Convenience.m */; };
 		CDFC35301EF07288001F2CAB /* Accelerate+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFC352F1EF07287001F2CAB /* Accelerate+Convenience.m */; };
-		FA098B701C91B98300D83FDF /* UIAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA098B6E1C91B98300D83FDF /* UIAccessoryView.m */; };
-		FA098B731C91BAD600D83FDF /* UIImage+View.m in Sources */ = {isa = PBXBuildFile; fileRef = FA098B721C91BAD600D83FDF /* UIImage+View.m */; };
 		FA098B771C91C0ED00D83FDF /* disclosure@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA098B761C91C0ED00D83FDF /* disclosure@2x.png */; };
 		FA0FB16C1C9074E50065558A /* AnalysisPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0FB16B1C9074E50065558A /* AnalysisPresenter.m */; };
 		FA0FB16F1C907BBD0065558A /* SegmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0FB16E1C907BBD0065558A /* SegmentController.m */; };
@@ -188,7 +187,6 @@
 		FA403E551AEC071C00827125 /* star-full-30@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA403E521AEC071C00827125 /* star-full-30@2x.png */; };
 		FA403EC41AEC182200827125 /* Luna-Icon-128.png in Resources */ = {isa = PBXBuildFile; fileRef = FA403EC31AEC182200827125 /* Luna-Icon-128.png */; };
 		FA4105BB1DE892CE00E76154 /* UIColor+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4105BA1DE892CE00E76154 /* UIColor+Convenience.m */; };
-		FA422A691B2EBB060011C7E3 /* UIFont+Modification.m in Sources */ = {isa = PBXBuildFile; fileRef = FA422A681B2EBB060011C7E3 /* UIFont+Modification.m */; };
 		FA47C7841BC26AC5002D2E02 /* moon-full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA47C7801BC26AC5002D2E02 /* moon-full@2x.png */; };
 		FA47C7851BC26AC5002D2E02 /* timer-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA47C7811BC26AC5002D2E02 /* timer-line@2x.png */; };
 		FA47C7861BC26AC5002D2E02 /* moon-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA47C7821BC26AC5002D2E02 /* moon-line@2x.png */; };
@@ -258,7 +256,6 @@
 		FAF0B2F71B554188001D0E66 /* AnalysisController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF0B2F61B554188001D0E66 /* AnalysisController.m */; };
 		FAF4014D1C7DC04A003C528D /* circle-full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF4014B1C7DC04A003C528D /* circle-full@2x.png */; };
 		FAF4014E1C7DC04A003C528D /* circle-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF4014C1C7DC04A003C528D /* circle-line@2x.png */; };
-		FAF5EA981C7BB7F20026F791 /* UIDatePicker+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF5EA971C7BB7F20026F791 /* UIDatePicker+Convenience.m */; };
 		FAFE58A61B6CCA6B00075724 /* SettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFE58A51B6CCA6B00075724 /* SettingsController.m */; };
 /* End PBXBuildFile section */
 
@@ -362,6 +359,8 @@
 		CD6DD8DB2092165000762ABC /* AlarmPickerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlarmPickerController.m; sourceTree = "<group>"; };
 		CD6DD8DD20921DB100762ABC /* AlarmSwitchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlarmSwitchCell.h; sourceTree = "<group>"; };
 		CD6DD8DE20921DB100762ABC /* AlarmSwitchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlarmSwitchCell.m; sourceTree = "<group>"; };
+		CD715A772175F5D20085BE83 /* UIDatePicker+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDatePicker+Convenience.m"; sourceTree = "<group>"; };
+		CD715A782175F5D20085BE83 /* UIDatePicker+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDatePicker+Convenience.h"; sourceTree = "<group>"; };
 		CD75B4FF1F19536D00BAB7DC /* SKInAppPurchase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKInAppPurchase.h; sourceTree = "<group>"; };
 		CD75B5001F19536D00BAB7DC /* SKInAppPurchase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKInAppPurchase.m; sourceTree = "<group>"; };
 		CD75B5011F19536D00BAB7DC /* StoreKit+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "StoreKit+Convenience.h"; sourceTree = "<group>"; };
@@ -485,10 +484,6 @@
 		CDF5FA6E1DB3C50600208F7E /* WatchKit+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WatchKit+Convenience.m"; sourceTree = "<group>"; };
 		CDFC352E1EF07287001F2CAB /* Accelerate+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Accelerate+Convenience.h"; sourceTree = "<group>"; };
 		CDFC352F1EF07287001F2CAB /* Accelerate+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Accelerate+Convenience.m"; sourceTree = "<group>"; };
-		FA098B6E1C91B98300D83FDF /* UIAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAccessoryView.m; sourceTree = "<group>"; };
-		FA098B6F1C91B98300D83FDF /* UIAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAccessoryView.h; sourceTree = "<group>"; };
-		FA098B711C91BAD600D83FDF /* UIImage+View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+View.h"; sourceTree = "<group>"; };
-		FA098B721C91BAD600D83FDF /* UIImage+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+View.m"; sourceTree = "<group>"; };
 		FA098B761C91C0ED00D83FDF /* disclosure@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "disclosure@2x.png"; sourceTree = "<group>"; };
 		FA0FB16A1C9074E50065558A /* AnalysisPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisPresenter.h; sourceTree = "<group>"; };
 		FA0FB16B1C9074E50065558A /* AnalysisPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisPresenter.m; sourceTree = "<group>"; };
@@ -535,8 +530,6 @@
 		FA403EC31AEC182200827125 /* Luna-Icon-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Luna-Icon-128.png"; sourceTree = "<group>"; };
 		FA4105B91DE892CE00E76154 /* UIColor+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Convenience.h"; sourceTree = "<group>"; };
 		FA4105BA1DE892CE00E76154 /* UIColor+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Convenience.m"; sourceTree = "<group>"; };
-		FA422A671B2EBB060011C7E3 /* UIFont+Modification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Modification.h"; sourceTree = "<group>"; };
-		FA422A681B2EBB060011C7E3 /* UIFont+Modification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Modification.m"; sourceTree = "<group>"; };
 		FA47C7801BC26AC5002D2E02 /* moon-full@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moon-full@2x.png"; sourceTree = "<group>"; };
 		FA47C7811BC26AC5002D2E02 /* timer-line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timer-line@2x.png"; sourceTree = "<group>"; };
 		FA47C7821BC26AC5002D2E02 /* moon-line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moon-line@2x.png"; sourceTree = "<group>"; };
@@ -643,8 +636,6 @@
 		FAF0B2F61B554188001D0E66 /* AnalysisController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisController.m; sourceTree = "<group>"; };
 		FAF4014B1C7DC04A003C528D /* circle-full@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle-full@2x.png"; sourceTree = "<group>"; };
 		FAF4014C1C7DC04A003C528D /* circle-line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle-line@2x.png"; sourceTree = "<group>"; };
-		FAF5EA961C7BB7F20026F791 /* UIDatePicker+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDatePicker+Convenience.h"; sourceTree = "<group>"; };
-		FAF5EA971C7BB7F20026F791 /* UIDatePicker+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDatePicker+Convenience.m"; sourceTree = "<group>"; };
 		FAFE58A41B6CCA6B00075724 /* SettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsController.h; sourceTree = "<group>"; };
 		FAFE58A51B6CCA6B00075724 /* SettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -945,25 +936,9 @@
 				FABFA8BE1D8191A500F79DBD /* UIRateController+Answers.m */,
 				FAE94AD11C99AC0B00FC2501 /* UIViewController+Answers.h */,
 				FAE94AD21C99AC0B00FC2501 /* UIViewController+Answers.m */,
-				FA829A3C1A9CB97900B1E47B /* UI */,
 			);
 			name = EXKit;
 			path = ../EXKit;
-			sourceTree = "<group>";
-		};
-		FA829A3C1A9CB97900B1E47B /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				FA098B6F1C91B98300D83FDF /* UIAccessoryView.h */,
-				FA098B6E1C91B98300D83FDF /* UIAccessoryView.m */,
-				FAF5EA961C7BB7F20026F791 /* UIDatePicker+Convenience.h */,
-				FAF5EA971C7BB7F20026F791 /* UIDatePicker+Convenience.m */,
-				FA422A671B2EBB060011C7E3 /* UIFont+Modification.h */,
-				FA422A681B2EBB060011C7E3 /* UIFont+Modification.m */,
-				FA098B711C91BAD600D83FDF /* UIImage+View.h */,
-				FA098B721C91BAD600D83FDF /* UIImage+View.m */,
-			);
-			path = UI;
 			sourceTree = "<group>";
 		};
 		FA8856931DDC61FE001B869F /* CoreMotion */ = {
@@ -1040,6 +1015,8 @@
 				CD9210BD20869D37001BB43B /* UIButton+Convenience.m */,
 				FA4105B91DE892CE00E76154 /* UIColor+Convenience.h */,
 				FA4105BA1DE892CE00E76154 /* UIColor+Convenience.m */,
+				CD715A782175F5D20085BE83 /* UIDatePicker+Convenience.h */,
+				CD715A772175F5D20085BE83 /* UIDatePicker+Convenience.m */,
 				FA4BA6011DDA0436008161D4 /* UIDocumentPickerViewController+Convenience.h */,
 				FA4BA6021DDA0436008161D4 /* UIDocumentPickerViewController+Convenience.m */,
 				FA38A0B21DDDFC8D004B963A /* UIGestureRecognizer+Convenience.h */,
@@ -1518,7 +1495,6 @@
 				FAF0B2F71B554188001D0E66 /* AnalysisController.m in Sources */,
 				FABFA8C81D819B6A00F79DBD /* NSArray+AnalysisPresenter.m in Sources */,
 				CDFC35301EF07288001F2CAB /* Accelerate+Convenience.m in Sources */,
-				FA098B731C91BAD600D83FDF /* UIImage+View.m in Sources */,
 				FACC6D601DF02B460009D3FF /* HKSleepAnalysis+CMMotionActivitySample.m in Sources */,
 				CD6DD8DF20921DB100762ABC /* AlarmSwitchCell.m in Sources */,
 				FA5BDD641CFE156C00DFB0F3 /* ActivityVisualizer.m in Sources */,
@@ -1526,7 +1502,6 @@
 				FA2EFC3E1DDF211600E24C1E /* UIGestureTransition.m in Sources */,
 				CDF5FA701DB3C50600208F7E /* CMMotionActivitySample.m in Sources */,
 				CDE33AFD2049920C00F89AD8 /* UIScrollView+Convenience.m in Sources */,
-				FAF5EA981C7BB7F20026F791 /* UIDatePicker+Convenience.m in Sources */,
 				CD0CB5B0207EB35900F2B266 /* NSString+Convenience.m in Sources */,
 				CDF5FA741DB3C50700208F7E /* NSFormatter+Convenience.m in Sources */,
 				FA4BA6061DDA04B6008161D4 /* NSFileManager+Convenience.m in Sources */,
@@ -1565,7 +1540,6 @@
 				FA4BA5E51DD9E885008161D4 /* MessageUI+Convenience.m in Sources */,
 				CD2935701DD884AA002A9FAF /* QuartzCore+Convenience.m in Sources */,
 				CDF5FA761DB3C50700208F7E /* UserNotifications+Convenience.m in Sources */,
-				FA422A691B2EBB060011C7E3 /* UIFont+Modification.m in Sources */,
 				CDAC1E422088BE1800587CC4 /* SleepButtonCell.m in Sources */,
 				CD9BC08B1E6C8FCC003BD7DE /* MobileCoreServices+Convenience.m in Sources */,
 				FAE94AD61C99E07B00FC2501 /* NavigationController.m in Sources */,
@@ -1575,6 +1549,7 @@
 				FA2EFC411DDF212000E24C1E /* UIInteractiveTransition.m in Sources */,
 				CDE3A8EE1DE0B5AF00AEB8BB /* NSTimer+Convenience.m in Sources */,
 				CD0988C71F02E494006E2A65 /* FBSDKCoreKit+Convenience.m in Sources */,
+				CD715A792175F5D30085BE83 /* UIDatePicker+Convenience.m in Sources */,
 				CD0906831E37FF4F00E45444 /* NSDictionary+Convenience.m in Sources */,
 				CD2935731DD884F0002A9FAF /* UIApplication+Convenience.m in Sources */,
 				CDA8403D1DDB8C690042D2CC /* NSCalendar+Convenience.m in Sources */,
@@ -1591,7 +1566,6 @@
 				FA0FB16C1C9074E50065558A /* AnalysisPresenter.m in Sources */,
 				CD5E0C511ED78A4100CE8C72 /* UITableViewCell+Convenience.m in Sources */,
 				FA4BA6001DDA0408008161D4 /* UIActivityViewController+Convenience.m in Sources */,
-				FA098B701C91B98300D83FDF /* UIAccessoryView.m in Sources */,
 				CD8CB7A31DD8C98A00450799 /* UIViewController+Convenience.m in Sources */,
 				CD0988C81F02E494006E2A65 /* FBSDKShareKit+Convenience.m in Sources */,
 				CD6DD8DC2092165000762ABC /* AlarmPickerController.m in Sources */,
@@ -1927,6 +1901,7 @@
 				PRODUCT_NAME = "Sleep Diary";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../Objective Sea\"";
 				WARNING_CFLAGS = (
 					"-Wrange-loop-analysis",
 					"-Wmove",
@@ -1966,6 +1941,7 @@
 				PRODUCT_NAME = "Sleep Diary";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../Objective Sea\"";
 				WARNING_CFLAGS = (
 					"-Wrange-loop-analysis",
 					"-Wmove",

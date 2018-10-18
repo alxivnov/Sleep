@@ -155,7 +155,7 @@ __synthesize(NSUserDefaults *, defaults, [NSUserDefaults standardUserDefaults])
 	double fill = -60.0;
 	vDSP_vfillD(&fill, bytes, 1, count);
 	for (CMMotionActivitySample *activity in activities) {
-		double dbl = (activity.type == CMMotionActivityTypeStationary ? activity.duration : -activity.duration) / (activity.confidence == CMMotionActivityConfidenceLow ? 3.0 : activity.confidence == CMMotionActivityConfidenceMedium ? 1.5 : 1);
+		double dbl = (activity.type == CMMotionActivityTypeStationary ? activity.duration : -activity.duration) / (activity.confidence == CMMotionActivityConfidenceLow ? 2.0 : activity.confidence == CMMotionActivityConfidenceMedium ? 1.5 : 1.0);
 		NSUInteger idx = round([activity.startDate timeIntervalSinceDate:startDate]);
 		NSUInteger len = round(activity.duration);
 		vDSP_vfillD(&dbl, bytes + idx, 1, len);
@@ -175,7 +175,7 @@ __synthesize(NSUserDefaults *, defaults, [NSUserDefaults standardUserDefaults])
 		double curr = 0.0;
 		vDSP_meanvD(bytes + index, 1, &curr, (NSUInteger)sleepLatency);
 
-		if (prev <= 60.0 && curr > 60.0) {
+		if (prev < 60.0 && curr >= 60.0) {
 			sleepIndex = index;
 		} else if (prev > 60.0 && curr <= 60.0) {
 			if (sleepIndex) {
@@ -189,7 +189,7 @@ __synthesize(NSUserDefaults *, defaults, [NSUserDefaults standardUserDefaults])
 			sleepIndex = 0;
 		}
 
-		if (prev <= 1.0 && curr > 1.0) {
+		if (prev < 1.0 && curr >= 1.0) {
 			inBedIndex = index;
 		} else if (prev > 1.0 && curr <= 1.0) {
 			if (inBedIndex) {
@@ -220,11 +220,11 @@ __synthesize(NSUserDefaults *, defaults, [NSUserDefaults standardUserDefaults])
 		if ([sleepArray any:^BOOL(NSDateInterval *obj) {
 			return [obj intersectsDateInterval:interval];
 		}]) {
-			NSArray *motion = [activities query:^BOOL(CMMotionActivitySample *obj) {
+			NSArray<CMMotionActivitySample *> *motion = [activities query:^BOOL(CMMotionActivitySample *obj) {
 				return [interval containsDate:obj.startDate] || [interval containsDate:obj.endDate];
 			}];
 
-			[arr addObject:[HKDataSleepAnalysis sampleWithStartDate:interval.startDate endDate:interval.endDate value:HKCategoryValueSleepAnalysisInBed metadata:@{ HKMetadataKeySampleActivities : [CMMotionActivitySample samplesToString:motion date:interval.startDate] ?: STR_EMPTY }]];
+			[arr addObject:[HKDataSleepAnalysis sampleWithStartDate:motion.firstObject.startDate ?: interval.startDate endDate:motion.lastObject.endDate ?: interval.endDate value:HKCategoryValueSleepAnalysisInBed metadata:@{ HKMetadataKeySampleActivities : [CMMotionActivitySample samplesToString:motion date:interval.startDate] ?: STR_EMPTY }]];
 
 			[arr addObjectsFromArray:[HKDataSleepAnalysis samplesFromActivities:motion maxSleepLatency:sleepLatency]];
 		}

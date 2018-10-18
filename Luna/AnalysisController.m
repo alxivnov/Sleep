@@ -13,19 +13,18 @@
 #import "Localization.h"
 #import "StatisticsController.h"
 
-#import "UIAccessoryView.h"
-#import "UIBezierPath+Convenience.h"
-#import "UIImage+View.h"
-
 #import "Dispatch+Convenience.h"
 #import "NSArray+Convenience.h"
 #import "NSObject+Convenience.h"
 #import "UIAlertController+Convenience.h"
 #import "UIApplication+Convenience.h"
+#import "UIBezierPath+Convenience.h"
 #import "UIColor+Convenience.h"
 #import "UIImage+Convenience.h"
+#import "UILabel+Convenience.h"
 #import "UIScrollView+Convenience.h"
 #import "UITableView+Convenience.h"
+#import "UITableViewCell+Convenience.h"
 #import "UIViewController+Convenience.h"
 
 #define GUI_SLEEP_CYCLE 5400.0
@@ -97,9 +96,10 @@
 		[[UIBezierPath bezierPathWithArcFrame:CGRectMake(0.0, 0.0, 22.0, 22.0) width:-(64.0 / 580.0) start:start / GLOBAL.sleepDuration end:end / GLOBAL.sleepDuration lineCap:kCGLineCapRound lineJoin:kCGLineJoinRound] stroke];
 	}];
 
-	UIAccessoryView *view = [[UIAccessoryView alloc] initWithFrame:cell.bounds];
-	[view setItems:[NSArray arrayWithObject:[sample.accessoryText labelWithSize:CGSizeMake(36.0, cell.bounds.size.height) options:NSSizeGreaterThan attributes:@{ NSForegroundColorAttributeName : [UIColor color:HEX_IOS_DARK_GRAY] }] /*withObject:sample.allPresenters ? @(-16.0) : Nil */withObject:sample.allPresenters ? [[UIImage originalImage:IMG_DISCLOSURE] imageView] : Nil] adjustWidth:YES];
-	cell.accessoryView = view;
+//	UIAccessoryView *view = [[UIAccessoryView alloc] initWithFrame:cell.bounds];
+//	[view setItems:[NSArray arrayWithObject:[sample.accessoryText labelWithSize:CGSizeMake(36.0, cell.bounds.size.height) options:NSSizeGreaterThan attributes:@{ NSForegroundColorAttributeName : [UIColor color:HEX_IOS_DARK_GRAY] }] /*withObject:sample.allPresenters ? @(-16.0) : Nil */withObject:sample.allPresenters ? [[UIImage originalImage:IMG_DISCLOSURE] imageView] : Nil] adjustWidth:YES];
+//	cell.accessoryView = view;
+	cell.accessoryViews = [NSArray arrayWithObject:[sample.accessoryText labelWithSize:CGSizeMake(36.0, cell.bounds.size.height) options:NSSizeGreaterThan attributes:@{ NSForegroundColorAttributeName : [UIColor color:HEX_IOS_DARK_GRAY] }] /*withObject:sample.allPresenters ? @(-16.0) : Nil */withObject:sample.allPresenters ? [[UIImage originalImage:IMG_DISCLOSURE] imageView:UIViewContentModeCenter] : Nil];
 
 	cell.textLabel.textColor = sample.isOwn ? [UIColor whiteColor] : [UIColor lightGrayColor];
 

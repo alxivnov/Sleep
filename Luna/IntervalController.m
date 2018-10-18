@@ -11,14 +11,14 @@
 #import "Global.h"
 #import "WatchDelegate.h"
 
-#import "UIDatePicker+Convenience.h"
-#import "UIFont+Modification.h"
-#import "UINavigationController+Convenience.h"
 #import "UIRateController.h"
 
 #import "HKSleepAnalysis+CMMotionActivitySample.h"
 #import "NSArray+Convenience.h"
 #import "NSCalendar+Convenience.h"
+#import "UIDatePicker+Convenience.h"
+#import "UILabel+Convenience.h"
+#import "UINavigationController+Convenience.h"
 #import "UITableView+Convenience.h"
 #import "UITableViewCell+Convenience.h"
 #import "UserNotifications+Convenience.h"
@@ -106,11 +106,11 @@
 
 - (void)identifierValueChanged:(NSIndexPath *)indexPath {
 	self.startLabel.textColor = indexPath && !indexPath.row ? [UIColor color:RGB_DARK_TINT] : [UIColor color:HEX_IOS_DARK_GRAY];
-	self.startLabel.font = indexPath && !indexPath.row ? [self.startLabel.font bold] : [self.startLabel.font original];
+	self.startLabel.font = indexPath && !indexPath.row ? self.startLabel.boldSystemFont : self.startLabel.systemFont;
 	self.startImage.image = [UIImage originalImage:indexPath && !indexPath.row ? IMG_MOON_FILL : IMG_MOON_LINE];
 
 	self.endLabel.textColor = indexPath && indexPath.row ? [UIColor color:HEX_NCS_YELLOW] : [UIColor color:HEX_IOS_DARK_GRAY];
-	self.endLabel.font = indexPath && indexPath.row ? [self.startLabel.font bold] : [self.startLabel.font original];
+	self.endLabel.font = indexPath && indexPath.row ? self.startLabel.boldSystemFont : self.startLabel.systemFont;
 	self.endImage.image = [UIImage originalImage:indexPath && indexPath.row ? IMG_SUN_FILL : IMG_SUN_LINE];
 
 	if (!indexPath)
@@ -217,8 +217,8 @@
 	self.longPressSwitch.on = GLOBAL.longPress.boolValue;
 	self.longPressImage.highlighted = self.longPressSwitch.on;
 
-	NOW(now);
-
+	now(now);
+	
 	NSDate *startDate = [now addValue:-1 forComponent:NSCalendarUnitDay];
 	NSDate *endDate = now;
 
@@ -256,7 +256,7 @@
 				self.endDate = now;
 			} else {
 				NSDate *startDate = [now addValue:-8 forComponent:NSCalendarUnitHour];
-				NSDate *endDate = self.visualizer.sleepSamples.lastObject.endDate;
+				NSDate *endDate = self.visualizer.inBedSamples.lastObject.endDate;
 
 				self.startDate = [endDate isGreaterThan:startDate] ? endDate : startDate;
 				self.endDate = now;

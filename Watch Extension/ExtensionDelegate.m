@@ -8,6 +8,8 @@
 
 #import "ExtensionDelegate.h"
 
+#define SEC_BACKGROUND_REFRESH 3600.0
+
 @interface ExtensionDelegate ()
 @property (strong, nonatomic, readonly) Settings *settings;
 
@@ -153,7 +155,7 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, etc.
 
-	[[WKExtension sharedExtension] scheduleBackgroundRefreshWithTimeIntervalSinceNow:1800.0];
+	[[WKExtension sharedExtension] scheduleBackgroundRefreshWithTimeIntervalSinceNow:SEC_BACKGROUND_REFRESH];
 }
 
 - (void)handleBackgroundTasks:(NSSet<WKRefreshBackgroundTask *> *)backgroundTasks {
@@ -164,22 +166,25 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
             // Be sure to complete the background task once you’re done.
             WKApplicationRefreshBackgroundTask *backgroundTask = (WKApplicationRefreshBackgroundTask*)task;
 
+			if (IS_DEBUGGING)
+				[[UNNotificationContent contentWithTitle:@"Background Task" body:[NSString stringWithFormat:@"Ran background task at %@", [NOW descriptionForDateAndTime:NSDateFormatterShortStyle]] badge:Nil sound:Nil attachments:Nil] scheduleWithIdentifier:[NOW descriptionForDateAndTime:NSDateFormatterShortStyle]];
+
 			[self detectFromUI:NO completion:^(NSArray<HKCategorySample *> *samples) {
 				for (HKCategorySample *sample in samples)
 					if (sample.value == HKCategoryValueSleepAnalysisAsleep)
 						[[UNNotificationContent contentWithTitle:[NSString stringWithFormat:@"You slept %@.", [[NSDateComponentsFormatter hhmmFullFormatter] stringFromTimeInterval:sample.duration]] body:[NSString stringWithFormat:@"%@ - %@", [sample.startDate descriptionForTime:NSDateFormatterShortStyle], [sample.endDate descriptionForTime:NSDateFormatterShortStyle]] badge:Nil sound:Nil attachments:Nil] scheduleWithIdentifier:[sample.startDate descriptionForDateAndTime:NSDateFormatterShortStyle]];
-/*
-				if (!samples.count)
-					[[UNNotificationContent contentWithTitle:@"Background Task" body:[NSString stringWithFormat:@"Ran background task at %@", [[NSDate date] descriptionForDateAndTime:NSDateFormatterShortStyle]] badge:Nil sound:Nil attachments:Nil] scheduleWithIdentifier:[[NSDate date] descriptionForDateAndTime:NSDateFormatterShortStyle]];
-*/
-				if (samples.count)
+
+				if (samples.count) {
 					[[HKHealthStore defaultStore] saveObjects:samples completion:^(BOOL success) {
-						[[WKExtension sharedExtension] scheduleBackgroundRefreshWithTimeIntervalSinceNow:1800.0];
+						[[WKExtension sharedExtension] scheduleBackgroundRefreshWithTimeIntervalSinceNow:SEC_BACKGROUND_REFRESH];
 
 						[backgroundTask setTaskCompletedWithSnapshot:/*NO*/success];
 					}];
-				else
+				} else {
+					[[WKExtension sharedExtension] scheduleBackgroundRefreshWithTimeIntervalSinceNow:SEC_BACKGROUND_REFRESH];
+
 					[backgroundTask setTaskCompletedWithSnapshot:NO];
+				}
 			}];
         } else if ([task isKindOfClass:[WKSnapshotRefreshBackgroundTask class]]) {
             // Snapshot tasks have a unique completion call, make sure to set your expiration date

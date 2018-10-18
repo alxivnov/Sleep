@@ -22,6 +22,8 @@
 @property (strong, nonatomic, readonly) ExtensionDelegate *delegate;
 
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceTable *table;
+
+@property (assign, nonatomic) BOOL detecting;
 @end
 
 
@@ -65,11 +67,18 @@
 	[self setup];
 
 //	NSArray *samples = @[ [HKDataSleepAnalysis sampleWithStartDate:[[NSDate date] addValue:-1 forComponent:NSCalendarUnitHour] endDate:[NSDate date] value:HKCategoryValueSleepAnalysisInBed metadata:Nil], [HKDataSleepAnalysis sampleWithStartDate:[[NSDate date] addValue:-1 forComponent:NSCalendarUnitHour] endDate:[NSDate date] value:HKCategoryValueSleepAnalysisAsleep metadata:Nil] ];
+	if (self.detecting)
+		return;
+
+	self.detecting = YES;
+
 	[self.delegate detectFromUI:[WKExtension sharedExtension].applicationState == WKApplicationStateActive completion:^(NSArray<HKCategorySample *> *samples) {
 		if (samples.count)
 			[GCD main:^{
 				[self presentControllerWithName:STR_SAMPLES context:samples];
 			}];
+
+		self.detecting = NO;
 	}];
 }
 

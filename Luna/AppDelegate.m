@@ -32,7 +32,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//	[Fabric with:@[[Crashlytics class]]];
+//	if (!IS_DEBUGGING)
+		[Fabric with:@[[Crashlytics class]]];
 
 	[CLLocationManager locationServicesEnabled];
 	[CLLocationManager defaultManager].delegate = self;

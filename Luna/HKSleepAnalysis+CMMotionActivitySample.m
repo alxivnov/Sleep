@@ -68,6 +68,8 @@
 		if (asleepMin < stationary) {
 			samples = tempMin;
 		} else {
+			samples = tempMin;
+/*
 			for (NSTimeInterval sec = min + 1.0; sec < min + TIME_MINUTE; sec += 1.0) {
 				NSArray<HKCategorySample *> *tempSec = [self samplesFromActivities:activities sleepLatency:sec];
 
@@ -82,7 +84,7 @@
 					break;
 				}
 			}
-
+*/
 //			NSLog(@"min: %f", min);
 
 			break;

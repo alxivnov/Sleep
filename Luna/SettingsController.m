@@ -11,13 +11,12 @@
 #import "Global.h"
 #import "Widget.h"
 
-#import "UIButton+Convenience.h"
-#import "UIDatePicker+Convenience.h"
-#import "UIFont+Modification.h"
-
 #import "NSArray+Convenience.h"
+#import "UIButton+Convenience.h"
 #import "NSCalendar+Convenience.h"
+#import "UIDatePicker+Convenience.h"
 #import "NSFormatter+Convenience.h"
+#import "UILabel+Convenience.h"
 #import "NSObject+Convenience.h"
 #import "UIScrollView+Convenience.h"
 #import "UITableView+Convenience.h"
@@ -58,13 +57,13 @@ __synthesize(NSArray<UIButton *> *, wakeUpButtons, (@[ self.sunButton, self.monB
 
 - (void)setIndexPath:(NSIndexPath *)indexPath {
 	self.sleepDurationLabel.textColor = indexPath && !indexPath.section ? self.bedtimeAlertSwitch.onTintColor : [UIColor color:HEX_IOS_DARK_GRAY];
-	self.sleepDurationLabel.font = indexPath && !indexPath.section ? [self.sleepDurationLabel.font bold] : [self.sleepDurationLabel.font original];
+	self.sleepDurationLabel.font = indexPath && !indexPath.section ? self.sleepDurationLabel.boldSystemFont : self.sleepDurationLabel.systemFont;
 	self.sleepDurationImage.image = indexPath && !indexPath.section ? [UIImage originalImage:IMG_TIMER_FULL] : [UIImage originalImage:IMG_TIMER_LINE];
 
 	UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
 
 	self.wakeUpTimeLabel.textColor = indexPath && indexPath.section ? cell.tintColor : [UIColor color:HEX_IOS_DARK_GRAY];
-	self.wakeUpTimeLabel.font = indexPath && indexPath.section ? [self.sleepDurationLabel.font bold] : [self.sleepDurationLabel.font original];
+	self.wakeUpTimeLabel.font = indexPath && indexPath.section ? self.sleepDurationLabel.boldSystemFont : self.sleepDurationLabel.systemFont;
 	self.wakeUpTimeImage.image = indexPath && indexPath.section ? [UIImage originalImage:IMG_ALARM_FULL] : [UIImage originalImage:IMG_ALARM_LINE];
 
 	if (!indexPath)
