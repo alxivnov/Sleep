@@ -217,28 +217,35 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
 	NSDate *endDate = [NSDate date];
 	__block NSDate *startDate = self.lastDetectDate ?: [endDate addValue:-10 forComponent:NSCalendarUnitDay];
 
-	[HKDataSleepAnalysis querySampleWithStartDate:startDate endDate:endDate completion:^(__kindof HKSample *sample) {
-		if (sample)
-			startDate = sample.endDate;
+	NSTimeInterval sleepLatency = self.settings.sleepLatency;
+	if ([endDate timeIntervalSinceDate:startDate] >= sleepLatency)
+		[HKDataSleepAnalysis querySamplesWithStartDate:startDate endDate:endDate options:HKQueryOptionStrictEndDate limit:1 sort:@{ HKSampleSortIdentifierEndDate : @(NO) } completion:^(NSArray<__kindof HKSample *> *samples) {
+			HKSample *sample = samples.firstObject;
+//		[HKDataSleepAnalysis querySampleWithStartDate:startDate endDate:endDate completion:^(__kindof HKSample *sample) {
+			if (sample)
+				startDate = sample.endDate;
 
-		if (startDate && endDate && [endDate timeIntervalSinceDate:startDate] >= self.sleepDuration)
-			[CMMotionActivitySample queryActivityStartingFromDate:startDate toDate:endDate within:self.sleepDuration withHandler:^(NSArray<CMMotionActivitySample *> *activities) {
-				NSArray<HKCategorySample *> *samples = [self.settings samplesFromActivities:activities fromUI:fromUI];
+			if (startDate && endDate && [endDate timeIntervalSinceDate:startDate] >= sleepLatency)
+				[CMMotionActivitySample queryActivityStartingFromDate:startDate toDate:endDate within:sleepLatency withHandler:^(NSArray<CMMotionActivitySample *> *activities) {
+					NSArray<HKCategorySample *> *samples = [self.settings samplesFromActivities:activities fromUI:fromUI];
 
-				BOOL inBed = [samples any:^BOOL(HKCategorySample *obj) {
-					return obj.value == HKCategoryValueSleepAnalysisInBed;
+					BOOL inBed = [samples any:^BOOL(HKCategorySample *obj) {
+						return obj.value == HKCategoryValueSleepAnalysisInBed;
+					}];
+
+					if (completion)
+						completion(fromUI || inBed ? samples : Nil);
+
+					if (fromUI || inBed)
+						self.lastDetectDate = endDate;
 				}];
-
+			else
 				if (completion)
-					completion(fromUI || inBed ? samples : Nil);
-
-				if (fromUI || inBed)
-					self.lastDetectDate = endDate;
-			}];
-		else
-			if (completion)
-				completion(Nil);
-	}];
+					completion(Nil);
+		}];
+	else
+		if (completion)
+			completion(Nil);
 }
 
 @end

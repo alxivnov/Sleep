@@ -62,7 +62,7 @@ __synthesize(SKInAppPurchase *, purchase3, [SKInAppPurchase purchaseWithProductI
 
 	[AFMediaItem lookup:@{ KEY_ID : @(DEV_ID), KEY_MEDIA : kMediaSoftware, KEY_ENTITY : kEntitySoftware } handler:^(NSArray<AFMediaItem *> *results) {
 		self.apps = [results query:^BOOL(AFMediaItem *obj) {
-			return [obj.wrapperType isEqualToString:kMediaSoftware] && obj.trackId.unsignedIntegerValue != APP_ID_LUNA;
+			return [obj.wrapperType isEqualToString:kMediaSoftware] && obj.trackId.integerValue != APP_ID_LUNA;
 		}];
 		[[self.apps map:^id(AFMediaItem *obj) {
 			return obj.dictionary;
