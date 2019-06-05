@@ -99,7 +99,7 @@
 //	UIAccessoryView *view = [[UIAccessoryView alloc] initWithFrame:cell.bounds];
 //	[view setItems:[NSArray arrayWithObject:[sample.accessoryText labelWithSize:CGSizeMake(36.0, cell.bounds.size.height) options:NSSizeGreaterThan attributes:@{ NSForegroundColorAttributeName : [UIColor color:HEX_IOS_DARK_GRAY] }] /*withObject:sample.allPresenters ? @(-16.0) : Nil */withObject:sample.allPresenters ? [[UIImage originalImage:IMG_DISCLOSURE] imageView] : Nil] adjustWidth:YES];
 //	cell.accessoryView = view;
-	cell.accessoryViews = [NSArray arrayWithObject:[sample.accessoryText labelWithSize:CGSizeMake(36.0, cell.bounds.size.height) options:NSSizeGreaterThan attributes:@{ NSForegroundColorAttributeName : [UIColor color:HEX_IOS_DARK_GRAY] }] /*withObject:sample.allPresenters ? @(-16.0) : Nil */withObject:sample.allPresenters ? [[UIImage originalImage:IMG_DISCLOSURE] imageView:UIViewContentModeCenter] : Nil];
+	cell.accessoryViews = [NSArray arrayWithObject:[sample.accessoryText labelWithSize:CGSizeZero/*CGSizeMake(36.0, cell.bounds.size.height)*/ options:NSSizeGreaterThan attributes:@{ NSForegroundColorAttributeName : [UIColor color:HEX_IOS_DARK_GRAY], NSFontAttributeName : [UIFont monospacedDigitSystemFontOfSize:cell.textLabel.font.pointSize weight:UIFontWeightRegular ] }] /*withObject:sample.allPresenters ? @(-16.0) : Nil */withObject:sample.allPresenters ? [[UIImage originalImage:IMG_DISCLOSURE] imageView:UIViewContentModeCenter] : Nil];
 
 	cell.textLabel.textColor = sample.isOwn ? [UIColor whiteColor] : [UIColor lightGrayColor];
 
