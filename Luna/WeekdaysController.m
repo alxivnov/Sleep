@@ -122,7 +122,7 @@
 			return days[obj] ?: [[AnalysisPresenter alloc] init];
 		}];
 
-		NSTimeInterval inBed = [days[today].allPresenters sum:^NSNumber *(AnalysisPresenter *obj) {
+		NSTimeInterval inBed = [days[today].allPresenters vSum:^NSNumber *(AnalysisPresenter *obj) {
 			return obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed ? @(obj.duration) : Nil;
 		}];
 		

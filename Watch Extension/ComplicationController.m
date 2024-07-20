@@ -12,6 +12,8 @@
 
 #define STR_FORMAT @"%@, %@: %@"
 
+#define IMG_MOON_LINE_16	@"moon-line-16"
+#define IMG_MOON_FILL_16	@"moon-fill-16"
 #define IMG_MOON_LINE_128	@"moon-line-128"
 #define IMG_MOON_FILL_128	@"moon-fill-128"
 
@@ -50,14 +52,16 @@
     // Call the handler with the current timeline entry
 //	handler(nil);
 
-	CLKComplicationTemplate *template = [CLKComplicationTemplate createWithFamily:complication.family member:CLKComplicationFamilyMemberStackImage];
+	CLKComplicationTemplate *template = [CLKComplicationTemplate createWithFamily:complication.family member:complication.family == CLKComplicationFamilyGraphicCircular ? CLKComplicationFamilyMemberRingImage : CLKComplicationFamilyMemberStackImage];
 
 	NSDate *today = [NSDate date].dateComponent;
 /*	NSArray<HKCategorySample *> *samples = [self.delegate.samples[today] query:^BOOL(HKCategorySample *obj) {
-		return obj.value == HKCategoryValueSleepAnalysisAsleep;
+		return IS_ASLEEP(obj.value);
 	}];
 */
 	if (template) {
+		float duration = self.delegate.sleepDuration / 8.0 / 60.0 / 60.0;
+		
 		if (self.delegate.startDate) {
 			CLKTextProvider *text = [CLKRelativeDateTextProvider textProviderWithDate:self.delegate.startDate style:CLKRelativeDateStyleTimer units:NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond];
 			NSDate *date = [self.delegate alarmDate];
@@ -65,8 +69,9 @@
 				[template setText:[CLKTextProvider textProviderWithFormat:STR_FORMAT, text, loc(@"wake up"), [date descriptionForTime:NSDateFormatterShortStyle]]];
 			else
 				[template setText:text];
-
-			[template setImage:[UIImage image:IMG_MOON_FILL_128] tintColor:Nil];
+			
+			[template setFill:duration tintColor:[UIColor color:RGB_DARK_TINT]];
+			[template setImage:[UIImage image:IMG_MOON_FILL_16] tintColor:[UIColor color:RGB_DARK_TINT]];
 
 			handler([CLKComplicationTimelineEntry entryWithDate:self.delegate.startDate complicationTemplate:template]);
 		} else /*if (self.delegate.presenters.count)*/ {
@@ -76,8 +81,9 @@
 				[template setText:[CLKTextProvider textProviderWithFormat:STR_FORMAT, text, loc(@"bedtime"), [date descriptionForTime:NSDateFormatterShortStyle]]];
 			else
 				[template setText:[CLKSimpleTextProvider textProviderWithText:text]];
-
-			[template setImage:[UIImage image:IMG_MOON_LINE_128] tintColor:Nil];
+			
+			[template setFill:duration tintColor:[UIColor color:RGB_DARK_TINT]];
+			[template setImage:[UIImage image:IMG_MOON_LINE_16] tintColor:[UIColor color:RGB_DARK_TINT]];
 
 			handler(/*text ? */[CLKComplicationTimelineEntry entryWithDate:self.delegate.presenters[today].endDate ?: [NSDate date] complicationTemplate:template]/* : Nil*/);
 		}
@@ -102,10 +108,11 @@
     // This method will be called once per supported complication, and the results will be cached
 //	handler(nil);
 
-	CLKComplicationTemplate *template = [CLKComplicationTemplate createWithFamily:complication.family member:CLKComplicationFamilyMemberStackImage];
+	CLKComplicationTemplate *template = [CLKComplicationTemplate createWithFamily:complication.family member:complication.family == CLKComplicationFamilyGraphicCircular ? CLKComplicationFamilyMemberRingImage : CLKComplicationFamilyMemberStackImage];
 
 	[template setText:@"7:15" shortText:Nil];
-	[template setImage:[UIImage image:IMG_MOON_FILL_128] tintColor:Nil];
+	[template setFill:7.25 / 8.0 tintColor:[UIColor color:RGB_DARK_TINT]];
+	[template setImage:[UIImage image:IMG_MOON_FILL_16] tintColor:[UIColor color:RGB_DARK_TINT]];
 
 	handler(template);
 }

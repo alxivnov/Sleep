@@ -286,7 +286,7 @@
 		ActivityVisualizer *visualizer = [[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:(self.showButton ? 1 : 0) + (self.showSwitch ? 1 : 0)]] subview:UISubviewKindOfClass(ActivityVisualizer)];
 
 		HKCategorySample *sample = presenter.allSamples.firstObject;
-		if (sample.value == HKCategoryValueSleepAnalysisAsleep)
+		if (IS_ASLEEP(sample.value))
 			visualizer.sleepSamples = [visualizer.sleepSamples query:^BOOL(HKCategorySample *obj) {
 				return ![obj.startDate isEqualToDate:sample.startDate] && ![obj.endDate isEqualToDate:sample.endDate];
 			}];
@@ -371,7 +371,7 @@
 	[self reloadData];
 
 	[CMMotionActivitySample queryActivityStartingFromDate:self.startDate toDate:self.endDate within:2.0 * TIME_HOUR withHandler:^(NSArray<CMMotionActivitySample *> *activities) {
-		NSTimeInterval time = [activities sum:^NSNumber *(CMMotionActivitySample *obj) {
+		NSTimeInterval time = [activities vSum:^NSNumber *(CMMotionActivitySample *obj) {
 			return obj.type == CMMotionActivityTypeWalking || obj.type == CMMotionActivityTypeRunning || obj.type == CMMotionActivityTypeCycling ? @(obj.duration) : Nil;
 		}];
 		[GCD main:^{

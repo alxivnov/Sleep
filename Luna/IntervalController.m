@@ -11,7 +11,7 @@
 #import "Global.h"
 #import "WatchDelegate.h"
 
-#import "UIRateController.h"
+//#import "UIRateController.h"
 
 #import "HKSleepAnalysis+CMMotionActivitySample.h"
 #import "NSArray+Convenience.h"
@@ -101,17 +101,17 @@
 		sample = Nil;
 	if ([sample.endDate isLessThan:self.endDate])
 		sample = Nil;
-	[self loadActivities:sample];
+	[self loadActivities:/*sample*/Nil];
 }
 
 - (void)identifierValueChanged:(NSIndexPath *)indexPath {
 	self.startLabel.textColor = indexPath && !indexPath.row ? [UIColor color:RGB_DARK_TINT] : [UIColor color:HEX_IOS_DARK_GRAY];
 	self.startLabel.font = indexPath && !indexPath.row ? self.startLabel.boldSystemFont : self.startLabel.systemFont;
-	self.startImage.image = [UIImage originalImage:indexPath && !indexPath.row ? IMG_MOON_FILL : IMG_MOON_LINE];
+	self.startImage.image = [UIImage systemImageNamed:indexPath && !indexPath.row ? @"moon.fill" : @"moon"];
 
 	self.endLabel.textColor = indexPath && indexPath.row ? [UIColor color:HEX_NCS_YELLOW] : [UIColor color:HEX_IOS_DARK_GRAY];
 	self.endLabel.font = indexPath && indexPath.row ? self.startLabel.boldSystemFont : self.startLabel.systemFont;
-	self.endImage.image = [UIImage originalImage:indexPath && indexPath.row ? IMG_SUN_FILL : IMG_SUN_LINE];
+	self.endImage.image = [UIImage systemImageNamed:indexPath && indexPath.row ? @"sun.min.fill" : @"sun.min"];
 
 	if (!indexPath)
 		return;
@@ -191,13 +191,15 @@
 }
 
 - (void)setProgress:(NSTimeInterval)sleepLatency {
-	self.inBedSample = sleepLatency ? [HKDataSleepAnalysis sampleWithStartDate:self.startDate endDate:self.endDate value:HKCategoryValueSleepAnalysisInBed metadata:Nil] : Nil;
-	self.sleepSamples = sleepLatency ? [HKDataSleepAnalysis samplesWithStartDate:self.startDate endDate:self.endDate activities:self.activities sleepLatency:sleepLatency adaptive:YES] : arr_([HKDataSleepAnalysis sampleWithStartDate:self.startDate endDate:self.endDate value:HKCategoryValueSleepAnalysisAsleep metadata:Nil]);
-	[self.visualizer scrollRectToVisibleDate:self.endDate animated:YES];
+	if ([self.endDate timeIntervalSinceDate:self.startDate] <= 345600) {
+		self.inBedSample = sleepLatency ? [HKDataSleepAnalysis sampleWithStartDate:self.startDate endDate:self.endDate value:HKCategoryValueSleepAnalysisInBed metadata:Nil] : Nil;
+		self.sleepSamples = sleepLatency ? [HKDataSleepAnalysis samplesWithStartDate:self.startDate endDate:self.endDate activities:self.activities sleepLatency:sleepLatency adaptive:YES] : arr_([HKDataSleepAnalysis sampleWithStartDate:self.startDate endDate:self.endDate value:CategoryValueSleepAnalysisAsleepUnspecified metadata:Nil]);
+		[self.visualizer scrollRectToVisibleDate:self.endDate animated:YES];
+	}
 
 	self.navigationController.navigationBar.progress = [[self.visualizer.sleepSamples query:^BOOL(HKCategorySample *obj) {
 		return obj.endDate.isToday;
-	}] sum:^NSNumber *(HKCategorySample *obj) {
+	}] vSum:^NSNumber *(HKCategorySample *obj) {
 		return @(obj.duration);
 	}] / GLOBAL.sleepDuration;
 }
@@ -233,10 +235,10 @@
 	[self.visualizer loadWithStartDate:startDate endDate:endDate completion:^{
 		if (self.sample) {
 			self.inBedSamplesToDelete = [self.visualizer.inBedSamples query:^BOOL(HKCategorySample *obj) {
-				return [obj.startDate isGreaterThanOrEqual:self.sample.startDate] && [obj.endDate isLessThanOrEqual:self.sample.endDate];
+				return obj.isOwn && [obj.startDate isGreaterThanOrEqual:self.sample.startDate] && [obj.endDate isLessThanOrEqual:self.sample.endDate];
 			}];
 			self.sleepSamplesToDelete = [self.visualizer.sleepSamples query:^BOOL(HKCategorySample *obj) {
-				return [obj.startDate isGreaterThanOrEqual:self.sample.startDate] && [obj.endDate isLessThanOrEqual:self.sample.endDate];
+				return obj.isOwn && [obj.startDate isGreaterThanOrEqual:self.sample.startDate] && [obj.endDate isLessThanOrEqual:self.sample.endDate];
 			}];
 
 			self.visualizer.inBedSamples = [self.visualizer.inBedSamples arrayByRemovingObjectsFromArray:self.inBedSamplesToDelete];
@@ -346,11 +348,21 @@
 
 - (IBAction)save:(UIBarButtonItem *)sender {
 	[GLOBAL endSleeping];
+	
+	BOOL hasInBed = [self.visualizer.inBedSamples any:^BOOL(HKCategorySample *obj) {
+		return !obj.isOwn && [obj.startDate isGreaterThanOrEqual:self.sample.startDate] && [obj.endDate isLessThanOrEqual:self.sample.endDate];
+	}];
+	BOOL hasSleep = [self.visualizer.sleepSamples any:^BOOL(HKCategorySample *obj) {
+		return !obj.isOwn && [obj.startDate isGreaterThanOrEqual:self.sample.startDate] && [obj.endDate isLessThanOrEqual:self.sample.endDate];
+	}];
+	NSNumber *adaptive = hasInBed || hasSleep
+		? Nil
+		: @YES;
 
 	if (self.inBedSamplesToDelete.count || self.sleepSamplesToDelete.count)
 		[[HKHealthStore defaultStore] deleteObjects:self.inBedSamplesToDelete.count && self.sleepSamplesToDelete.count ? [self.inBedSamplesToDelete arrayByAddingObjectsFromArray:self.sleepSamplesToDelete] : self.inBedSamplesToDelete.count ? self.inBedSamplesToDelete : self.sleepSamplesToDelete completion:^(BOOL success) {
 			if (success)
-				[HKDataSleepAnalysis saveSampleWithStartDate:self.startDate endDate:self.endDate activities:self.activities sleepLatency:-self.visualizer.sleepLatency.doubleValue adaptive:YES completion:^(BOOL success) {
+				[HKDataSleepAnalysis saveSampleWithStartDate:self.startDate endDate:self.endDate activities:self.activities sleepLatency:-self.visualizer.sleepLatency.doubleValue adaptive:adaptive completion:^(BOOL success) {
 					[GCD main:^{
 						[self performSegueWithIdentifier:success ? GUI_SAVE : GUI_CANCEL sender:Nil];
 					}];
@@ -361,7 +373,7 @@
 				}];
 		}];
 	else
-		[HKDataSleepAnalysis saveSampleWithStartDate:self.startDate endDate:self.endDate activities:self.activities sleepLatency:-self.visualizer.sleepLatency.doubleValue adaptive:YES completion:^(BOOL success) {
+		[HKDataSleepAnalysis saveSampleWithStartDate:self.startDate endDate:self.endDate activities:self.activities sleepLatency:-self.visualizer.sleepLatency.doubleValue adaptive:adaptive completion:^(BOOL success) {
 			[GCD main:^{
 				[self performSegueWithIdentifier:success ? GUI_SAVE : GUI_CANCEL sender:Nil];
 			}];

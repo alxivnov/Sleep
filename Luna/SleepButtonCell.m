@@ -83,10 +83,10 @@
 }
 
 - (void)setup:(NSArray<AnalysisPresenter *> *)presenters {
-	NSTimeInterval sleep = [presenters sum:^NSNumber *(AnalysisPresenter *obj) {
-		return obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisAsleep ? @(obj.duration) : Nil;
+	NSTimeInterval sleep = [presenters vSum:^NSNumber *(AnalysisPresenter *obj) {
+		return IS_ASLEEP(obj.allSamples.firstObject.value) ? @(obj.duration) : Nil;
 	}];
-	NSTimeInterval inBed = [presenters sum:^NSNumber *(AnalysisPresenter *obj) {
+	NSTimeInterval inBed = [presenters vSum:^NSNumber *(AnalysisPresenter *obj) {
 		return obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed ? @(obj.duration) : Nil;
 	}];
 	[self setSleepDuration:sleep inBedDuration:inBed cycleCount:0.0 animated:YES];

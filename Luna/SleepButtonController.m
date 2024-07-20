@@ -20,7 +20,8 @@
 #import "UIViewController+Convenience.h"
 
 #import "NSTimer+Convenience.h"
-#import "UIRateController.h"
+#import "NSURLSession+Convenience.h"
+//#import "UIRateController.h"
 #import "WatchDelegate.h"
 #import "WeekdaysController.h"
 
@@ -60,7 +61,9 @@
 				}];
 			}];
 		else {
-			[self setup];
+			[GCD main:^{
+				[self setup];
+			}];
 
 //			[self setupVisualizer:Nil];
 		}
@@ -89,8 +92,8 @@
 		[self.notificationsView removeFromSuperview];
 	if (self.emptyStateView != view)
 		[self.emptyStateView removeFromSuperview];
-	if ([UIRateController instance].view != view)
-		[[UIRateController instance].view removeFromSuperview];
+//	if ([UIRateController instance].view != view)
+//		[[UIRateController instance].view removeFromSuperview];
 //	if (self.alertView != view)
 //		[self.alertView removeFromSuperview];
 //	if (self.alarmController.view != view)
@@ -112,7 +115,7 @@
 		[AnalysisPresenter query:NSCalendarUnitDay completion:^(NSArray<AnalysisPresenter *> *presenters) {
 			[GCD main:^{
 				NSTimeInterval sleep = presenters.firstObject.duration;
-				NSTimeInterval inBed = [presenters.firstObject.allPresenters sum:^NSNumber *(AnalysisPresenter *obj) {
+				NSTimeInterval inBed = [presenters.firstObject.allPresenters vSum:^NSNumber *(AnalysisPresenter *obj) {
 					return obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed ? @(obj.duration) : Nil;
 				}];
 
@@ -180,8 +183,8 @@
 							[self setupTodayView:self.notificationsView];
 						else if (!hasData)
 							[self setupTodayView:self.emptyStateView];
-						else if ([UIRateController instance].view)
-							[self setupTodayView:[UIRateController instance].view];
+//						else if ([UIRateController instance].view)
+//							[self setupTodayView:[UIRateController instance].view];
 //						else
 //							[self setupTodayView:self.alertView];
 					}];

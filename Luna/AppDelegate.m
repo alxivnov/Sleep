@@ -6,15 +6,15 @@
 //  Copyright (c) 2015 Alexander Ivanov. All rights reserved.
 //
 
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
+//#import <Fabric/Fabric.h>
+//#import <Crashlytics/Crashlytics.h>
 
 #import "AppDelegate.h"
 #import "Global.h"
 #import "WatchDelegate.h"
 #import "Widget.h"
 
-#import "UIViewController+Answers.h"
+//#import "UIViewController+Answers.h"
 
 #import "NSObject+Convenience.h"
 #import "SKInAppPurchase.h"
@@ -33,7 +33,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 //	if (!IS_DEBUGGING)
-		[Fabric with:@[[Crashlytics class]]];
+//		[Fabric with:@[[Crashlytics class]]];
 
 	[CLLocationManager locationServicesEnabled];
 	[CLLocationManager defaultManager].delegate = self;
@@ -106,9 +106,9 @@
 	completionHandler();
 }
 
-- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
-	[Answers logCustomEventWithName:@"Memory Warning" customAttributes:@{ @"VC" : [[application.rootViewController.lastViewController class] description], @"model" : [UIDevice currentDevice].model, @"version" : [UIDevice currentDevice].systemVersion }];
-}
+//- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
+//	[Answers logCustomEventWithName:@"Memory Warning" customAttributes:@{ @"VC" : [[application.rootViewController.lastViewController class] description], @"model" : [UIDevice currentDevice].model, @"version" : [UIDevice currentDevice].systemVersion }];
+//}
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
 	[[UIApplication sharedApplication].rootViewController forwardSelector:@selector(locationManager:didChangeAuthorizationStatus:) withObject:manager withObject:@(status) nextTarget:UIViewControllerNextTarget(NO)];

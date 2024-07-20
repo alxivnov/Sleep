@@ -8,7 +8,7 @@
 
 #import "Global.h"
 
-#import "NSRateController.h"
+//#import "NSRateController.h"
 
 #define APP_GROUP @"group.alexivanov.luna"
 

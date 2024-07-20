@@ -20,6 +20,10 @@
 
 #define RGB_LIGHT_TINT		0x6C69D1
 #define RGB_DARK_TINT		0x3F3AAB
+#define RGB_DEEP			0x36349D
+#define RGB_CORE			0x3B82F6
+#define RGB_REM				0x80CFFA
+
 
 
 @interface Settings : NSObject

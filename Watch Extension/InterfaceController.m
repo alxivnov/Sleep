@@ -24,6 +24,8 @@
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceTable *table;
 
 @property (assign, nonatomic) BOOL detecting;
+
+@property (assign, nonatomic) BOOL didActivate;
 @end
 
 
@@ -42,14 +44,17 @@
 	NSDate *today = [now dateComponent];
 	AnalysisPresenter *presenter = self.delegate.presenters[today];
 	NSArray<AnalysisPresenter *> *presenters = [presenter.allPresenters query:^BOOL(AnalysisPresenter *obj) {
-		return obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed || obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisAsleep;
+		return obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed || IS_ASLEEP(obj.allSamples.firstObject.value);
 	}];
-	if (self.table.numberOfRows > 1)
-		[self.table removeRowsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(1, self.table.numberOfRows - 1)]];
+	NSUInteger count = presenters.count + 1;
+	if (self.table.numberOfRows > count)
+		[self.table removeRowsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(count, self.table.numberOfRows - count)]];
+	else if (self.table.numberOfRows < count)
+		[self.table insertRowsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(self.table.numberOfRows, count - self.table.numberOfRows)] withRowType:ROW_ID_ASLEEP];
 	for (NSUInteger index = 0; index < presenters.count; index++) {
 		AnalysisPresenter *obj = presenters[index];
 
-		[self.table insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:index + 1] withRowType:obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed ? ROW_ID_IN_BED : ROW_ID_ASLEEP];
+//		[self.table insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:index + 1] withRowType:obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed ? ROW_ID_IN_BED : ROW_ID_ASLEEP];
 		[[self.table rowControllerAtIndex:index + 1] setPresenter:obj];
 	}
 }
@@ -63,10 +68,21 @@
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
+    
+    self.didActivate = YES;
+}
+
+- (void)didAppear {
+	[super didAppear];
+	
+    if (!self.didActivate)
+        return;
+    
+    self.didActivate = NO;
 
 	[self setup];
 
-//	NSArray *samples = @[ [HKDataSleepAnalysis sampleWithStartDate:[[NSDate date] addValue:-1 forComponent:NSCalendarUnitHour] endDate:[NSDate date] value:HKCategoryValueSleepAnalysisInBed metadata:Nil], [HKDataSleepAnalysis sampleWithStartDate:[[NSDate date] addValue:-1 forComponent:NSCalendarUnitHour] endDate:[NSDate date] value:HKCategoryValueSleepAnalysisAsleep metadata:Nil] ];
+//	NSArray *samples = @[ [HKDataSleepAnalysis sampleWithStartDate:[[NSDate date] addValue:-1 forComponent:NSCalendarUnitHour] endDate:[NSDate date] value:HKCategoryValueSleepAnalysisInBed metadata:Nil], [HKDataSleepAnalysis sampleWithStartDate:[[NSDate date] addValue:-1 forComponent:NSCalendarUnitHour] endDate:[NSDate date] value:CategoryValueSleepAnalysisAsleepUnspecified metadata:Nil] ];
 	if (self.detecting)
 		return;
 
@@ -89,7 +105,7 @@
 
 - (void)table:(WKInterfaceTable *)table didSelectRowAtIndex:(NSInteger)rowIndex {
 	NSArray<AnalysisPresenter *> *presenters = [self.delegate.presenters[[[NSDate date] dateComponent]].allPresenters query:^BOOL(AnalysisPresenter *obj) {
-		return obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed || obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisAsleep;
+		return obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed || IS_ASLEEP(obj.allSamples.firstObject.value);
 	}];
 
 	AnalysisPresenter *presenter = presenters[rowIndex - 1];

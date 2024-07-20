@@ -39,11 +39,11 @@
 
 - (void)setSamples:(NSArray<AnalysisPresenter *> *)samples animated:(BOOL)animated {
 	_samples = samples;
-	_avg = [_samples avg:^NSNumber *(AnalysisPresenter *obj) {
-		return obj.allSamples && obj.allSamples.firstObject.value != HKCategoryValueSleepAnalysisAsleep ? Nil : @(obj.duration);
+	_avg = [_samples vAvg:^NSNumber *(AnalysisPresenter *obj) {
+        return obj.allSamples && !IS_ASLEEP(obj.allSamples.firstObject.value) ? Nil : @(obj.duration);
 	}];
-	_sum = [_samples sum:^NSNumber *(AnalysisPresenter *obj) {
-		return obj.allSamples && obj.allSamples.firstObject.value != HKCategoryValueSleepAnalysisAsleep ? Nil : @(obj.duration);
+	_sum = [_samples vSum:^NSNumber *(AnalysisPresenter *obj) {
+		return obj.allSamples && !IS_ASLEEP(obj.allSamples.firstObject.value) ? Nil : @(obj.duration);
 	}];
 
 	[GCD main:^{
@@ -85,8 +85,20 @@
 	cell.textLabel.text = sample.text;
 	cell.detailTextLabel.text = sample.detailText;
 
-	UIColor *color = sample.allPresenters ? [sample.duration < self.avg ? [UIColor color:HEX_NCS_RED] : [UIColor color:HEX_NCS_BLUE] colorWithAlphaComponent:(sample.cycleCount + 1.0) / 6.0] : sample.allSamples.firstObject.value == HKCategoryValueSleepAnalysisAsleep ? [UIColor color:RGB_DARK_TINT] : [UIColor color:HEX_IOS_GRAY];
-	NSTimeInterval start = (sample.allPresenters ? 0.0 : [[self.samples arrayWithCount:indexPath.row] sum:^NSNumber *(AnalysisPresenter *obj) {
+	UIColor *color = sample.allPresenters
+        ? [sample.duration < self.avg
+			? [UIColor color:HEX_NCS_RED]
+			: [UIColor color:HEX_NCS_BLUE] colorWithAlphaComponent:(sample.cycleCount + 1.0) / 6.0]
+		: sample.allSamples.firstObject.value == CategoryValueSleepAnalysisAsleepCore
+			? [UIColor color:RGB_CORE]
+			: sample.allSamples.firstObject.value == CategoryValueSleepAnalysisAsleepDeep
+				? [UIColor color:RGB_DEEP]
+				: sample.allSamples.firstObject.value == CategoryValueSleepAnalysisAsleepREM
+					? [UIColor color:RGB_REM]
+					: sample.allSamples.firstObject.value == CategoryValueSleepAnalysisAsleepUnspecified
+						? [UIColor color:RGB_DARK_TINT]
+						: [UIColor color:HEX_IOS_GRAY];
+	NSTimeInterval start = (sample.allPresenters ? 0.0 : [[self.samples arrayWithCount:indexPath.row] vSum:^NSNumber *(AnalysisPresenter *obj) {
 		return sample.allSamples.firstObject.value == obj.allSamples.firstObject.value ? @(obj.duration) : Nil;
 	}]);
 	NSTimeInterval end = start + sample.duration;
@@ -99,7 +111,7 @@
 //	UIAccessoryView *view = [[UIAccessoryView alloc] initWithFrame:cell.bounds];
 //	[view setItems:[NSArray arrayWithObject:[sample.accessoryText labelWithSize:CGSizeMake(36.0, cell.bounds.size.height) options:NSSizeGreaterThan attributes:@{ NSForegroundColorAttributeName : [UIColor color:HEX_IOS_DARK_GRAY] }] /*withObject:sample.allPresenters ? @(-16.0) : Nil */withObject:sample.allPresenters ? [[UIImage originalImage:IMG_DISCLOSURE] imageView] : Nil] adjustWidth:YES];
 //	cell.accessoryView = view;
-	cell.accessoryViews = [NSArray arrayWithObject:[sample.accessoryText labelWithSize:CGSizeZero/*CGSizeMake(36.0, cell.bounds.size.height)*/ options:NSSizeGreaterThan attributes:@{ NSForegroundColorAttributeName : [UIColor color:HEX_IOS_DARK_GRAY], NSFontAttributeName : [UIFont monospacedDigitSystemFontOfSize:cell.textLabel.font.pointSize weight:UIFontWeightRegular ] }] /*withObject:sample.allPresenters ? @(-16.0) : Nil */withObject:sample.allPresenters ? [[UIImage originalImage:IMG_DISCLOSURE] imageView:UIViewContentModeCenter] : Nil];
+    cell.accessoryViews = [NSArray arrayWithObject:[sample.accessoryText labelWithSize:CGSizeZero/*CGSizeMake(36.0, cell.bounds.size.height)*/ options:NSSizeGreaterThan attributes:@{ NSForegroundColorAttributeName : [UIColor color:HEX_IOS_DARK_GRAY], NSFontAttributeName : [UIFont monospacedDigitSystemFontOfSize:cell.textLabel.font.pointSize weight:UIFontWeightRegular ] }] /*withObject:sample.allPresenters ? @(-16.0) : Nil */withObject:sample.allPresenters ? ({ UIImageView *view = [[UIImage systemImageNamed:@"chevron.right"] imageView:UIViewContentModeCenter]; view.tintColor = [UIColor systemGrayColor]; view; }) : Nil];
 
 	cell.textLabel.textColor = sample.isOwn ? [UIColor whiteColor] : [UIColor lightGrayColor];
 

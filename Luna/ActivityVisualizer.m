@@ -60,11 +60,11 @@ __synthesize(CAShapeLayer *, sleepLayer, ({ CAShapeLayer *x = [CAShapeLayer new]
 __synthesize(CAShapeLayer *, stepsLayer, ({ CAShapeLayer *x = [CAShapeLayer new]; [self.layer addSublayer:x]; x.fillColor = [UIColor color:HEX_NCS_YELLOW].CGColor; x; }))
 __synthesize(CAShapeLayer *, heartLayer, ({ CAShapeLayer *x = [CAShapeLayer new]; [self.layer addSublayer:x]; x.fillColor = Nil; x.strokeColor = [UIColor color:HEX_NCS_RED].CGColor; x; }))
 __synthesize(CAShapeLayer *, alertLayer, ({ CAShapeLayer *x = [CAShapeLayer new]; [self.layer addSublayer:x]; x.fillColor = RGB(51, 51, 51).CGColor; x; }))
-__synthesize(CAShapeLayer *, activityLayer, ({ CAShapeLayer *x = [CAShapeLayer new]; [self.layer addSublayer:x]; x.fillColor = [UIColor color:HEX_NCS_BLUE].CGColor; x; }))
+__synthesize(CAShapeLayer *, activityLayer, ({ CAShapeLayer *x = [CAShapeLayer new]; [self.layer addSublayer:x]; x.fillColor = [UIColor color:HEX_NCS_GREEN].CGColor; x; }))
 __synthesize(UIImageView *, timeView, ({ UIImageView *x = [[UIImageView alloc] initWithFrame:CGRectMakeWithSize(self.contentSize)]; [self addSubview:x]; x; }))
 __synthesize(UIImageView *, scaleView, ({ UIImageView *x = [[UIImageView alloc] initWithFrame:CGRectMake(self.contentOffset.x, self.bounds.origin.y, self.bounds.size.width, self.contentSize.height)]; [self addSubview:x]; x; }))
-__synthesize(UIImageView *, sunriseView, ({ UIImageView *x = [[UIImageView alloc] initWithImage:[UIImage imageNamed:IMG_SUNRISE]]; [self addSubview:x]; x; }))
-__synthesize(UIImageView *, sunsetView, ({ UIImageView *x = [[UIImageView alloc] initWithImage:[UIImage imageNamed:IMG_SUNSET]]; [self addSubview:x]; x; }))
+__synthesize(UIImageView *, sunriseView, ({ UIImageView *x = [[UIImageView alloc] initWithImage:[UIImage systemImageNamed:@"sunrise.fill"]]; x.tintColor = [UIColor systemYellowColor]; [self addSubview:x]; x; }))
+__synthesize(UIImageView *, sunsetView, ({ UIImageView *x = [[UIImageView alloc] initWithImage:[UIImage systemImageNamed:@"sunset.fill"]]; x.tintColor = [UIColor systemYellowColor]; [self addSubview:x]; x; }))
 
 @synthesize sleepLatency = _sleepLatency;
 
@@ -145,7 +145,7 @@ __synthesize(UIImageView *, sunsetView, ({ UIImageView *x = [[UIImageView alloc]
 - (void)setSleepSamples:(NSArray<HKCategorySample *> *)samples {
 	_sleepSamples = samples;
 
-	UIColor *color = RGB(63, 58, 171);
+//	UIColor *color = RGB(63, 58, 171);
 
 	NSMutableArray<CAShapeLayer *> *layers = [NSMutableArray new];
 //	UIImage *image = [self imageWithColor:Nil draw:^(CGContextRef context) {
@@ -153,6 +153,14 @@ __synthesize(UIImageView *, sunsetView, ({ UIImageView *x = [[UIImageView alloc]
 		NSUInteger cycleCount = 0;
 
 		for (HKCategorySample *sample in samples) {
+			UIColor *color = sample.value == CategoryValueSleepAnalysisAsleepCore
+				? [UIColor color:RGB_CORE]
+				: sample.value == CategoryValueSleepAnalysisAsleepDeep
+					? [UIColor color:RGB_DEEP]
+					: sample.value == CategoryValueSleepAnalysisAsleepREM
+						? [UIColor color:RGB_REM]
+						: RGB(63, 58, 171);
+			
 			NSArray<CMMotionActivitySample *> *activities = sample.duration > cycleWidth ? [CMMotionActivitySample samplesFromString:sample.metadata[@"activities"] date:sample.startDate] : Nil;
 
 			if (activities.count) {
@@ -160,7 +168,7 @@ __synthesize(UIImageView *, sunsetView, ({ UIImageView *x = [[UIImageView alloc]
 					return [@(obj2.duration) compare:@(obj1.duration)];
 				}];
 
-				cycleCount = floor([activities sum:^NSNumber *(CMMotionActivitySample *obj) {
+				cycleCount = floor([activities vSum:^NSNumber *(CMMotionActivitySample *obj) {
 					return @(obj.duration);
 				}] / (1.5 * 60.0 * 60.0));
 
@@ -172,6 +180,7 @@ __synthesize(UIImageView *, sunsetView, ({ UIImageView *x = [[UIImageView alloc]
 					CGFloat width = [self x:activity.endDate] - x;
 					CGFloat height = self.contentSize.height;
 
+					
 					[layers addObject:[self layerWithRect:CGRectMake(x, y, width, height) fillColor:[UIColor color:index < cycleCount && [activity.startDate timeIntervalSinceDate:sample.startDate] > 60.0 * 60.0 ? RGB_DARK_PURPLE : RGB_LIGHT_VIOLET]]];
 				}
 			} else {
@@ -183,9 +192,9 @@ __synthesize(UIImageView *, sunsetView, ({ UIImageView *x = [[UIImageView alloc]
 				NSUInteger index = 0;
 				NSUInteger count = floor(width / cycleWidth);
 				for (; index < count; index++)
-					[layers addObject:[self layerWithRect:CGRectMake(x + index * cycleWidth, y, cycleWidth, height) fillColor:[color colorWithAlphaComponent:0.3 + 0.10 * cycleCount++]]];
+					[layers addObject:[self layerWithRect:CGRectMake(x + index * cycleWidth, y, cycleWidth, height) fillColor:/*[color colorWithAlphaComponent:0.3 + 0.10 * cycleCount++]*/color]];
 
-				[layers addObject:[self layerWithRect:CGRectMake(x + index * cycleWidth, y, width - index * cycleWidth, height) fillColor:[color colorWithAlphaComponent:0.3 + 0.10 * cycleCount]]];
+				[layers addObject:[self layerWithRect:CGRectMake(x + index * cycleWidth, y, width - index * cycleWidth, height) fillColor:/*[color colorWithAlphaComponent:0.3 + 0.10 * cycleCount]*/color]];
 			}
 		}
 //	}];
@@ -443,7 +452,7 @@ __synthesize(UIImageView *, sunsetView, ({ UIImageView *x = [[UIImageView alloc]
 	}
 
 	NSDictionary<NSNumber *, NSArray<HKCategorySample *> *> *dic = [samples dictionaryWithKey:^id<NSCopying>(HKCategorySample *obj) {
-		return @(obj.value == HKCategoryValueSleepAnalysisAsleep);
+        return @(IS_ASLEEP(obj.value));
 	} value:^id(HKCategorySample *obj, id<NSCopying> key, id val) {
 		NSMutableArray<HKCategorySample *> *arr = val ?: [NSMutableArray new];
 		[arr addObject:obj];
@@ -479,6 +488,10 @@ __synthesize(UIImageView *, sunsetView, ({ UIImageView *x = [[UIImageView alloc]
 
 	[[HKHealthStore defaultStore] requestAuthorizationToShare:Nil read:@[ [HKDataSleepAnalysis identifier], [HKStepCount identifier], [HKHeartRate identifier], [HKActiveEnergy identifier] ] completion:^(BOOL success) {
 		[HKDataSleepAnalysis querySamplesWithStartDate:self.startDate endDate:self.endDate options:HKQueryOptionStrictEndDate limit:HKObjectQueryNoLimit sort:@{ HKSampleSortIdentifierStartDate : @YES } completion:^(NSArray<HKCategorySample *> *samples) {
+			samples = [samples query:^BOOL(__kindof HKCategorySample *sample) {
+				return sample.value != HKCategoryValueSleepAnalysisAwake;
+			}];
+			
 			[self setSamples:samples startDate:Nil endDate:Nil];
 
 			sleep = YES;

@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="t0I-PW-JGY">
-    <device id="watch42" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="22505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="t0I-PW-JGY">
+    <device id="watch49"/>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14033"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="22022"/>
     </dependencies>
     <scenes>
         <!--Sleep Diary-->
@@ -63,13 +60,13 @@
                                                         <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                                     </label>
                                                     <label alignment="right" text="7:40" id="KIT-dv-wfl">
-                                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <color key="textColor" systemColor="lightTextColor"/>
                                                         <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                                     </label>
                                                 </items>
                                             </group>
                                             <label alignment="left" text="1:50 - 9:30" minimumScaleFactor="0.5" id="s9j-Tw-tQu">
-                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <color key="textColor" systemColor="lightTextColor"/>
                                                 <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                             </label>
                                         </items>
@@ -101,6 +98,7 @@
                                         </items>
                                     </group>
                                     <connections>
+                                        <outlet property="accessoryView" destination="H8S-xc-nBV" id="ei0-8R-LTw"/>
                                         <outlet property="detailTextLabel" destination="G94-W9-1mP" id="4p5-AU-N7h"/>
                                         <outlet property="textLabel" destination="T7D-7c-Kdp" id="TOO-eb-LgF"/>
                                     </connections>
@@ -110,7 +108,7 @@
                     </items>
                     <connections>
                         <outlet property="table" destination="QlL-3E-2i4" id="ixo-QB-naI"/>
-                        <segue destination="7nO-fq-irV" kind="relationship" relationship="nextPage" id="cAp-wU-v1K"/>
+                        <segue destination="7nO-fq-irV" kind="relationship" relationship="nextPage" id="Klc-Zx-X0S"/>
                     </connections>
                 </controller>
             </objects>
@@ -174,7 +172,7 @@
                                             <group width="1" alignment="left" id="VMy-1r-h5g">
                                                 <items>
                                                     <label alignment="left" verticalAlignment="center" text="Wake Up" id="oAH-qS-TZQ">
-                                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <color key="textColor" systemColor="lightTextColor"/>
                                                         <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                                     </label>
                                                     <label alignment="right" verticalAlignment="bottom" text="8:00" id="rBe-G4-QFO">
@@ -196,7 +194,7 @@
                                             <group width="1" alignment="left" id="fQI-u8-QiH">
                                                 <items>
                                                     <label alignment="left" verticalAlignment="center" text="Go to Bed" id="ED3-pJ-IN3">
-                                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <color key="textColor" systemColor="lightTextColor"/>
                                                         <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                                     </label>
                                                     <label alignment="right" verticalAlignment="bottom" text="23:00" id="bnF-nn-KpF">
@@ -238,13 +236,13 @@
                                                         <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                                     </label>
                                                     <label alignment="right" text="7:40" id="Nqw-Jc-HRN">
-                                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <color key="textColor" systemColor="lightTextColor"/>
                                                         <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                                     </label>
                                                 </items>
                                             </group>
                                             <label alignment="left" text="1:50 - 9:30" minimumScaleFactor="0.5" id="7JX-Z5-0s3">
-                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <color key="textColor" systemColor="lightTextColor"/>
                                                 <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                             </label>
                                         </items>
@@ -310,4 +308,15 @@
             <point key="canvasLocation" x="651" y="403"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background-fill" width="136" height="136"/>
+        <image name="background-line" width="136" height="136"/>
+        <image name="moon-line" width="30" height="30"/>
+        <image name="sun-line" width="30" height="30"/>
+        <image name="sunrise" width="30" height="30"/>
+        <image name="sunset" width="30" height="30"/>
+        <systemColor name="lightTextColor">
+            <color white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

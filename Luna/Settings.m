@@ -80,7 +80,7 @@ __synthesize(NSUserDefaults *, defaults, [NSUserDefaults standardUserDefaults])
 
 - (void)saveSampleWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate completion:(void(^)(BOOL))completion {
 	NSTimeInterval sleepLatency = self.sleepLatency;
-	BOOL adaptive = YES;
+	NSNumber *adaptive = @YES;
 
 	if ([CMMotionActivityManager isActivityAvailable])
 		[CMMotionActivitySample queryActivityStartingFromDate:startDate toDate:endDate within:sleepLatency withHandler:^(NSArray<CMMotionActivitySample *> *activities) {
@@ -215,7 +215,7 @@ __synthesize(NSUserDefaults *, defaults, [NSUserDefaults standardUserDefaults])
 
 	NSMutableArray<HKCategorySample *> *arr = [NSMutableArray arrayWithCapacity:sleepArray.count + inBedArray.count];
 /*	for (NSDateInterval *interval in sleepArray)
-		[arr addObject:[HKDataSleepAnalysis sampleWithStartDate:interval.startDate endDate:interval.endDate value:HKCategoryValueSleepAnalysisAsleep metadata:@{ HKMetadataKeySleepOnsetLatency : @(sleepLatency) }]];
+		[arr addObject:[HKDataSleepAnalysis sampleWithStartDate:interval.startDate endDate:interval.endDate value:CategoryValueSleepAnalysisAsleepUnspecified metadata:@{ HKMetadataKeySleepOnsetLatency : @(sleepLatency) }]];
 */	for (NSDateInterval *interval in inBedArray)
 		if ([sleepArray any:^BOOL(NSDateInterval *obj) {
 			return [obj intersectsDateInterval:interval];

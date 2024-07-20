@@ -10,9 +10,9 @@
 #import "Global.h"
 #import "Localization.h"
 
-#import "UIRateController+Answers.h"
+//#import "UIRateController+Answers.h"
 
-#import "Answers+Convenience.h"
+//#import "Answers+Convenience.h"
 #import "Affiliates+Convenience.h"
 #import "MessageUI+Convenience.h"
 #import "QuartzCore+Convenience.h"
@@ -22,6 +22,7 @@
 #import "UIActivityViewController+Convenience.h"
 #import "UIAlertController+Convenience.h"
 #import "UIApplication+Convenience.h"
+#import "UIButton+Convenience.h"
 #import "UIScrollView+Convenience.h"
 #import "UITableView+Convenience.h"
 #import "UIView+Convenience.h"
@@ -178,11 +179,11 @@ __synthesize(SKInAppPurchase *, purchase3, [SKInAppPurchase purchaseWithProductI
 		[self presentMailComposeWithRecipients:arr_(STR_EMAIL) subject:[NSBundle bundleDisplayNameAndShortVersion] body:Nil attachments:screenshot ? @{ @"screenshot.jpg" : [screenshot jpegRepresentation] } : Nil completionHandler:Nil];
 	} else if (indexPath.section == 3) {
 		[self presentWebActivityWithActivityItems:@[ [NSBundle bundleDisplayName], [NSURL URLForMobileAppWithIdentifier:APP_ID_LUNA affiliateInfo:GLOBAL.affiliateInfo] ] excludedTypes:Nil completionHandler:^(UIActivityType  _Nullable activityType, BOOL completed, NSArray * _Nullable returnedItems, NSError * _Nullable activityError) {
-			[Answers logInviteWithMethod:activityType customAttributes:@{ @"version" : [NSBundle bundleVersion], @"success" : completed ? @"YES" : @"NO", @"error" : [activityError debugDescription] ?: STR_EMPTY }];
+//			[Answers logInviteWithMethod:activityType customAttributes:@{ @"version" : [NSBundle bundleVersion], @"success" : completed ? @"YES" : @"NO", @"error" : [activityError debugDescription] ?: STR_EMPTY }];
 		}];
 	} else if (indexPath.section == 4) {
 		[UIApplication openURL:[NSURL URLForMobileAppWithIdentifier:APP_ID_LUNA affiliateInfo:GLOBAL.affiliateInfo] options:Nil completionHandler:^(BOOL success) {
-			[UIRateController logRateWithMethod:@"AboutController" success:success];
+//			[UIRateController logRateWithMethod:@"AboutController" success:success];
 		}];
 	} else if (indexPath.section == IDX_APPS) {
 		[self presentProductWithIdentifier:[self.apps[indexPath.row].trackId integerValue] parameters:GLOBAL.affiliateInfo];
@@ -208,18 +209,18 @@ __synthesize(SKInAppPurchase *, purchase3, [SKInAppPurchase purchaseWithProductI
 			else
 				[__self presentAlertWithError:error cancelActionTitle:[Localization cancel]];
 
-			[Answers logPurchaseWithPrice:product.price currency:product.priceLocale.currencyCode success:@(success) itemName:product.localizedTitle itemType:Nil itemId:product.productIdentifier customAttributes:dic_(@"error", transactions.lastObject.error.shortDescription)];
+//            [Answers logPurchaseWithPrice:product.price currency:product.priceLocale.currencyCode success:@(success) itemName:product.localizedTitle itemType:Nil itemId:product.productIdentifier customAttributes:dic_(@"error", transactions.lastObject.error.shortDescription)];
 
-			for (SKPaymentTransaction *transaction in transactions)
-				[Answers logError:transaction.error];
+//			for (SKPaymentTransaction *transaction in transactions)
+//				[Answers logError:transaction.error];
 		}];
 
-		[Answers logStartCheckoutWithPrice:product.price currency:product.priceLocale.currencyCode itemCount:@(payment.quantity) customAttributes:dic_(@"error", error.shortDescription)];
+//		[Answers logStartCheckoutWithPrice:product.price currency:product.priceLocale.currencyCode itemCount:@(payment.quantity) customAttributes:dic_(@"error", error.shortDescription)];
 
-		[Answers logError:error];
+//		[Answers logError:error];
 	}];
 
-	[Answers logAddToCartWithPrice:purchase.price currency:purchase.currencyCode itemName:purchase.localizedTitle itemType:Nil itemId:purchase.productIdentifier customAttributes:Nil];
+//	[Answers logAddToCartWithPrice:purchase.price currency:purchase.currencyCode itemName:purchase.localizedTitle itemType:Nil itemId:purchase.productIdentifier customAttributes:Nil];
 }
 
 @end

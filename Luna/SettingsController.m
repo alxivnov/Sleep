@@ -19,6 +19,7 @@
 #import "UILabel+Convenience.h"
 #import "NSObject+Convenience.h"
 #import "UIScrollView+Convenience.h"
+#import "UIStepper+Convenience.h"
 #import "UITableView+Convenience.h"
 #import "UITableViewCell+Convenience.h"
 #import "Dispatch+Convenience.h"
@@ -58,13 +59,13 @@ __synthesize(NSArray<UIButton *> *, wakeUpButtons, (@[ self.sunButton, self.monB
 - (void)setIndexPath:(NSIndexPath *)indexPath {
 	self.sleepDurationLabel.textColor = indexPath && !indexPath.section ? self.bedtimeAlertSwitch.onTintColor : [UIColor color:HEX_IOS_DARK_GRAY];
 	self.sleepDurationLabel.font = indexPath && !indexPath.section ? self.sleepDurationLabel.boldSystemFont : self.sleepDurationLabel.systemFont;
-	self.sleepDurationImage.image = indexPath && !indexPath.section ? [UIImage originalImage:IMG_TIMER_FULL] : [UIImage originalImage:IMG_TIMER_LINE];
+	self.sleepDurationImage.image = /*indexPath && !indexPath.section ? [UIImage systemImageNamed:@"timer.fill"] : */[UIImage systemImageNamed:@"timer"];
 
 	UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
 
 	self.wakeUpTimeLabel.textColor = indexPath && indexPath.section ? cell.tintColor : [UIColor color:HEX_IOS_DARK_GRAY];
 	self.wakeUpTimeLabel.font = indexPath && indexPath.section ? self.sleepDurationLabel.boldSystemFont : self.sleepDurationLabel.systemFont;
-	self.wakeUpTimeImage.image = indexPath && indexPath.section ? [UIImage originalImage:IMG_ALARM_FULL] : [UIImage originalImage:IMG_ALARM_LINE];
+	self.wakeUpTimeImage.image = /*indexPath && indexPath.section ? [UIImage systemImageNamed:@"alarm.fill"] : */[UIImage systemImageNamed:@"alarm"];
 
 	if (!indexPath)
 		return;
@@ -197,6 +198,9 @@ __synthesize(NSArray<UIButton *> *, wakeUpButtons, (@[ self.sunButton, self.monB
 		stepper.stepValue = TIME_MINUTE;
 		stepper.value = GLOBAL.sleepLatency;
 		[stepper addTarget:self action:@selector(stepperValueChanged:) forControlEvents:UIControlEventValueChanged];
+
+		[stepper resetImages];
+		
 		[cell setAccessoryView:stepper insets:UIEdgeInsetsZero];
 
 		cell.detailTextLabel.text = [[NSDateComponentsFormatter mmShortFormatter] stringFromTimeInterval:stepper.value];

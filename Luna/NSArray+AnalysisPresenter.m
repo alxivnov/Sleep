@@ -11,7 +11,7 @@
 @implementation NSArray (AnalysisPresenter)
 
 - (NSTimeInterval)sumDuration {
-	return [self sum:^NSNumber *(id obj) {
+	return [self vSum:^NSNumber *(id obj) {
 		AnalysisPresenter *presenter = cls(AnalysisPresenter, obj);
 
 		return presenter ? @(presenter.duration) : Nil;
@@ -19,7 +19,7 @@
 }
 
 - (double)sumCycleCount {
-	return [self sum:^NSNumber *(id obj) {
+	return [self vSum:^NSNumber *(id obj) {
 		AnalysisPresenter *presenter = cls(AnalysisPresenter, obj);
 
 		return presenter ? @(presenter.cycleCount) : Nil;
@@ -27,7 +27,7 @@
 }
 
 - (NSTimeInterval)avgStartTime {
-	double avg = [self avg:^NSNumber *(id obj) {
+	double avg = [self vAvg:^NSNumber *(id obj) {
 		AnalysisPresenter *presenter = cls(AnalysisPresenter, obj);
 
 		return presenter ? @([presenter.startDate timeComponent] + ([[presenter.startDate dateComponent] isEqualToDate:[presenter.endDate dateComponent]] ? TIME_DAY : 0.0)) : Nil;
@@ -36,7 +36,7 @@
 }
 
 - (NSTimeInterval)avgEndTime {
-	return [self avg:^NSNumber *(id obj) {
+	return [self vAvg:^NSNumber *(id obj) {
 		AnalysisPresenter *presenter = cls(AnalysisPresenter, obj);
 
 		return presenter ? @([presenter.endDate timeComponent]) : Nil;
@@ -44,7 +44,7 @@
 }
 
 - (NSTimeInterval)avgDuration {
-	return [self avg:^NSNumber *(id obj) {
+	return [self vAvg:^NSNumber *(id obj) {
 		AnalysisPresenter *presenter = cls(AnalysisPresenter, obj);
 
 		return presenter ? @(presenter.duration) : Nil;
@@ -52,7 +52,7 @@
 }
 
 - (double)avgCycleCount {
-	return [self avg:^NSNumber *(id obj) {
+	return [self vAvg:^NSNumber *(id obj) {
 		AnalysisPresenter *presenter = cls(AnalysisPresenter, obj);
 
 		return presenter ? @(presenter.cycleCount) : Nil;

@@ -13,7 +13,7 @@
 #import "SegmentController.h"
 #import "ActivitiesController.h"
 
-#import "UIViewController+Answers.h"
+//#import "UIViewController+Answers.h"
 
 #import "NSArray+Convenience.h"
 #import "UIGestureRecognizer+Convenience.h"
@@ -43,13 +43,13 @@
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	
-	[self startLogging];
+//	[self startLogging];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
 	[super viewDidDisappear:animated];
 	
-	[self endLogging];
+//	[self endLogging];
 }
 
 __synthesize(UIPanTransition *, transition, [UIPanTransition gestureTransition:Nil])

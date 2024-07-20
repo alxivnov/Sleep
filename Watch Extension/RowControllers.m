@@ -80,14 +80,24 @@
 
 @implementation SleepRowController
 
+- (void)setInBed:(BOOL)inBed {
+	[self.textLabel setTextColor:inBed ? [UIColor lightGrayColor] : [UIColor whiteColor]];
+	[self.detailTextLabel setTextColor:inBed ? [UIColor lightGrayColor] : [UIColor whiteColor]];
+	[self.accessoryView setText:inBed ? @"In Bed" : @"Asleep"];
+}
+
 - (void)setPresenter:(AnalysisPresenter *)presenter {
 	[self.textLabel setText:presenter.text];
 	[self.detailTextLabel setText:presenter.accessoryText];
+	
+	[self setInBed:presenter.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed];
 }
 
 - (void)setSample:(HKCategorySample *)sample {
 	[self.textLabel setText:[NSString stringWithFormat:@"%@ - %@", [sample.startDate descriptionForTime:NSDateFormatterShortStyle], [sample.endDate descriptionForTime:NSDateFormatterShortStyle]]];
 	[self.detailTextLabel setText:[[NSDateComponentsFormatter hhmmFormatter] stringFromTimeInterval:sample.duration]];
+	
+	[self setInBed:sample.value == HKCategoryValueSleepAnalysisInBed];
 }
 
 @end

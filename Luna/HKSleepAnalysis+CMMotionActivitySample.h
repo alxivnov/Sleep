@@ -21,6 +21,6 @@
 
 + (NSArray<HKCategorySample *> *)samplesWithStartDate:(NSDate *)start endDate:(NSDate *)end activities:(NSArray<CMMotionActivitySample *> *)activities sleepLatency:(NSTimeInterval)sleepLatency adaptive:(BOOL)adaptive;
 
-+ (void)saveSampleWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate activities:(NSArray<CMMotionActivitySample *> *)activities sleepLatency:(NSTimeInterval)sleepLatency adaptive:(BOOL)adaptive completion:(void(^)(BOOL))completion;
++ (void)saveSampleWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate activities:(NSArray<CMMotionActivitySample *> *)activities sleepLatency:(NSTimeInterval)sleepLatency adaptive:(NSNumber *)adaptive completion:(void(^)(BOOL))completion;
 
 @end

@@ -90,6 +90,10 @@
 		startDate = unit ? [unit == NSCalendarUnitDay || unit == NSCalendarUnitWeekday ? endDate : [[endDate addValue:-1 forComponent:unit] addValue:1 forComponent:NSCalendarUnitDay] dateComponent] : Nil;
 
 	return [HKDataSleepAnalysis querySamplesWithStartDate:startDate endDate:endDate options:HKQueryOptionStrictEndDate limit:HKObjectQueryNoLimit sort:@{ HKSampleSortIdentifierEndDate : @NO } completion:^(NSArray<HKCategorySample *> *samples) {
+		samples = [samples query:^BOOL(__kindof HKCategorySample *sample) {
+			return sample.value != HKCategoryValueSleepAnalysisAwake;
+		}];
+		
 		if (completion)
 			completion([self create:samples unit:unit]);
 	}];
@@ -124,14 +128,26 @@
 
 __synthesize(NSTimeInterval, duration, [(HKCategorySample *)self.samples.firstObject duration])
 
-__synthesize(NSUInteger, cycleCount, floor(self.duration / SLEEP_CYCLE_DURATION))
+__synthesize(NSUInteger, cycleCount, self.allSamples.firstObject.value == CategoryValueSleepAnalysisAsleepUnspecified ? floor(self.duration / SLEEP_CYCLE_DURATION) : self.allSamples.firstObject.value == CategoryValueSleepAnalysisAsleepDeep ? 1 : 0)
 
 - (NSArray<HKCategorySample *> *)allSamples {
 	return self.samples;
 }
 
 - (NSString *)detailText {
-	NSString *detailText = self.allSamples.firstObject.value == HKCategoryValueSleepAnalysisAsleep ? loc(@"Asleep") : self.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed ? loc(@"In Bed") : Nil;
+	NSString *detailText = self.allSamples.firstObject.value == CategoryValueSleepAnalysisAsleepUnspecified
+		? loc(@"Asleep")
+		: self.allSamples.firstObject.value == CategoryValueSleepAnalysisAsleepCore
+			? loc(@"Core")
+			: self.allSamples.firstObject.value == CategoryValueSleepAnalysisAsleepDeep
+				? loc(@"Deep")
+				: self.allSamples.firstObject.value == CategoryValueSleepAnalysisAsleepREM
+					? loc(@"REM")
+					: self.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed
+						? loc(@"In Bed")
+						: self.allSamples.firstObject.value == HKCategoryValueSleepAnalysisAwake
+							? loc(@"Awake")
+							: Nil;
 	if (IS_DEBUGGING && self.allSamples.firstObject.metadata[HKMetadataKeySleepOnsetLatency])
 		detailText = [NSString stringWithFormat:@"%@ (%@)", detailText, [[NSDateComponentsFormatter mmssAbbreviatedFormatter] stringFromTimeInterval:[self.allSamples.firstObject.metadata[HKMetadataKeySleepOnsetLatency] doubleValue]]];
 	return detailText;
@@ -159,7 +175,7 @@ __synthesize(NSArray *, inBedPresenters, [self.samples query:^BOOL(SamplePresent
 }])
 
 __synthesize(NSArray *, sleepPresenters, [self.samples query:^BOOL(SamplePresenter *obj) {
-	return obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisAsleep;
+	return IS_ASLEEP(obj.allSamples.firstObject.value);
 }])
 
 - (NSDate *)startDate {

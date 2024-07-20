@@ -10,6 +10,8 @@
 
 #define SEC_BACKGROUND_REFRESH 3600.0
 
+#define test_sel(obj, sel) ([obj respondsToSelector:@selector(sel)] ? [obj performSelector:@selector(sel)] : Nil)
+
 @interface ExtensionDelegate ()
 @property (strong, nonatomic, readonly) Settings *settings;
 
@@ -66,11 +68,11 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
 		NSDate *today = [now dateComponent];
 		AnalysisPresenter *presenter = self.presenters[today];
 
-		self.inBedDuration = [presenter.allPresenters sum:^NSNumber *(AnalysisPresenter *obj) {
+		self.inBedDuration = [presenter.allPresenters vSum:^NSNumber *(AnalysisPresenter *obj) {
 			return obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisInBed ? @(obj.duration) : Nil;
 		}];
-		self.sleepDuration = [presenter.allPresenters sum:^NSNumber *(AnalysisPresenter *obj) {
-			return obj.allSamples.firstObject.value == HKCategoryValueSleepAnalysisAsleep ? @(obj.duration) : Nil;
+		self.sleepDuration = [presenter.allPresenters vSum:^NSNumber *(AnalysisPresenter *obj) {
+			return IS_ASLEEP(obj.allSamples.firstObject.value) ? @(obj.duration) : Nil;
 		}];
 
 		self.image = self.startDate ? Nil : self.inBedDuration == 0.0 && self.sleepDuration == 0.0 ? [UIImage image:IMG_BACK_LINE] : [UIImage imageWithSize:CGSizeMake(IMG_BACK_SIZE, IMG_BACK_SIZE) opaque:NO scale:2.0 draw:^(CGContextRef context) {
@@ -90,9 +92,9 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
 		[GCD main:^{
 			WKInterfaceController *root = [WKExtension sharedExtension].rootInterfaceController;
 			WKInterfaceController *visible = [WKExtension sharedExtension].visibleInterfaceController;
-			sel(root, setup);
+            sel(root, setup);
 			if (visible != root)
-				sel(visible, setup);
+                sel(visible, setup);
 		}];
 
 		[[CLKComplicationServer sharedInstance] reloadTimeline:Nil];
@@ -129,22 +131,27 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
 
 	[HKDataSleepAnalysis requestAuthorizationToShare:YES andRead:YES completion:^(BOOL success) {
 		if (success)
-			[self setup];
+			[GCD main:^{
+				[self setup];
+			}];
 	}];
 
-	[[WCSessionDelegate instance].reachableSession sendMessage:@{ STR_UNDERSCORE : [[Settings class] description] } replyHandler:^(NSDictionary<NSString *,id> *replyMessage) {
-		if (!replyMessage)
-			return;
+	[WCSessionDelegate instance].activationDidComplete = ^(WCSessionActivationState activationState) {
+		[[WCSessionDelegate instance].reachableSession sendMessage:@{ STR_UNDERSCORE : [[Settings class] description] } replyHandler:^(NSDictionary<NSString *,id> *replyMessage) {
+			if (!replyMessage)
+				return;
 
-		if (!self.settings.startDate)
-			self.settings.startDate = replyMessage[@"startDate"];
+			if (!self.settings.startDate)
+				self.settings.startDate = replyMessage[@"startDate"];
 
-		self.settings.bedtimeAlert = [replyMessage[@"bedtimeAlert"] boolValue];
-		self.settings.sleepDuration = [replyMessage[@"sleepDuration"] doubleValue];
-		self.settings.alarmWeekdays = replyMessage[@"alarmWeekdays"];
-		self.settings.alarmTime = [replyMessage[@"alarmTime"] doubleValue];
-		self.settings.sleepLatency = [replyMessage[@"sleepLatency"] doubleValue];
-	}];
+			self.settings.bedtimeAlert = [replyMessage[@"bedtimeAlert"] boolValue];
+			self.settings.sleepDuration = [replyMessage[@"sleepDuration"] doubleValue];
+			self.settings.alarmWeekdays = replyMessage[@"alarmWeekdays"];
+			self.settings.alarmTime = [replyMessage[@"alarmTime"] doubleValue];
+			self.settings.sleepLatency = [replyMessage[@"sleepLatency"] doubleValue];
+		}];
+	};
+	[[WCSessionDelegate instance] reachableSession];
 }
 
 - (void)applicationDidBecomeActive {
@@ -171,7 +178,7 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
 
 			[self detectFromUI:NO completion:^(NSArray<HKCategorySample *> *samples) {
 				for (HKCategorySample *sample in samples)
-					if (sample.value == HKCategoryValueSleepAnalysisAsleep)
+					if (IS_ASLEEP(sample.value))
 						[[UNNotificationContent contentWithTitle:[NSString stringWithFormat:@"You slept %@.", [[NSDateComponentsFormatter hhmmFullFormatter] stringFromTimeInterval:sample.duration]] body:[NSString stringWithFormat:@"%@ - %@", [sample.startDate descriptionForTime:NSDateFormatterShortStyle], [sample.endDate descriptionForTime:NSDateFormatterShortStyle]] badge:Nil sound:Nil attachments:Nil] scheduleWithIdentifier:[sample.startDate descriptionForDateAndTime:NSDateFormatterShortStyle]];
 
 				if (samples.count) {
@@ -219,8 +226,11 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
 
 	NSTimeInterval sleepLatency = self.settings.sleepLatency;
 	if ([endDate timeIntervalSinceDate:startDate] >= sleepLatency)
-		[HKDataSleepAnalysis querySamplesWithStartDate:startDate endDate:endDate options:HKQueryOptionStrictEndDate limit:1 sort:@{ HKSampleSortIdentifierEndDate : @(NO) } completion:^(NSArray<__kindof HKSample *> *samples) {
-			HKSample *sample = samples.firstObject;
+		[HKDataSleepAnalysis querySamplesWithStartDate:startDate endDate:endDate options:HKQueryOptionStrictEndDate limit:/*0*/HKObjectQueryNoLimit sort:@{ HKSampleSortIdentifierEndDate : @(NO) } completion:^(NSArray<__kindof HKSample *> *samples) {
+//			HKSample *sample = samples.firstObject;
+			HKSample *sample = [samples firstObject:^BOOL(__kindof HKCategorySample *sample) {
+				return sample.value == HKCategoryValueSleepAnalysisInBed;
+			}];
 //		[HKDataSleepAnalysis querySampleWithStartDate:startDate endDate:endDate completion:^(__kindof HKSample *sample) {
 			if (sample)
 				startDate = sample.endDate;
@@ -229,12 +239,13 @@ __synthesize(Settings *, settings, [[Settings alloc] init])
 				[CMMotionActivitySample queryActivityStartingFromDate:startDate toDate:endDate within:sleepLatency withHandler:^(NSArray<CMMotionActivitySample *> *activities) {
 					NSArray<HKCategorySample *> *samples = [self.settings samplesFromActivities:activities fromUI:fromUI];
 
-					BOOL inBed = [samples any:^BOOL(HKCategorySample *obj) {
+					NSArray *inBedSamples = [samples query:^BOOL(HKCategorySample *obj) {
 						return obj.value == HKCategoryValueSleepAnalysisInBed;
 					}];
+					BOOL inBed = inBedSamples.count > 0;
 
 					if (completion)
-						completion(fromUI || inBed ? samples : Nil);
+						completion(fromUI || inBed ? /*samples*/inBedSamples : Nil);
 
 					if (fromUI || inBed)
 						self.lastDetectDate = endDate;

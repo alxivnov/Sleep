@@ -123,7 +123,9 @@
 
 	CLLocation *location = locations.lastObject;
 
-	[self setup:location];
+	[GCD main:^{
+		[self setup:location];
+	}];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {

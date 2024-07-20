@@ -25,13 +25,13 @@
 @implementation Widget
 
 - (void)isRegistered:(void(^)(BOOL granted))handler {
-	[UNUserNotificationCenter getNotificationSettings:^(UNNotificationSettings *settings) {
+	[UNUserNotificationCenter getCurrentNotificationSettings:^(UNNotificationSettings *settings) {
 		handler(settings.authorization.boolValue);
 	}];
 }
 
 - (void)requestRegistration:(void(^)(BOOL granted))handler {
-	[UNUserNotificationCenter getNotificationSettings:^(UNNotificationSettings *settings) {
+	[UNUserNotificationCenter getCurrentNotificationSettings:^(UNNotificationSettings *settings) {
 		if (settings.authorization.boolValue) {
 			if (handler)
 				handler(YES);

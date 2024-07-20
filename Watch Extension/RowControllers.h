@@ -35,6 +35,7 @@
 @interface SleepRowController : NSObject
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *textLabel;
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *detailTextLabel;
+@property (weak, nonatomic) IBOutlet WKInterfaceLabel *accessoryView;
 
 - (void)setPresenter:(AnalysisPresenter *)presenter;
 
