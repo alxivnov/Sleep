@@ -155,7 +155,13 @@ __synthesize(NSUserDefaults *, defaults, [NSUserDefaults standardUserDefaults])
 	double fill = -60.0;
 	vDSP_vfillD(&fill, bytes, 1, count);
 	for (CMMotionActivitySample *activity in activities) {
-		double dbl = (activity.type == CMMotionActivityTypeStationary ? activity.duration : -activity.duration) / (activity.confidence == CMMotionActivityConfidenceLow ? 2.0 : activity.confidence == CMMotionActivityConfidenceMedium ? 1.5 : 1.0);
+		double dbl = (
+			activity.type == CMMotionActivityTypeStationary
+				? activity.duration
+				: activity.type == CMMotionActivityTypeWalking || activity.type == CMMotionActivityTypeRunning || activity.type == CMMotionActivityTypeCycling
+					? -activity.duration
+					: 0
+		) / (activity.confidence == CMMotionActivityConfidenceLow ? 2.0 : activity.confidence == CMMotionActivityConfidenceMedium ? 1.5 : 1.0);
 		NSUInteger idx = round([activity.startDate timeIntervalSinceDate:startDate]);
 		NSUInteger len = round(activity.duration);
 		vDSP_vfillD(&dbl, bytes + idx, 1, len);
