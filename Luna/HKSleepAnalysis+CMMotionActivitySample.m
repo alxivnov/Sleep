@@ -96,12 +96,19 @@
 
 + (NSArray<HKCategorySample *> *)samplesWithStartDate:(NSDate *)start endDate:(NSDate *)end activities:(NSArray<CMMotionActivitySample *> *)activities sleepLatency:(NSTimeInterval)sleepLatency adaptive:(BOOL)adaptive {
 	if (adaptive) {
-		NSTimeInterval duration = [activities vSum:^NSNumber *(CMMotionActivitySample *obj) {
-			return obj.confidence == CMMotionActivityConfidenceHigh ? @(obj.duration) : Nil;
+		NSArray<CMMotionActivitySample *> *filtered = [activities query:^BOOL(CMMotionActivitySample *obj) {
+			return [obj.startDate isGreaterThanOrEqual:start] && [obj.endDate isLessThanOrEqual:end];
+		}];
+		NSTimeInterval duration = [filtered vSum:^NSNumber *(CMMotionActivitySample *obj) {
+			return obj.confidence == CMMotionActivityConfidenceLow
+			? @(obj.duration / 2.0)
+				: obj.confidence == CMMotionActivityConfidenceMedium
+					? @(obj.duration / 1.5)
+					: @(obj.duration);
 		}];
 		NSTimeInterval interval = [end timeIntervalSinceDate:start];
 		if (duration > interval / 3.0) {
-			NSArray<HKCategorySample *> *samples = [self samplesFromActivities:activities maxSleepLatency:sleepLatency];
+			NSArray<HKCategorySample *> *samples = [self samplesFromActivities:filtered maxSleepLatency:sleepLatency];
 			if ([samples.firstObject.startDate isGreaterThan:start] && [samples.lastObject.endDate isLessThan:end])
 				return samples;
 		}
@@ -116,7 +123,18 @@
 	if (startDate && endDate && [endDate timeIntervalSinceDate:startDate] > fabs(sleepLatency))
         [HKDataSleepAnalysis saveSampleWithStartDate:startDate endDate:endDate value:sleepLatency ? HKCategoryValueSleepAnalysisInBed : CategoryValueSleepAnalysisAsleepUnspecified metadata:activities ? @{ HKMetadataKeySampleActivities : [CMMotionActivitySample samplesToString:activities date:startDate] ?: STR_EMPTY } : Nil completion:sleepLatency ? ^(BOOL success) {
 			if (adaptive) {
-				NSArray<HKCategorySample *> *samples = [HKDataSleepAnalysis samplesWithStartDate:startDate endDate:endDate activities:activities sleepLatency:sleepLatency adaptive:adaptive.boolValue];
+				NSDate *start = startDate;
+				NSDate *end = endDate;
+				BOOL adaptiveBool = adaptive.boolValue;
+				if (adaptive.doubleValue > 1) {
+					end = [NSDate dateWithTimeIntervalSinceReferenceDate:fabs(adaptive.doubleValue)];
+					adaptiveBool = YES;
+				} else if (adaptive.doubleValue < -1) {
+					start = [NSDate dateWithTimeIntervalSinceReferenceDate:fabs(adaptive.doubleValue)];
+					adaptiveBool = YES;
+				}
+				
+				NSArray<HKCategorySample *> *samples = [HKDataSleepAnalysis samplesWithStartDate:/*startDate*/start endDate:/*endDate*/end activities:activities sleepLatency:sleepLatency adaptive:/*adaptive.boolValue*/adaptiveBool];
 				
 				if (samples.count)
 					[[HKHealthStore defaultStore] saveObjects:samples completion:completion];

@@ -193,7 +193,17 @@
 - (void)setProgress:(NSTimeInterval)sleepLatency {
 	if ([self.endDate timeIntervalSinceDate:self.startDate] <= 345600) {
 		self.inBedSample = sleepLatency ? [HKDataSleepAnalysis sampleWithStartDate:self.startDate endDate:self.endDate value:HKCategoryValueSleepAnalysisInBed metadata:Nil] : Nil;
-		self.sleepSamples = sleepLatency ? [HKDataSleepAnalysis samplesWithStartDate:self.startDate endDate:self.endDate activities:self.activities sleepLatency:sleepLatency adaptive:YES] : arr_([HKDataSleepAnalysis sampleWithStartDate:self.startDate endDate:self.endDate value:CategoryValueSleepAnalysisAsleepUnspecified metadata:Nil]);
+		
+		NSArray<HKCategorySample *> *sleepSamples = [self.visualizer.sleepSamples query:^BOOL(HKCategorySample *obj) {
+			return obj.sourceName && [obj.startDate isGreaterThanOrEqual:self.sample.startDate] && [obj.endDate isLessThanOrEqual:self.sample.endDate];
+		}];
+		NSTimeInterval startInterval = [sleepSamples.firstObject.startDate timeIntervalSinceDate:self.startDate];
+		NSTimeInterval endInterval = [self.endDate timeIntervalSinceDate:sleepSamples.lastObject.endDate];
+		NSDate *inBedStart = startInterval && endInterval && startInterval < endInterval ? sleepSamples.lastObject.endDate : self.startDate;
+		NSDate *inBedEnd = startInterval && endInterval && startInterval > endInterval ? sleepSamples.firstObject.startDate : self.endDate;
+		self.sleepSamples = sleepLatency
+			? [HKDataSleepAnalysis samplesWithStartDate:inBedStart endDate:inBedEnd activities:self.activities sleepLatency:sleepLatency adaptive:YES]
+			: arr_([HKDataSleepAnalysis sampleWithStartDate:inBedStart endDate:inBedEnd value:CategoryValueSleepAnalysisAsleepUnspecified metadata:Nil]);
 		[self.visualizer scrollRectToVisibleDate:self.endDate animated:YES];
 	}
 
@@ -349,15 +359,29 @@
 - (IBAction)save:(UIBarButtonItem *)sender {
 	[GLOBAL endSleeping];
 	
-	BOOL hasInBed = [self.visualizer.inBedSamples any:^BOOL(HKCategorySample *obj) {
-		return !obj.isOwn && [obj.startDate isGreaterThanOrEqual:self.sample.startDate] && [obj.endDate isLessThanOrEqual:self.sample.endDate];
+//	BOOL hasInBed = [self.visualizer.inBedSamples any:^BOOL(HKCategorySample *obj) {
+//		return !obj.isOwn && [obj.startDate isGreaterThanOrEqual:self.sample.startDate] && [obj.endDate isLessThanOrEqual:self.sample.endDate];
+//	}];
+//	BOOL hasSleep = [self.visualizer.sleepSamples any:^BOOL(HKCategorySample *obj) {
+//		return !obj.isOwn && [obj.startDate isGreaterThanOrEqual:self.sample.startDate] && [obj.endDate isLessThanOrEqual:self.sample.endDate];
+//	}];
+//	NSNumber *adaptive = hasInBed || hasSleep
+//		? Nil
+//		: @YES;
+	NSNumber *adaptive = @YES;
+	
+	NSArray<HKCategorySample *> *sleepSamples = [self.visualizer.sleepSamples query:^BOOL(HKCategorySample *obj) {
+		return obj.sourceName && [obj.startDate isGreaterThanOrEqual:self.sample.startDate] && [obj.endDate isLessThanOrEqual:self.sample.endDate];
 	}];
-	BOOL hasSleep = [self.visualizer.sleepSamples any:^BOOL(HKCategorySample *obj) {
-		return !obj.isOwn && [obj.startDate isGreaterThanOrEqual:self.sample.startDate] && [obj.endDate isLessThanOrEqual:self.sample.endDate];
-	}];
-	NSNumber *adaptive = hasInBed || hasSleep
-		? Nil
-		: @YES;
+	NSTimeInterval startInterval = [sleepSamples.firstObject.startDate timeIntervalSinceDate:self.startDate];
+	NSTimeInterval endInterval = [self.endDate timeIntervalSinceDate:sleepSamples.lastObject.endDate];
+	if (startInterval && endInterval) {
+		if (startInterval < endInterval) {
+			adaptive = @(-sleepSamples.lastObject.endDate.timeIntervalSinceReferenceDate);
+		} else if (startInterval > endInterval) {
+			adaptive = @(sleepSamples.firstObject.startDate.timeIntervalSinceReferenceDate);
+		}
+	}
 
 	if (self.inBedSamplesToDelete.count || self.sleepSamplesToDelete.count)
 		[[HKHealthStore defaultStore] deleteObjects:self.inBedSamplesToDelete.count && self.sleepSamplesToDelete.count ? [self.inBedSamplesToDelete arrayByAddingObjectsFromArray:self.sleepSamplesToDelete] : self.inBedSamplesToDelete.count ? self.inBedSamplesToDelete : self.sleepSamplesToDelete completion:^(BOOL success) {

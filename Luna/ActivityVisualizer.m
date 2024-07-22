@@ -192,9 +192,9 @@ __synthesize(UIImageView *, sunsetView, ({ UIImageView *x = [[UIImageView alloc]
 				NSUInteger index = 0;
 				NSUInteger count = floor(width / cycleWidth);
 				for (; index < count; index++)
-					[layers addObject:[self layerWithRect:CGRectMake(x + index * cycleWidth, y, cycleWidth, height) fillColor:/*[color colorWithAlphaComponent:0.3 + 0.10 * cycleCount++]*/color]];
+					[layers addObject:[self layerWithRect:CGRectMake(x + index * cycleWidth, y, cycleWidth, height) fillColor:sample.isOwn ? [color colorWithAlphaComponent:0.3 + 0.10 * cycleCount++] : color]];
 
-				[layers addObject:[self layerWithRect:CGRectMake(x + index * cycleWidth, y, width - index * cycleWidth, height) fillColor:/*[color colorWithAlphaComponent:0.3 + 0.10 * cycleCount]*/color]];
+				[layers addObject:[self layerWithRect:CGRectMake(x + index * cycleWidth, y, width - index * cycleWidth, height) fillColor:sample.isOwn ? [color colorWithAlphaComponent:0.3 + 0.10 * cycleCount] : color]];
 			}
 		}
 //	}];
