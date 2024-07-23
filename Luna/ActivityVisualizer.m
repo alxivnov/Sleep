@@ -30,6 +30,7 @@
 @interface ActivityVisualizer () <UIScrollViewDelegate>
 @property (assign, nonatomic) NSTimeInterval duration;
 @property (assign, nonatomic) CGFloat pointsPerSecond;
+@property (assign, nonatomic) CGSize contentSizeCache;
 
 @property (strong, nonatomic, readonly) CAShapeLayer *inBedLayer;
 @property (strong, nonatomic, readonly) CAShapeLayer *sleepLayer;
@@ -51,8 +52,12 @@
 __property(NSTimeInterval, duration, [self.endDate timeIntervalSinceDate:self.startDate])
 //__property(CGFloat, pointsPerSecond, self.contentSize.width / self.duration)
 
+- (CGSize)contentSizeCache {
+	return CGSizeIsNan(_contentSizeCache) ? self.contentSize : _contentSizeCache;
+}
+
 - (CGFloat)pointsPerSecond {
-	return self.contentSize.width / (self.startDate && self.endDate ? self.duration : TIME_DAY);
+	return self.contentSizeCache.width / (self.startDate && self.endDate ? self.duration : TIME_DAY);
 }
 
 __synthesize(CAShapeLayer *, inBedLayer, ({ CAShapeLayer *x = [CAShapeLayer new]; [self.layer addSublayer:x]; x; }))
@@ -86,7 +91,7 @@ __synthesize(UIImageView *, sunsetView, ({ UIImageView *x = [[UIImageView alloc]
 }
 
 - (CGFloat)y:(double)fraction {
-	return self.contentSize.height - fraction * self.contentSize.height;
+	return self.contentSizeCache.height - fraction * self.contentSizeCache.height;
 }
 
 - (CAShapeLayer *)layerWithRect:(CGRect)rect fillColor:(UIColor *)color {
@@ -132,7 +137,7 @@ __synthesize(UIImageView *, sunsetView, ({ UIImageView *x = [[UIImageView alloc]
 		CGFloat x = [self x:obj.startDate];
 		CGFloat y = 0.0;
 		CGFloat width = [self x:obj.endDate] - x;
-		CGFloat height = self.contentSize.height;
+		CGFloat height = self.contentSizeCache.height;
 
 		return [self layerWithRect:CGRectMake(x, y, width, height) fillColor:color];
 	}];
@@ -187,7 +192,7 @@ __synthesize(UIImageView *, sunsetView, ({ UIImageView *x = [[UIImageView alloc]
 				CGFloat x = [self x:sample.startDate];
 				CGFloat y = 0.0;
 				CGFloat width = [self x:sample.endDate] - x;
-				CGFloat height = self.contentSize.height;
+				CGFloat height = self.contentSizeCache.height;
 
 				NSUInteger index = 0;
 				NSUInteger count = floor(width / cycleWidth);
@@ -220,7 +225,7 @@ __synthesize(UIImageView *, sunsetView, ({ UIImageView *x = [[UIImageView alloc]
 		CGFloat x = [self x:sample.startDate];
 		CGFloat y = [self y:/*logCount / logMax*/[sample doubleValueForUnit:[HKUnit countUnit]] / max];
 		CGFloat width = sample.duration * self.pointsPerSecond;
-		CGFloat height = self.contentSize.height - y;
+		CGFloat height = self.contentSizeCache.height - y;
 
 		CGPathAddRect(path, NULL, CGRectMake(x, y, width, height));
 	}
@@ -256,7 +261,7 @@ __synthesize(UIImageView *, sunsetView, ({ UIImageView *x = [[UIImageView alloc]
 
 	if (_fallAsleep) {
 		CGMutablePathRef path = CGPathCreateMutable();
-		CGPathAddRect(path, NULL, CGRectMake([self x:_fallAsleep], 0.0, self.sleepLatency.doubleValue * self.pointsPerSecond, self.contentSize.height));
+		CGPathAddRect(path, NULL, CGRectMake([self x:_fallAsleep], 0.0, self.sleepLatency.doubleValue * self.pointsPerSecond, self.contentSizeCache.height));
 
 		[GCD main:^{
 			self.alertLayer.path = path;
@@ -407,7 +412,7 @@ __synthesize(UIImageView *, sunsetView, ({ UIImageView *x = [[UIImageView alloc]
 }
 
 - (void)setupContentSize {
-	self.contentSize = CGSizeMake([self.endDate timeIntervalSinceDate:self.startDate] / 60.0 * self.zoom, self.zoom == 1.0 ? 255.0 : 127.0/*self.bounds.size.height*/);
+	_contentSizeCache = self.contentSize = CGSizeMake([self.endDate timeIntervalSinceDate:self.startDate] / 60.0 * self.zoom, self.zoom == 1.0 ? 255.0 : 127.0/*self.bounds.size.height*/);
 #warning Remove constant!
 	self.inBedLayer.frame = CGRectMakeWithSize(self.contentSize);
 	self.sleepLayer.frame = CGRectMakeWithSize(self.contentSize);

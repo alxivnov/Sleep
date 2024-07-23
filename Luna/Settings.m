@@ -172,6 +172,9 @@ __synthesize(NSUserDefaults *, defaults, [NSUserDefaults standardUserDefaults])
 
 	NSUInteger sleepIndex = 0;
 	NSUInteger inBedIndex = 0;
+	
+	double sleepTreshold = 60.0;
+	double inBedTreshold = 1.0 / 2.0;
 
 	double prev = 0.0;
 	vDSP_meanvD(bytes, 1, &prev, (NSUInteger)sleepLatency);
@@ -181,9 +184,9 @@ __synthesize(NSUserDefaults *, defaults, [NSUserDefaults standardUserDefaults])
 		double curr = 0.0;
 		vDSP_meanvD(bytes + index, 1, &curr, (NSUInteger)sleepLatency);
 
-		if (prev < 60.0 && curr >= 60.0) {
+		if (prev < sleepTreshold && curr >= sleepTreshold) {
 			sleepIndex = index;
-		} else if (prev > 60.0 && curr <= 60.0) {
+		} else if (prev > sleepTreshold && curr <= sleepTreshold) {
 			if (sleepIndex) {
 				double max = 0.0;
 				vDSP_maxvD(bytes + sleepIndex, 1, &max, index - sleepIndex);
@@ -195,9 +198,9 @@ __synthesize(NSUserDefaults *, defaults, [NSUserDefaults standardUserDefaults])
 			sleepIndex = 0;
 		}
 
-		if (prev < 1.0 && curr >= 1.0) {
+		if (prev < inBedTreshold && curr >= inBedTreshold) {
 			inBedIndex = index;
-		} else if (prev > 1.0 && curr <= 1.0) {
+		} else if (prev > inBedTreshold && curr <= inBedTreshold) {
 			if (inBedIndex) {
 				double max = 0.0;
 				vDSP_maxvD(bytes + inBedIndex, 1, &max, index - inBedIndex);

@@ -199,8 +199,8 @@
 		}];
 		NSTimeInterval startInterval = [sleepSamples.firstObject.startDate timeIntervalSinceDate:self.startDate];
 		NSTimeInterval endInterval = [self.endDate timeIntervalSinceDate:sleepSamples.lastObject.endDate];
-		NSDate *inBedStart = startInterval && endInterval && startInterval < endInterval ? sleepSamples.lastObject.endDate : self.startDate;
-		NSDate *inBedEnd = startInterval && endInterval && startInterval > endInterval ? sleepSamples.firstObject.startDate : self.endDate;
+		NSDate *inBedStart = startInterval > sleepLatency && endInterval > sleepLatency && startInterval < endInterval ? sleepSamples.lastObject.endDate : self.startDate;
+		NSDate *inBedEnd = startInterval > sleepLatency && endInterval > sleepLatency && startInterval > endInterval ? sleepSamples.firstObject.startDate : self.endDate;
 		self.sleepSamples = sleepLatency
 			? [HKDataSleepAnalysis samplesWithStartDate:inBedStart endDate:inBedEnd activities:self.activities sleepLatency:sleepLatency adaptive:YES]
 			: arr_([HKDataSleepAnalysis sampleWithStartDate:inBedStart endDate:inBedEnd value:CategoryValueSleepAnalysisAsleepUnspecified metadata:Nil]);
@@ -370,12 +370,13 @@
 //		: @YES;
 	NSNumber *adaptive = @YES;
 	
+	NSTimeInterval sleepLatency = self.visualizer.sleepLatency.doubleValue;
 	NSArray<HKCategorySample *> *sleepSamples = [self.visualizer.sleepSamples query:^BOOL(HKCategorySample *obj) {
 		return obj.sourceName && [obj.startDate isGreaterThanOrEqual:self.sample.startDate] && [obj.endDate isLessThanOrEqual:self.sample.endDate];
 	}];
 	NSTimeInterval startInterval = [sleepSamples.firstObject.startDate timeIntervalSinceDate:self.startDate];
 	NSTimeInterval endInterval = [self.endDate timeIntervalSinceDate:sleepSamples.lastObject.endDate];
-	if (startInterval && endInterval) {
+	if (startInterval > sleepLatency && endInterval > sleepLatency) {
 		if (startInterval < endInterval) {
 			adaptive = @(-sleepSamples.lastObject.endDate.timeIntervalSinceReferenceDate);
 		} else if (startInterval > endInterval) {

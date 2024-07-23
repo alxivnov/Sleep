@@ -414,7 +414,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "36B7A725-5329-4E22-9A2C-1C6ADC28676B"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Luna/HKSleepAnalysis+CMMotionActivitySample.m"
@@ -484,8 +484,8 @@
             filePath = "Luna/ActivityVisualizer.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
             landmarkName = "-setSleepSamples:"
             landmarkType = "7">
          </BreakpointContent>
@@ -500,8 +500,8 @@
             filePath = "Luna/ActivityVisualizer.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
             landmarkName = "-setSleepSamples:"
             landmarkType = "7">
          </BreakpointContent>
@@ -516,9 +516,57 @@
             filePath = "Luna/ActivityVisualizer.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
             landmarkName = "-setSleepSamples:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B5B00BBC-FC12-4DA0-9C81-83C2E2158E91"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Luna/IntervalController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "387"
+            endingLineNumber = "387"
+            landmarkName = "-save:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "57D49BC0-6FE6-490A-9A7F-C28D85661627"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Luna/HKSleepAnalysis+CMMotionActivitySample.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "+samplesWithStartDate:endDate:activities:sleepLatency:adaptive:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CD1C41CB-0C4B-4341-9844-9D0BD3410529"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Objective-Sea/HKHealthStore+Convenience.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "-deleteObjects:completion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
