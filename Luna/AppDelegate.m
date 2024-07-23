@@ -35,7 +35,7 @@
 //	if (!IS_DEBUGGING)
 //		[Fabric with:@[[Crashlytics class]]];
 
-	[CLLocationManager locationServicesEnabled];
+//	[CLLocationManager locationServicesEnabled];
 	[CLLocationManager defaultManager].delegate = self;
 
 	[SKInAppPurchase purchasesWithProductIdentifiers:@[ APP_PURCHASE_ID_1, APP_PURCHASE_ID_2, APP_PURCHASE_ID_3 ]];

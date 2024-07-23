@@ -414,7 +414,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "36B7A725-5329-4E22-9A2C-1C6ADC28676B"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Luna/HKSleepAnalysis+CMMotionActivitySample.m"
@@ -542,7 +542,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "57D49BC0-6FE6-490A-9A7F-C28D85661627"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Luna/HKSleepAnalysis+CMMotionActivitySample.m"
