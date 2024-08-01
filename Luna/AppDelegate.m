@@ -45,6 +45,9 @@
 
 	if (launchOptions[UIApplicationLaunchOptionsShortcutItemKey])
 		[application.rootViewController.lastViewController forwardSelector:@selector(application:performActionForShortcutItem:completionHandler:) withObject:application withObject:launchOptions[UIApplicationLaunchOptionsShortcutItemKey] withObject:Nil nextTarget:UIViewControllerNextTarget(YES)];
+	
+	NSDateComponents * comp = [NSDateComponents dateComponentsWithYear:2015 month:2 day:5];
+	[@(ceil([[NSDate now] timeIntervalSinceDate:comp.date] / (24.0 * 60.0 * 60.0))) log:@"Days"];
 
 	return YES;
 }

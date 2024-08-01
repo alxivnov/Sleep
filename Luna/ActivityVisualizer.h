@@ -33,6 +33,7 @@
 @property (strong, nonatomic) CLLocation *location;
 
 @property (assign, nonatomic) double zoom;
+@property (assign, nonatomic) BOOL edit;
 
 - (void)setSamples:(NSArray<HKCategorySample *> *)samples startDate:(NSDate *)startDate endDate:(NSDate *)endDate;
 

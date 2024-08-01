@@ -174,7 +174,7 @@ __synthesize(NSUserDefaults *, defaults, [NSUserDefaults standardUserDefaults])
 	NSUInteger inBedIndex = 0;
 	
 	double sleepTreshold = 60.0;
-	double inBedTreshold = 1.0 / 2.0;
+	double inBedTreshold = 0.80;
 
 	double prev = 0.0;
 	vDSP_meanvD(bytes, 1, &prev, (NSUInteger)sleepLatency);

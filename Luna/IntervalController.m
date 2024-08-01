@@ -241,6 +241,7 @@
 	}
 
 	self.visualizer.zoom = 0.5 * (GLOBAL.scale ? 2.0 : 1.0);
+	self.visualizer.edit = YES;
 
 	[self.visualizer loadWithStartDate:startDate endDate:endDate completion:^{
 		if (self.sample) {
@@ -376,7 +377,7 @@
 	}];
 	NSTimeInterval startInterval = [sleepSamples.firstObject.startDate timeIntervalSinceDate:self.startDate];
 	NSTimeInterval endInterval = [self.endDate timeIntervalSinceDate:sleepSamples.lastObject.endDate];
-	if (startInterval > sleepLatency && endInterval > sleepLatency) {
+	if (startInterval > sleepLatency || endInterval > sleepLatency) {
 		if (startInterval < endInterval) {
 			adaptive = @(-sleepSamples.lastObject.endDate.timeIntervalSinceReferenceDate);
 		} else if (startInterval > endInterval) {
