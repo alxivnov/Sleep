@@ -25,7 +25,7 @@
 //	17.7.21.900
 
 @interface AppDelegate () <UNUserNotificationCenterDelegate, CLLocationManagerDelegate>
-
+@property (strong, nonatomic) HKObserverQuery *observer;
 @end
 
 @implementation AppDelegate
@@ -48,6 +48,10 @@
 	
 	NSDateComponents * comp = [NSDateComponents dateComponentsWithYear:2015 month:2 day:5];
 	[@(ceil([[NSDate now] timeIntervalSinceDate:comp.date] / (24.0 * 60.0 * 60.0))) log:@"Days"];
+	
+	self.observer = [AnalysisPresenter observe:NSCalendarUnitWeekOfMonth updateHandler:^(NSArray<AnalysisPresenter *> *presenters) {
+		[application.rootViewController forwardSelector:@selector(reloadData)];
+	}];
 
 	return YES;
 }

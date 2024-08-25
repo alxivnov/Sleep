@@ -92,7 +92,7 @@
 	else if (indexPath.row == 1)
 		self.endDate = sender.date;
 	
-	[self setProgress:-self.visualizer.sleepLatency.doubleValue];
+	[self setProgress:-self.visualizer.sleepLatency.doubleValue scrollRectToVisibleDate:sender.date];
 
 	HKCategorySample *sample = [self.sample.allSamples firstObject:^BOOL(HKCategorySample *obj) {
 		return obj.metadata[HKMetadataKeySampleActivities] != Nil;
@@ -191,6 +191,10 @@
 }
 
 - (void)setProgress:(NSTimeInterval)sleepLatency {
+	[self setProgress:sleepLatency scrollRectToVisibleDate:Nil];
+}
+
+- (void)setProgress:(NSTimeInterval)sleepLatency scrollRectToVisibleDate:(NSDate *)date {
 	if ([self.endDate timeIntervalSinceDate:self.startDate] <= 345600) {
 		self.inBedSample = sleepLatency ? [HKDataSleepAnalysis sampleWithStartDate:self.startDate endDate:self.endDate value:HKCategoryValueSleepAnalysisInBed metadata:Nil] : Nil;
 		
@@ -204,7 +208,7 @@
 		self.sleepSamples = sleepLatency
 			? [HKDataSleepAnalysis samplesWithStartDate:inBedStart endDate:inBedEnd activities:self.activities sleepLatency:sleepLatency adaptive:YES]
 			: arr_([HKDataSleepAnalysis sampleWithStartDate:inBedStart endDate:inBedEnd value:CategoryValueSleepAnalysisAsleepUnspecified metadata:Nil]);
-		[self.visualizer scrollRectToVisibleDate:self.endDate animated:YES];
+		[self.visualizer scrollRectToVisibleDate:date ?: self.endDate animated:YES];
 	}
 
 	self.navigationController.navigationBar.progress = [[self.visualizer.sleepSamples query:^BOOL(HKCategorySample *obj) {
