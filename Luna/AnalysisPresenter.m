@@ -208,15 +208,7 @@ __synthesize(NSUInteger, cycleCount, [self.sleepPresenters sumCycleCount])
 		return arr;
 	}];
 	return [[dictionary.allValues map:^id(NSArray<AnalysisPresenter *> *obj) {
-		return [[self alloc] initWithSamples:[obj sortedArrayUsingComparator:^NSComparisonResult(AnalysisPresenter *obj1, AnalysisPresenter *obj2) {
-			return obj1.isOwn && obj2.isOwn
-				? NSOrderedSame
-				: obj1.isOwn
-					? NSOrderedAscending
-					: obj2.isOwn
-						? NSOrderedDescending
-						: NSOrderedSame;
-		}]];
+		return [[self alloc] initWithSamples:obj];
 	}] sortedArrayUsingComparator:^NSComparisonResult(AnalysisPresenter *obj1, AnalysisPresenter *obj2) {
 		return [obj2.endDate compare:obj1.endDate];
 	}];

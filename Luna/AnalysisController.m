@@ -38,7 +38,15 @@
 @implementation AnalysisController
 
 - (void)setSamples:(NSArray<AnalysisPresenter *> *)samples animated:(BOOL)animated {
-	_samples = samples;
+	_samples = [samples sortedArrayUsingComparator:^NSComparisonResult(AnalysisPresenter *obj1, AnalysisPresenter *obj2) {
+		return obj1.isOwn && obj2.isOwn
+			? NSOrderedSame
+			: obj1.isOwn
+				? NSOrderedAscending
+				: obj2.isOwn
+					? NSOrderedDescending
+					: NSOrderedSame;
+	}];
 	_avg = [_samples vAvg:^NSNumber *(AnalysisPresenter *obj) {
         return obj.allSamples && !IS_ASLEEP(obj.allSamples.firstObject.value) ? Nil : @(obj.duration);
 	}];

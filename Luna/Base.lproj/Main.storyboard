@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23077.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="70M-6Q-HOo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23091" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="70M-6Q-HOo">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23068.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23079"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +13,7 @@
             <objects>
                 <tableViewController id="3a1-dw-KMi" customClass="IntervalController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="56" sectionHeaderHeight="10" sectionFooterHeight="10" id="lnY-td-E92">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -655,10 +655,10 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="J2d-YZ-fEs">
-                                    <rect key="frame" x="0.0" y="0.0" width="304" height="40"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="304" height="0.0"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HI1-3K-w9H">
-                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="40" height="0.0"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="0oz-0J-5ig"/>
                                                 <constraint firstAttribute="width" constant="40" id="fd6-Xv-Xfg"/>
@@ -670,7 +670,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v66-PY-IaT">
-                                            <rect key="frame" x="44" y="0.0" width="40" height="40"/>
+                                            <rect key="frame" x="44" y="0.0" width="40" height="0.0"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="Cow-or-Xb1"/>
                                                 <constraint firstAttribute="width" constant="40" id="ohY-dH-ue5"/>
@@ -682,7 +682,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j39-G4-EBG">
-                                            <rect key="frame" x="88" y="0.0" width="40" height="40"/>
+                                            <rect key="frame" x="88" y="0.0" width="40" height="0.0"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="c0m-a9-BYp"/>
                                                 <constraint firstAttribute="height" constant="40" id="ytP-J3-b2c"/>
@@ -694,7 +694,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xwz-SJ-UUV">
-                                            <rect key="frame" x="132" y="0.0" width="40" height="40"/>
+                                            <rect key="frame" x="132" y="0.0" width="40" height="0.0"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="eCU-B5-Cbp"/>
                                                 <constraint firstAttribute="height" constant="40" id="sEV-G2-Svm"/>
@@ -706,7 +706,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTV-tN-Str">
-                                            <rect key="frame" x="176" y="0.0" width="40" height="40"/>
+                                            <rect key="frame" x="176" y="0.0" width="40" height="0.0"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="HsO-14-4Fl"/>
                                                 <constraint firstAttribute="width" constant="40" id="r4Q-Ff-6BT"/>
@@ -718,7 +718,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ajs-cJ-aXZ">
-                                            <rect key="frame" x="220" y="0.0" width="40" height="40"/>
+                                            <rect key="frame" x="220" y="0.0" width="40" height="0.0"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="79o-gT-tFL"/>
                                                 <constraint firstAttribute="height" constant="40" id="vmh-DV-3fd"/>
@@ -730,7 +730,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRQ-84-FP1">
-                                            <rect key="frame" x="264" y="0.0" width="40" height="40"/>
+                                            <rect key="frame" x="264" y="0.0" width="40" height="0.0"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="I2y-m3-iSB"/>
                                                 <constraint firstAttribute="height" constant="40" id="Ryr-lv-b80"/>
@@ -1657,7 +1657,7 @@
                 <navigationController storyboardIdentifier="interval" automaticallyAdjustsScrollViewInsets="NO" id="Fvd-gf-oYC" customClass="NavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="CmC-G9-ihM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -2101,7 +2101,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Inh-cb-GaY"/>
+        <segue reference="SPb-wX-aAo"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemIndigoColor"/>
     <resources>
@@ -2139,16 +2139,16 @@
         <image name="sun.min.fill" catalog="system" width="128" height="123"/>
         <image name="timer" catalog="system" width="128" height="123"/>
         <systemColor name="systemGrayColor">
-            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
-            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
-            <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
